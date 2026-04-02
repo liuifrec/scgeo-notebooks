@@ -48,15 +48,17 @@ Run notebooks in this exact order.
 
 1. `notebooks/manuscript/05_OOD.ipynb` (**Figure 2**)
 2. `notebooks/manuscript/Velocity_shift_alignment.ipynb` (**Figure 3**)
-3. `notebooks/manuscript/Final_summary.ipynb` (**integrated manuscript outputs**)
+3. `notebooks/manuscript/Final_summary.ipynb` (**intermediate integrated summary**)
 4. `notebooks/manuscript/test_driver_genes.ipynb` (**Figure 4**)
+
+> Note: `notebooks/manuscript/Final_summary.ipynb` is intentionally run **before** `notebooks/manuscript/test_driver_genes.ipynb` despite its filename.
 
 ## Figure-to-notebook mapping
 
 - **Figure 2** → `notebooks/manuscript/05_OOD.ipynb`
 - **Figure 3** → `notebooks/manuscript/Velocity_shift_alignment.ipynb`
 - **Figure 4** → `notebooks/manuscript/test_driver_genes.ipynb`
-- **Integrated manuscript outputs** → `notebooks/manuscript/Final_summary.ipynb`
+- **Intermediate integrated summary** → `notebooks/manuscript/Final_summary.ipynb`
 
 ## Notebook naming notes
 
