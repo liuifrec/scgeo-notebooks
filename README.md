@@ -44,6 +44,15 @@ For manuscript-oriented reruns, use the notebook groups in this order:
 
 > Reproducibility note: core preprocessing and manuscript notebooks are scripted, while the two exploration notebooks above include manual/semi-manual decisions that are part of the analysis flow.
 
+## External references for annotation
+
+Some notebooks (particularly in `notebooks/exploration/`) use external reference resources to assist with cell type annotation and interpretation:
+
+- Hematopoietic reference atlas (HemAtlas)
+- Azimuth reference mapping (HuBMAP): https://azimuth.hubmapconsortium.org/
+
+These resources were used for manual or semi-guided annotation steps and are not part of the ScGeo framework itself. They serve as biological references to support interpretation of embedding structure and inferred trajectories.
+
 ## Execution order (reviewer-focused)
 
 Run notebooks in this exact order.
