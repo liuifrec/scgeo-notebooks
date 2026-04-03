@@ -19,7 +19,7 @@ This repository is organized so reviewers can run a minimal, manuscript-focused 
    ```bash
    jupyter lab
    ```
-4. **Run notebooks in the execution order below** (data prep first, then manuscript notebooks).
+4. **Run notebooks in the execution order below** (data prep, then reference prep/annotation, then manuscript notebooks).
 
 > Notes:
 > - Package versions may need to match the manuscript environment exactly for byte-level reproducibility.
@@ -27,10 +27,31 @@ This repository is organized so reviewers can run a minimal, manuscript-focused 
 
 ## Repository structure
 
-- `notebooks/data_prep/` — **preprocessing pipeline** required before manuscript analyses.
-- `notebooks/manuscript/` — **reproducible paper figures/results**.
-- `notebooks/exploration/` — **side analyses** (helpful context, not required for core reproduction).
+- `notebooks/data_prep/` — **preprocessing and dataset preparation** required before downstream analyses.
+- `notebooks/exploration/` — **intermediate, analysis-relevant notebooks**, including manual reference preparation and manual annotation steps used upstream of final manuscript outputs.
+- `notebooks/manuscript/` — **final figure/result generation** notebooks for manuscript outputs.
 - `notebooks/tutorials/` — **user-facing demos** and learning-oriented walkthroughs.
+
+## Workflow order (manuscript-focused)
+
+For manuscript-oriented reruns, use the notebook groups in this order:
+
+1. **Data preparation**: run `notebooks/data_prep/` notebooks to preprocess and prepare inputs.
+2. **Reference preparation and annotation (semi-manual)**:
+   - `notebooks/exploration/06_Ref_prep.ipynb` — manual reference preparation.
+   - `notebooks/exploration/07_Reference_based_annotation.ipynb` — manual reference-based annotation.
+3. **Final manuscript outputs**: run `notebooks/manuscript/` notebooks for final figures/graphs and reported result outputs.
+
+> Reproducibility note: core preprocessing and manuscript notebooks are scripted, while the two exploration notebooks above include manual/semi-manual decisions that are part of the analysis flow.
+
+## External references for annotation
+
+Some notebooks (particularly in `notebooks/exploration/`) use external biological references during manual or semi-guided annotation:
+
+- Hematopoietic reference atlas (HemAtlas)
+- Azimuth reference mapping (HuBMAP): https://azimuth.hubmapconsortium.org/
+
+These references are used to support cell type interpretation of embeddings and inferred trajectories. They are not part of the ScGeo framework itself.
 
 ## Execution order (reviewer-focused)
 
@@ -44,7 +65,12 @@ Run notebooks in this exact order.
 3. `notebooks/data_prep/03_gse280305_cellrank_sparse.ipynb`
 4. `notebooks/data_prep/04_scgeo_gse280305_phase1_qc.ipynb`
 
-### 2) Manuscript analyses (IMPORTANT ORDER)
+### 2) Reference preparation and annotation (semi-manual, upstream)
+
+1. `notebooks/exploration/06_Ref_prep.ipynb`
+2. `notebooks/exploration/07_Reference_based_annotation.ipynb`
+
+### 3) Manuscript analyses (IMPORTANT ORDER)
 
 1. `notebooks/manuscript/05_OOD.ipynb` (**Figure 2**)
 2. `notebooks/manuscript/Velocity_shift_alignment.ipynb` (**Figure 3**)
@@ -65,7 +91,7 @@ Run notebooks in this exact order.
 To avoid breaking existing links/references, notebook filenames are preserved in this repository.
 
 - Manuscript notebooks are documented above with explicit figure mapping for readability.
-- Exploration notebooks are treated as optional/non-required.
+- Exploration notebooks include intermediate analysis steps; specifically, `06_Ref_prep.ipynb` and `07_Reference_based_annotation.ipynb` are upstream of final manuscript outputs.
 - Tutorial notebooks are demo-oriented and not required for manuscript reproduction.
 - Existing numeric prefixes (for ordering) are kept where already meaningful.
 
@@ -78,11 +104,11 @@ To avoid breaking existing links/references, notebook filenames are preserved in
 Recommended provenance workflow:
 1. Download source data from GEO (`GSE280305`) and record download date + GEO file checksums in your local run log.
 2. Place data in your local/project data location expected by the data prep notebooks.
-3. Execute `notebooks/data_prep/` notebooks in order before running manuscript notebooks.
+3. Execute `notebooks/data_prep/`, then `notebooks/exploration/06_Ref_prep.ipynb` and `notebooks/exploration/07_Reference_based_annotation.ipynb`, before running manuscript notebooks.
 
 ## Scope summary
 
 - **manuscript** = reproducible paper figures/results
-- **exploration** = side analyses (not required)
+- **exploration** = intermediate analysis notebooks (including manual reference prep/annotation)
 - **tutorials** = user demos
 - **data_prep** = preprocessing pipeline
