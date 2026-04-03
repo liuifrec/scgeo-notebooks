@@ -16,3 +16,17 @@ outputs/
 figures/tmp/
 cache/
 .DS_Store
+
+# data folders inside notebooks
+notebooks/**/data/
+
+# figures (generated)
+*.png
+*.tiff
+*.tif
+
+# optional: keep only if you NEVER want figures tracked
+# otherwise comment these out and track only final figures
+
+# notebook checkpoints
+.ipynb_checkpoints/
