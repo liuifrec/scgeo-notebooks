@@ -1,0 +1,29 @@
+name: scgeo-pancreas-dataset-d
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - pip
+  - anndata=0.12.7
+  - scanpy=1.11.5
+  - scvelo=0.3.4
+  - cellrank=2.0.7
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - h5py
+  - igraph
+  - leidenalg
+  - jupyterlab
+  - ipykernel
+  - nbclient
+  - nbformat
+  - python-igraph
+  - tqdm
+  - requests
+  - pip:
+      - -e ../scgeo

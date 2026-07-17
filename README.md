@@ -30,7 +30,92 @@ This repository is organized so reviewers can run a minimal, manuscript-focused 
 - `notebooks/data_prep/` — **preprocessing and dataset preparation** required before downstream analyses.
 - `notebooks/exploration/` — **intermediate, analysis-relevant notebooks**, including manual reference preparation and manual annotation steps used upstream of final manuscript outputs.
 - `notebooks/manuscript/` — **final figure/result generation** notebooks for manuscript outputs.
+- `notebooks/benchmarks/` — **synthetic revision benchmark notebooks** that read frozen manuscript-profile simulation outputs.
+- `notebooks/public_validation/` — **public validation notebooks** using external public datasets only.
 - `notebooks/tutorials/` — **user-facing demos** and learning-oriented walkthroughs.
+
+## Synthetic revision benchmark workflow
+
+The revision benchmark notebooks use only the frozen synthetic manuscript-profile outputs. They do not rerun the manuscript simulation suite and do not tune or propose new thresholds.
+
+Configure the frozen benchmark source with:
+
+```bash
+export SCGEO_BENCHMARK_DIR=/path/to/manuscript_v1
+```
+
+If the variable is unset, the notebooks use the relative default recorded in `configs/manuscript_benchmark_v1.json`:
+
+```text
+../scgeo/results/simulation/manuscript_v1
+```
+
+The pinned revision config records the `manuscript_v1` protocol, source commit, expected job counts, calibration seeds, held-out evaluation seeds, required audit files, and checksum manifests. The committed manifests are:
+
+- `results_manifest/benchmark_files.csv`
+- `results_manifest/checksums.sha256`
+
+Run the clean-kernel execution test from the repository root:
+
+```bash
+python scripts/execute_revision_notebooks.py
+```
+
+The runner executes these notebooks in fresh kernels:
+
+1. `notebooks/benchmarks/00_manuscript_benchmark_overview.ipynb`
+2. `notebooks/benchmarks/01_robust_estimator_comparison.ipynb`
+3. `notebooks/benchmarks/02_representation_and_dynamics_validation.ipynb`
+4. `notebooks/benchmarks/03_framework_ablation.ipynb`
+5. `notebooks/benchmarks/04_synthetic_geometry_stress_test.ipynb`
+6. `notebooks/benchmarks/05_synthetic_dynamics_stress_test.ipynb`
+7. `notebooks/tutorials/01_quickstart_perturbation_report.ipynb`
+
+Generated revision artifacts are written under `results/revision_synthetic_benchmark/`:
+
+- `figures/` contains SVG and PNG figures.
+- `figure_sources/` contains figure-source CSV tables.
+- `alt_text/` contains deterministic alt text.
+- `metadata/` records Python, scgeo, package, repository commit, source commit, protocol, and timestamp metadata.
+- `execution/revision_notebook_execution_report.json` records clean-kernel runtimes and artifact inventory.
+
+The benchmark notebooks keep calibration seeds (`0-4`) and held-out evaluation seeds (`5-19`) visibly separated. One simulation job/seed is treated as the independent unit. The notebooks explicitly report the negative revision findings captured by the frozen audit outputs: balanced-replicate seed dependence, incomplete state-level instability recall, zero local-distortion recall in representation-corruption jobs, and imperfect bootstrap uncertainty coverage.
+
+## Public pancreas Dataset D validation
+
+Dataset D is a public endocrine-pancreas developmental-dynamics validation using the official CellRank pancreas dataset. It does not modify the ScGeo package, does not change frozen synthetic thresholds or protocol settings, and does not create artificial treatment/control labels.
+
+Create the optional environment from the repository root:
+
+```bash
+conda env create -f environment/pancreas_environment.yml
+conda activate scgeo-pancreas-dataset-d
+```
+
+The public data and output locations are configurable:
+
+```bash
+export SCGEO_PANCREAS_DATA_DIR=data/public/pancreas_dataset_d
+export SCGEO_PANCREAS_OUTPUT_DIR=results/public_validation/pancreas_dataset_d
+```
+
+Run the clean-kernel public validation workflow:
+
+```bash
+python scripts/execute_pancreas_validation.py
+```
+
+The runner executes these source-output-free notebooks and saves executed review copies under `results/public_validation/pancreas_dataset_d/executed_notebooks/`:
+
+1. `notebooks/public_validation/pancreas/00_acquire_and_validate.ipynb`
+2. `notebooks/public_validation/pancreas/01_scvelo_dynamical_velocity.ipynb`
+3. `notebooks/public_validation/pancreas/02_cellrank_fates.ipynb`
+4. `notebooks/public_validation/pancreas/03_scgeo_representation_dynamics.ipynb`
+5. `notebooks/public_validation/pancreas/04_manuscript_figures.ipynb`
+
+The workflow records official public dataset checksums, scVelo dynamical velocity outputs, a CellRank VelocityKernel/GPCCA comparator, ScGeo-style representation-dynamics evidence across PCA20, PCA30, PCA50, diffusion map, and UMAP diagnostics, negative controls, PNG/SVG figures, figure-source CSVs, deterministic alt text, metadata, and version records.
+
+CellRank output is treated as a complementary probabilistic comparator derived from scVelo RNA velocity. It is not reported as evidence independent of RNA velocity.
 
 ## Workflow order (manuscript-focused)
 

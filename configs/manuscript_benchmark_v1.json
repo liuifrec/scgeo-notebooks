@@ -1,0 +1,67 @@
+{
+  "protocol_version": "manuscript_v1",
+  "profile": "manuscript",
+  "benchmark_dir_env": "SCGEO_BENCHMARK_DIR",
+  "default_benchmark_dir": "../scgeo/results/simulation/manuscript_v1",
+  "source_repository_env": "SCGEO_SOURCE_REPO",
+  "default_source_repository": "../scgeo",
+  "expected_source_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "results_manifest": "results_manifest/benchmark_files.csv",
+  "checksums_manifest": "results_manifest/checksums.sha256",
+  "notebook_output_env": "SCGEO_REVISION_OUTPUT_DIR",
+  "default_output_dir": "results/revision_synthetic_benchmark",
+  "independent_unit": "simulation job/seed",
+  "threshold_policy": "Use frozen manuscript_v1 thresholds and audit outputs only; do not tune or propose new thresholds.",
+  "expected_jobs": {
+    "total": 240,
+    "completed": 240,
+    "calibration": 60,
+    "evaluation": 180
+  },
+  "expected_seed_splits": {
+    "calibration": [0, 1, 2, 3, 4],
+    "evaluation": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  },
+  "expected_scenarios": [
+    "abundance_only",
+    "aligned_dynamics",
+    "balanced_replicate_heterogeneity",
+    "batch_condition_confounding",
+    "centroid_shift",
+    "covariance_only",
+    "discordant_dynamics",
+    "local_warp",
+    "null_effect",
+    "outlier_contamination",
+    "representation_corruption",
+    "unequal_cell_counts"
+  ],
+  "required_audit_files": [
+    "audit/bootstrap_uncertainty_by_seed.csv",
+    "audit/dynamics_performance.csv",
+    "audit/estimator_comparison.csv",
+    "audit/framework_ablation_by_seed.csv",
+    "audit/limitations.csv",
+    "audit/local_distortion_performance.csv",
+    "audit/manuscript_profile_scientific_audit.md",
+    "audit/null_false_call_by_seed.csv",
+    "audit/representation_robustness.csv",
+    "audit/runtime_memory.csv",
+    "audit/shift_detection_by_seed.csv"
+  ],
+  "revision_notebooks": [
+    "notebooks/benchmarks/00_manuscript_benchmark_overview.ipynb",
+    "notebooks/benchmarks/01_robust_estimator_comparison.ipynb",
+    "notebooks/benchmarks/02_representation_and_dynamics_validation.ipynb",
+    "notebooks/benchmarks/03_framework_ablation.ipynb",
+    "notebooks/benchmarks/04_synthetic_geometry_stress_test.ipynb",
+    "notebooks/benchmarks/05_synthetic_dynamics_stress_test.ipynb",
+    "notebooks/tutorials/01_quickstart_perturbation_report.ipynb"
+  ],
+  "negative_results_to_report": [
+    "balanced-replicate seed dependence",
+    "incomplete state-level instability recall",
+    "zero local-distortion recall in corruption jobs",
+    "imperfect bootstrap uncertainty coverage"
+  ]
+}
