@@ -1,0 +1,16 @@
+name: scgeo-gse249479-dataset-b
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - anndata
+  - h5py
+  - numpy
+  - pandas
+  - scipy
+  - psutil
+  - matplotlib
+  - ipykernel
+  - nbclient
+  - nbformat
