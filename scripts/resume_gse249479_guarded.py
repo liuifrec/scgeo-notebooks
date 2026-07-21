@@ -170,6 +170,64 @@ def resolve_path(root: Path, value: str) -> Path:
     return path.resolve()
 
 
+def is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        Path(path).resolve().relative_to(Path(parent).resolve())
+    except ValueError:
+        return False
+    return True
+
+
+def repo_dataset_data_dir(root: Path) -> Path:
+    return (Path(root).resolve() / "data" / "gse249479").resolve()
+
+
+def workflow_temp_dir(root: Path, config: dict[str, Any]) -> Path:
+    env_name = config.get("temp_dir_env", "SCGEO_GSE249479_TMPDIR")
+    default_value = config.get("default_temp_dir", ".tmp")
+    return resolve_path(root, os.environ.get(env_name, default_value))
+
+
+def ensure_repo_writable(root: Path) -> None:
+    probe = Path(root).resolve() / ".codex_gse249479_write_probe"
+    try:
+        atomic_write_text(probe, "probe\n")
+        probe.unlink()
+    except Exception as exc:
+        raise RuntimeError(f"Repository is not writable: {root}") from exc
+
+
+def configure_temp_environment(root: Path, config: dict[str, Any], *, create: bool = True) -> Path:
+    temp_dir = workflow_temp_dir(root, config)
+    if not is_relative_to(temp_dir, Path(root).resolve()):
+        raise RuntimeError(f"Workflow temp directory must be inside repository {root}; observed {temp_dir}")
+    if create:
+        temp_dir.mkdir(parents=True, exist_ok=True)
+    for key in ("TMPDIR", "TEMP", "TMP"):
+        os.environ[key] = str(temp_dir)
+    return temp_dir
+
+
+def require_repo_local_dataset_paths(root: Path, data_dir: Path, h5ad_path: Path | None = None) -> None:
+    expected_data_dir = repo_dataset_data_dir(root)
+    if Path(data_dir).resolve() != expected_data_dir:
+        raise RuntimeError(f"GSE249479 data_dir must be repo-local {expected_data_dir}; observed {Path(data_dir).resolve()}")
+    if h5ad_path is not None and not is_relative_to(Path(h5ad_path).resolve(), expected_data_dir):
+        raise RuntimeError(f"GSE249479 H5AD path must live under {expected_data_dir}; observed {Path(h5ad_path).resolve()}")
+
+
+def nearest_existing_parent(path: Path, stop_at: Path) -> Path:
+    current = Path(path).resolve()
+    stop_at = Path(stop_at).resolve()
+    while not current.exists():
+        if current == stop_at or current.parent == current:
+            return stop_at
+        current = current.parent
+    if not is_relative_to(current, stop_at) and current != stop_at:
+        return stop_at
+    return current
+
+
 def sample_bucket(accession: str) -> str:
     prefix = "".join(ch for ch in accession if ch.isalpha())
     digits = "".join(ch for ch in accession if ch.isdigit())
@@ -306,10 +364,8 @@ def disk_usage_record(path: Path) -> dict[str, Any]:
     }
 
 
-def collect_environment_inventory(data_dir: Path, output_dir: Path) -> dict[str, Any]:
-    data_root = data_dir
-    if not data_root.exists():
-        data_root = data_dir.parent if data_dir.parent.exists() else Path.home()
+def collect_environment_inventory(root: Path, data_dir: Path, output_dir: Path, temp_dir: Path) -> dict[str, Any]:
+    data_root = nearest_existing_parent(data_dir, root)
     try:
         import psutil
 
@@ -330,11 +386,11 @@ def collect_environment_inventory(data_dir: Path, output_dir: Path) -> dict[str,
         "commands": {
             "free_h": run_capture(["free", "-h"]),
             "swapon_show": run_capture(["swapon", "--show"]),
-            "df_h": run_capture(["df", "-h", str(data_root), "/tmp"]),
+            "df_h": run_capture(["df", "-h", str(data_root), str(temp_dir)]),
         },
         "disk_usage": {
             "data_root": disk_usage_record(data_root),
-            "tmp": disk_usage_record(Path("/tmp")),
+            "tmp": disk_usage_record(temp_dir),
         },
         "existing_files": collect_existing_files(data_dir),
         "prior_artifacts": collect_prior_artifacts(output_dir, data_dir),
@@ -825,17 +881,19 @@ def run_sample_worker(args: argparse.Namespace) -> int:
     started = time.perf_counter()
     report_path = Path(args.report_path).expanduser().resolve()
     try:
+        root = Path(args.root).resolve()
+        config = load_config(root)
+        configure_temp_environment(root, config, create=True)
         import anndata as ad
         import pandas as pd
         import scipy.io
         import scipy.sparse as sp
 
-        root = Path(args.root).resolve()
-        config = load_config(root)
         data_dir = Path(args.data_dir).expanduser().resolve()
         accession = args.accession
         condition = args.condition
         output_h5ad = Path(args.output_h5ad).expanduser().resolve()
+        require_repo_local_dataset_paths(root, data_dir, output_h5ad)
         files = sample_paths_from_config(config, data_dir, accession)
         for role, path in files.items():
             if not path.exists():
@@ -1001,7 +1059,7 @@ def classify_returncode(returncode: int) -> dict[str, Any]:
         cause = "possible OOM or external kill"
     else:
         cause = f"terminated by {name}"
-        return {"classification": cause, "returncode": returncode, "signal": signum, "signal_name": name}
+    return {"classification": cause, "returncode": returncode, "signal": signum, "signal_name": name}
 
 
 def run_worker_subprocess(command: list[str], report_path: Path) -> dict[str, Any]:
@@ -1122,11 +1180,14 @@ def run_concat_worker(args: argparse.Namespace) -> int:
     started = time.perf_counter()
     report_path = Path(args.report_path).expanduser().resolve()
     try:
+        root = Path(args.root).resolve()
+        config = load_config(root)
+        configure_temp_environment(root, config, create=True)
         import anndata as ad
 
-        root = Path(args.root).resolve()
         data_dir = Path(args.data_dir).expanduser().resolve()
         output_h5ad = Path(args.output_h5ad).expanduser().resolve()
+        require_repo_local_dataset_paths(root, data_dir, output_h5ad)
         sample_reports = json.loads(Path(args.sample_reports_json).read_text(encoding="utf-8"))
         axis_check = compare_feature_axes(sample_reports)
         estimate = estimate_concat_memory(sample_reports)
@@ -1368,8 +1429,11 @@ def failure_classification(download_summary: dict[str, Any] | None, sample_summa
 def run_orchestrator(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve()
     config = load_config(root)
+    ensure_repo_writable(root)
+    temp_dir = configure_temp_environment(root, config, create=True)
     data_dir = resolve_path(root, args.data_dir)
     output_dir = resolve_path(root, args.output_dir)
+    require_repo_local_dataset_paths(root, data_dir, final_output_path(data_dir))
     audit_dir = output_dir / "audit"
     audit_dir.mkdir(parents=True, exist_ok=True)
     report_path = audit_dir / REPORT_NAME
@@ -1387,7 +1451,7 @@ def run_orchestrator(args: argparse.Namespace) -> int:
     sample_summary = None
     concat_summary = None
     try:
-        inventory = collect_environment_inventory(data_dir, output_dir)
+        inventory = collect_environment_inventory(root, data_dir, output_dir, temp_dir)
         report["phase1_inventory"] = inventory
         atomic_write_json(audit_dir / "gse249479_guarded_phase1_inventory.json", inventory)
         atomic_write_json(report_path, report)

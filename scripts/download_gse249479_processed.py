@@ -28,7 +28,9 @@ from gse249479_memory_safe import (
     ensure_output_tree,
     load_config,
     memory_threshold_bytes,
+    configure_temp_environment,
     relative_or_absolute,
+    require_repo_local_dataset_paths,
     repo_root,
     require_active_branch,
     resolve_path,
@@ -347,6 +349,8 @@ def run(
     memory_threshold_gb: float | None = None,
 ) -> dict[str, Any]:
     config = load_config(root)
+    configure_temp_environment(root, config, create=True)
+    require_repo_local_dataset_paths(root, data_dir)
     require_active_branch(root, config["required_git_branch"])
     ensure_output_tree(output_dir)
     data_dir.mkdir(parents=True, exist_ok=True)

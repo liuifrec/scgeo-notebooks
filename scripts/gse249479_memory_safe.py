@@ -47,18 +47,62 @@ def resolve_path(root: Path, value: str) -> Path:
     return path.resolve()
 
 
+def repo_dataset_data_dir(root: Path) -> Path:
+    return (Path(root).resolve() / "data" / "gse249479").resolve()
+
+
+def is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        Path(path).resolve().relative_to(Path(parent).resolve())
+    except ValueError:
+        return False
+    return True
+
+
+def require_repo_local_dataset_paths(root: Path, data_dir: Path, input_h5ad: Path | None = None) -> None:
+    expected_data_dir = repo_dataset_data_dir(root)
+    if Path(data_dir).resolve() != expected_data_dir:
+        raise RuntimeError(
+            f"GSE249479 data_dir must be repo-local {expected_data_dir}; observed {Path(data_dir).resolve()}"
+        )
+    if input_h5ad is not None and not is_relative_to(Path(input_h5ad).resolve(), expected_data_dir):
+        raise RuntimeError(
+            f"GSE249479 input/output H5AD must live under {expected_data_dir}; observed {Path(input_h5ad).resolve()}"
+        )
+
+
+def workflow_temp_dir(root: Path, config: dict[str, Any]) -> Path:
+    env_name = config.get("temp_dir_env", "SCGEO_GSE249479_TMPDIR")
+    default_value = config.get("default_temp_dir", ".tmp")
+    return resolve_path(root, os.environ.get(env_name, default_value))
+
+
+def configure_temp_environment(root: Path, config: dict[str, Any], *, create: bool = True) -> Path:
+    temp_dir = workflow_temp_dir(root, config)
+    if not is_relative_to(temp_dir, Path(root).resolve()):
+        raise RuntimeError(f"Workflow temp directory must be inside the repository; observed {temp_dir}")
+    if create:
+        temp_dir.mkdir(parents=True, exist_ok=True)
+    for key in ("TMPDIR", "TEMP", "TMP"):
+        os.environ[key] = str(temp_dir)
+    return temp_dir
+
+
 def configured_paths(config: dict[str, Any], root: Path | None = None) -> dict[str, Path]:
-    root = repo_root() if root is None else Path(root)
+    root = repo_root() if root is None else Path(root).resolve()
     data_dir = resolve_path(root, os.environ.get(config["data_dir_env"], config["default_data_dir"]))
     input_h5ad = resolve_path(root, os.environ.get(config["input_h5ad_env"], config["default_input_h5ad"]))
     output_dir = resolve_path(root, os.environ.get(config["output_dir_env"], config["default_output_dir"]))
     source_repo = resolve_path(root, os.environ.get(config["source_repository_env"], config["default_source_repository"]))
+    temp_dir = configure_temp_environment(root, config, create=False)
+    require_repo_local_dataset_paths(root, data_dir, input_h5ad)
     return {
         "root": root,
         "data_dir": data_dir,
         "input_h5ad": input_h5ad,
         "output_dir": output_dir,
         "source_repo": source_repo,
+        "temp_dir": temp_dir,
     }
 
 

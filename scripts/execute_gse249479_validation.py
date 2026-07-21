@@ -36,6 +36,24 @@ def resolve_from_repo(root: Path, value: str) -> Path:
     return path.resolve()
 
 
+def repo_dataset_data_dir(root: Path) -> Path:
+    return (root.resolve() / "data" / "gse249479").resolve()
+
+
+def workflow_temp_dir(root: Path, config: dict[str, Any]) -> Path:
+    env_name = config.get("temp_dir_env", "SCGEO_GSE249479_TMPDIR")
+    default_value = config.get("default_temp_dir", ".tmp")
+    return resolve_from_repo(root, os.environ.get(env_name, default_value))
+
+
+def require_repo_local_dataset_paths(root: Path, data_dir: Path, input_h5ad: Path | None = None) -> None:
+    expected_data_dir = repo_dataset_data_dir(root)
+    if data_dir.resolve() != expected_data_dir:
+        raise RuntimeError(f"GSE249479 data_dir must be repo-local {expected_data_dir}; observed {data_dir.resolve()}")
+    if input_h5ad is not None and not is_relative_to(input_h5ad.resolve(), expected_data_dir):
+        raise RuntimeError(f"GSE249479 input H5AD must live under {expected_data_dir}; observed {input_h5ad.resolve()}")
+
+
 def format_report_path(root: Path, path: Path | None) -> str | None:
     if path is None:
         return None
@@ -149,6 +167,8 @@ def execute_one(
     if embedded_bytes and not allow_source_outputs:
         raise RuntimeError(f"{notebook_rel} contains {embedded_bytes} bytes of embedded outputs")
 
+    temp_dir = workflow_temp_dir(root, load_config(root))
+    temp_dir.mkdir(parents=True, exist_ok=True)
     env = {
         "SCGEO_GSE249479_DATA_DIR": str(data_dir),
         "SCGEO_GSE249479_H5AD": str(input_h5ad),
@@ -157,10 +177,14 @@ def execute_one(
         "SCGEO_GSE249479_MEMORY_THRESHOLD_GB": str(memory_threshold_gb),
         "NUMBA_CACHE_DIR": str(output_dir / "_numba_cache"),
         "MPLCONFIGDIR": str(output_dir / "_matplotlib_cache"),
+        "TMPDIR": str(temp_dir),
+        "TEMP": str(temp_dir),
+        "TMP": str(temp_dir),
         "PYTHONHASHSEED": "0",
     }
     Path(env["NUMBA_CACHE_DIR"]).mkdir(parents=True, exist_ok=True)
     Path(env["MPLCONFIGDIR"]).mkdir(parents=True, exist_ok=True)
+    Path(env["TMPDIR"]).mkdir(parents=True, exist_ok=True)
 
     started = time.perf_counter()
     with patched_env(env):
@@ -279,6 +303,7 @@ def main() -> int:
     input_h5ad = resolve_from_repo(root, args.input_h5ad)
     output_dir = resolve_from_repo(root, args.output_dir)
     source_repo = resolve_from_repo(root, args.source_repo)
+    require_repo_local_dataset_paths(root, data_dir, input_h5ad)
     executed_dir = (
         resolve_from_repo(root, args.executed_dir)
         if args.executed_dir

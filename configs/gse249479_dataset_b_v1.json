@@ -3,9 +3,9 @@
   "workflow_name": "dataset_b_gse249479_phase1_public_download_reconstruction_audit",
   "required_git_branch": "revision-dataset-b-gse249479",
   "data_dir_env": "SCGEO_GSE249479_DATA_DIR",
-  "default_data_dir": "~/data/gse249479",
+  "default_data_dir": "data/gse249479",
   "input_h5ad_env": "SCGEO_GSE249479_H5AD",
-  "default_input_h5ad": "~/data/gse249479/zeng2026_xenograft_cd34_rna_raw.h5ad",
+  "default_input_h5ad": "data/gse249479/zeng2026_xenograft_cd34_rna_raw.h5ad",
   "output_dir_env": "SCGEO_GSE249479_OUTPUT_DIR",
   "default_output_dir": "results/public_validation/gse249479_dataset_b",
   "source_repository_env": "SCGEO_SOURCE_REPO",
@@ -127,13 +127,52 @@
     "library"
   ],
   "replication_field_categories": {
-    "biological_donor": ["donor", "subject", "patient", "individual"],
-    "xenograft_recipient": ["recipient", "xenograft", "host", "animal", "mouse"],
-    "source_pool": ["pool"],
-    "genetic_clade": ["clade", "clone", "lineage", "barcode"],
-    "experimental_library": ["library", "batch", "lane"],
-    "condition": ["condition", "group", "treatment", "disease", "status", "timepoint", "sample_type"],
-    "inferred_cell_label": ["celltype", "cell_type", "cell label", "annotation", "cluster", "leiden", "louvain", "seurat"]
+    "biological_donor": [
+      "donor",
+      "subject",
+      "patient",
+      "individual"
+    ],
+    "xenograft_recipient": [
+      "recipient",
+      "xenograft",
+      "host",
+      "animal",
+      "mouse"
+    ],
+    "source_pool": [
+      "pool"
+    ],
+    "genetic_clade": [
+      "clade",
+      "clone",
+      "lineage",
+      "barcode"
+    ],
+    "experimental_library": [
+      "library",
+      "batch",
+      "lane"
+    ],
+    "condition": [
+      "condition",
+      "group",
+      "treatment",
+      "disease",
+      "status",
+      "timepoint",
+      "sample_type"
+    ],
+    "inferred_cell_label": [
+      "celltype",
+      "cell_type",
+      "cell label",
+      "annotation",
+      "cluster",
+      "leiden",
+      "louvain",
+      "seurat"
+    ]
   },
   "clade_metadata_keywords": [
     "clade",
@@ -167,5 +206,7 @@
     "nbformat",
     "nbclient",
     "matplotlib"
-  ]
+  ],
+  "temp_dir_env": "SCGEO_GSE249479_TMPDIR",
+  "default_temp_dir": ".tmp"
 }
