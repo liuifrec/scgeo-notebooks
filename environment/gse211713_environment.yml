@@ -9,3 +9,6 @@ dependencies:
   - nbclient
   - nbformat
   - pyyaml
+  - scikit-image=0.25.2
+  - pip:
+      - scrublet==0.2.3

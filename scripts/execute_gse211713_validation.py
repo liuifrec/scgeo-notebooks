@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute the GSE211713 Phase C0 audit notebook in a clean kernel."""
+"""Execute GSE211713 validation notebooks in clean kernels."""
 
 from __future__ import annotations
 
@@ -43,9 +43,11 @@ def ensure_ignored(path: Path) -> None:
         raise RuntimeError(f"Executed notebook path must be ignored by Git: {relative}")
 
 
-def execute(kernel_name: str, timeout: int) -> dict[str, Any]:
+def execute(notebook_relative: str, kernel_name: str, timeout: int) -> dict[str, Any]:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    notebook = ROOT / "notebooks/public_validation/gse211713/00_study_design_replication_and_file_audit.ipynb"
+    notebook = (ROOT / notebook_relative).resolve()
+    if ROOT not in notebook.parents or notebook.suffix != ".ipynb":
+        raise ValueError(f"Notebook must be an .ipynb below the repository root: {notebook_relative}")
     output_root = (ROOT / config["output_dir"]).resolve()
     executed = (ROOT / config["executed_notebook_dir"] / notebook.relative_to(ROOT)).resolve()
     ensure_ignored(executed)
@@ -97,7 +99,7 @@ def execute(kernel_name: str, timeout: int) -> dict[str, Any]:
         "executed_sha256": sha256_file(executed), "kernel": kernel_name,
         "runtime_seconds": runtime,
     }
-    report_path = output_root / "audit/execution_report.json"
+    report_path = output_root / "execution" / f"{notebook.stem}_execution_report.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     temporary_report = report_path.with_name(f".{report_path.name}.tmp.{os.getpid()}")
     temporary_report.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -109,8 +111,18 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--kernel-name", default="scgeo_pre")
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument(
+        "--notebook",
+        action="append",
+        dest="notebooks",
+        help="Repository-relative source notebook; may be supplied repeatedly",
+    )
     args = parser.parse_args()
-    print(json.dumps(execute(args.kernel_name, args.timeout), indent=2, sort_keys=True))
+    notebooks = args.notebooks or [
+        "notebooks/public_validation/gse211713/00_study_design_replication_and_file_audit.ipynb"
+    ]
+    reports = [execute(notebook, args.kernel_name, args.timeout) for notebook in notebooks]
+    print(json.dumps(reports[0] if len(reports) == 1 else reports, indent=2, sort_keys=True))
     return 0
 
 
