@@ -1,0 +1,44 @@
+{
+  "schema_version": "gse249479_official_augur_validation_v1",
+  "inference_status": "descriptive_only",
+  "compact_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_qc_hvg.h5ad",
+  "compact_sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759",
+  "existing_python_summary": "results/public_validation/gse249479_dataset_b/comparator/05_augur_state_summary.csv",
+  "existing_scgeo_comparator": "results/public_validation/gse249479_dataset_b/comparator/06_scgeo_augur_full_comparator.csv",
+  "validation_output": "results/public_validation/gse249479_dataset_b/official_augur_validation",
+  "official_source": "https://github.com/neurorestore/Augur",
+  "official_commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+  "official_version": "1.0.3",
+  "contrasts": ["TNF", "LPS"],
+  "condition_reference": "PBS",
+  "n_hvg": 3000,
+  "normalization": "sparse_counts_per_10000_using_full_library_total_then_log1p",
+  "detailed_state_order": [
+    "HSC/quiescent",
+    "Activated HSC",
+    "MPP/progenitor",
+    "Myeloid",
+    "Megakaryocyte/erythroid",
+    "Lymphoid",
+    "Ambiguous HSPC"
+  ],
+  "detailed_state_mapping": {
+    "HSC_quiescent": "HSC/quiescent",
+    "activated_HSC": "Activated HSC",
+    "MPP_progenitor": "MPP/progenitor",
+    "myeloid": "Myeloid",
+    "megakaryocyte_erythroid": "Megakaryocyte/erythroid",
+    "lymphoid": "Lymphoid",
+    "ambiguous_HSPC": "Ambiguous HSPC"
+  },
+  "agreement_decision_thresholds": {
+    "high_spearman_min": 0.8,
+    "moderate_spearman_min": 0.5,
+    "note": "Prespecified before official results were generated; thresholds classify descriptive rank agreement only."
+  },
+  "scientific_status": {
+    "biological_replicates": false,
+    "uncertainty": "computational_cell_resampling_stability_only",
+    "population_level_inference": false
+  }
+}
