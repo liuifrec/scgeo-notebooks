@@ -1,0 +1,64 @@
+{
+  "schema_version": "gse249479_representations_v1",
+  "inference_status": "descriptive_only",
+  "required_branch": "revision-dataset-b-gse249479",
+  "frozen_scgeo_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "default_compact_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_qc_hvg.h5ad",
+  "default_representation_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_representations.h5ad",
+  "default_output_dir": "results/public_validation/gse249479_dataset_b",
+  "warning_rss_gib": 20.0,
+  "hard_stop_rss_gib": 24.0,
+  "random_seed": 1729,
+  "pca": {
+    "n_hvg": 3000,
+    "normalization_target_sum": 10000.0,
+    "log1p": true,
+    "n_components": 50,
+    "views": [20, 30, 50],
+    "algorithm": "randomized_truncated_svd_sparse_uncentered",
+    "n_iter": 7,
+    "stability_seed_offset": 1
+  },
+  "diffusion": {
+    "pca_basis": "X_pca50",
+    "n_neighbors": 30,
+    "n_components": 20,
+    "metric": "euclidean",
+    "method": "umap_connectivities_then_scanpy_diffmap",
+    "retain_sparse_graphs": true
+  },
+  "scvi": {
+    "n_latent": 20,
+    "n_hidden": 128,
+    "n_layers": 2,
+    "dropout_rate": 0.1,
+    "gene_likelihood": "nb",
+    "dispersion": "gene",
+    "batch_size": 256,
+    "num_workers": 0,
+    "max_epochs": 100,
+    "early_stopping": true,
+    "early_stopping_patience": 10,
+    "train_size": 0.9,
+    "batch_covariate": null,
+    "accelerator_policy": "gpu_if_torch_cuda_available_else_cpu"
+  },
+  "quality": {
+    "n_neighbors": 30,
+    "silhouette_sample_size": 5000,
+    "distance_pair_sample_size": 100000,
+    "rare_state_max_fraction": 0.1,
+    "umap_n_neighbors": 30,
+    "umap_min_dist": 0.3,
+    "umap_metric": "euclidean"
+  },
+  "forbidden": [
+    "Harmony",
+    "Scanorama",
+    "ScGeo perturbation analysis",
+    "comparators",
+    "RNA velocity",
+    "pseudo-replicates",
+    "condition as batch covariate"
+  ]
+}
