@@ -1,0 +1,11 @@
+name: scgeo-gse211713-dataset-c
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - psutil
+  - ipykernel
+  - nbclient
+  - nbformat
+  - pyyaml
