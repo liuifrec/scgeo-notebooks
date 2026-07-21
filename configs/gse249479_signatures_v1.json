@@ -1,0 +1,47 @@
+{
+  "schema_version": "gse249479_signatures_v1",
+  "study_source": {
+    "citation": "Zeng et al., Human haematopoietic stem cells remember inflammatory stress, Nature (2026)",
+    "doi": "10.1038/s41586-026-10522-7",
+    "supplement_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-026-10522-7/MediaObjects/41586_2026_10522_MOESM3_ESM.xlsx",
+    "supplement_sha256": "eb3df83ff069ab781ec9f298f5ccab3265565abb17b1d2291f10f49d8c575f06",
+    "extraction": "First 50 ranked genes from each indicated official supplementary-table program; these are explicitly labelled top-50 subsets, not the complete published programs."
+  },
+  "signatures": {
+    "study_quiescence_top50_subset": {
+      "provenance_class": "study-derived",
+      "source_table": "Supplementary Table 4, Quiescence_GeoMean rank",
+      "genes": ["AREG", "TCF4", "GRASP", "ZFP36L2", "FOSL2", "PELI1", "AVP", "ALDH1A1", "NAMPT", "RILPL2", "SRGN", "ZNF331", "MALAT1", "CNOT6L", "PDE4B", "HLA-E", "MALT1", "SEC14L1", "FOXO1", "SKI", "MAP3K8", "BMP6", "NEAT1", "SNX9", "RNF144B", "HIF1A", "PRKCH", "FAM3C", "CYTIP", "ST3GAL1", "THEMIS2", "PPP1CB", "LINC00891", "GADD45A", "GNA13", "INPP5D", "MECOM", "B3GNT5", "KLF3", "FLT1", "VSIR", "SOCS2", "IRAK3", "RNF125", "TNFRSF1B", "LRRFIP1", "TXNIP", "PLEKHA2", "PIK3CG", "SLC35E1"]
+    },
+    "study_inflammation_top50_subset": {
+      "provenance_class": "study-derived",
+      "source_table": "Supplementary Table 4, Inflammation_GeoMean rank",
+      "genes": ["HSPA5", "NFKB1", "CHD1", "REL", "CALR", "HSP90B1", "CD83", "KDM6A", "RAB8B", "IRF1", "AC116366.1", "HNRNPC", "CXCL8", "SPAG9", "PDIA3", "MSMO1", "PSME4", "DNAJB11", "XBP1", "UBE2H", "IFIH1", "LDLR", "AC103591.3", "YTHDC1", "RB1CC1", "FDFT1", "ETF1", "UBR5", "MAPKAPK2", "CHD2", "ATP2A2", "RANBP2", "STARD4", "IDI1", "MALAT1", "CDC42", "ARID4B", "EZH2", "DCP1A", "TM9SF3", "TOP1", "CCNL1", "USP9X", "USP14", "WHAMM", "CYLD", "PRPF40A", "KMT2C", "EIF2AK3", "MAP2K3"]
+    },
+    "study_hsc_im_top50_subset": {
+      "provenance_class": "study-derived",
+      "source_table": "Supplementary Table 9, HSC-II ranked markers",
+      "genes": ["SIPA1L1", "ATP2B1", "MALT1", "CABLES1", "AREG", "EZR", "AC104365.1", "PPP1R16B", "TRIM24", "RASGEF1B", "RELL1", "NR4A2", "SNX9", "NR4A3", "ELL2", "IQCJ-SCHIP1", "SGIP1", "ANKRD28", "SKI", "SYTL3", "PPP1CB", "USP36", "LMNA", "NFKB1", "ZSWIM6", "SPDYA", "CDK17", "LRRFIP1", "EML4", "BMP6", "ZNF331", "DPYSL3", "PEAK1", "RFX2", "DENND4A", "NR4A1", "ARIH1", "PLEKHA2", "KLF2", "SIK3", "RILPL2", "MAN2A1", "CRY1", "KLF6", "FTH1", "MCL1", "OSBPL8", "AGO2", "SYAP1", "PSME4"]
+    },
+    "study_hsc_i_top50_subset": {
+      "provenance_class": "study-derived",
+      "source_table": "Supplementary Table 9, HSC-I ranked markers",
+      "genes": ["ESS2", "ZNF460", "KCNQ4", "AL158212.5", "ATP2C2", "AC092287.1", "LINC01664", "TUBA3E", "GAP43", "HNRNPA1L2", "AL138824.1", "SLC38A11", "AC024559.1", "LINC02137", "GOLGA8S", "LINC01811", "TRPV5", "FBXO8", "PLD5", "AC113618.2", "AC096536.1", "AC244090.3", "FAM183A", "AC091564.6", "AP000786.1", "AP001062.2", "AL445430.2", "CYP4F11", "SUSD4", "LINC00895", "OOSP4A", "AC021055.1", "AL590438.1", "AKR1C4", "NEURL3", "KCNA1", "MUC5B", "AC007881.3", "AL135784.1", "AL445213.2", "AC078950.1", "AP002505.1", "LINC02148", "KRTAP5-10", "EFCAB9", "AC010280.2", "AL391095.1", "MYO1A", "AL354824.1", "FAM104B"]
+    },
+    "hsc_quiescent_markers": {"provenance_class": "marker-based inferred label", "genes": ["HLF", "AVP", "MECOM", "MLLT3", "HOPX", "CRHBP", "MEIS1", "PROCR", "CLEC14A", "PROM1", "SOCS2", "GATA2", "MPL", "TXNIP"]},
+    "activated_hsc_markers": {"provenance_class": "marker-based inferred label", "genes": ["FOS", "JUN", "JUNB", "FOSB", "DUSP1", "EGR1", "IER2", "IER3", "ATF3", "NFKBIA", "CD69", "MYC"]},
+    "mpp_progenitor_markers": {"provenance_class": "marker-based inferred label", "genes": ["FLT3", "CD34", "LMO2", "SPINK2", "CDK6", "PRSS57", "LYL1", "KIT", "GATA2"]},
+    "myeloid_markers": {"provenance_class": "marker-based inferred label", "genes": ["LST1", "TYROBP", "FCER1G", "CTSS", "LYZ", "MPO", "ELANE", "AZU1", "CTSG", "S100A8", "S100A9"]},
+    "megakaryocyte_erythroid_markers": {"provenance_class": "marker-based inferred label", "genes": ["PPBP", "PF4", "GP9", "ITGA2B", "NFE2", "GATA1", "KLF1", "HBB", "HBA1", "HBA2", "AHSP"]},
+    "lymphoid_markers": {"provenance_class": "marker-based inferred label", "genes": ["IL7R", "DNTT", "CD79A", "CD3D", "CD3E", "EBF1", "PAX5", "VPREB1", "CD37"]},
+    "tnf_nfkb_response": {"provenance_class": "literature-derived canonical markers", "genes": ["NFKBIA", "TNFAIP3", "NFKB1", "REL", "RELA", "ICAM1", "BIRC3", "TRAF1", "IER3", "CXCL8"]},
+    "inflammatory_memory_program": {"provenance_class": "study-derived alias", "source_signature": "study_hsc_im_top50_subset", "genes": ["SIPA1L1", "ATP2B1", "MALT1", "AREG", "RASGEF1B", "NR4A2", "NR4A3", "NFKB1", "NR4A1", "KLF6"]},
+    "ap1_stress_response": {"provenance_class": "literature-derived canonical markers", "genes": ["FOS", "FOSB", "FOSL1", "FOSL2", "JUN", "JUNB", "JUND", "ATF3", "DUSP1", "EGR1"]},
+    "interferon_response": {"provenance_class": "literature-derived canonical markers", "genes": ["ISG15", "IFIT1", "IFIT2", "IFIT3", "IFI6", "IFIH1", "MX1", "OAS1", "OAS2", "STAT1", "IRF7"]},
+    "quiescence": {"provenance_class": "literature-derived canonical markers", "genes": ["HLF", "MEIS1", "MECOM", "AVP", "TXNIP", "FOXO1", "SOCS2", "CDKN1C", "HOPX"]},
+    "cell_cycle": {"provenance_class": "literature-derived canonical markers", "genes": ["MKI67", "TOP2A", "PCNA", "MCM2", "MCM3", "MCM4", "MCM5", "MCM6", "TYMS", "UBE2C"]},
+    "immediate_early": {"provenance_class": "literature-derived canonical markers", "genes": ["FOS", "JUN", "JUNB", "EGR1", "EGR2", "IER2", "IER3", "DUSP1", "NR4A1", "NR4A2", "NR4A3"]},
+    "apoptosis": {"provenance_class": "literature-derived canonical markers", "genes": ["BAX", "BAK1", "BBC3", "PMAIP1", "BCL2L11", "FAS", "CASP3", "CASP8", "TP53", "GADD45A"]},
+    "ambient_or_low_quality": {"provenance_class": "diagnostic marker set", "genes": ["HBA1", "HBA2", "HBB", "ALAS2", "PPBP", "PF4", "MALAT1", "MT-CO1", "MT-CO2", "MT-ND1", "RPLP0", "RPS18"]}
+  }
+}
