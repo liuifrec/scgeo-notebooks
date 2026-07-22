@@ -1,0 +1,201 @@
+{
+  "schema_version": "pancreas_dataset_d_v1",
+  "workflow_name": "public_pancreas_developmental_dynamics_validation",
+  "data_dir_env": "SCGEO_PANCREAS_DATA_DIR",
+  "default_data_dir": "data/public/pancreas_dataset_d",
+  "output_dir_env": "SCGEO_PANCREAS_OUTPUT_DIR",
+  "default_output_dir": "results/public_validation/pancreas_dataset_d",
+  "source_repository_env": "SCGEO_SOURCE_REPO",
+  "default_source_repository": "../scgeo",
+  "threshold_policy": "Use prespecified ScGeo alignment defaults only; do not tune thresholds or modify the frozen synthetic manuscript protocol.",
+  "dataset": {
+    "name": "CellRank pancreas E15.5 endocrinogenesis",
+    "cellrank_dataset_function": "cellrank.datasets.pancreas",
+    "official_documentation": "https://cellrank.readthedocs.io/en/stable/api/_autosummary/datasets/cellrank.datasets.pancreas.html",
+    "kind_order": ["raw", "preprocessed", "preprocessed-kernel"],
+    "official_file_urls": {
+      "raw": "https://ndownloader.figshare.com/files/25060877",
+      "preprocessed": "https://ndownloader.figshare.com/files/25030028",
+      "preprocessed-kernel": "https://ndownloader.figshare.com/files/41325411"
+    },
+    "analysis_kind": "preprocessed",
+    "preprocessed_kernel_role": "VelocityKernel-derived reference/comparator only; not independent of scVelo RNA velocity.",
+    "base_filename": "cellrank_pancreas.h5ad",
+    "expected_cell_count": 2531,
+    "expected_shapes": {
+      "raw": [2531, 27998],
+      "preprocessed": [2531, 2000],
+      "preprocessed-kernel": [2531, 5974]
+    },
+    "required_layers": ["spliced", "unspliced"],
+    "required_obs": ["clusters"],
+    "required_obsm": ["X_umap"]
+  },
+  "cluster_key": "clusters",
+  "biological_reference_policy": "Use original pancreas cluster annotations as the principal biological reference; treat CellRank as a complementary probabilistic comparator.",
+  "transition_edges": [
+    {
+      "transition_id": "ngn3_low_ep_to_ngn3_high_ep",
+      "source": "Ngn3 low EP",
+      "target": "Ngn3 high EP",
+      "rationale": "Ngn3-low endocrine progenitors precede Ngn3-high endocrine progenitors in the original annotation"
+    },
+    {
+      "transition_id": "ngn3_high_ep_to_fev_plus",
+      "source": "Ngn3 high EP",
+      "target": "Fev+",
+      "rationale": "Ngn3-high endocrine progenitors precede Fev-positive endocrine precursors in the original annotation"
+    },
+    {
+      "transition_id": "fev_plus_to_alpha",
+      "source": "Fev+",
+      "target": "Alpha",
+      "rationale": "Fev-positive endocrine precursors are upstream of alpha-cell differentiation in the original annotation"
+    },
+    {
+      "transition_id": "fev_plus_to_beta",
+      "source": "Fev+",
+      "target": "Beta",
+      "rationale": "Fev-positive endocrine precursors are upstream of beta-cell differentiation in the original annotation"
+    },
+    {
+      "transition_id": "fev_plus_to_delta",
+      "source": "Fev+",
+      "target": "Delta",
+      "rationale": "Fev-positive endocrine precursors are upstream of delta-cell differentiation in the original annotation"
+    },
+    {
+      "transition_id": "fev_plus_to_epsilon",
+      "source": "Fev+",
+      "target": "Epsilon",
+      "rationale": "Fev-positive endocrine precursors are upstream of epsilon-cell differentiation in the original annotation"
+    }
+  ],
+  "representations": [
+    {
+      "name": "PCA20",
+      "obsm_key": "X_pca20",
+      "source_obsm_key": "X_pca",
+      "velocity_key": "velocity_pca20",
+      "source_velocity_key": "velocity_pca",
+      "n_components": 20,
+      "principal": true,
+      "display_only": false
+    },
+    {
+      "name": "PCA30",
+      "obsm_key": "X_pca30",
+      "source_obsm_key": "X_pca",
+      "velocity_key": "velocity_pca30",
+      "source_velocity_key": "velocity_pca",
+      "n_components": 30,
+      "principal": true,
+      "display_only": false
+    },
+    {
+      "name": "PCA50",
+      "obsm_key": "X_pca50",
+      "source_obsm_key": "X_pca",
+      "velocity_key": "velocity_pca50",
+      "source_velocity_key": "velocity_pca",
+      "n_components": 50,
+      "principal": true,
+      "display_only": false
+    },
+    {
+      "name": "diffmap",
+      "obsm_key": "X_diffmap",
+      "source_obsm_key": "X_diffmap",
+      "velocity_key": "velocity_diffmap",
+      "source_velocity_key": "velocity_diffmap",
+      "n_components": 10,
+      "principal": true,
+      "display_only": false
+    },
+    {
+      "name": "UMAP",
+      "obsm_key": "X_umap",
+      "source_obsm_key": "X_umap",
+      "velocity_key": "velocity_umap",
+      "source_velocity_key": "velocity_umap",
+      "n_components": 2,
+      "principal": false,
+      "display_only": true
+    }
+  ],
+  "scgeo_alignment_defaults": {
+    "alignment_pos_thr": 0.3,
+    "alignment_neg_thr": -0.3,
+    "class_fraction_threshold": 0.6,
+    "min_usable_representations": 2,
+    "min_cells_per_cluster": 20
+  },
+  "scvelo": {
+    "n_pcs": 50,
+    "n_neighbors": 30,
+    "random_state": 0,
+    "recover_dynamics": {
+      "max_iter": 25,
+      "n_jobs": 1
+    },
+    "velocity": {
+      "mode": "dynamical",
+      "min_r2": 0.01,
+      "min_likelihood": 0.001
+    },
+    "velocity_graph": {
+      "n_jobs": 1
+    }
+  },
+  "cellrank": {
+    "transition_matrix_key": "T_fwd",
+    "kernel_model": "deterministic",
+    "kernel_similarity": "correlation",
+    "seed": 0,
+    "n_schur_components": 20,
+    "n_macrostates": 12,
+    "n_terminal_states": 4,
+    "n_initial_states": 1,
+    "fate_probability_solver": "gmres",
+    "use_petsc": false,
+    "n_jobs": 1
+  },
+  "negative_controls": {
+    "seed": 1729,
+    "controls": ["reversed_edges", "shuffled_velocity", "rotated_velocity"],
+    "shuffle_stratum": "all_cells",
+    "shuffle_rationale": "The public pancreas snapshot has no treatment/control, donor, or batch strata for this validation; all cells are the prespecified permutation stratum.",
+    "rotate_preserves_velocity_magnitude": true
+  },
+  "pancreas_notebooks": [
+    "notebooks/public_validation/pancreas/00_acquire_and_validate.ipynb",
+    "notebooks/public_validation/pancreas/01_scvelo_dynamical_velocity.ipynb",
+    "notebooks/public_validation/pancreas/02_cellrank_fates.ipynb",
+    "notebooks/public_validation/pancreas/03_scgeo_representation_dynamics.ipynb",
+    "notebooks/public_validation/pancreas/04_manuscript_figures.ipynb"
+  ],
+  "main_outputs": {
+    "A": "annotated pancreas embedding with velocity stream",
+    "B": "biological transition graph",
+    "C": "transition-by-representation alignment heatmap",
+    "D": "forward versus reversed/shuffled/rotated controls",
+    "E": "CellRank terminal-state/fate comparison",
+    "F": "state-transition evidence table"
+  },
+  "version_record_packages": [
+    "python",
+    "scgeo",
+    "scanpy",
+    "scvelo",
+    "cellrank",
+    "anndata",
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "nbformat",
+    "nbclient"
+  ]
+}

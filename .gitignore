@@ -1,4 +1,5 @@
 .ipynb_checkpoints/
+__pycache__/
 *.h5ad
 *.loom
 *.h5mu
@@ -15,6 +16,9 @@ results/
 outputs/
 figures/tmp/
 cache/
+.tmp/
+*.core
+core.*
 .DS_Store
 
 # data folders inside notebooks

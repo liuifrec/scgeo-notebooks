@@ -1,0 +1,105 @@
+{
+  "schema_version": "gse249479_scgeo_v1",
+  "required_branch": "revision-dataset-b-gse249479",
+  "frozen_scgeo_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "default_representation_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_representations.h5ad",
+  "default_compact_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_qc_hvg.h5ad",
+  "default_output_dir": "results/public_validation/gse249479_dataset_b",
+  "expected_representation_sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979",
+  "expected_compact_sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759",
+  "inference_status": "descriptive_only",
+  "resampling_status": "descriptive_cell_resampling_only",
+  "computational_null_status": "non_biological_shuffled_cell_label_control",
+  "warning_rss_gib": 20.0,
+  "hard_stop_rss_gib": 24.0,
+  "random_seed": 1729,
+  "condition_key": "condition",
+  "group0": "PBS",
+  "contrasts": ["TNF", "LPS"],
+  "representations": {
+    "primary": ["X_pca30", "X_pca50", "X_scvi"],
+    "dimensional_sensitivity": ["X_pca20"],
+    "exploratory_sensitivity": ["X_diffmap"],
+    "all_quantitative": ["X_pca20", "X_pca30", "X_pca50", "X_diffmap", "X_scvi"],
+    "forbidden_quantitative": ["X_umap_pca50", "X_umap_diffmap", "X_umap_scvi"]
+  },
+  "detailed_state_order": [
+    "HSC/quiescent",
+    "Activated HSC",
+    "MPP/progenitor",
+    "Myeloid",
+    "Megakaryocyte/erythroid",
+    "Lymphoid",
+    "Ambiguous HSPC"
+  ],
+  "detailed_state_mapping": {
+    "HSC_quiescent": "HSC/quiescent",
+    "activated_HSC": "Activated HSC",
+    "MPP_progenitor": "MPP/progenitor",
+    "myeloid": "Myeloid",
+    "megakaryocyte_erythroid": "Megakaryocyte/erythroid",
+    "lymphoid": "Lymphoid",
+    "ambiguous_HSPC": "Ambiguous HSPC"
+  },
+  "coarse_state_order": [
+    "HSC-like",
+    "progenitor",
+    "myeloid",
+    "megakaryocyte/erythroid",
+    "lymphoid",
+    "ambiguous"
+  ],
+  "coarse_state_mapping": {
+    "HSC/quiescent": "HSC-like",
+    "Activated HSC": "HSC-like",
+    "MPP/progenitor": "progenitor",
+    "Myeloid": "myeloid",
+    "Megakaryocyte/erythroid": "megakaryocyte/erythroid",
+    "Lymphoid": "lymphoid",
+    "Ambiguous HSPC": "ambiguous"
+  },
+  "frozen_scgeo_defaults": {
+    "center": "geometric_median",
+    "trim_fraction": 0.1,
+    "n_boot": 500,
+    "bootstrap_unit": "auto_resolves_to_cell_without_sample_key",
+    "normalize_by": "pooled_robust_scale",
+    "representation_stability_min_cells": 20,
+    "consensus_rules": "package_defaults_at_frozen_commit"
+  },
+  "balanced_subsampling": {
+    "repeats": 10,
+    "seed_stride": 101,
+    "point_estimate_only": true
+  },
+  "shuffled_condition_control": {
+    "repeats": 10,
+    "representations": ["X_pca30", "X_pca50", "X_scvi"],
+    "point_estimate_only": true
+  },
+  "distribution": {
+    "max_cells_per_condition_state": 600,
+    "sliced_wasserstein_projections": 64,
+    "mmd_bandwidth_pilot_cells": 250,
+    "representations": ["X_pca20", "X_pca30", "X_pca50", "X_diffmap", "X_scvi"]
+  },
+  "local_geometry": {
+    "k_values": [15, 30, 50],
+    "n_boot": 500,
+    "max_exact_cells": 3000,
+    "reference_rep": "X_pca50"
+  },
+  "signatures": [
+    "study_inflammation_top50_subset",
+    "tnf_nfkb_response",
+    "ap1_stress_response",
+    "immediate_early",
+    "interferon_response",
+    "quiescence",
+    "cell_cycle",
+    "apoptosis",
+    "study_hsc_im_top50_subset",
+    "study_hsc_i_top50_subset"
+  ],
+  "study_hsc_i_limitation": "Only 45 of the prespecified top-50 genes were available, and cell scores are strongly zero-inflated; retain as sparse descriptive context only."
+}

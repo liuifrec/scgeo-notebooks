@@ -1,0 +1,104 @@
+{
+  "schema_version": "gse249479_augur_v1",
+  "required_branch": "revision-dataset-b-gse249479",
+  "frozen_scgeo_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "default_compact_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_qc_hvg.h5ad",
+  "default_representation_h5ad": "/home/liuyuchen/hsc_memory_nature_2026/results/gse249479_revision_representations.h5ad",
+  "default_output_dir": "results/public_validation/gse249479_dataset_b",
+  "expected_compact_sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759",
+  "expected_representation_sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979",
+  "inference_status": "descriptive_only",
+  "uncertainty_status": "computational_cell_resampling_stability_only",
+  "implementation": {
+    "name": "Augur-inspired Python approximation",
+    "manuscript_role": "supplementary_implementation_sensitivity",
+    "official_augur_package_called": false,
+    "headline_parameters_matched": ["n_subsamples=50", "subsample_size=20_per_condition", "folds=3", "var_quantile_target=0.5", "feature_perc=0.5", "trees=100", "mtry=2"],
+    "feature_selection": "upper_half_of_genes_by_raw_sparse_variance_not_official_LOESS_residuals",
+    "documented_differences": ["raw_sparse_variance_instead_of_official_LOESS_residual_feature_selection", "sklearn_forest_instead_of_R_randomForest", "different_seed_schedule", "sklearn_StratifiedKFold_instead_of_rsample_vfold_cv"],
+    "reason": "Python sensitivity implementation using Augur-like subsampling and random-forest settings; it is not an exact or faithful implementation of the published default Augur protocol.",
+    "paper_doi": "10.1038/s41587-020-0605-1",
+    "protocol_doi": "10.1038/s41596-021-00561-x",
+    "official_source": "https://github.com/neurorestore/Augur/blob/master/R/calculate_auc.R"
+  },
+  "canonical_comparator": {
+    "name": "Official R Augur",
+    "package": "Augur",
+    "version": "1.0.3",
+    "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+    "manuscript_role": "primary_external_comparator",
+    "settings": {
+      "n_subsamples": 50,
+      "subsample_size_per_condition": 20,
+      "cv": "3-fold stratified rsample::vfold_cv",
+      "variable_feature_selection": "LOESS_residuals_of_mean_over_sd_after_1pct_tail_trimming_upper_50pct",
+      "random_feature_selection": "random_50pct_using_floor",
+      "forest": "R_randomForest_100_trees_mtry_2"
+    },
+    "state_auc_path": "results/public_validation/gse249479_dataset_b/official_augur_validation/official_augur_state_auc.csv",
+    "subsample_auc_path": "results/public_validation/gse249479_dataset_b/official_augur_validation/official_augur_subsample_auc.csv",
+    "implementation_comparison_path": "results/public_validation/gse249479_dataset_b/official_augur_validation/official_python_scgeo_state_comparison.csv",
+    "feature_overlap_path": "results/public_validation/gse249479_dataset_b/official_augur_validation/official_python_feature_selection_overlap.csv"
+  },
+  "warning_rss_gib": 20.0,
+  "hard_stop_rss_gib": 24.0,
+  "random_seed": 1729,
+  "condition_key": "condition",
+  "group0": "PBS",
+  "contrasts": ["TNF", "LPS"],
+  "expression": {
+    "n_hvg": 3000,
+    "normalization": "sparse_counts_per_10000_using_full_library_total_then_log1p",
+    "dtype": "float32",
+    "full_matrix_densified": false
+  },
+  "augur_defaults": {
+    "scope": "headline_settings_matched_by_the_Augur-inspired_Python_approximation_not_an_exact_protocol_implementation",
+    "classifier": "random_forest",
+    "metric": "roc_auc",
+    "n_subsamples": 50,
+    "subsample_size_per_condition": 20,
+    "cv_folds": 3,
+    "variance_quantile_retained": 0.5,
+    "random_feature_fraction": 0.5,
+    "n_trees": 100,
+    "max_features_mtry": 2,
+    "min_samples_split": 2,
+    "n_jobs": 1
+  },
+  "fixed_seed_blocks": [1729, 1830, 1931, 2032, 2133],
+  "subsamples_per_seed_block": 10,
+  "shuffled_null": {
+    "fixed_seed_blocks": [11729, 11830, 11931, 12032, 12133],
+    "subsamples_per_seed_block": 4,
+    "total_subsamples": 20,
+    "status": "non_biological_label_shuffled_computational_null_no_p_value"
+  },
+  "detailed_state_order": ["HSC/quiescent", "Activated HSC", "MPP/progenitor", "Myeloid", "Megakaryocyte/erythroid", "Lymphoid", "Ambiguous HSPC"],
+  "detailed_state_mapping": {
+    "HSC_quiescent": "HSC/quiescent",
+    "activated_HSC": "Activated HSC",
+    "MPP_progenitor": "MPP/progenitor",
+    "myeloid": "Myeloid",
+    "megakaryocyte_erythroid": "Megakaryocyte/erythroid",
+    "lymphoid": "Lymphoid",
+    "ambiguous_HSPC": "Ambiguous HSPC"
+  },
+  "coarse_state_order": ["HSC-like", "progenitor", "myeloid", "megakaryocyte/erythroid", "lymphoid", "ambiguous"],
+  "coarse_state_mapping": {
+    "HSC/quiescent": "HSC-like",
+    "Activated HSC": "HSC-like",
+    "MPP/progenitor": "progenitor",
+    "Myeloid": "myeloid",
+    "Megakaryocyte/erythroid": "megakaryocyte/erythroid",
+    "Lymphoid": "lymphoid",
+    "Ambiguous HSPC": "ambiguous"
+  },
+  "comparison_pattern_rules": {
+    "high_rank_max": 2,
+    "moderate_or_low_rank_min": 4,
+    "low_rank_min": 5,
+    "note": "Transparent rank labels for examples only; never combined into a score."
+  },
+  "principal_signatures": ["study_inflammation_top50_subset", "tnf_nfkb_response", "ap1_stress_response", "immediate_early", "interferon_response", "quiescence", "cell_cycle", "apoptosis", "study_hsc_im_top50_subset", "study_hsc_i_top50_subset"]
+}

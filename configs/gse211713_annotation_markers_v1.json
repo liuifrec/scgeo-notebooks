@@ -1,0 +1,53 @@
+{
+  "schema_version": "gse211713_annotation_markers_v1",
+  "random_seed": 1729,
+  "annotation_pca_components": 30,
+  "annotation_neighbors": 15,
+  "leiden_resolutions": [0.4, 0.8, 1.2],
+  "primary_leiden_resolution": 0.8,
+  "major_modules": {
+    "epithelial": {"source": "canonical_mouse_lung", "genes": ["Epcam", "Krt8", "Krt18", "Krt19", "Sftpc", "Sftpa1", "Ager", "Pdpn", "Scgb1a1", "Foxj1"]},
+    "endothelial": {"source": "publication_and_canonical", "genes": ["Pecam1", "Cdh5", "Kdr", "Emcn", "Vwf", "Car4"]},
+    "fibroblast/stromal": {"source": "publication_and_canonical", "genes": ["Col1a1", "Col1a2", "Col3a1", "Dcn", "Lum", "Pdgfra", "Tcf21"]},
+    "myeloid": {"source": "canonical_mouse_lung", "genes": ["Ptprc", "Lyz2", "Csf1r", "Adgre1", "Tyrobp", "Ctss"]},
+    "lymphoid": {"source": "canonical_mouse_lung", "genes": ["Cd3d", "Cd3e", "Trbc1", "Nkg7", "Klrd1", "Cd79a", "Ms4a1"]},
+    "mast": {"source": "canonical_mouse_lung", "genes": ["Kit", "Fcer1a", "Cpa3", "Mcpt4", "Tpsb2"]},
+    "proliferating": {"source": "canonical_cell_cycle", "genes": ["Mki67", "Top2a", "Cenpf", "Stmn1", "Tubb5"]}
+  },
+  "refined_modules": {
+    "alveolar_type_I": {"parent": "epithelial", "source": "publication_and_canonical", "genes": ["Ager", "Pdpn", "Aqp5", "Hopx", "Cav1"]},
+    "alveolar_type_II": {"parent": "epithelial", "source": "publication_and_canonical", "genes": ["Sftpc", "Sftpa1", "Sftpb", "Abca3", "Lamp3"]},
+    "airway_club": {"parent": "epithelial", "source": "publication_and_canonical", "genes": ["Scgb1a1", "Cyp2f2", "Krt19", "Klf5"]},
+    "airway_ciliated": {"parent": "epithelial", "source": "publication_and_canonical", "genes": ["Foxj1", "Pifo", "Tppp3", "Cfap126"]},
+    "vascular_endothelial": {"parent": "endothelial", "source": "publication_and_canonical", "genes": ["Pecam1", "Cdh5", "Kdr", "Emcn", "Vwf", "Car4"]},
+    "lymphatic_endothelial": {"parent": "endothelial", "source": "publication_derived", "genes": ["Prox1", "Lyve1", "Flt4", "Mmrn1", "Fxyd6", "Fgl2"]},
+    "macrophage": {"parent": "myeloid", "source": "publication_and_canonical", "genes": ["Adgre1", "C1qa", "C1qb", "C1qc", "Marco", "Lpl"]},
+    "monocyte": {"parent": "myeloid", "source": "publication_and_canonical", "genes": ["Ly6c2", "Ccr2", "S100a8", "S100a9", "Lilrb4a"]},
+    "neutrophil": {"parent": "myeloid", "source": "publication_and_canonical", "genes": ["S100a8", "S100a9", "Retnlg", "Ngp", "Lcn2"]},
+    "dendritic": {"parent": "myeloid", "source": "publication_and_canonical", "genes": ["Flt3", "Itgax", "H2-Ab1", "Cd74", "Clec10a"]},
+    "T_cell": {"parent": "lymphoid", "source": "publication_and_canonical", "genes": ["Cd3d", "Cd3e", "Trbc1", "Lck"]},
+    "NK_cell": {"parent": "lymphoid", "source": "publication_and_canonical", "genes": ["Nkg7", "Klrd1", "Ncr1", "Prf1"]},
+    "B_cell": {"parent": "lymphoid", "source": "publication_and_canonical", "genes": ["Cd79a", "Ms4a1", "Cd37", "H2-Aa"]},
+    "Col13a1_like_matrix_fibroblast": {"parent": "fibroblast/stromal", "source": "publication_derived", "genes": ["Col13a1", "Tcf21", "Inmt", "Npnt"]},
+    "Col14a1_like_matrix_fibroblast": {"parent": "fibroblast/stromal", "source": "publication_derived", "genes": ["Col14a1", "Pi16", "Meg3", "Dpt"]},
+    "myofibroblast": {"parent": "fibroblast/stromal", "source": "publication_derived", "genes": ["Hhip", "Cdh11", "Pdgfrb", "Acta2", "Tagln"]}
+  },
+  "assignment_rules": {
+    "cluster_major_minimum_z": 0.0,
+    "cluster_major_minimum_margin": 0.10,
+    "refined_minimum_z": 0.0,
+    "refined_minimum_margin": 0.10,
+    "moderate_confidence_margin": 0.30,
+    "high_confidence_margin": 0.80,
+    "minimum_detected_marker_fraction_for_moderate": 0.20,
+    "proliferating_override_z": 1.5,
+    "ambiguous_label": "ambiguous/low-quality",
+    "ambiguous_fibroblast_label": "ambiguous_fibroblast"
+  },
+  "scientific_boundaries": [
+    "Marker scoring and clustering are condition-blind.",
+    "Publication-derived marker definitions do not imply a recovered publication barcode mapping.",
+    "Do not force ambiguous cells into one of the publication labels.",
+    "The annotation PCA is for clustering and annotation only and is not a final ScGeo representation."
+  ]
+}

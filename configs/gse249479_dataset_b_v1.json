@@ -1,0 +1,212 @@
+{
+  "schema_version": "gse249479_dataset_b_v1",
+  "workflow_name": "dataset_b_gse249479_phase1_public_download_reconstruction_audit",
+  "required_git_branch": "revision-dataset-b-gse249479",
+  "data_dir_env": "SCGEO_GSE249479_DATA_DIR",
+  "default_data_dir": "data/gse249479",
+  "input_h5ad_env": "SCGEO_GSE249479_H5AD",
+  "default_input_h5ad": "data/gse249479/zeng2026_xenograft_cd34_rna_raw.h5ad",
+  "output_dir_env": "SCGEO_GSE249479_OUTPUT_DIR",
+  "default_output_dir": "results/public_validation/gse249479_dataset_b",
+  "source_repository_env": "SCGEO_SOURCE_REPO",
+  "default_source_repository": "../scgeo",
+  "memory_threshold_gb_env": "SCGEO_GSE249479_MEMORY_THRESHOLD_GB",
+  "default_memory_threshold_gb": 12.0,
+  "stop_before_estimated_rss_gb": 10.0,
+  "wsl_memory_budget_gb": 16.0,
+  "phase": "phase1a_public_download_sparse_reconstruction_then_audit",
+  "dataset": {
+    "accession": "GSE249479",
+    "object_name": "zeng2026_xenograft_cd34_rna_raw.h5ad",
+    "description": "Public Dataset B GSE249479 raw CD34 RNA object for memory-safe metadata, replication, and matrix audit."
+  },
+  "geo": {
+    "series_accession": "GSE249479",
+    "series_supplementary_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249479/suppl/",
+    "series_filelist_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249479/suppl/filelist.txt",
+    "sample_url_template": "https://ftp.ncbi.nlm.nih.gov/geo/samples/{sample_bucket}/{accession}/suppl/{filename}",
+    "samples": [
+      {
+        "accession": "GSM7948736",
+        "condition": "PBS",
+        "description": "PBS RNA",
+        "expected_files": {
+          "barcodes": "GSM7948736_PBS_barcodes.tsv.gz",
+          "features": "GSM7948736_PBS_features.tsv.gz",
+          "matrix": "GSM7948736_PBS_matrix.mtx.gz"
+        }
+      },
+      {
+        "accession": "GSM7948737",
+        "condition": "TNF",
+        "description": "TNF RNA",
+        "expected_files": {
+          "barcodes": "GSM7948737_TNF_barcodes.tsv.gz",
+          "features": "GSM7948737_TNF_features.tsv.gz",
+          "matrix": "GSM7948737_TNF_matrix.mtx.gz"
+        }
+      },
+      {
+        "accession": "GSM7948738",
+        "condition": "LPS",
+        "description": "LPS RNA",
+        "expected_files": {
+          "barcodes": "GSM7948738_LPS_barcodes.tsv.gz",
+          "features": "GSM7948738_LPS_features.tsv.gz",
+          "matrix": "GSM7948738_LPS_matrix.mtx.gz"
+        }
+      }
+    ],
+    "metadata_inventory_keywords": [
+      "rds",
+      "soupor",
+      "clade",
+      "genotyping",
+      "genetic",
+      "annotation",
+      "metadata",
+      "seurat"
+    ]
+  },
+  "hard_scientific_boundaries": [
+    "Do not modify the ScGeo package.",
+    "Use only public GEO supplementary inputs.",
+    "Do not treat cells as biological replicates.",
+    "Do not tune frozen ScGeo thresholds.",
+    "Do not force RNA velocity.",
+    "Preserve original sparse count matrices."
+  ],
+  "hard_resource_boundaries": [
+    "Do not densify the full expression matrix.",
+    "Never call .toarray(), .A, np.asarray(X), or create a dense cells-by-genes matrix on the full dataset.",
+    "Prefer float32.",
+    "Keep at most one large AnnData object in memory.",
+    "Write intermediates to disk between major stages.",
+    "Delete unused objects and call garbage collection between stages.",
+    "Use n_jobs=1 unless explicitly justified.",
+    "Stop before any step estimated to exceed 10 GB resident memory.",
+    "If RSS exceeds 12 GB, save current outputs and stop cleanly."
+  ],
+  "forbidden_phase1_steps": [
+    "PCA",
+    "Scanorama",
+    "Harmony",
+    "scVI",
+    "UMAP",
+    "ScGeo",
+    "comparator analysis",
+    "RNA velocity"
+  ],
+  "condition_column_candidates": [
+    "condition",
+    "Condition",
+    "group",
+    "Group",
+    "treatment",
+    "Treatment",
+    "disease",
+    "Disease",
+    "status",
+    "Status",
+    "timepoint",
+    "Timepoint",
+    "sample_type",
+    "Sample_type"
+  ],
+  "replicate_metadata_keywords": [
+    "donor",
+    "subject",
+    "patient",
+    "individual",
+    "replicate",
+    "sample",
+    "animal",
+    "mouse",
+    "recipient",
+    "xenograft",
+    "library"
+  ],
+  "replication_field_categories": {
+    "biological_donor": [
+      "donor",
+      "subject",
+      "patient",
+      "individual"
+    ],
+    "xenograft_recipient": [
+      "recipient",
+      "xenograft",
+      "host",
+      "animal",
+      "mouse"
+    ],
+    "source_pool": [
+      "pool"
+    ],
+    "genetic_clade": [
+      "clade",
+      "clone",
+      "lineage",
+      "barcode"
+    ],
+    "experimental_library": [
+      "library",
+      "batch",
+      "lane"
+    ],
+    "condition": [
+      "condition",
+      "group",
+      "treatment",
+      "disease",
+      "status",
+      "timepoint",
+      "sample_type"
+    ],
+    "inferred_cell_label": [
+      "celltype",
+      "cell_type",
+      "cell label",
+      "annotation",
+      "cluster",
+      "leiden",
+      "louvain",
+      "seurat"
+    ]
+  },
+  "clade_metadata_keywords": [
+    "clade",
+    "clone",
+    "lineage",
+    "barcode"
+  ],
+  "qc_field_keywords": [
+    "n_genes",
+    "n_counts",
+    "total_counts",
+    "pct_counts",
+    "mito",
+    "mt",
+    "qc",
+    "doublet",
+    "scrublet"
+  ],
+  "phase1_notebooks": [
+    "notebooks/public_validation/gse249479/00a_download_and_reconstruct.ipynb",
+    "notebooks/public_validation/gse249479/00_metadata_replication_and_memory_audit.ipynb"
+  ],
+  "version_record_packages": [
+    "python",
+    "anndata",
+    "h5py",
+    "numpy",
+    "pandas",
+    "scipy",
+    "psutil",
+    "nbformat",
+    "nbclient",
+    "matplotlib"
+  ],
+  "temp_dir_env": "SCGEO_GSE249479_TMPDIR",
+  "default_temp_dir": ".tmp"
+}
