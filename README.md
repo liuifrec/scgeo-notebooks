@@ -1,199 +1,138 @@
 # scgeo-notebooks
 
-Reproducibility companion notebooks for the **ScGeo manuscript** (radiation-induced hematopoietic recovery; **GSE280305**).
+Reproducibility companion for the
+[`scgeo`](https://github.com/liuifrec/scgeo) Python package and the ScGeo
+manuscript revision.
 
-This repository is organized so reviewers can run a minimal, manuscript-focused pipeline end-to-end, while still keeping side analyses and demos available.
+## 1. Relationship to the ScGeo package
 
-## Quick start
+The package repository contains the installable library, tests, and API
+contracts. This repository contains source notebooks, execution wrappers,
+public-data provenance, figure assembly, evidence ledgers, and reviewer-facing
+audits. Revision workflows pin the package at
+[`9a0ed16`](https://github.com/liuifrec/scgeo/tree/9a0ed16cbaa57f935f9c9bc87d1643a25b51012c).
 
-1. **Create and activate a Python environment** (example with `conda`):
-   ```bash
-   conda create -n scgeo python=3.10 -y
-   conda activate scgeo
-   ```
-2. **Install core notebook dependencies** used across these analyses:
-   ```bash
-   pip install jupyterlab scanpy scvelo cellrank anndata scanorama pandas numpy matplotlib seaborn
-   ```
-3. **Launch Jupyter** from the repo root:
-   ```bash
-   jupyter lab
-   ```
-4. **Run notebooks in the execution order below** (data prep, then reference prep/annotation, then manuscript notebooks).
+Start with [Start here](docs/START_HERE.md). Package users who do not need to
+reproduce the manuscript can instead follow the package
+[quick start](https://github.com/liuifrec/scgeo/blob/main/docs/QUICKSTART.md).
 
-> Notes:
-> - Package versions may need to match the manuscript environment exactly for byte-level reproducibility.
-> - If you already use a lab/cluster environment, keep your existing setup and use the notebook order in this README as the source of truth.
+## 2. Repository map
 
-## Repository structure
+| Path | Role |
+|---|---|
+| `notebooks/benchmarks/` | Frozen synthetic revision benchmark review |
+| `notebooks/public_validation/` | Pancreas, Dataset B, and Dataset C public validation |
+| `notebooks/data_prep/` | Original GSE280305 preprocessing |
+| `notebooks/exploration/` | Semi-manual reference preparation and annotation |
+| `notebooks/manuscript/` | Original manuscript-oriented analyses and figures |
+| `notebooks/revision_finalization/` | Reviewer metric, aggregation, and terminology audits |
+| `scripts/` | Testable implementations and clean-kernel runners |
+| `configs/` | Frozen workflow settings and checksums |
+| `environment/` | Workflow-specific environment specifications |
+| `results/` | Mostly ignored generated artifacts; a small set of tracked manifests may remain |
 
-- `notebooks/data_prep/` — **preprocessing and dataset preparation** required before downstream analyses.
-- `notebooks/exploration/` — **intermediate, analysis-relevant notebooks**, including manual reference preparation and manual annotation steps used upstream of final manuscript outputs.
-- `notebooks/manuscript/` — **final figure/result generation** notebooks for manuscript outputs.
-- `notebooks/benchmarks/` — **synthetic revision benchmark notebooks** that read frozen manuscript-profile simulation outputs.
-- `notebooks/public_validation/` — **public validation notebooks** using external public datasets only.
-- `notebooks/tutorials/` — **user-facing demos** and learning-oriented walkthroughs.
+See [Dataset map](docs/DATASET_MAP.md) and [Results overview](docs/RESULTS_OVERVIEW.md).
 
-## Synthetic revision benchmark workflow
+## 3. Quick-start decision tree
 
-The revision benchmark notebooks use only the frozen synthetic manuscript-profile outputs. They do not rerun the manuscript simulation suite and do not tune or propose new thresholds.
+1. **Learning the package API?** Use the package quick start and tutorials.
+2. **Reviewing revision evidence?** Read the frozen evidence summaries before
+   executing anything.
+3. **Reproducing a public dataset?** Open that dataset’s folder README and run
+   its numbered source notebooks through the corresponding executor.
+4. **Rebuilding manuscript presentation only?** Use the assembly notebook after
+   verifying its checksum-pinned numerical inputs.
+5. **Reproducing the original GSE280305 workflow?** Follow the data-preparation,
+   semi-manual annotation, and manuscript order in
+   [`notebooks/manuscript/README.md`](notebooks/manuscript/README.md).
 
-Configure the frozen benchmark source with:
+Do not substitute conditions, libraries, cells, or artificial partitions for a
+biological sample identity.
 
-```bash
-export SCGEO_BENCHMARK_DIR=/path/to/manuscript_v1
-```
+## 4. Dataset table
 
-If the variable is unset, the notebooks use the relative default recorded in `configs/manuscript_benchmark_v1.json`:
+| Workflow | Public/controlled material | Frozen scope | Inference status |
+|---|---|---|---|
+| Synthetic benchmark | Controlled simulations with stored truth and held-out evaluation | Tests estimator, representation, local-geometry, uncertainty, and dynamics behavior | No biological claim |
+| Pancreas | Public developmental dynamics with scVelo/CellRank context | Representation–dynamics validation | Descriptive dynamics validation |
+| Dataset B, GSE249479 | Public inflammatory xenograft data; 34,432 retained cells | Treatment geometry and official R Augur comparison | `descriptive_only`; no recoverable biological-replicate identity |
+| Dataset C, GSE211713 | Public mouse-lung radiation data; 20 independent mouse libraries and 131,157 retained cells | Replicate-aware primary radiation contrasts | Replicate-aware association; cross-sectional, not longitudinal |
 
-```text
-../scgeo/results/simulation/manuscript_v1
-```
+Official R Augur is the primary Dataset B comparator. The Python implementation
+is retained only as an **Augur-inspired Python approximation** sensitivity
+analysis.
 
-The pinned revision config records the `manuscript_v1` protocol, source commit, expected job counts, calibration seeds, held-out evaluation seeds, required audit files, and checksum manifests. The committed manifests are:
+## 5. Execution environments
 
-- `results_manifest/benchmark_files.csv`
-- `results_manifest/checksums.sha256`
+Environment specifications are under `environment/`. Execute from the
+repository root so relative paths and imports resolve consistently. The frozen
+workflows used named kernels or explicit Python executables recorded in their
+execution metadata; byte-level reproduction requires the corresponding package
+versions as well as the same numerical inputs.
 
-Run the clean-kernel execution test from the repository root:
+Common commands include:
 
 ```bash
 python scripts/execute_revision_notebooks.py
-```
-
-The runner executes these notebooks in fresh kernels:
-
-1. `notebooks/benchmarks/00_manuscript_benchmark_overview.ipynb`
-2. `notebooks/benchmarks/01_robust_estimator_comparison.ipynb`
-3. `notebooks/benchmarks/02_representation_and_dynamics_validation.ipynb`
-4. `notebooks/benchmarks/03_framework_ablation.ipynb`
-5. `notebooks/benchmarks/04_synthetic_geometry_stress_test.ipynb`
-6. `notebooks/benchmarks/05_synthetic_dynamics_stress_test.ipynb`
-7. `notebooks/tutorials/01_quickstart_perturbation_report.ipynb`
-
-Generated revision artifacts are written under `results/revision_synthetic_benchmark/`:
-
-- `figures/` contains SVG and PNG figures.
-- `figure_sources/` contains figure-source CSV tables.
-- `alt_text/` contains deterministic alt text.
-- `metadata/` records Python, scgeo, package, repository commit, source commit, protocol, and timestamp metadata.
-- `execution/revision_notebook_execution_report.json` records clean-kernel runtimes and artifact inventory.
-
-The benchmark notebooks keep calibration seeds (`0-4`) and held-out evaluation seeds (`5-19`) visibly separated. One simulation job/seed is treated as the independent unit. The notebooks explicitly report the negative revision findings captured by the frozen audit outputs: balanced-replicate seed dependence, incomplete state-level instability recall, zero local-distortion recall in representation-corruption jobs, and imperfect bootstrap uncertainty coverage.
-
-## Public pancreas Dataset D validation
-
-Dataset D is a public endocrine-pancreas developmental-dynamics validation using the official CellRank pancreas dataset. It does not modify the ScGeo package, does not change frozen synthetic thresholds or protocol settings, and does not create artificial treatment/control labels.
-
-Create the optional environment from the repository root:
-
-```bash
-conda env create -f environment/pancreas_environment.yml
-conda activate scgeo-pancreas-dataset-d
-```
-
-The public data and output locations are configurable:
-
-```bash
-export SCGEO_PANCREAS_DATA_DIR=data/public/pancreas_dataset_d
-export SCGEO_PANCREAS_OUTPUT_DIR=results/public_validation/pancreas_dataset_d
-```
-
-Run the clean-kernel public validation workflow:
-
-```bash
 python scripts/execute_pancreas_validation.py
+python scripts/execute_gse249479_validation.py
+python scripts/execute_gse211713_validation.py
 ```
 
-The runner executes these source-output-free notebooks and saves executed review copies under `results/public_validation/pancreas_dataset_d/executed_notebooks/`:
+Each dataset README identifies the appropriate staged executors and inputs.
 
-1. `notebooks/public_validation/pancreas/00_acquire_and_validate.ipynb`
-2. `notebooks/public_validation/pancreas/01_scvelo_dynamical_velocity.ipynb`
-3. `notebooks/public_validation/pancreas/02_cellrank_fates.ipynb`
-4. `notebooks/public_validation/pancreas/03_scgeo_representation_dynamics.ipynb`
-5. `notebooks/public_validation/pancreas/04_manuscript_figures.ipynb`
+## 6. Thin-notebook architecture
 
-The workflow records official public dataset checksums, scVelo dynamical velocity outputs, a CellRank VelocityKernel/GPCCA comparator, ScGeo-style representation-dynamics evidence across PCA20, PCA30, PCA50, diffusion map, and UMAP diagnostics, negative controls, PNG/SVG figures, figure-source CSVs, deterministic alt text, metadata, and version records.
+Most revision notebooks are deliberately short, output-free orchestration
+entry points. Their corresponding modules under `scripts/` hold the reusable,
+testable implementation. This keeps notebook diffs readable and permits
+clean-kernel execution without embedding generated outputs in Git.
 
-CellRank output is treated as a complementary probabilistic comparator derived from scVelo RNA velocity. It is not reported as evidence independent of RNA velocity.
+See [Thin notebook architecture](docs/THIN_NOTEBOOK_ARCHITECTURE.md).
 
-## Workflow order (manuscript-focused)
+## 7. Generated-versus-tracked artifact policy
 
-For manuscript-oriented reruns, use the notebook groups in this order:
+Tracked source notebooks must have zero outputs and null execution counts.
+Executed review copies, figures, source CSVs, alt text, logs, H5AD objects,
+models, downloaded data, and caches are written under ignored result or local
+data directories. Checksum manifests and source configuration may be tracked;
+large generated artifacts are not.
 
-1. **Data preparation**: run `notebooks/data_prep/` notebooks to preprocess and prepare inputs.
-2. **Reference preparation and annotation (semi-manual)**:
-   - `notebooks/exploration/06_Ref_prep.ipynb` — manual reference preparation.
-   - `notebooks/exploration/07_Reference_based_annotation.ipynb` — manual reference-based annotation.
-3. **Final manuscript outputs**: run `notebooks/manuscript/` notebooks for final figures/graphs and reported result outputs.
+See [Reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md).
 
-> Reproducibility note: core preprocessing and manuscript notebooks are scripted, while the two exploration notebooks above include manual/semi-manual decisions that are part of the analysis flow.
+## 8. Frozen revision checkpoints
 
-## External references for annotation
+- ScGeo package: `9a0ed16cbaa57f935f9c9bc87d1643a25b51012c`
+- Companion merge checkpoint: `958a0ada568c53e78864ede022c050830cb55a36`
+- Dataset-specific numerical inputs and outputs: pinned in execution metadata,
+  validation reports, or evidence ledgers rather than inferred from filenames.
 
-Some notebooks (particularly in `notebooks/exploration/`) use external reference resources to assist with cell type annotation and interpretation:
+Frozen thresholds and numerical results must not be changed during a
+presentation or documentation pass.
 
-- Hematopoietic reference atlas (HemAtlas)
-- Azimuth reference mapping (HuBMAP): https://azimuth.hubmapconsortium.org/
+## 9. Manuscript-oriented workflow
 
-These resources were used for manual or semi-guided annotation steps and are not part of the ScGeo framework itself. They serve as biological references to support interpretation of embedding structure and inferred trajectories.
+The original manuscript pipeline and the major-revision evidence package are
+separate but related:
 
-## Execution order (reviewer-focused)
+1. original GSE280305 preparation and semi-manual annotation;
+2. original manuscript analyses;
+3. frozen synthetic and public-data revision validation;
+4. Dataset B and Dataset C manuscript assembly;
+5. reviewer evidence ledgers and reproducibility audit.
 
-Run notebooks in this exact order.
+The [Results overview](docs/RESULTS_OVERVIEW.md) summarizes accepted and negative
+findings without recomputing them.
 
-### 1) Data preparation
+## 10. Limitations and semi-manual steps
 
-1. `notebooks/data_prep/01_gse280305_paths.ipynb`
-2. `notebooks/data_prep/02_gse280305_pathC_velocity.ipynb`  
-   - corresponds to the manuscript velocity-prep step sometimes referenced as `02_gse280305_path_velocity.ipynb`
-3. `notebooks/data_prep/03_gse280305_cellrank_sparse.ipynb`
-4. `notebooks/data_prep/04_scgeo_gse280305_phase1_qc.ipynb`
-
-### 2) Reference preparation and annotation (semi-manual, upstream)
-
-1. `notebooks/exploration/06_Ref_prep.ipynb`
-2. `notebooks/exploration/07_Reference_based_annotation.ipynb`
-
-### 3) Manuscript analyses (IMPORTANT ORDER)
-
-1. `notebooks/manuscript/05_OOD.ipynb` (**Figure 2**)
-2. `notebooks/manuscript/Velocity_shift_alignment.ipynb` (**Figure 3**)
-3. `notebooks/manuscript/Final_summary.ipynb` (**intermediate integrated summary**)
-4. `notebooks/manuscript/test_driver_genes.ipynb` (**Figure 4**)
-
-> Note: `notebooks/manuscript/Final_summary.ipynb` is intentionally run **before** `notebooks/manuscript/test_driver_genes.ipynb` despite its filename.
-
-## Figure-to-notebook mapping
-
-- **Figure 2** → `notebooks/manuscript/05_OOD.ipynb`
-- **Figure 3** → `notebooks/manuscript/Velocity_shift_alignment.ipynb`
-- **Figure 4** → `notebooks/manuscript/test_driver_genes.ipynb`
-- **Intermediate integrated summary** → `notebooks/manuscript/Final_summary.ipynb`
-
-## Notebook naming notes
-
-To avoid breaking existing links/references, notebook filenames are preserved in this repository.
-
-- Manuscript notebooks are documented above with explicit figure mapping for readability.
-- Exploration notebooks include intermediate analysis steps; specifically, `06_Ref_prep.ipynb` and `07_Reference_based_annotation.ipynb` are upstream of final manuscript outputs.
-- Tutorial notebooks are demo-oriented and not required for manuscript reproduction.
-- Existing numeric prefixes (for ordering) are kept where already meaningful.
-
-## Data provenance (GSE280305)
-
-- Dataset: **NCBI GEO accession GSE280305** (radiation-induced hematopoietic recovery).
-- Biological context in these notebooks: mouse LSK cells across post-irradiation timepoints (D8, D11, D14, D21).
-- Raw/intermediate data files are not stored in this repository.
-
-Recommended provenance workflow:
-1. Download source data from GEO (`GSE280305`) and record download date + GEO file checksums in your local run log.
-2. Place data in your local/project data location expected by the data prep notebooks.
-3. Execute `notebooks/data_prep/`, then `notebooks/exploration/06_Ref_prep.ipynb` and `notebooks/exploration/07_Reference_based_annotation.ipynb`, before running manuscript notebooks.
-
-## Scope summary
-
-- **manuscript** = reproducible paper figures/results
-- **exploration** = intermediate analysis notebooks (including manual reference prep/annotation)
-- **tutorials** = user demos
-- **data_prep** = preprocessing pipeline
+- Original reference preparation and annotation include semi-manual decisions.
+- Public Dataset B lacks a recoverable biological-replicate identity and remains
+  descriptive.
+- Dataset C has independent mice but is cross-sectional; it does not establish
+  longitudinal reversal, persistence, or causality.
+- Nested PCA dimensions share a basis and are not independent confirmations.
+- UMAP is display-only in quantitative validation workflows.
+- Some frozen validation scripts retain absolute workstation paths. Supported
+  environment-variable overrides and remaining fixed paths are documented in
+  the [Reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md).
