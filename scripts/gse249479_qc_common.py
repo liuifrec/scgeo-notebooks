@@ -1,4 +1,4 @@
-"""Sparse, descriptive-only Phase 2 helpers for GSE249479 Dataset B.
+"""Sparse, descriptive-only Phase 2 helpers for GSE249479.
 
 The functions in this module never densify a complete cells-by-genes matrix.
 They operate on CSR counts, materialize only one-dimensional summaries or small

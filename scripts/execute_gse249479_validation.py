@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute Dataset B GSE249479 Phase 1 validation notebooks in clean kernels."""
+"""Execute GSE249479 Phase 1 validation notebooks in clean kernels."""
 
 from __future__ import annotations
 

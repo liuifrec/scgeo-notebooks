@@ -1,4 +1,4 @@
-"""Descriptive-only ScGeo treatment geometry for GSE249479 Dataset B."""
+"""Descriptive-only ScGeo treatment geometry for GSE249479."""
 
 from __future__ import annotations
 

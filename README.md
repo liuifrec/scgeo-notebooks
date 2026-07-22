@@ -21,7 +21,7 @@ reproduce the manuscript can instead follow the package
 | Path | Role |
 |---|---|
 | `notebooks/benchmarks/` | Frozen synthetic revision benchmark review |
-| `notebooks/public_validation/` | Pancreas, Dataset B, and Dataset C public validation |
+| `notebooks/public_validation/` | Public pancreatic-development, GSE249479 human HSPC inflammatory xenograft, and GSE211713 mouse-lung radiation validation |
 | `notebooks/data_prep/` | Original GSE280305 preprocessing |
 | `notebooks/exploration/` | Semi-manual reference preparation and annotation |
 | `notebooks/manuscript/` | Original manuscript-oriented analyses and figures |
@@ -51,14 +51,15 @@ biological sample identity.
 
 ## 4. Dataset table
 
-| Workflow | Public/controlled material | Frozen scope | Inference status |
-|---|---|---|---|
-| Synthetic benchmark | Controlled simulations with stored truth and held-out evaluation | Tests estimator, representation, local-geometry, uncertainty, and dynamics behavior | No biological claim |
-| Pancreas | Public developmental dynamics with scVelo/CellRank context | Representation–dynamics validation | Descriptive dynamics validation |
-| Dataset B, GSE249479 | Public inflammatory xenograft data; 34,432 retained cells | Treatment geometry and official R Augur comparison | `descriptive_only`; no recoverable biological-replicate identity |
-| Dataset C, GSE211713 | Public mouse-lung radiation data; 20 independent mouse libraries and 131,157 retained cells | Replicate-aware primary radiation contrasts | Replicate-aware association; cross-sectional, not longitudinal |
+| Workflow | Biological system | Inference status |
+|---|---|---|
+| Synthetic benchmark | Controlled simulations with stored truth and held-out evaluation | No biological claim |
+| GSE280305 | Irradiated LSK hematopoietic recovery | Original biological case study |
+| Public pancreas | Pancreatic developmental dynamics with scVelo/CellRank context | Descriptive dynamics validation |
+| GSE249479 | Human HSPC inflammatory xenograft perturbation; 34,432 retained cells | `descriptive_only`; no recoverable biological-replicate identity |
+| GSE211713 | Mouse-lung radiation response; 20 independent mouse libraries and 131,157 retained cells | Replicate-aware association; cross-sectional, not longitudinal |
 
-Official R Augur is the primary Dataset B comparator. The Python implementation
+Official R Augur is the principal GSE249479 comparator. The Python implementation
 is retained only as an **Augur-inspired Python approximation** sensitivity
 analysis.
 
@@ -118,7 +119,7 @@ separate but related:
 1. original GSE280305 preparation and semi-manual annotation;
 2. original manuscript analyses;
 3. frozen synthetic and public-data revision validation;
-4. Dataset B and Dataset C manuscript assembly;
+4. GSE249479 and GSE211713 manuscript assembly;
 5. reviewer evidence ledgers and reproducibility audit.
 
 The [Results overview](docs/RESULTS_OVERVIEW.md) summarizes accepted and negative
@@ -127,10 +128,10 @@ findings without recomputing them.
 ## 10. Limitations and semi-manual steps
 
 - Original reference preparation and annotation include semi-manual decisions.
-- Public Dataset B lacks a recoverable biological-replicate identity and remains
+- GSE249479 lacks a recoverable biological-replicate identity and remains
   descriptive.
-- Dataset C has independent mice but is cross-sectional; it does not establish
-  longitudinal reversal, persistence, or causality.
+- GSE211713 has independent mouse libraries but is cross-sectional; it does not
+  establish causality, persistence, reversal, or within-mouse change.
 - Nested PCA dimensions share a basis and are not independent confirmations.
 - UMAP is display-only in quantitative validation workflows.
 - Some frozen validation scripts retain absolute workstation paths. Supported

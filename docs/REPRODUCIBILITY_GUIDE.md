@@ -9,19 +9,23 @@ frozen workflow.
 
 ## Supported path overrides
 
+The public-data overrides cover GSE249479, a public human HSPC inflammatory
+xenograft dataset, and GSE211713, a public mouse-lung radiation dataset with 20
+independent mouse libraries.
+
 | Variable | Purpose |
 |---|---|
 | `SCGEO_SOURCE_REPO` | ScGeo package checkout |
 | `SCGEO_BENCHMARK_DIR` | Frozen synthetic benchmark directory |
-| `SCGEO_GSE249479_H5AD` | Dataset B source H5AD |
-| `SCGEO_GSE249479_COMPACT_H5AD` | Dataset B compact QC/HVG H5AD |
-| `SCGEO_GSE249479_OUTPUT_DIR` | Dataset B generated output root |
-| `SCGEO_GSE211713_DATA_DIR` | Dataset C local data root |
-| `SCGEO_GSE211713_COMPACT_H5AD` | Dataset C compact QC/HVG H5AD |
-| `SCGEO_GSE211713_ANNOTATED_H5AD` | Dataset C annotated H5AD |
-| `SCGEO_GSE211713_REPRESENTATION_V2_H5AD` | Dataset C canonical representation object |
-| `SCGEO_GSE211713_C6_V2_OUTPUT_DIR` | Dataset C representation-v2 outputs |
-| `SCGEO_GSE211713_C7_V2_OUTPUT_DIR` | Dataset C ScGeo-v2 outputs |
+| `SCGEO_GSE249479_H5AD` | GSE249479 source H5AD |
+| `SCGEO_GSE249479_COMPACT_H5AD` | GSE249479 compact QC/HVG H5AD |
+| `SCGEO_GSE249479_OUTPUT_DIR` | GSE249479 generated output root |
+| `SCGEO_GSE211713_DATA_DIR` | GSE211713 local data root |
+| `SCGEO_GSE211713_COMPACT_H5AD` | GSE211713 compact QC/HVG H5AD |
+| `SCGEO_GSE211713_ANNOTATED_H5AD` | GSE211713 annotated H5AD |
+| `SCGEO_GSE211713_REPRESENTATION_V2_H5AD` | GSE211713 canonical representation object |
+| `SCGEO_GSE211713_C6_V2_OUTPUT_DIR` | GSE211713 representation-v2 outputs |
+| `SCGEO_GSE211713_C7_V2_OUTPUT_DIR` | GSE211713 ScGeo-v2 outputs |
 
 Set only variables supported by the invoked script. Dataset-specific executors
 also record their resolved inputs and checksums.
@@ -29,9 +33,9 @@ also record their resolved inputs and checksums.
 ## Frozen workstation paths
 
 Some validated executors and gates still contain absolute paths under
-`/home/liuyuchen`. Examples include Dataset C v2 validation/execution,
+`/home/liuyuchen`. Examples include GSE211713 v2 validation/execution,
 `scripts/finalize_revision_evidence.py`, the recorded scVI interpreter, and
-Dataset B execution/comparator wrappers. These paths reproduce the frozen
+GSE249479 execution/comparator wrappers. These paths reproduce the frozen
 workstation audit. This documentation pass does not rewrite them; portability
 changes require a separate implementation and numerical-equivalence review.
 

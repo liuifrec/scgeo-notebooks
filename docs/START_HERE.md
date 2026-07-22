@@ -20,10 +20,13 @@ and large artifacts belong under ignored result or workstation data paths.
 ## Scientific interpretation
 
 Always identify the analysis unit and inference scope. Synthetic jobs support
-controlled method evaluation. The pancreas workflow is descriptive. Dataset B
-is `descriptive_only`. Dataset C primary contrasts use independent mouse
-libraries but are cross-sectional. Representation agreement does not turn
-nested PCA views into independent evidence.
+controlled method evaluation. The public pancreatic-development workflow is
+descriptive. GSE249479, a public human HSPC inflammatory xenograft dataset, is
+`descriptive_only` because no recoverable biological-replicate identity is
+available. GSE211713, a public mouse-lung radiation dataset with 20 independent
+mouse libraries, supports replicate-aware primary contrasts that are
+cross-sectional rather than longitudinal. Representation agreement does not
+turn nested PCA views into independent evidence.
 
 Next: [Dataset map](DATASET_MAP.md), [Reproducibility guide](REPRODUCIBILITY_GUIDE.md),
 and [Thin notebook architecture](THIN_NOTEBOOK_ARCHITECTURE.md).

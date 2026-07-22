@@ -1,8 +1,8 @@
-# Public pancreas dynamics validation
+# Public pancreatic-development workflow
 
 ## Purpose and inference status
 
-This workflow uses the official public pancreas dataset to compare ScGeo
+The public pancreatic-development workflow uses the official CellRank pancreas dataset to compare ScGeo
 representation–dynamics diagnostics with scVelo and CellRank context. It is a
 descriptive dynamics validation; CellRank is derived from RNA-velocity context
 and is not an independent biological confirmation.
