@@ -1,0 +1,90 @@
+{
+  "schema_version": "gse211713_representations_v2_repair",
+  "required_branch": "revision-dataset-c-gse211713",
+  "frozen_scgeo_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "default_compact_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_qc_hvg.h5ad",
+  "expected_compact_sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560",
+  "default_annotated_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_annotated.h5ad",
+  "expected_annotated_sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca",
+  "default_representation_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_representations_v2.h5ad",
+  "default_output_dir": "results/public_validation/gse211713_dataset_c/c6_v2",
+  "invalidation_manifest": "results/public_validation/gse211713_dataset_c/invalidated_runs/c6_c7_model_switch_run/invalidation_manifest.json",
+  "warning_rss_gib": 20.0,
+  "hard_stop_rss_gib": 24.0,
+  "random_seed": 1729,
+  "pca": {
+    "n_hvg": 3500,
+    "normalization_target_sum": 10000.0,
+    "log1p": true,
+    "n_components": 50,
+    "views": [20, 30, 50],
+    "algorithm": "sklearn_pca_arpack_sparse",
+    "svd_solver": "arpack"
+  },
+  "diffusion": {
+    "pca_basis": "X_pca50",
+    "n_neighbors": 30,
+    "n_components": 20,
+    "metric": "euclidean",
+    "method": "scanpy_neighbors_plus_diffmap",
+    "retain_sparse_graphs": true
+  },
+  "scvi": {
+    "n_hvg": 3500,
+    "n_latent": 20,
+    "n_hidden": 128,
+    "n_layers": 2,
+    "dropout_rate": 0.1,
+    "gene_likelihood": "nb",
+    "dispersion": "gene",
+    "batch_size": 256,
+    "num_workers": 0,
+    "max_epochs": 100,
+    "early_stopping": true,
+    "early_stopping_patience": 10,
+    "train_size": 0.9,
+    "batch_covariate": null,
+    "require_gpu": true
+  },
+  "quality": {
+    "n_neighbors": 30,
+    "silhouette_sample_size": 5000,
+    "fibroblast_silhouette_sample_size": 5000,
+    "umap_n_neighbors": 30,
+    "umap_min_dist": 0.3,
+    "umap_metric": "euclidean",
+    "mouse_neighborhood_k": 30
+  },
+  "representation_roles": {
+    "primary": ["X_pca30", "X_pca50", "X_scvi"],
+    "dimensional_sensitivity": ["X_pca20"],
+    "exploratory_sensitivity": ["X_diffmap"],
+    "display_only": ["X_umap_display_only"]
+  },
+  "approved_major_states": [
+    "Endothelial",
+    "Epithelial",
+    "Fibroblast/stromal",
+    "Lymphoid",
+    "Myeloid",
+    "Proliferating"
+  ],
+  "approved_fibroblast_states": [
+    "Col13a1-like matrix fibroblast",
+    "Col14a1-like matrix fibroblast",
+    "Myofibroblast"
+  ],
+  "source_fibroblast_labels": {
+    "Col13a1-like matrix fibroblast": "Col13a1_like_matrix_fibroblast",
+    "Col14a1-like matrix fibroblast": "Col14a1_like_matrix_fibroblast",
+    "Myofibroblast": "myofibroblast"
+  },
+  "forbidden_batch_covariates": [
+    "dose_gy",
+    "month_post_irradiation",
+    "irradiation_group",
+    "analysis_group_primary",
+    "mouse_id",
+    "gsm"
+  ]
+}

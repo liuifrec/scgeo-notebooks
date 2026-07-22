@@ -1,0 +1,85 @@
+{
+  "schema_version": "gse211713_scgeo_v2_repair",
+  "required_branch": "revision-dataset-c-gse211713",
+  "frozen_scgeo_commit": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+  "default_representation_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_representations_v2.h5ad",
+  "representation_checksum_report": "results/public_validation/gse211713_dataset_c/c6_v2/metadata/assembly_quality_stage.json",
+  "default_compact_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_qc_hvg.h5ad",
+  "expected_compact_sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560",
+  "default_annotated_h5ad": "/home/liuyuchen/data/gse211713/gse211713_revision_annotated.h5ad",
+  "expected_annotated_sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca",
+  "default_output_dir": "results/public_validation/gse211713_dataset_c/scgeo_v2",
+  "invalidation_manifest": "results/public_validation/gse211713_dataset_c/invalidated_runs/c6_c7_model_switch_run/invalidation_manifest.json",
+  "coverage_tables": {
+    "contrast_eligibility": "results/public_validation/gse211713_dataset_c/coverage/contrast_state_eligibility.csv",
+    "mouse_state_counts": "results/public_validation/gse211713_dataset_c/coverage/mouse_state_cell_counts.csv",
+    "fibroblast_coverage": "results/public_validation/gse211713_dataset_c/coverage/fibroblast_coverage.csv"
+  },
+  "warning_rss_gib": 20.0,
+  "hard_stop_rss_gib": 24.0,
+  "random_seed": 1729,
+  "sample_key": "mouse_id",
+  "condition_key": "analysis_condition_v2",
+  "estimator": {
+    "center": "geometric_median",
+    "trim_fraction": 0.1,
+    "n_boot": 500,
+    "bootstrap_unit": "sample",
+    "resampling_label": "biological_mouse_bootstrap",
+    "normalize_by": "pooled_robust_scale"
+  },
+  "primary_contrasts": [
+    {"contrast_id": "control_vs_17gy_early", "group0": "control", "group1": "17Gy_early", "inference_status": "replicate_aware_primary"},
+    {"contrast_id": "control_vs_17gy_late", "group0": "control", "group1": "17Gy_late", "inference_status": "replicate_aware_primary"},
+    {"contrast_id": "17gy_early_vs_late", "group0": "17Gy_early", "group1": "17Gy_late", "inference_status": "replicate_aware_primary"}
+  ],
+  "secondary_contrasts": [
+    {"contrast_id": "control_vs_all17gy", "group0": "control", "group1": "17Gy_all", "inference_status": "replicate_aware_secondary_time_heterogeneous"},
+    {"contrast_id": "control_vs_all10gy", "group0": "control", "group1": "10Gy_all", "inference_status": "replicate_aware_secondary_time_heterogeneous"}
+  ],
+  "representations": {
+    "primary": ["X_pca30", "X_pca50", "X_scvi"],
+    "dimensional_sensitivity": ["X_pca20"],
+    "exploratory_sensitivity": ["X_diffmap"],
+    "all": ["X_pca20", "X_pca30", "X_pca50", "X_diffmap", "X_scvi"]
+  },
+  "states": {
+    "major": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast/stromal",
+      "Lymphoid",
+      "Myeloid",
+      "Proliferating"
+    ],
+    "fibroblast": [
+      "Col13a1-like matrix fibroblast",
+      "Col14a1-like matrix fibroblast",
+      "Myofibroblast"
+    ]
+  },
+  "source_fibroblast_labels": {
+    "Col13a1-like matrix fibroblast": "Col13a1_like_matrix_fibroblast",
+    "Col14a1-like matrix fibroblast": "Col14a1_like_matrix_fibroblast",
+    "Myofibroblast": "myofibroblast"
+  },
+  "coverage": {
+    "major_min_cells_per_mouse": 30,
+    "fibroblast_min_cells_per_mouse": 20,
+    "minimum_eligible_mice_per_group": 3
+  },
+  "distribution": {
+    "max_cells_per_state_group": 300,
+    "sliced_wasserstein_projections": 32
+  },
+  "canonical_manifest": [
+    {"contrast_id": "control_vs_17gy_early", "hierarchy": "major"},
+    {"contrast_id": "control_vs_17gy_late", "hierarchy": "major"},
+    {"contrast_id": "17gy_early_vs_late", "hierarchy": "major"},
+    {"contrast_id": "control_vs_all17gy", "hierarchy": "major"},
+    {"contrast_id": "control_vs_all10gy", "hierarchy": "major"},
+    {"contrast_id": "control_vs_17gy_early", "hierarchy": "fibroblast"},
+    {"contrast_id": "control_vs_17gy_late", "hierarchy": "fibroblast"},
+    {"contrast_id": "17gy_early_vs_late", "hierarchy": "fibroblast"}
+  ]
+}
