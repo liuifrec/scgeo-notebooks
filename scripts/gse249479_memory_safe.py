@@ -1,4 +1,4 @@
-"""Memory-safe helpers for Dataset B GSE249479 Phase 1 audits.
+"""Memory-safe helpers for GSE249479 Phase 1 audits.
 
 The helpers inspect H5AD structure without materializing the expression matrix.
 They are intentionally limited to metadata and storage audits for Phase 1.

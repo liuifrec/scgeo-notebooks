@@ -1,11 +1,12 @@
-# Dataset C: GSE211713
+# GSE211713 — mouse-lung radiation dataset
 
 ## Purpose and inference status
 
-Dataset C is a public mouse-lung radiation-response validation. It contains 20
-independent mouse/GSM libraries and 131,157 retained cells. The three frozen
-primary contrasts are replicate-aware associations based on mouse-level state
-centers. The design is cross-sectional, not longitudinal.
+GSE211713, a public mouse-lung radiation dataset with 20 independent mouse
+libraries, contains 131,157 retained cells. The three frozen primary contrasts
+are replicate-aware associations based on mouse-level state centers. The design
+is cross-sectional, not longitudinal, and does not establish causality,
+persistence, reversal, or within-mouse change.
 
 ## Notebook order
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute the public pancreas Dataset D validation notebooks in clean kernels.
+"""Execute the public pancreatic-development workflow notebooks in clean kernels.
 
 The runner uses only the public CellRank pancreas dataset. It saves executed
 review copies by default while refusing to overwrite source notebooks.

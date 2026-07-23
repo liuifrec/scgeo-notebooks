@@ -16,15 +16,18 @@ They are presentation and audit workflows, not new numerical analyses.
 
 The testable implementation is `scripts/assemble_reviewer2_repairs.py`, with
 final evidence assembly in `scripts/finalize_revision_evidence.py`. Inputs are
-frozen synthetic, pancreas, Dataset B, official R Augur, and Dataset C evidence
-artifacts. Generated tables, figures, captions, alt text, ledgers, and audit
+frozen synthetic evidence, the public pancreatic-development workflow,
+GSE249479 human HSPC inflammatory xenograft evidence, official R Augur, and
+GSE211713 mouse-lung radiation evidence from independent mouse libraries.
+Generated tables, figures, captions, alt text, ledgers, and audit
 reports are written under ignored `results/revision_finalization/` paths.
 
 ## Accepted findings and limitations
 
 The outputs clarify mixscore aggregation, distribution comparison units,
 representation metrics, ScGeo–scPASI distinctions, and corrected claims. They
-must retain negative evidence, distinguish official R Augur from the Python
-approximation, keep Dataset B descriptive, and keep Dataset C cross-sectional.
+must retain negative evidence, distinguish official R Augur from the
+Augur-inspired Python approximation, keep GSE249479 `descriptive_only`, and keep
+GSE211713 replicate-aware and cross-sectional.
 They do not change any numerical result or replace scientific manuscript and
 response-letter writing.

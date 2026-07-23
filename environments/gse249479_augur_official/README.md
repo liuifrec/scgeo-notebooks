@@ -1,8 +1,10 @@
 # Isolated official Augur validation environment
 
-This environment validates the GSE249479 Dataset B Augur-inspired Python
-approximation against the official R package without modifying the Python
-environment or any Phase 3C result.
+This environment validates the Augur-inspired Python approximation for
+GSE249479, a public human HSPC inflammatory xenograft dataset, against the
+official R package without modifying the Python environment or any Phase 3C
+result. Official R Augur is the principal comparator; the Python implementation
+is an approximation used only for implementation sensitivity.
 
 - R: 4.1.2
 - installation mechanism: `renv`

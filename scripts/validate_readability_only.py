@@ -8,6 +8,7 @@ only the Python standard library except for PyYAML when YAML files are present.
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import re
 import subprocess
@@ -26,6 +27,18 @@ NOTEBOOK_AREAS = (
     "notebooks/public_validation/",
     "notebooks/revision_finalization/",
 )
+PRESENTATION_PYTHON_FILES = {
+    "scripts/assemble_gse211713_manuscript_outputs.py",
+    "scripts/assemble_gse249479_manuscript_outputs.py",
+    "scripts/assemble_reviewer2_repairs.py",
+    "scripts/execute_gse249479_validation.py",
+    "scripts/execute_pancreas_validation.py",
+    "scripts/finalize_revision_evidence.py",
+    "scripts/gse249479_memory_safe.py",
+    "scripts/gse249479_qc_common.py",
+    "scripts/gse249479_scgeo_common.py",
+    "scripts/pancreas_validation_common.py",
+}
 
 
 def git(repo: Path, *args: str, check: bool = True) -> str:
@@ -80,6 +93,27 @@ def validate_notebook_change(repo: Path, base: str, rel: str, errors: list[str])
     for key in ("cell_count", "cell_types", "code_sources", "code_outputs", "execution_counts"):
         if before[key] != after[key]:
             errors.append(f"{rel}: notebook {key} changed")
+
+
+class _StringNeutralizer(ast.NodeTransformer):
+    def visit_Constant(self, node: ast.Constant) -> ast.AST:  # noqa: N802
+        if isinstance(node.value, str):
+            return ast.copy_location(ast.Constant(value="<display-text>"), node)
+        return node
+
+
+def validate_python_display_change(repo: Path, base: str, rel: str, errors: list[str]) -> None:
+    """Allow explanatory string/comment edits while rejecting structural Python changes."""
+    try:
+        before = ast.parse(git(repo, "show", f"{base}:{rel}"), filename=rel)
+        after = ast.parse((repo / rel).read_text(encoding="utf-8"), filename=rel)
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"{rel}: Python parse failed ({exc})")
+        return
+    before = _StringNeutralizer().visit(before)
+    after = _StringNeutralizer().visit(after)
+    if ast.dump(before, include_attributes=False) != ast.dump(after, include_attributes=False):
+        errors.append(f"{rel}: change is not limited to comments or string display text")
 
 
 def validate_all_notebooks(repo: Path, errors: list[str]) -> int:
@@ -165,7 +199,9 @@ def allowed_notebook_path(rel: str, status: str) -> bool:
         return True
     if rel == "scripts/validate_readability_only.py":
         return True
-    if rel.endswith("/README.md") and rel.startswith("notebooks/"):
+    if rel in PRESENTATION_PYTHON_FILES:
+        return True
+    if rel.endswith("/README.md"):
         return True
     if rel.endswith(".ipynb") and rel.startswith(NOTEBOOK_AREAS):
         return True
@@ -201,6 +237,8 @@ def main() -> int:
                 errors.append(f"{rel}: adding notebooks is not allowed in this pass")
             else:
                 validate_notebook_change(repo, args.base, rel, errors)
+        if mode == "notebooks" and rel in PRESENTATION_PYTHON_FILES and status != "D":
+            validate_python_display_change(repo, args.base, rel, errors)
 
     tracked_cache = [
         rel for rel in git(repo, "ls-files").splitlines()

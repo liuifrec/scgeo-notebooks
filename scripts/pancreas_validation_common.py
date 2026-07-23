@@ -1,4 +1,4 @@
-"""Shared utilities for the public pancreas Dataset D validation notebooks.
+"""Shared utilities for the public pancreatic-development workflow notebooks.
 
 These helpers handle paths, checksums, artifact writing, and the prespecified
 cosine/consensus bookkeeping used by the public validation notebooks. They do

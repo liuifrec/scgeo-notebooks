@@ -1,11 +1,12 @@
-# Dataset B: GSE249479
+# GSE249479 — human HSPC inflammatory xenograft dataset
 
 ## Purpose and inference status
 
-Dataset B is a public inflammatory xenograft validation of treatment-associated
-geometry and comparator complementarity. The compact analysis retained 34,432
-cells, but no valid biological-replicate identity could be linked to cells.
-Every Dataset B result is therefore `descriptive_only`.
+GSE249479, a public human HSPC inflammatory xenograft dataset, is used to
+validate treatment-associated geometry and comparator complementarity. The
+compact analysis retained 34,432 cells, but no recoverable biological-replicate
+identity could be linked to cells. Every GSE249479 result is therefore
+`descriptive_only`.
 
 ## Notebook order
 
@@ -35,7 +36,7 @@ Frozen descriptive evidence includes TNF shifts in Activated HSC and Lymphoid,
 broader LPS displacement, an abundance-dominant LPS HSC/quiescent pattern, high
 rank agreement among the primary representations, and diffusion-map
 sensitivity with limited influence on the primary conclusions. Official R
-Augur 1.0.3 is the primary comparator. The Python method is an Augur-inspired
+Augur 1.0.3 is the principal comparator. The Python method is an Augur-inspired
 Python approximation used only for implementation sensitivity.
 
 ## Limitations
