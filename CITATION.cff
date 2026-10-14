@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  Please cite the published ScGeo paper when using this repository.
+  Also record the exact software or workflow commit used for reproducibility.
+type: software
+title: "ScGeo reproducibility companion: notebooks and analysis workflows"
+authors:
+  - family-names: Liu
+    given-names: Yu-Chen
+repository-code: "https://github.com/liuifrec/scgeo-notebooks"
+url: "https://github.com/liuifrec/scgeo-notebooks"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Liu
+      given-names: Yu-Chen
+    - family-names: Yoshida
+      given-names: Kengo
+  title: "ScGeo reveals non-canonical trajectories beyond RNA velocity in radiation-induced hematopoietic recovery"
+  journal: Bioinformatics Advances
+  year: 2026
+  month: 9
+  volume: "6"
+  issue: "1"
+  start: vbag266
+  doi: "10.1093/bioadv/vbag266"
+  url: "https://doi.org/10.1093/bioadv/vbag266"

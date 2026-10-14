@@ -1,8 +1,10 @@
 # scgeo-notebooks
 
+[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fbioadv%2Fvbag266-blue)](https://doi.org/10.1093/bioadv/vbag266)
+
 Reproducibility companion for the
 [`scgeo`](https://github.com/liuifrec/scgeo) Python package and the ScGeo
-manuscript revision.
+[published study](https://doi.org/10.1093/bioadv/vbag266).
 
 ## 1. Relationship to the ScGeo package
 
@@ -137,3 +139,31 @@ findings without recomputing them.
 - Some frozen validation scripts retain absolute workstation paths. Supported
   environment-variable overrides and remaining fixed paths are documented in
   the [Reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md).
+
+## 11. Citation
+
+If you use these workflows, please cite the associated paper:
+
+Liu Y-C, Yoshida K. **ScGeo reveals non-canonical trajectories beyond RNA
+velocity in radiation-induced hematopoietic recovery.** *Bioinformatics Advances*.
+2026;6(1):vbag266. [doi:10.1093/bioadv/vbag266](https://doi.org/10.1093/bioadv/vbag266).
+
+```bibtex
+@article{Liu2026ScGeo,
+  author = {Liu, Yu-Chen and Yoshida, Kengo},
+  title = {{ScGeo} reveals non-canonical trajectories beyond {RNA} velocity in radiation-induced hematopoietic recovery},
+  journal = {Bioinformatics Advances},
+  year = {2026},
+  volume = {6},
+  number = {1},
+  pages = {vbag266},
+  doi = {10.1093/bioadv/vbag266},
+  url = {https://doi.org/10.1093/bioadv/vbag266}
+}
+```
+
+Machine-readable citation metadata is provided in [CITATION.cff](CITATION.cff).
+
+Also record the exact commits of both repositories, the workflow configuration,
+and the input checksums. The frozen checkpoints in Section 8 remain unchanged;
+this publication-metadata update does not rerun or replace the numerical evidence.
