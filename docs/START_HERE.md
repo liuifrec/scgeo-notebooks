@@ -43,6 +43,13 @@ executed copy under `executed_notebooks/`. The tracked notebook stays
 output-free. See [notebook architecture](THIN_NOTEBOOK_ARCHITECTURE.md) for the
 source/output convention.
 
+## Redraw existing result tables
+
+For the development plotting API, see [plotting workflows](PLOTTING_WORKFLOWS.md).
+It includes an executable renderer for existing CSVs and a link to the package's
+synthetic visual gallery. These new interfaces require the matching development
+checkout; they are not in the published `scgeo==0.1.0` distribution.
+
 ## Read the published evidence
 
 Begin with the [results guide](RESULTS_OVERVIEW.md), then use the linked dataset
