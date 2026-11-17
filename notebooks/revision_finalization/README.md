@@ -1,5 +1,8 @@
 # Revision-finalization notebooks
 
+[Workflow catalog](../../docs/DATASET_MAP.md) · [Results guide](../../docs/RESULTS_OVERVIEW.md) ·
+[Reproducibility](../../docs/REPRODUCIBILITY_GUIDE.md) · [Cite and reuse](../../docs/PUBLICATION_GUIDE.md)
+
 ## Purpose and inference status
 
 These output-free notebooks assemble reviewer-facing definitions, inventories,
