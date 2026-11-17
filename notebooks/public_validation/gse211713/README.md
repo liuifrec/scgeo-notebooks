@@ -1,5 +1,8 @@
 # GSE211713 — mouse-lung radiation dataset
 
+[Workflow catalog](../../../docs/DATASET_MAP.md) · [Results guide](../../../docs/RESULTS_OVERVIEW.md) ·
+[Reproducibility](../../../docs/REPRODUCIBILITY_GUIDE.md) · [Cite and reuse](../../../docs/PUBLICATION_GUIDE.md)
+
 ## Purpose and inference status
 
 GSE211713, a public mouse-lung radiation dataset with 20 independent mouse

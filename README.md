@@ -1,169 +1,132 @@
-# scgeo-notebooks
+<p align="center">
+  <img src="https://raw.githubusercontent.com/liuifrec/scgeo/main/docs/assets/ScGeo_logo.png" width="360" alt="ScGeo logo">
+</p>
 
-[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fbioadv%2Fvbag266-blue)](https://doi.org/10.1093/bioadv/vbag266)
+<h1 align="center">ScGeo workflows</h1>
 
-Reproducibility companion for the
-[`scgeo`](https://github.com/liuifrec/scgeo) Python package and the ScGeo
-[published study](https://doi.org/10.1093/bioadv/vbag266).
+<p align="center">Explore the analyses behind geometry-aware single-cell interpretation.</p>
 
-## 1. Relationship to the ScGeo package
+[![Paper DOI](https://img.shields.io/badge/Paper-10.1093%2Fbioadv%2Fvbag266-blue)](https://doi.org/10.1093/bioadv/vbag266)
+[![Python package](https://img.shields.io/pypi/v/scgeo)](https://pypi.org/project/scgeo/)
 
-The package repository contains the installable library, tests, and API
-contracts. This repository contains source notebooks, execution wrappers,
-public-data provenance, figure assembly, evidence ledgers, and reviewer-facing
-audits. Revision workflows pin the package at
-[`9a0ed16`](https://github.com/liuifrec/scgeo/tree/9a0ed16cbaa57f935f9c9bc87d1643a25b51012c).
+**Read the paper, follow the evidence, and adapt the workflows to your own study.**
+This repository connects ScGeo's published analyses to their source notebooks,
+configurations, execution scripts, and figure-generation steps. It is the
+reproducibility companion to the [`scgeo` Python package](https://github.com/liuifrec/scgeo).
 
-Start with [Start here](docs/START_HERE.md). Package users who do not need to
-reproduce the manuscript can instead follow the package
-[quick start](https://github.com/liuifrec/scgeo/blob/main/docs/QUICKSTART.md).
+[Start here](docs/START_HERE.md) ·
+[Workflow catalog](docs/DATASET_MAP.md) ·
+[Results guide](docs/RESULTS_OVERVIEW.md) ·
+[Reproduce the paper](docs/REPRODUCIBILITY_GUIDE.md) ·
+[Cite and reuse](docs/PUBLICATION_GUIDE.md)
 
-## 2. Repository map
+## Find your starting point
 
-| Path | Role |
-|---|---|
-| `notebooks/benchmarks/` | Frozen synthetic revision benchmark review |
-| `notebooks/public_validation/` | Public pancreatic-development, GSE249479 human HSPC inflammatory xenograft, and GSE211713 mouse-lung radiation validation |
-| `notebooks/data_prep/` | Original GSE280305 preprocessing |
-| `notebooks/exploration/` | Semi-manual reference preparation and annotation |
-| `notebooks/manuscript/` | Original manuscript-oriented analyses and figures |
-| `notebooks/revision_finalization/` | Reviewer metric, aggregation, and terminology audits |
-| `scripts/` | Testable implementations and clean-kernel runners |
-| `configs/` | Frozen workflow settings and checksums |
-| `environment/` | Workflow-specific environment specifications |
-| `results/` | Mostly ignored generated artifacts; a small set of tracked manifests may remain |
-
-See [Dataset map](docs/DATASET_MAP.md) and [Results overview](docs/RESULTS_OVERVIEW.md).
-
-## 3. Quick-start decision tree
-
-1. **Learning the package API?** Use the package quick start and tutorials.
-2. **Reviewing revision evidence?** Read the frozen evidence summaries before
-   executing anything.
-3. **Reproducing a public dataset?** Open that dataset’s folder README and run
-   its numbered source notebooks through the corresponding executor.
-4. **Rebuilding manuscript presentation only?** Use the assembly notebook after
-   verifying its checksum-pinned numerical inputs.
-5. **Reproducing the original GSE280305 workflow?** Follow the data-preparation,
-   semi-manual annotation, and manuscript order in
-   [`notebooks/manuscript/README.md`](notebooks/manuscript/README.md).
-
-Do not substitute conditions, libraries, cells, or artificial partitions for a
-biological sample identity.
-
-## 4. Dataset table
-
-| Workflow | Biological system | Inference status |
+| Your goal | Start with | What you get |
 |---|---|---|
-| Synthetic benchmark | Controlled simulations with stored truth and held-out evaluation | No biological claim |
-| GSE280305 | Irradiated LSK hematopoietic recovery | Original biological case study |
-| Public pancreas | Pancreatic developmental dynamics with scVelo/CellRank context | Descriptive dynamics validation |
-| GSE249479 | Human HSPC inflammatory xenograft perturbation; 34,432 retained cells | `descriptive_only`; no recoverable biological-replicate identity |
-| GSE211713 | Mouse-lung radiation response; 20 independent mouse libraries and 131,157 retained cells | Replicate-aware association; cross-sectional, not longitudinal |
+| Use ScGeo on your own AnnData | [Package quick start](https://github.com/liuifrec/scgeo/blob/main/docs/QUICKSTART.md) | A runnable introduction to the library API |
+| Understand the report format | [Small synthetic tutorial](notebooks/tutorials/01_quickstart_perturbation_report.ipynb) | A no-download conceptual example with a figure, source table, and metadata |
+| Understand the published evidence | [Results guide](docs/RESULTS_OVERVIEW.md) | Main findings, their interpretation, and the workflow behind each claim |
+| Reproduce a dataset or figure | [Workflow catalog](docs/DATASET_MAP.md) and [reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md) | Inputs, environments, execution order, and frozen checkpoints |
+| Cite or adapt an analysis | [Citation and reuse guide](docs/PUBLICATION_GUIDE.md) | Paper citation, reference-manager files, and a provenance checklist |
 
-Official R Augur is the principal GSE249479 comparator. The Python implementation
-is retained only as an **Augur-inspired Python approximation** sensitivity
-analysis.
+The conceptual tutorial constructs its report with NumPy, pandas, and
+Matplotlib. For calls to the ScGeo API, use the package quick start.
 
-## 5. Execution environments
+## Analyses included
 
-Environment specifications are under `environment/`. Execute from the
-repository root so relative paths and imports resolve consistently. The frozen
-workflows used named kernels or explicit Python executables recorded in their
-execution metadata; byte-level reproduction requires the corresponding package
-versions as well as the same numerical inputs.
+ScGeo separates state displacement, sample uncertainty, representation
+stability, local geometry, distributional change, and dynamics agreement.
+The workflows below show how those evidence layers can be interpreted across
+different biological designs.
 
-Common commands include:
+| Workflow | Biological question or purpose | Scope of the evidence |
+|---|---|---|
+| [GSE280305: hematopoietic recovery](notebooks/manuscript/README.md) | How does hematopoietic state space change across post-irradiation time points? | Original biological case study; D8 is a post-irradiation reference |
+| [Synthetic benchmarks](notebooks/benchmarks/README.md) | How do estimators and diagnostics behave under controlled perturbations? | Stored ground truth with separate calibration and held-out evaluation |
+| [Pancreatic development](notebooks/public_validation/pancreas/README.md) | How does representation geometry agree with developmental dynamics? | Descriptive validation using related scVelo/CellRank context |
+| [GSE249479: human HSPC inflammation](notebooks/public_validation/gse249479/README.md) | How do TNF- and LPS-associated shifts relate to abundance and separability? | 34,432 retained cells; `descriptive_only` because biological-replicate identity is unavailable |
+| [GSE211713: mouse-lung radiation](notebooks/public_validation/gse211713/README.md) | Which early and late radiation associations are stable across representations? | 20 independent mouse libraries; 131,157 retained cells; replicate-aware, cross-sectional contrasts |
+
+The [results guide](docs/RESULTS_OVERVIEW.md) preserves both supported findings
+and limitations. Official R Augur is the principal GSE249479 comparator; the
+retained Python approximation is an implementation-sensitivity analysis.
+
+## Current use and paper reproduction
+
+For learning the package and starting a new analysis, install the published
+library in a fresh environment (Python 3.12 recommended):
 
 ```bash
-python scripts/execute_revision_notebooks.py
-python scripts/execute_pancreas_validation.py
-python scripts/execute_gse249479_validation.py
-python scripts/execute_gse211713_validation.py
+python -m pip install "scgeo[scanpy,notebook]==0.1.0"
 ```
 
-Each dataset README identifies the appropriate staged executors and inputs.
+See the [package installation guide](https://github.com/liuifrec/scgeo/blob/main/docs/INSTALLATION.md)
+for optional workflows and conda-managed environments. This repository is a
+collection of workflows, not an additional Python package to install.
 
-## 6. Thin-notebook architecture
+For the paper's frozen evidence, use the recorded environments, numerical
+inputs, and checkpoints:
 
-Most revision notebooks are deliberately short, output-free orchestration
-entry points. Their corresponding modules under `scripts/` hold the reusable,
-testable implementation. This keeps notebook diffs readable and permits
-clean-kernel execution without embedding generated outputs in Git.
+| Component | Frozen checkpoint |
+|---|---|
+| ScGeo package | [`9a0ed16cbaa57f935f9c9bc87d1643a25b51012c`](https://github.com/liuifrec/scgeo/tree/9a0ed16cbaa57f935f9c9bc87d1643a25b51012c) |
+| Companion merge checkpoint | [`958a0ada568c53e78864ede022c050830cb55a36`](https://github.com/liuifrec/scgeo-notebooks/tree/958a0ada568c53e78864ede022c050830cb55a36) |
 
-See [Thin notebook architecture](docs/THIN_NOTEBOOK_ARCHITECTURE.md).
+A current package installation does not replace those recorded environments.
+Some frozen executors retain workstation paths and named interpreters; the
+[reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md) identifies supported
+path overrides and remaining portability limits before you run a workflow.
 
-## 7. Generated-versus-tracked artifact policy
+## What the workflows produce
 
-Tracked source notebooks must have zero outputs and null execution counts.
-Executed review copies, figures, source CSVs, alt text, logs, H5AD objects,
-models, downloaded data, and caches are written under ignored result or local
-data directories. Checksum manifests and source configuration may be tracked;
-large generated artifacts are not.
+Where supported by the workflow, generated bundles include:
 
-See [Reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md).
+- **Executed notebooks** showing the analysis in order.
+- **PNG/SVG figures and source tables** for inspection and reuse.
+- **Alt text, execution metadata, and checksums** linking presentation to its inputs.
+- **Evidence ledgers** connecting a conclusion with its analysis unit and limitations.
 
-## 8. Frozen revision checkpoints
+Source notebooks are output-free. Generated copies, large data, models, and
+figures are kept in ignored result or local-data directories. The repository
+contains the instructions and source needed to generate these outputs; it is
+not a complete download of all manuscript data and executed artifacts.
 
-- ScGeo package: `9a0ed16cbaa57f935f9c9bc87d1643a25b51012c`
-- Companion merge checkpoint: `958a0ada568c53e78864ede022c050830cb55a36`
-- Dataset-specific numerical inputs and outputs: pinned in execution metadata,
-  validation reports, or evidence ledgers rather than inferred from filenames.
+## Repository map
 
-Frozen thresholds and numerical results must not be changed during a
-presentation or documentation pass.
+| Location | Contents |
+|---|---|
+| [`notebooks/tutorials/`](notebooks/tutorials/) | Conceptual and application tutorials |
+| [`notebooks/data_prep/`](notebooks/data_prep/), [`notebooks/exploration/`](notebooks/exploration/) | Original GSE280305 preprocessing and semi-manual reference annotation |
+| [`notebooks/manuscript/`](notebooks/manuscript/README.md) | Original manuscript analyses and figure utilities |
+| [`notebooks/benchmarks/`](notebooks/benchmarks/README.md) | Frozen synthetic benchmark review |
+| [`notebooks/public_validation/`](notebooks/public_validation/) | Pancreas, GSE249479, and GSE211713 workflows |
+| [`notebooks/revision_finalization/`](notebooks/revision_finalization/README.md) | Evidence ledgers, metric definitions, and manuscript audit trail |
+| [`scripts/`](scripts/), [`configs/`](configs/), [`environment/`](environment/) | Reusable implementations, frozen settings, and environment specifications |
 
-## 9. Manuscript-oriented workflow
+[Thin notebook architecture](docs/THIN_NOTEBOOK_ARCHITECTURE.md) explains how
+source notebooks, reusable code, and generated outputs fit together.
 
-The original manuscript pipeline and the major-revision evidence package are
-separate but related:
-
-1. original GSE280305 preparation and semi-manual annotation;
-2. original manuscript analyses;
-3. frozen synthetic and public-data revision validation;
-4. GSE249479 and GSE211713 manuscript assembly;
-5. reviewer evidence ledgers and reproducibility audit.
-
-The [Results overview](docs/RESULTS_OVERVIEW.md) summarizes accepted and negative
-findings without recomputing them.
-
-## 10. Limitations and semi-manual steps
-
-- Original reference preparation and annotation include semi-manual decisions.
-- GSE249479 lacks a recoverable biological-replicate identity and remains
-  descriptive.
-- GSE211713 has independent mouse libraries but is cross-sectional; it does not
-  establish causality, persistence, reversal, or within-mouse change.
-- Nested PCA dimensions share a basis and are not independent confirmations.
-- UMAP is display-only in quantitative validation workflows.
-- Some frozen validation scripts retain absolute workstation paths. Supported
-  environment-variable overrides and remaining fixed paths are documented in
-  the [Reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md).
-
-## 11. Citation
-
-If you use these workflows, please cite the associated paper:
+## Cite ScGeo
 
 Liu Y-C, Yoshida K. **ScGeo reveals non-canonical trajectories beyond RNA
 velocity in radiation-induced hematopoietic recovery.** *Bioinformatics Advances*.
 2026;6(1):vbag266. [doi:10.1093/bioadv/vbag266](https://doi.org/10.1093/bioadv/vbag266).
 
-```bibtex
-@article{Liu2026ScGeo,
-  author = {Liu, Yu-Chen and Yoshida, Kengo},
-  title = {{ScGeo} reveals non-canonical trajectories beyond {RNA} velocity in radiation-induced hematopoietic recovery},
-  journal = {Bioinformatics Advances},
-  year = {2026},
-  volume = {6},
-  number = {1},
-  pages = {vbag266},
-  doi = {10.1093/bioadv/vbag266},
-  url = {https://doi.org/10.1093/bioadv/vbag266}
-}
-```
+Use [BibTeX](CITATION.bib), [RIS](CITATION.ris), or GitHub's **Cite this repository**
+menu, powered by [CITATION.cff](CITATION.cff). The [citation and reuse guide](docs/PUBLICATION_GUIDE.md)
+explains how to report software versions, workflow commits, datasets, and
+adaptations alongside the paper citation.
 
-Machine-readable citation metadata is provided in [CITATION.cff](CITATION.cff).
+## Interpretation and support
 
-Also record the exact commits of both repositories, the workflow configuration,
-and the input checksums. The frozen checkpoints in Section 8 remain unchanged;
-this publication-metadata update does not rerun or replace the numerical evidence.
+Independent biological sample IDs determine the scope of inference. Related
+PCA dimensions share a basis, UMAP is used for display in the quantitative
+validation workflows, and agreement with a dynamics model inherits that
+model's assumptions. GSE249479 remains descriptive; GSE211713 comparisons are
+between different mice and do not establish longitudinal change or causality.
+
+For a workflow question or reproducibility issue, open an
+[issue](https://github.com/liuifrec/scgeo-notebooks/issues) with the notebook,
+repository commits, environment, and relevant error or output. Package API
+questions belong in the [ScGeo package issue tracker](https://github.com/liuifrec/scgeo/issues).

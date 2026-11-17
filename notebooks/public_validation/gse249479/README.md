@@ -1,5 +1,8 @@
 # GSE249479 — human HSPC inflammatory xenograft dataset
 
+[Workflow catalog](../../../docs/DATASET_MAP.md) · [Results guide](../../../docs/RESULTS_OVERVIEW.md) ·
+[Reproducibility](../../../docs/REPRODUCIBILITY_GUIDE.md) · [Cite and reuse](../../../docs/PUBLICATION_GUIDE.md)
+
 ## Purpose and inference status
 
 GSE249479, a public human HSPC inflammatory xenograft dataset, is used to

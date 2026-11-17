@@ -1,5 +1,8 @@
 # Public pancreatic-development workflow
 
+[Workflow catalog](../../../docs/DATASET_MAP.md) · [Results guide](../../../docs/RESULTS_OVERVIEW.md) ·
+[Reproducibility](../../../docs/REPRODUCIBILITY_GUIDE.md) · [Cite and reuse](../../../docs/PUBLICATION_GUIDE.md)
+
 ## Purpose and inference status
 
 The public pancreatic-development workflow uses the official CellRank pancreas dataset to compare ScGeo

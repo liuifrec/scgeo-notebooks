@@ -1,33 +1,57 @@
-# Thin notebook architecture
+# How the notebooks and scripts fit together
 
-## Why notebooks are thin
+ScGeo's companion keeps scientific explanation close to each workflow while
+placing reusable execution logic in scripts. This makes an analysis easier to
+read, review, and adapt without storing large outputs in notebook source.
 
-Revision notebooks are reviewable orchestration documents. They state purpose,
-inference scope, frozen inputs, outputs, findings, and limitations, then call a
-testable implementation under `scripts/`. This separates scientific narration
-from reusable execution logic and keeps code review focused.
+[Start here](START_HERE.md) · [Workflow catalog](DATASET_MAP.md) ·
+[Reproducibility](REPRODUCIBILITY_GUIDE.md)
 
-## Tracked source notebook
+## Three parts of a workflow
 
-A source notebook is committed with:
+| Part | Role | Where it lives |
+|---|---|---|
+| Source notebook | Explains the biological question, inference scope, inputs, outputs, and ordered analysis steps | Tracked under `notebooks/` |
+| Implementation | Performs reusable calculations, validation, execution, or figure assembly | Tracked under `scripts/`, with settings under `configs/` |
+| Generated bundle | Holds executed copies, figures, source tables, alt text, metadata, and logs | Ignored result or local-data directories |
 
-- stable cell order and code-cell source;
-- null execution counts;
-- no embedded outputs;
-- Markdown that explains the frozen workflow;
-- calls into the corresponding script.
+Most revision notebooks are short orchestration documents that call the
+matching script. Some original exploratory/manuscript notebooks contain more
+notebook-local implementation and semi-manual decisions; follow their folder
+guide rather than assuming every notebook has the same structure.
 
-## Generated review copy
+## Reading a source notebook
 
-The executor starts a clean kernel, runs the source notebook, and writes the
-executed copy beneath an ignored results directory. Figures, source CSVs, alt
-text, logs, and metadata are generated alongside it. The executed copy is for
-review and validation, not version control.
+The ordered cells describe what the workflow expects and why a result has its
+stated interpretation. Tracked notebooks retain stable code-cell source and
+order, with null execution counts and no embedded outputs. Read them alongside
+the linked scripts and the [results guide](RESULTS_OVERVIEW.md).
 
-## Where to change logic
+Source notebooks do not serve as a complete rendered archive of all manuscript
+results. Their generated inputs and outputs may need to be recovered from the
+recorded environment or produced by earlier stages.
 
-Numerical or scientific implementation changes belong in the corresponding
-script and require their own validation task. Documentation passes may edit
-Markdown only. A notebook-readability validator compares source notebooks with
-the base branch and rejects code-source, code-order, cell-type, execution-count,
-or output changes.
+## Running and inspecting outputs
+
+The corresponding executor starts a clean kernel and records execution status.
+Where supported, request a separate executed notebook copy; for example,
+`execute_revision_notebooks.py` uses `--keep-executed`. Generated review copies
+are written under ignored result paths so source notebooks remain suitable for
+version control.
+
+Figure-producing stages can write PNG/SVG images, source CSVs, alt text, and
+metadata together. The source table and configuration explain what the image
+summarizes; the version and checksum records identify the inputs used to create
+it. Consult the dataset README for the specific output locations.
+
+## Adapting a workflow
+
+Change reusable numerical logic in its script and document any altered design,
+parameters, or inputs. Validate the affected results before using them in a new
+study. Keep presentation-only edits distinct from numerical changes when
+rebuilding a manuscript figure from frozen evidence.
+
+For an editorial pass, the readability validator compares source notebooks with
+a chosen base revision and checks cell types, code source/order, outputs, and
+execution counts. A numerical implementation change requires its own validation;
+passing a readability check does not establish scientific equivalence.
