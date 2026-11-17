@@ -17,6 +17,7 @@ reproducibility companion to the [`scgeo` Python package](https://github.com/liu
 [Start here](docs/START_HERE.md) ·
 [Workflow catalog](docs/DATASET_MAP.md) ·
 [Results guide](docs/RESULTS_OVERVIEW.md) ·
+[Plotting workflows](docs/PLOTTING_WORKFLOWS.md) ·
 [Reproduce the paper](docs/REPRODUCIBILITY_GUIDE.md) ·
 [Cite and reuse](docs/PUBLICATION_GUIDE.md)
 
@@ -26,6 +27,7 @@ reproducibility companion to the [`scgeo` Python package](https://github.com/liu
 |---|---|---|
 | Use ScGeo on your own AnnData | [Package quick start](https://github.com/liuifrec/scgeo/blob/main/docs/QUICKSTART.md) | A runnable introduction to the library API |
 | Understand the report format | [Small synthetic tutorial](notebooks/tutorials/01_quickstart_perturbation_report.ipynb) | A no-download conceptual example with a figure, source table, and metadata |
+| Redraw stored evidence tables | [Development plotting workflows](docs/PLOTTING_WORKFLOWS.md) | Source-aware state, contrast, sample, and representation figures |
 | Understand the published evidence | [Results guide](docs/RESULTS_OVERVIEW.md) | Main findings, their interpretation, and the workflow behind each claim |
 | Reproduce a dataset or figure | [Workflow catalog](docs/DATASET_MAP.md) and [reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md) | Inputs, environments, execution order, and frozen checkpoints |
 | Cite or adapt an analysis | [Citation and reuse guide](docs/PUBLICATION_GUIDE.md) | Paper citation, reference-manager files, and a provenance checklist |
