@@ -76,6 +76,10 @@ class Application:
         require(dataset in INPUTS, "Expected dataset B or C.")
         require(sg.__version__ == VERSION and importlib.metadata.version("scgeo") == VERSION,
                 "Use the published ScGeo 0.2.0 environment.")
+        expected_python = os.environ.get("SCGEO_APPLICATION_EXPECTED_PYTHON")
+        if expected_python:
+            require(Path(sys.executable).resolve() == Path(expected_python).resolve(),
+                    "Notebook is running in the wrong interpreter.")
         self.dataset = dataset
         self.input_root = env_path(f"SCGEO_APPLICATION_{dataset}_ROOT")
         self.frozen = env_path("SCGEO_APPLICATION_FROZEN_RESULTS")

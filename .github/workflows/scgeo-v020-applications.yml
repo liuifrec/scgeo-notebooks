@@ -1,0 +1,51 @@
+name: ScGeo public application contracts
+
+"on":
+  pull_request:
+    paths:
+      - "notebooks/applications/**"
+      - "scripts/scgeo_v020_applications.py"
+      - "scripts/execute_scgeo_v020_applications.py"
+      - "tests/test_scgeo_v020_applications.py"
+      - ".github/workflows/scgeo-v020-applications.yml"
+  push:
+    branches: [main]
+    paths:
+      - "notebooks/applications/**"
+      - "scripts/scgeo_v020_applications.py"
+      - "scripts/execute_scgeo_v020_applications.py"
+      - "tests/test_scgeo_v020_applications.py"
+      - ".github/workflows/scgeo-v020-applications.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  MPLBACKEND: Agg
+  PYTHONNOUSERSITE: "1"
+  OMP_NUM_THREADS: "2"
+  OPENBLAS_NUM_THREADS: "2"
+  MKL_NUM_THREADS: "2"
+
+jobs:
+  synthetic-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Verify and install exact public wheel
+        run: |
+          python -m pip download --index-url https://pypi.org/simple --no-deps --only-binary=:all: scgeo==0.2.0 --dest "$RUNNER_TEMP/scgeo-wheel"
+          echo "105fe2e702ff995a1b46a9f09a5346a784175f9e75c03edf978bc7c728507a37  $RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" | sha256sum -c -
+          python -m pip install "$RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" -r environment/scgeo_v020_tutorials.txt "scgeo[scanpy]==0.2.0"
+          python -m pip check
+      - name: Validate clean source notebooks and syntax
+        run: python scripts/execute_scgeo_v020_applications.py --validate-only
+      - name: Exercise synthetic adapters and actual released renderers
+        run: python tests/test_scgeo_v020_applications.py -v
