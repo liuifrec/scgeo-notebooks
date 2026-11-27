@@ -31,6 +31,11 @@ env:
 jobs:
   synthetic-contract:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["0.2.0", "0.2.1"]
+    env:
+      SCGEO_APPLICATION_VERSION: ${{ matrix.version }}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -40,10 +45,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verify and install exact public wheel
+        if: matrix.version == '0.2.0'
         run: |
           python -m pip download --index-url https://pypi.org/simple --no-deps --only-binary=:all: scgeo==0.2.0 --dest "$RUNNER_TEMP/scgeo-wheel"
           echo "105fe2e702ff995a1b46a9f09a5346a784175f9e75c03edf978bc7c728507a37  $RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" | sha256sum -c -
           python -m pip install "$RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" -r environment/scgeo_v020_tutorials.txt "scgeo[scanpy]==0.2.0"
+          python -m pip check
+      - name: Install exact visually accepted 0.2.1 source
+        if: matrix.version == '0.2.1'
+        run: |
+          python -m pip install "scgeo[scanpy,notebook] @ git+https://github.com/liuifrec/scgeo.git@683228b1c52808d3cc5df2de5f6e104932c29328" nbformat nbclient ipykernel
           python -m pip check
       - name: Validate clean source notebooks and syntax
         run: python scripts/execute_scgeo_v020_applications.py --validate-only

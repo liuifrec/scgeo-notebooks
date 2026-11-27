@@ -17,7 +17,7 @@ import scgeo as sg
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from scgeo_v020_applications import (
     REPS, adapt_b, adapt_c, adapt_centers, adjacency, plot_evidence, audit_exports,
-    build_pca50_graph,
+    build_pca50_graph, plot_profile, apply_profile, VERSION,
 )
 
 
@@ -101,7 +101,8 @@ class PublicApplicationTests(unittest.TestCase):
         self.assertEqual(set(names), {"A","B","Other retained cells"})
         with tempfile.TemporaryDirectory() as temp:
             app = Recorder(Path(temp))
-            plot_evidence(app, a, frame, "PBS", "TNF", "condition", "display", "b", names)
+            profile = plot_profile(a, [frame], states, "condition")
+            plot_evidence(app, a, frame, "PBS", "TNF", "condition", "display", "b", names, profile=profile)
             self.assertEqual(len(app.saved), 4)
             self.assertEqual(audit_exports(app.out)["figures"], 12)
 
@@ -144,10 +145,17 @@ class PublicApplicationTests(unittest.TestCase):
         names, _ = adjacency(a, graph)
         with tempfile.TemporaryDirectory() as temp:
             app = Recorder(Path(temp))
+            profile = plot_profile(a, [frame], states, "application_group", sample="mouse_id", centers=[tidy])
             plot_evidence(app, a, frame, "control", "17Gy_early", "application_group",
-                          "display", "c", names, sample="mouse_id")
-            app.save(sg.pl.replicate_effect(tidy, coordinate=0, summary=None,
-                return_result=True, show=False), "centers", "fixture")
+                          "display", "c", names, sample="mouse_id", profile=profile)
+            if VERSION == "0.2.1":
+                self.assertAlmostEqual(profile["abundance_xlim"][1], 100 / 3 * 1.15)
+                self.assertGreater(profile["effect_xlim"][1], .8)
+                self.assertLess(profile["pc1_ylim"][0], 0)
+                self.assertGreater(profile["pc1_ylim"][1], 2)
+            result = sg.pl.replicate_effect(tidy, coordinate=0, summary=None,
+                return_result=True, show=False)
+            app.save(apply_profile(result, profile, pc1=True), "centers", "fixture")
             self.assertEqual(audit_exports(app.out)["figures"], 15)
 
 

@@ -1,4 +1,4 @@
-# ScGeo 0.2.0 — public biological applications (B and C)
+# ScGeo public biological applications (B and C)
 
 This separate, opt-in track redraws previously computed public-data evidence with
 the released plotting API. It does not replace the frozen paper reproduction
@@ -47,6 +47,40 @@ creates a new directory. To run interactively, additionally set
 before starting JupyterLab, select the registered kernel and run one notebook.
 The runner retains partial executed notebooks on failure. Open the executed
 notebooks in its reported run folder to see the figures without rerunning.
+
+## Opt-in 0.2.1 visualization profile
+
+The default runner remains pinned to the published 0.2.0 package. The same
+notebook sources also accept `--version 0.2.1` in a separate environment.
+The tested pre-release source commit is
+[683228b](https://github.com/liuifrec/scgeo/commit/683228b1c52808d3cc5df2de5f6e104932c29328).
+The maintainer's GSE211713 preview of that commit completed 33 plot comparisons,
+99/99 selected unchanged-source checks and zero collapsed-layout warnings.
+This preview used the old application source and a separate preview driver;
+the integrated notebook profile still requires full real-data execution.
+
+For candidate testing only, install into a fresh environment (not the
+published 0.2.0 environment), using:
+
+```bash
+python -m pip install "scgeo[scanpy,notebook] @ git+https://github.com/liuifrec/scgeo.git@683228b1c52808d3cc5df2de5f6e104932c29328" nbformat nbclient ipykernel
+python -m pip check
+python -m ipykernel install --user --name scgeo-v021-applications --display-name "ScGeo 0.2.1 Applications"
+export SCGEO_APPLICATION_EXPECTED_SHA=683228b1c52808d3cc5df2de5f6e104932c29328
+python scripts/execute_scgeo_v020_applications.py --version 0.2.1 --kernel scgeo-v021-applications --dataset C --output-dir /path/to/new/results
+```
+
+For interactive notebooks set `SCGEO_APPLICATION_VERSION=0.2.1` before
+launching Jupyter. When using the eventual published wheel, unset
+`SCGEO_APPLICATION_EXPECTED_SHA`; do not claim a VCS commit for a wheel
+without separate release provenance. The profile uses adaptive compasses and
+atlases, larger pies, stable category colors, shared heatmap/effect scales and
+PC1 axes within each declared hierarchy/contrast family. The abundance axis
+uses the maximum observed state fraction among all retained samples in that
+hierarchy with headroom (minimum 5 percentage points, maximum 100%). This is
+a display-only improvement over the preview's full 0–100% range, not a new
+denominator or inference. Numerical source exports remain unchanged in meaning.
+No new estimator or private data is introduced.
 
 ## Inputs and safeguards
 

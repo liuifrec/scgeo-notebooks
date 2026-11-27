@@ -39,13 +39,15 @@ def main():
     p.add_argument("--timeout", type=int, default=1800, help="Per-cell timeout in seconds")
     p.add_argument("--output-dir", type=Path)
     p.add_argument("--validate-only", action="store_true")
+    p.add_argument("--version", choices=["0.2.0", "0.2.1"],
+                   default=os.environ.get("SCGEO_APPLICATION_VERSION", "0.2.0"))
     args = p.parse_args()
     validate()
     if args.validate_only:
         return
     import scgeo as sg
-    if sg.__version__ != "0.2.0":
-        raise RuntimeError("Install ScGeo 0.2.0.")
+    if sg.__version__ != args.version:
+        raise RuntimeError(f"Install the selected ScGeo {args.version}.")
     if args.output_dir is None:
         p.error("--output-dir is required for real applications")
     base = args.output_dir.expanduser().resolve()
@@ -59,7 +61,7 @@ def main():
             p.error(f"Invalid or overlapping source/output directory: {key}")
     base.mkdir(parents=True, exist_ok=True)
     dest = Path(tempfile.mkdtemp(prefix="application-run-", dir=base))
-    summary = {"status": "running", "datasets": []}
+    summary = {"status": "running", "package": args.version, "datasets": []}
     try:
         for dataset in datasets:
             source = ROOT / "notebooks/applications/v0.2.0" / NOTEBOOKS[dataset]
@@ -69,7 +71,8 @@ def main():
             book = nbformat.read(source, as_version=4)
             env = dict(os.environ, MPLBACKEND="Agg", PYTHONNOUSERSITE="1",
                        SCGEO_APPLICATION_OUTPUT_ROOT=str(folder),
-                       SCGEO_APPLICATION_EXPECTED_PYTHON=sys.executable)
+                       SCGEO_APPLICATION_EXPECTED_PYTHON=sys.executable,
+                       SCGEO_APPLICATION_VERSION=args.version)
             env.pop("PYTHONPATH", None)
             env.pop("PYTHONHOME", None)
             client = NotebookClient(book, timeout=args.timeout, kernel_name=args.kernel,
@@ -86,6 +89,7 @@ def main():
                 raise RuntimeError("Expected exactly one completed dataset manifest")
             manifest = json.loads(manifests[0].read_text())
             if (manifest["status"] != "success" or manifest["dataset"] != dataset
+                    or manifest["package"] != args.version
                     or Path(manifest["python_executable"]).resolve() != Path(sys.executable).resolve()):
                 raise RuntimeError("Application failed or used the wrong interpreter")
             record = {"dataset": dataset, "manifest": str(manifests[0].relative_to(dest)),

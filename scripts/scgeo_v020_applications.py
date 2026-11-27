@@ -22,7 +22,9 @@ from scipy import sparse
 import scgeo as sg
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = os.environ.get("SCGEO_APPLICATION_VERSION", "0.2.0")
+SUPPORTED_VERSIONS = ("0.2.0", "0.2.1")
+CANDIDATE_SHA = "683228b1c52808d3cc5df2de5f6e104932c29328"
 FROZEN_COMMIT = "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c"
 REPS = ["X_pca20", "X_pca30", "X_pca50", "X_scvi", "X_diffmap"]
 FORMATS = ("png", "svg", "pdf")
@@ -74,8 +76,19 @@ def env_path(name):
 class Application:
     def __init__(self, dataset):
         require(dataset in INPUTS, "Expected dataset B or C.")
+        require(VERSION in SUPPORTED_VERSIONS, "Unsupported application version")
         require(sg.__version__ == VERSION and importlib.metadata.version("scgeo") == VERSION,
-                "Use the published ScGeo 0.2.0 environment.")
+                f"Use the explicitly selected ScGeo {VERSION} environment.")
+        self.distribution_origin = None
+        expected_sha = os.environ.get("SCGEO_APPLICATION_EXPECTED_SHA")
+        origin = importlib.metadata.distribution("scgeo").read_text("direct_url.json")
+        if origin:
+            self.distribution_origin = json.loads(origin)
+        if expected_sha:
+            require(VERSION == "0.2.1" and expected_sha == CANDIDATE_SHA,
+                    "Unexpected preview source commit")
+            actual = (self.distribution_origin or {}).get("vcs_info", {}).get("commit_id")
+            require(actual == expected_sha, "Installed package is not the tested candidate")
         expected_python = os.environ.get("SCGEO_APPLICATION_EXPECTED_PYTHON")
         if expected_python:
             require(Path(sys.executable).resolve() == Path(expected_python).resolve(),
@@ -190,6 +203,7 @@ class Application:
             commit = None
         result = {"status": "success", "dataset": self.dataset, "scope": self.scope,
                   "package": VERSION, "package_path": sg.__file__,
+                  "distribution_origin": self.distribution_origin,
                   "frozen_estimator_source": FROZEN_COMMIT, "companion_commit": commit,
                   "python": sys.version, "python_executable": sys.executable,
                   "sources": self.records, "graphs": self.graphs, "plots": self.plots,
@@ -390,23 +404,107 @@ def report_for(frame):
     return report
 
 
-def plot_evidence(app, a, frame, group0, group1, condition, basis, name, names, sample=None):
+def finite_upper(values, pad=1.05):
+    values = np.asarray(values, dtype=float).ravel()
+    values = values[np.isfinite(values)]
+    return max(1e-8, float(values.max()) * pad) if len(values) else 1.0
+
+
+def plot_profile(a, frames, states, condition, sample=None, centers=()):
+    """Return shared display settings for a declared contrast family.
+
+    Scales are based on all supplied frozen contrasts, not the selected plot.
+    For abundance, retain the denominator of ALL retained cells per sample,
+    including non-target/context states; only the visible-axis extent changes.
+    """
+    if VERSION == "0.2.0":
+        return None
+    require(VERSION == "0.2.1", "Unknown visualization profile")
+    from scgeo.pl._style import category_palette
+
+    reports = [report_for(frame) for frame in frames]
+    magnitudes = np.concatenate([f["normalized_delta_norm"].to_numpy(dtype=float)
+                                 for f in frames])
+    effects = []
+    for report in reports:
+        for col in ("normalized_delta_norm", "normalized_magnitude_ci95_high"):
+            if col in report:
+                effects.append(report[col].to_numpy(dtype=float))
+    profile = {
+        "state_order": list(states),
+        "matrix_vmax": finite_upper(magnitudes),
+        "effect_xlim": [0.0, finite_upper(np.concatenate(effects), 1.12)],
+        "condition_palette": category_palette(a.obs[condition].astype(str).unique()),
+    }
+    if centers:
+        pc = np.concatenate([c["value"].to_numpy(dtype=float) for c in centers])
+        pc = pc[np.isfinite(pc)]
+        require(len(pc) > 0, "No finite mouse centers")
+        lo, hi = float(pc.min()), float(pc.max())
+        pad = max(0.1, 0.08 * (hi-lo))
+        profile["pc1_ylim"] = [lo-pad, hi+pad]
+    if sample is not None:
+        require(a.obs[sample].notna().all(), "Missing sample identity")
+        require(a.obs.groupby(sample, observed=True)[condition].nunique().le(1).all(),
+                "A sample belongs to multiple conditions")
+        counts = pd.crosstab(a.obs[sample], a.obs["application_state"])
+        denom = counts.sum(axis=1)
+        require(denom.gt(0).all(), "Invalid sample denominator")
+        fraction = counts.reindex(columns=states, fill_value=0).div(denom, axis=0)
+        # At least 5 percentage points; leave 15% headroom; never exceed 100%.
+        right = min(100.0, max(5.0, finite_upper(100 * fraction.to_numpy(), 1.15)))
+        profile["abundance_xlim"] = [-min(1.0, right * .05), right]
+    return profile
+
+
+def apply_profile(result, profile, *, effect_axis=None, abundance=False, pc1=False):
+    """Change axes only, never numerical source tables."""
+    if profile is None:
+        return result
+    if effect_axis is not None:
+        result.axes[effect_axis].set_xlim(*profile["effect_xlim"])
+    if abundance and "abundance" in result.axes:
+        result.axes["abundance"].set_xlim(*profile["abundance_xlim"])
+    if pc1:
+        for ax in result.axes.values():
+            ax.set_ylim(*profile["pc1_ylim"])
+    result.metadata["application_display_profile"] = profile
+    return result
+
+
+def plot_evidence(app, a, frame, group0, group1, condition, basis, name, names, sample=None,
+                  profile=None):
     report = report_for(frame)
     report.to_csv(app.out / f"{name}_adapted_pca50_report.csv", index=False)
     frame.to_csv(app.out / f"{name}_adapted_all_representations.csv", index=False)
     scope = "Frozen descriptive displacement; no biological replication" if sample is None else (
         "Frozen qualified-mouse displacement; cross-sectional")
     title = f"{group0} vs {group1}"
-    app.save(sg.pl.state_evidence_panel(
+    evidence_options = {}
+    matrix_options = {}
+    pie_options = {}
+    compass_options = {"layout": "summary"}
+    if profile is not None:
+        evidence_options = dict(state_order=profile["state_order"],
+                                figsize=(11, max(4.0, len(profile["state_order"])*0.7+2.2)))
+        matrix_options = dict(row_order=profile["state_order"], vmin=0,
+                              vmax=profile["matrix_vmax"])
+        pie_options = dict(pie_palette=profile["condition_palette"], node_size=320,
+                           pie_size_scale=1.3, figsize=(11.4, 8.0))
+        compass_options = dict(layout="adaptive", arrow_color_mode="constant")
+    result = sg.pl.state_evidence_panel(
         report, effect_metric="normalized_delta_norm", show_ci=sample is not None,
         show_sample_counts=sample is not None, show_inference=True,
-        max_states=None, title=f"{title} | PCA50", return_result=True, show=False),
-        f"{name}_evidence", scope)
-    app.save(sg.pl.robustness_matrix(
+        max_states=None, title=f"{title} | PCA50", return_result=True, show=False,
+        **evidence_options)
+    app.save(apply_profile(result, profile, effect_axis="effect"), f"{name}_evidence", scope)
+    result = sg.pl.robustness_matrix(
         frame, row_key="state", col_key="representation", value_key="normalized_delta_norm",
         col_order=REPS, summary=None, cbar_label="Normalized displacement",
-        title=f"{title} | Representation sensitivity", return_result=True, show=False),
-        f"{name}_representation_matrix", "Stored scalar magnitudes; representations not independent")
+        title=f"{title} | Representation sensitivity", return_result=True, show=False,
+        **matrix_options)
+    app.save(apply_profile(result, profile), f"{name}_representation_matrix",
+             "Stored scalar magnitudes; representations not independent")
     common = dict(node_key="application_state", condition_key=condition,
                   group0=group0, group1=group1, basis=basis, paga_key="application_adjacency",
                   graph_node_order=names, node_position="pooled", connectivity_threshold=.01,
@@ -414,17 +512,19 @@ def plot_evidence(app, a, frame, group0, group1, condition, basis, name, names, 
     pie = dict(pie_key=condition, pie_mode="sample_abundance" if sample else "cell_fraction")
     if sample:
         pie["pie_sample_key"] = sample
-    app.save(sg.pl.paga_shift_map(
+    result = sg.pl.paga_shift_map(
         a, **common, **pie, show_shift=False, show_endpoints=False, show_velocity=False,
-        node_scale_by_n=False, title=f"{title} | Neighbor adjacency and composition"),
+        node_scale_by_n=False, title=f"{title} | Neighbor adjacency and composition", **pie_options)
+    app.save(apply_profile(result, profile),
         f"{name}_composition_pies",
         "PAGA-style renderer of descriptive pooled neighbor adjacency, not PAGA inference; "
         + ("equal-mouse state frequencies within condition" if sample else "captured-cell composition"))
-    app.save(sg.pl.recovery_compass(
+    result = sg.pl.recovery_compass(
         a, **common, mode="stored", shift_df=report, analysis_rep="X_pca50",
         effect_metric="normalized_delta_norm", alignment_df=None, sample_key=sample,
-        min_cells=20, layout="summary", fill_color_mode="constant", ring_mode="none",
-        node_size_mode="constant", title=f"{title} | State response compass"),
+        min_cells=20, fill_color_mode="constant", ring_mode="none",
+        node_size_mode="constant", title=f"{title} | State response compass", **compass_options)
+    app.save(apply_profile(result, profile, effect_axis="effect", abundance=sample is not None),
         f"{name}_compass", scope + "; alignment/OOD absent; connectors show display means, "
         "not quantitative displacements; graph is descriptive adjacency")
     return report
