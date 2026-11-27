@@ -109,7 +109,8 @@ def recover_centered_pca(x, z):
     z = np.asarray(z, dtype=np.float64)
     zc = z - z.mean(axis=0)
     gram = zc.T @ zc
-    require(np.linalg.matrix_rank(gram) == gram.shape[0], "Rank-deficient PCA scores")
+    if np.linalg.matrix_rank(gram) != gram.shape[0]:
+        raise MappingError("Rank-deficient PCA scores")
     cross = np.zeros((x.shape[1], z.shape[1]), dtype=np.float64)
     for start in range(0, len(z), 4096):
         sl = slice(start, min(start + 4096, len(z)))
@@ -298,6 +299,9 @@ def analyze_state(app, work, row, state_key, condition, group0, group1,
         min_cells=20, min_samples=3 if sample else 2, n_boot=200 if sample else 0,
         seed=SEED, mapping_rtol=RTOL, mapping_atol=ATOL, store_key="molecular_explanation")
     summary = result["summary"].iloc[0].to_dict()
+    if summary["status"] in ("ok", "insufficient_samples"):
+        require(np.isclose(summary["contribution_sum"], observed, rtol=1e-4, atol=1e-5),
+                "Signed gene contributions do not reconstruct displacement magnitude")
     if sample is not None:
         require(summary["n_samples0"] == int(row["n_samples0"])
                 and summary["n_samples1"] == int(row["n_samples1"]), "Qualified mouse counts differ")
@@ -346,6 +350,7 @@ def analyze_state(app, work, row, state_key, condition, group0, group1,
 
 
 def run_dataset(app, work, provenance, display, modules):
+    require(sg.__version__ == "0.2.1", "Use ScGeo 0.2.1 for the molecular application track")
     rows = []
     if app.dataset == "B":
         mapped = work.obs["marker_inferred_label"].astype(str).map(app.config["detailed_state_mapping"])
@@ -363,7 +368,6 @@ def run_dataset(app, work, provenance, display, modules):
         work.obs["application_group"] = np.select(
             [dose.eq(0), dose.eq(17) & month.isin([1, 2]), dose.eq(17) & month.isin([4, 5])],
             ["control", "17Gy_early", "17Gy_late"], default="other_dose_time")
-        work = work[work.obs["application_group"].ne("other_dose_time")].copy()
         roster = work.obs.groupby("application_group", observed=True)["mouse_id"].nunique()
         require(roster.reindex(["control", "17Gy_early", "17Gy_late"]).tolist() == [5,4,4],
                 "Unexpected primary mouse roster")
@@ -382,6 +386,8 @@ def run_dataset(app, work, provenance, display, modules):
     summary = pd.DataFrame(rows)
     require(summary.status.isin(["ok", "insufficient_samples"]).any(), "No supported molecular results")
     summary.to_csv(app.out / "molecular_state_summary.csv", index=False)
+    expected_rows = 14 if app.dataset == "B" else 27
+    require(len(summary) == expected_rows, "Incomplete molecular state/contrast roster")
     # Hash new numerical outputs and mapping artifacts, independently of plot exports.
     artifacts = {p.name: sha256(p) for p in sorted(app.out.iterdir())
                  if p.name in ("mapping_audit.json", "molecular_feature_map.csv",

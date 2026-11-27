@@ -82,6 +82,14 @@ a display-only improvement over the preview's full 0–100% range, not a new
 denominator or inference. Numerical source exports remain unchanged in meaning.
 No new estimator or private data is introduced.
 
+## Molecular shift explanations (0.2.1)
+
+A separate opt-in track applies the actual `robust_shift`, `explain_shift`,
+`shift_curves` and `shift_embedding` APIs to the original public count data.
+See [molecular shift guide](MOLECULAR_SHIFTS.md) for strict feature-to-coordinate
+verification, coverage rules and execution instructions. The existing geometry
+notebooks remain unchanged.
+
 ## Inputs and safeguards
 
 - B: `gse249479_revision_representations.h5ad` and

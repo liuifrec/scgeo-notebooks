@@ -5,16 +5,20 @@ name: ScGeo public application contracts
     paths:
       - "notebooks/applications/**"
       - "scripts/scgeo_v020_applications.py"
+      - "scripts/scgeo_public_molecular.py"
       - "scripts/execute_scgeo_v020_applications.py"
       - "tests/test_scgeo_v020_applications.py"
+      - "tests/test_scgeo_public_molecular.py"
       - ".github/workflows/scgeo-v020-applications.yml"
   push:
     branches: [main]
     paths:
       - "notebooks/applications/**"
       - "scripts/scgeo_v020_applications.py"
+      - "scripts/scgeo_public_molecular.py"
       - "scripts/execute_scgeo_v020_applications.py"
       - "tests/test_scgeo_v020_applications.py"
+      - "tests/test_scgeo_public_molecular.py"
       - ".github/workflows/scgeo-v020-applications.yml"
   workflow_dispatch:
 
@@ -60,3 +64,7 @@ jobs:
         run: python scripts/execute_scgeo_v020_applications.py --validate-only
       - name: Exercise synthetic adapters and actual released renderers
         run: python tests/test_scgeo_v020_applications.py -v
+
+      - name: Exercise molecular mapping and attribution contracts
+        if: matrix.version == '0.2.1'
+        run: python tests/test_scgeo_public_molecular.py -v
