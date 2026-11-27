@@ -34,3 +34,6 @@ notebooks/**/data/
 
 # notebook checkpoints
 .ipynb_checkpoints/
+
+# Independent current-API tutorial environment
+.venv-tutorials/
