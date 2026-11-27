@@ -16,6 +16,10 @@ simulation benchmark and pancreas workflows remain separate until their
 verified local objects have been recovered. The current tutorial series
 remains the download-free starting point.
 
+## GSE280305 native visualization (0.2.1)
+
+The opt-in [GSE280305 native plotting notebook](08_gse280305_native_visualization.ipynb) applies the actual ScGeo renderers to the recovered historical checkpoint and reviewed geometry, molecular and local-geometry tables. See the [execution guide](GSE280305_NATIVE_PLOTS.md). This separate application is pending workstation execution and does not alter the existing B/C runner or published evidence. No velocity is fabricated.
+
 ## Set up
 
 Use an independent Python 3.12 environment. From this companion checkout:
