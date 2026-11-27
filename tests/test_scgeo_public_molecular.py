@@ -18,7 +18,7 @@ import scgeo as sg
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from scgeo_public_molecular import (
     REP, normalized_hvgs, recover_centered_pca, verify_map, MappingError,
-    qualified_mask, analyze_state,
+    qualified_mask, analyze_state, state_mapping_policy, RTOL, ATOL,
 )
 
 
@@ -65,6 +65,73 @@ class MolecularContracts(unittest.TestCase):
             verify_map(x, wrong, L, centered=True)
         svd = TruncatedSVD(n_components=5, random_state=17).fit(x)
         verify_map(x, svd.transform(x), svd.components_.T, centered=False)
+
+    def test_verified_global_pca_recenter_bound(self):
+        # Mimic a globally valid finite-precision map where a narrow state has
+        # nonzero projection residuals but a much smaller relative tolerance.
+        obs = pd.DataFrame([
+            dict(state="A", condition=group, sample=f"{group}_{j}")
+            for group in ("control", "treated") for j in range(3) for _ in range(24)
+        ] + [
+            dict(state="wide", condition="other", sample="outside") for _ in range(24)
+        ])
+        obs.index = pd.Index([f"c{i}" for i in range(len(obs))])
+        x = np.ones((len(obs), 2), dtype=np.float32)
+        x[:72, 0] = 2.
+        x[72:144, 0] = 4.
+        x[144:, 0] = 100.
+        z = x.copy()
+        z[:144, 0] += np.tile(np.array([-0.00018, 0.00018], dtype=np.float32), 72)
+        # Center the saved scores globally, as in the frozen PCA workflow.
+        z -= z.mean(axis=0)
+        a = ad.AnnData(sparse.csr_matrix(x), obs=obs)
+        a.var_names = ["g0", "g1"]
+        a.var["original_feature_id"] = a.var_names
+        a.var["display_gene_symbol"] = a.var_names
+        a.obsm[REP] = z
+        a.varm["molecular_loadings"] = np.eye(2)
+        audit = verify_map(a.X, z, a.varm["molecular_loadings"], centered=True)
+        provenance = {**audit, "basis_scope": "verified_frozen_pca50_coordinates",
+                      "method": "recovered_centered_pca_loadings"}
+        policy = state_mapping_policy(provenance)
+        self.assertEqual(policy["rtol"], 0.)
+        self.assertAlmostEqual(policy["atol"], 2 * audit["max_abs_residual"] + ATOL)
+        self.assertLessEqual(policy["atol"], 2 * audit["tolerance"] + ATOL)
+        # A rejected global audit cannot authorize a larger state tolerance.
+        with self.assertRaises(ValueError):
+            state_mapping_policy(dict(provenance, max_abs_residual=2 * audit["tolerance"]))
+        self.assertEqual(state_mapping_policy({"method": "original_uncentered_svd_checkpoint"}),
+                         {"name": "state_relative_default", "rtol": RTOL, "atol": ATOL})
+        subset = a[a.obs.state.eq("A")].copy()
+        frozen = sg.tl.robust_shift(subset, rep=REP, condition_key="condition",
+            group0="control", group1="treated", sample_key="sample",
+            center="geometric_median", n_boot=0, store_key="molecular_shift")
+        with self.assertRaisesRegex(ValueError, "do not share the declared affine mapping"):
+            sg.tl.explain_shift(subset, shift_key="molecular_shift",
+                loadings_key="molecular_loadings", n_boot=0, min_samples=3)
+        row = dict(state="A", contrast="control_vs_treated", hierarchy="major",
+                   effect_status="assessed", n_cells0=72, n_cells1=72, n_samples0=3, n_samples1=3,
+                   eligible_mouse_ids_group0=json.dumps([f"control_{i}" for i in range(3)]),
+                   eligible_mouse_ids_group1=json.dumps([f"treated_{i}" for i in range(3)]),
+                   delta_norm=frozen["global"]["delta_norm"])
+        with tempfile.TemporaryDirectory() as d:
+            result = analyze_state(Recorder(Path(d)), a, row, "state", "condition",
+                "control", "treated", {"test": ["g0", "g1"]}, provenance, "display",
+                "recenter", False, sample="sample")
+            self.assertEqual(result["status"], "ok")
+            self.assertGreater(result["mapping_max_abs_residual"],
+                               result["mapping_default_state_tolerance"])
+            self.assertLessEqual(result["mapping_max_abs_residual"], result["mapping_tolerance"])
+            self.assertAlmostEqual(result["new_delta_norm"], result["contribution_sum"], places=4)
+            self.assertEqual(result["mapping_policy"], policy["name"])
+        # The subset guard still rejects a projection that exceeds the bound.
+        broken = subset.copy()
+        broken.X[0, 0] += 0.1
+        with self.assertRaisesRegex(ValueError, "do not share the declared affine mapping"):
+            sg.tl.explain_shift(broken, shift_key="molecular_shift",
+                loadings_key="molecular_loadings", n_boot=0, min_samples=3,
+                mapping_rtol=policy["rtol"], mapping_atol=policy["atol"])
+
 
     def test_real_api_signed_attribution_and_qualified_samples(self):
         rng = np.random.default_rng(21)

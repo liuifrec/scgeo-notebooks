@@ -95,9 +95,39 @@ def verify_map(x, z, loadings, *, centered):
     if not centered and np.max(np.abs(intercept)) > tolerance:
         raise MappingError("Uncentered SVD requires a near-zero intercept")
     return {"max_abs_residual": residual, "tolerance": tolerance,
+            "centered_representation_scale": scale,
             "max_loading_orthogonality_error": gram_error,
             "intercept": intercept.tolist(), "n_verified_cells": len(z),
             "mapping_rtol": RTOL, "mapping_atol": ATOL}
+
+
+def state_mapping_policy(provenance):
+    """Retain the global audit; account for recentering of a verified subset.
+
+    For globally audited residual r_i = z_i - x_i L - b and subset S,
+    ScGeo estimates b_S = b + mean_S(r). Hence its residual is
+    r_i - mean_S(r), bounded in infinity norm by 2 max_i |r_i|.
+    Use this measured bound plus the original absolute rounding allowance
+    only for the recovered frozen centered PCA. No failure-driven retry or
+    tolerance inflation of the full-data map is permitted.
+    """
+    policy = {"name": "state_relative_default", "rtol": RTOL, "atol": ATOL}
+    if (provenance.get("basis_scope") != "verified_frozen_pca50_coordinates"
+            or provenance.get("method") != "recovered_centered_pca_loadings"):
+        return policy
+    error = float(provenance["max_abs_residual"])
+    scale = float(provenance["centered_representation_scale"])
+    tolerance = float(provenance["tolerance"])
+    orthogonality = float(provenance["max_loading_orthogonality_error"])
+    require(np.isfinite([error, scale, tolerance, orthogonality]).all()
+            and 0 <= error <= tolerance and scale >= 0
+            and 0 <= orthogonality <= 5e-4
+            and provenance["n_verified_cells"] > 0
+            and provenance["mapping_rtol"] == RTOL and provenance["mapping_atol"] == ATOL
+            and np.isclose(tolerance, ATOL + RTOL * scale, rtol=1e-12, atol=1e-15),
+            "Global PCA mapping audit did not satisfy the original tolerance")
+    return {"name": "verified_global_residual_recenter_bound",
+            "rtol": 0.0, "atol": 2.0 * error + ATOL}
 
 
 def recover_centered_pca(x, z):
@@ -190,6 +220,7 @@ def load_molecular(app, rep):
         provenance.update(verify_map(x, z, L, centered=dataset == "C"))
         provenance.update(method="new_linear_fit", basis_scope="new_representation_not_frozen",
                           frozen_mapping_failure=str(exc))
+    provenance["state_mapping_policy"] = state_mapping_policy(provenance)
     # Keep stable original IDs; make readable labels with a reversible feature map.
     symbols = (var["gene_symbol"].fillna("").astype(str).to_numpy()
                if dataset == "C" else hvg_names.copy())
@@ -294,10 +325,12 @@ def analyze_state(app, work, row, state_key, condition, group0, group1,
         require(np.isclose(observed, original, rtol=1e-4, atol=1e-5),
                 f"New robust point estimate differs from frozen displacement: {name}: "
                 f"{observed:g} vs {original:g}")
+    policy = state_mapping_policy(provenance)
     result = sg.tl.explain_shift(a, shift_key="molecular_shift",
         loadings_key="molecular_loadings", modules=modules or None,
         min_cells=20, min_samples=3 if sample else 2, n_boot=200 if sample else 0,
-        seed=SEED, mapping_rtol=RTOL, mapping_atol=ATOL, store_key="molecular_explanation")
+        seed=SEED, mapping_rtol=policy["rtol"], mapping_atol=policy["atol"],
+        store_key="molecular_explanation")
     summary = result["summary"].iloc[0].to_dict()
     if summary["status"] in ("ok", "insufficient_samples"):
         require(np.isclose(summary["contribution_sum"], observed, rtol=1e-4, atol=1e-5),
@@ -307,7 +340,13 @@ def analyze_state(app, work, row, state_key, condition, group0, group1,
                 and summary["n_samples1"] == int(row["n_samples1"]), "Qualified mouse counts differ")
     summary = {**summary, **identity, "frozen_delta_norm": original,
                "new_delta_norm": observed, "frozen_magnitude_checked": frozen,
-               "mapping_max_abs_residual": result["mapping"]["max_abs_residual"]}
+               "mapping_max_abs_residual": result["mapping"]["max_abs_residual"],
+               "mapping_tolerance": result["mapping"]["tolerance"],
+               "mapping_default_state_tolerance": ATOL + RTOL *
+                   result["mapping"]["centered_representation_scale"],
+               "mapping_policy": policy["name"],
+               "mapping_rtol_used": policy["rtol"],
+               "mapping_atol_used": policy["atol"]}
     for key in ("genes", "programs", "samples"):
         table = result[key].copy()
         for col, value in identity.items():
@@ -320,6 +359,7 @@ def analyze_state(app, work, row, state_key, condition, group0, group1,
     scope = ("Pooled descriptive attribution; no biological replicates" if sample is None else
              "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves")
     scope += "; " + provenance["basis_scope"] + "; geometric accounting, not causal regulation"
+    scope += "; mapping policy: " + policy["name"]
     if plot and summary["status"] in ("ok", "insufficient_samples"):
         genes = choose_features(result["genes"])
         if genes:

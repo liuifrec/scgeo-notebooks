@@ -44,6 +44,30 @@ zero. ScGeo independently checks the selected contrast's affine mapping
 again. Original feature IDs and readable feature labels are exported,
 together with the recovered loadings and intercept.
 
+### Verified global error budget for recovered C loadings
+
+The original state-relative default may reject a narrow state even after the
+full-data map has passed, because both the coordinate scale and the fitted
+intercept change when the cells are subset. With global residual
+r_i = z_i - x_i L - b, and E = max_i ||r_i||_infinity, the residual after
+recentering on any qualified subset S is r_i - mean_S(r), bounded by 2 E.
+Only for the globally verified recovered centered PCA map, use a fixed
+absolute state tolerance of 2 E + 1e-6 and relative tolerance zero. The
+additional 1e-6 is the original absolute numerical allowance. E is measured
+over every frozen cell before any state explanation; it must satisfy the
+original global threshold and orthogonality check. No failed state can
+inflate this budget, and no fallback or representation refit is triggered
+by a state-level failure. B's original SVD and explicitly refitted bases
+retain the original per-state default.
+
+The mapping audit records the policy, global scale, residual and threshold.
+The state summary records actual local residual, applied threshold, original
+state-relative threshold and policy. The original coordinates, qualified
+mouse roster, frozen point-estimate comparison and signed contribution
+conservation check are unchanged. This is finite-precision molecular
+accounting on a verified approximate affine map, not an assertion of
+bitwise-exact recovery of the historical PCA model.
+
 If the original B checkpoint is absent or a verified projection cannot be
 recovered, the default is to **stop**. A checksum or identity mismatch always
 stops. To deliberately permit a fresh linear fit instead, set
@@ -51,7 +75,7 @@ SCGEO_MOLECULAR_ALLOW_REFIT=1. This fallback uses the original count
 normalization but produces new scores and loadings, verifies their map, and
 labels all outputs new_representation_not_frozen. It must not be presented
 as an explanation of the original frozen geometry. Prefer the strict run
-first; no tolerance is relaxed automatically.
+first. The all-cell acceptance tolerance is never relaxed.
 
 ## Scientific interpretation
 
