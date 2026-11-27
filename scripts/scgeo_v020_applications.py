@@ -316,6 +316,36 @@ def adapt_centers(raw, evidence, contrast, hierarchy, group0, group1):
                   "representation", "state_cells"]]
 
 
+def build_pca50_graph(a, *, n_neighbors=30, random_state=1729):
+    """Build neighbors on isolated frozen PCA50 coordinates.
+
+    Compact representation objects may retain X_diffmap without diffmap_evals.
+    Scanpy's Neighbors initializer reads that metadata even when computing PCA
+    neighbors. A scratch AnnData prevents this unrelated initialization path
+    without changing or inventing any metadata on the original object.
+    """
+    import scanpy as sc
+
+    require(a.obs_names.is_unique, "Neighbor construction requires unique cell IDs")
+    require("X_pca50" in a.obsm, "Frozen PCA50 coordinates missing")
+    coords = np.array(a.obsm["X_pca50"], copy=True)
+    require(coords.shape == (a.n_obs, 50) and np.isfinite(coords).all(),
+            "Invalid frozen PCA50 coordinates")
+    require(2 <= n_neighbors < a.n_obs, "Invalid neighbor count")
+    # X is a temporary numeric coordinate matrix, not gene expression.
+    # Explicit use_rep selects the existing coordinates, never a fitted PCA.
+    scratch = ad.AnnData(X=coords, obs=pd.DataFrame(index=a.obs_names.copy()))
+    scratch.obsm["X_pca50"] = coords
+    sc.pp.neighbors(scratch, n_neighbors=n_neighbors, use_rep="X_pca50",
+                    metric="euclidean", random_state=random_state,
+                    key_added="application_neighbors")
+    require(scratch.obs_names.equals(a.obs_names), "Scratch graph cell order changed")
+    graph = sparse.csr_matrix(scratch.obsp["application_neighbors_connectivities"]).copy()
+    require(graph.shape == (a.n_obs, a.n_obs) and np.isfinite(graph.data).all()
+            and (graph.data >= 0).all(), "Invalid scratch neighbor graph")
+    return graph
+
+
 def adjacency(a, graph, state_key="application_state"):
     """H.T @ W @ H, divided by sqrt(total incident weights per state).
 

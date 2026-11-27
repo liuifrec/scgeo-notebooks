@@ -71,7 +71,10 @@ provenance, not an independently signed artifact. All source hashes are
 rechecked after rendering.
 
 The B graph is **new**: Scanpy neighbors on frozen PCA50 (30 neighbors,
-Euclidean, seed 1729). C uses its existing PCA50 graph induced on the primary
+Euclidean, seed 1729). B builds this graph in a temporary coordinate-only
+AnnData, preserving the original object (which stores diffusion coordinates but
+not diffusion eigenvalues). No missing diffusion metadata is invented. C uses
+its existing PCA50 graph induced on the primary
 roster. Both aggregate symmetric edge mass using state membership matrix H
 and cell graph W: M = H.T W H, then divide each off-diagonal M[i,j] by
 sqrt(sum(M[i,:]) * sum(M[j,:])). The diagonal is zero. The PAGA-style renderers

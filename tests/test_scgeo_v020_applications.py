@@ -17,6 +17,7 @@ import scgeo as sg
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from scgeo_v020_applications import (
     REPS, adapt_b, adapt_c, adapt_centers, adjacency, plot_evidence, audit_exports,
+    build_pca50_graph,
 )
 
 
@@ -52,6 +53,34 @@ class Recorder:
 
 
 class PublicApplicationTests(unittest.TestCase):
+    def test_neighbors_with_incomplete_diffmap_metadata(self):
+        a, _ = fixture()
+        rng = np.random.default_rng(1729)
+        a.obsm["X_pca50"] = rng.normal(size=(a.n_obs, 50)).astype(np.float32)
+        a.obsm["X_diffmap"] = rng.normal(size=(a.n_obs, 20))
+        # Exact compact-object failure mode: coordinates without eigenvalues.
+        self.assertNotIn("diffmap_evals", a.uns)
+        before_coords = a.obsm["X_pca50"].copy()
+        before_diffmap = a.obsm["X_diffmap"].copy()
+        before_obs = a.obs.copy(deep=True)
+        before_uns = dict(a.uns)
+        before_obsp = set(a.obsp.keys())
+        graph = build_pca50_graph(a, n_neighbors=15, random_state=1729)
+        self.assertEqual(graph.shape, (a.n_obs, a.n_obs))
+        self.assertGreater(graph.nnz, 0)
+        self.assertTrue(np.isfinite(graph.data).all())
+        self.assertTrue((graph.data >= 0).all())
+        delta = graph - graph.T
+        self.assertTrue(delta.nnz == 0 or np.max(np.abs(delta.data)) < 1e-6)
+        self.assertEqual(set(a.obsp.keys()), before_obsp)
+        self.assertEqual(dict(a.uns), before_uns)
+        pd.testing.assert_frame_equal(a.obs, before_obs)
+        np.testing.assert_array_equal(a.obsm["X_pca50"], before_coords)
+        np.testing.assert_array_equal(a.obsm["X_diffmap"], before_diffmap)
+        names, matrix = adjacency(a, graph)
+        self.assertEqual(set(names), {"A", "B", "Other retained cells"})
+        np.testing.assert_allclose(matrix, matrix.T)
+
     def test_b_counts_and_renderers(self):
         a, graph = fixture()
         states = ["A","B"]
