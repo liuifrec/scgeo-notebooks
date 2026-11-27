@@ -42,7 +42,12 @@ For either basis, check loading orthogonality (maximum absolute Gram error
 maximum centered coordinate magnitude. The B intercept must also be near
 zero. ScGeo independently checks the selected contrast's affine mapping
 again. Original feature IDs and readable feature labels are exported,
-together with the recovered loadings and intercept.
+together with the recovered loadings and intercept. New NPZ exports use
+explicit Unicode feature identifiers and verify a pickle-free roundtrip.
+For the first successful runs, the original_feature_ids field may have object
+dtype; use the accompanying molecular_feature_map.csv for identifiers and
+read the numeric arrays with allow_pickle=False. Do not unpickle an untrusted
+archive. Existing successful run artifacts need not be modified.
 
 ### Verified global error budget for recovered C loadings
 

@@ -163,6 +163,23 @@ def refit_linear(x, dataset):
     return z, L
 
 
+def export_linear_map(path, loadings, original_feature_ids, feature_labels, intercept):
+    """Export only numeric and Unicode arrays; require pickle-free roundtrip."""
+    arrays = {
+        "loadings": np.asarray(loadings),
+        "original_feature_ids": np.asarray(original_feature_ids, dtype=str),
+        "feature_labels": np.asarray(feature_labels, dtype=str),
+        "intercept": np.asarray(intercept),
+    }
+    require(all(not arr.dtype.hasobject for arr in arrays.values()),
+            "Linear map must not contain object arrays")
+    np.savez_compressed(path, **arrays)
+    with np.load(path, allow_pickle=False) as saved:
+        require(set(saved.files) == set(arrays) and
+                all(np.array_equal(saved[key], value) for key, value in arrays.items()),
+                "Linear map export roundtrip failed")
+
+
 def load_molecular(app, rep):
     dataset = app.dataset
     config = json.loads((ROOT / "configs" / (
@@ -239,10 +256,8 @@ def load_molecular(app, rep):
     work.obsm[display] = np.array(rep.obsm[display], copy=True)
     work.var[["original_feature_id", "display_gene_symbol"]].to_csv(
         app.out / "molecular_feature_map.csv", index_label="feature")
-    np.savez_compressed(app.out / "verified_linear_map.npz",
-                       loadings=L, original_feature_ids=hvg_names,
-                       feature_labels=np.asarray(labels, dtype=str),
-                       intercept=np.asarray(provenance["intercept"]))
+    export_linear_map(app.out / "verified_linear_map.npz", L, hvg_names, labels,
+                      provenance["intercept"])
     (app.out / "mapping_audit.json").write_text(json.dumps(provenance, indent=2) + "\n")
     print("Mapping:", provenance["basis_scope"], provenance["method"],
           "residual", provenance["max_abs_residual"], "tolerance", provenance["tolerance"],

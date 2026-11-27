@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from scgeo_public_molecular import (
     REP, normalized_hvgs, recover_centered_pca, verify_map, MappingError,
     qualified_mask, analyze_state, state_mapping_policy, RTOL, ATOL,
+    export_linear_map,
 )
 
 
@@ -36,6 +37,21 @@ class Recorder:
 
 
 class MolecularContracts(unittest.TestCase):
+    def test_linear_map_export_pickle_free_with_object_ids(self):
+        ids = pd.Index(["ENSG0001", "ENSG0002"]).to_numpy(dtype=object)
+        labels = ["G1", "G2"]
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "verified_linear_map.npz"
+            export_linear_map(path, np.eye(2), ids, labels, [0.1, -0.2])
+            with np.load(path, allow_pickle=False) as saved:
+                self.assertEqual(set(saved.files), {
+                    "loadings", "original_feature_ids", "feature_labels", "intercept"})
+                self.assertEqual(saved["original_feature_ids"].dtype.kind, "U")
+                np.testing.assert_array_equal(saved["original_feature_ids"], ids)
+                np.testing.assert_array_equal(saved["feature_labels"], labels)
+                np.testing.assert_array_equal(saved["loadings"], np.eye(2))
+                np.testing.assert_array_equal(saved["intercept"], [0.1, -0.2])
+
     def test_distinct_normalization_denominators(self):
         a = ad.AnnData(sparse.csr_matrix([[2., 3., 5.], [1., 1., 8.]]),
                        obs=pd.DataFrame({"total_counts": [10., 10.]}, index=["a", "b"]),
