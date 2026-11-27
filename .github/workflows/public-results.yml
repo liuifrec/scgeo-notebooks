@@ -1,0 +1,60 @@
+name: Public result notebook
+
+"on":
+  pull_request:
+    paths:
+      - "notebooks/applications/results/**"
+      - "scripts/render_public_lung_gallery.mjs"
+      - "scripts/extract_public_lung_gallery.py"
+      - ".github/workflows/public-results.yml"
+  push:
+    branches: [main]
+    paths:
+      - "notebooks/applications/results/**"
+      - "scripts/render_public_lung_gallery.mjs"
+      - "scripts/extract_public_lung_gallery.py"
+      - ".github/workflows/public-results.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install lightweight notebook dependencies
+        run: python -m pip install "pandas>=2.2,<4" nbformat nbclient ipykernel
+      - name: Verify deterministic SVGs
+        run: node scripts/render_public_lung_gallery.mjs --check
+      - name: Validate and execute the real-data results notebook
+        run: |
+          python -m py_compile scripts/extract_public_lung_gallery.py
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import xml.etree.ElementTree as ET
+          import nbformat
+          from nbclient import NotebookClient
+
+          folder = Path("notebooks/applications/results/gse211713").resolve()
+          source = folder / "GSE211713_fibroblast_results.ipynb"
+          nb = nbformat.read(source, as_version=4)
+          nbformat.validate(nb)
+          for svg in folder.glob("figures/*.svg"):
+              ET.parse(svg)
+          NotebookClient(nb, timeout=90, kernel_name="python3",
+                         resources={"metadata": {"path": str(folder)}}).execute()
+          assert not any(out.get("output_type") == "error" for cell in nb.cells
+                         if cell.cell_type == "code" for out in cell.outputs)
+          output = Path(os.environ["RUNNER_TEMP"]) / "GSE211713_fibroblast_results.executed.ipynb"
+          nbformat.write(nb, output)
+          print("PASS: executed all notebook code cells; original source untouched")
+          PY
