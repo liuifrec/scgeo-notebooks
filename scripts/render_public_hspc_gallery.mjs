@@ -103,7 +103,7 @@ function renderHspc(d) {
         s+=rect(xx+1,yy+1,w-2,h-2,mix(v,lim),2)+txt(xx+w/2,yy+h/2+5,v.toFixed(3),{anchor:"middle",size:13,color:Math.abs(v)>.65*lim?"white":ink});
       }
     });
-    s+=legend(785,475,lim)+txt(26,521,"Parentheses: measured HVGs / requested members. Program sums overlap and do not partition the net displacement.",{size:12,color:muted})+txt(26,540,"HSC-IM denotes the original study's selected HSC-II marker subset; this is not evidence of persistent inflammatory memory.",{size:12,color:muted});
+    s+=legend(785,475,lim)+txt(26,521,"Parentheses: measured HVGs / requested members. Program sums overlap and do not partition the net displacement.",{size:12,color:muted})+txt(26,540,"HSC-IM is the study-derived marker subset; pooled program contributions do not establish persistent inflammatory memory.",{size:12,color:muted});
     out["05_programs.svg"]=end(s);
   }
   return out;
