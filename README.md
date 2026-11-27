@@ -46,6 +46,10 @@ The new [0.2.0 learning track](notebooks/tutorials/v0.2.0/README.md) calls the p
 
 The older conceptual tutorial remains available unchanged; it constructs its report with NumPy, pandas and Matplotlib rather than calling the library.
 
+## Public-data application notebooks
+
+The [ScGeo 0.2.0 application track](notebooks/applications/v0.2.0/README.md) provides new visualization notebooks for the original HSPC inflammation and corrected mouse-lung radiation inputs. These opt-in workflows read checksum-matched local data and frozen evidence tables. They are separate from the simulated tutorials and the paper reproduction workflows; see the application guide for graph provenance and biological-replication limits.
+
 ## Analyses included
 
 ScGeo separates state displacement, sample uncertainty, representation
