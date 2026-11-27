@@ -83,7 +83,7 @@ function renderHspc(d) {
       s+=txt(x-14,yy+22,short[i],{anchor:"end",bold:true,size:14});
       for(let j=0;j<2;j++){
         const row=genes.get(`${i}:${j}:5`),e=row[3],c=row[5],by=yy+j*22,ex=p(e,-.30,0,x,w),z=p(0,-.003,.022,x2,w2),cx=p(c,-.003,.022,x2,w2);
-        s+=rect(ex,by,w-(ex-x),12,colors[j],2)+txt(ex+5,by+10,e.toFixed(3),{size:10,color:"white"});
+        s+=rect(ex,by,w-(ex-x),12,colors[j],2)+txt(x+w+8,by+10,e.toFixed(3),{size:11,color:muted});
         s+=rect(Math.min(z,cx),by,Math.max(.7,Math.abs(cx-z)),12,colors[j],2)+txt(c>=0?cx+5:cx-5,by+10,c.toFixed(4),{anchor:c>=0?"start":"end",size:11});
       }
     }
