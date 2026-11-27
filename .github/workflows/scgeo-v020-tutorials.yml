@@ -1,0 +1,78 @@
+name: ScGeo 0.2.0 tutorials
+
+"on":
+  pull_request:
+    paths:
+      - "notebooks/tutorials/v0.2.0/**"
+      - "scripts/scgeo_v020_examples/**"
+      - "scripts/execute_scgeo_v020_tutorials.py"
+      - "environment/scgeo_v020_tutorials.txt"
+      - ".gitattributes"
+      - ".github/workflows/scgeo-v020-tutorials.yml"
+  push:
+    branches: [main]
+    paths:
+      - "notebooks/tutorials/v0.2.0/**"
+      - "scripts/scgeo_v020_examples/**"
+      - "scripts/execute_scgeo_v020_tutorials.py"
+      - "environment/scgeo_v020_tutorials.txt"
+      - ".gitattributes"
+      - ".github/workflows/scgeo-v020-tutorials.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  MPLBACKEND: Agg
+  PYTHONNOUSERSITE: "1"
+  OMP_NUM_THREADS: "2"
+  OPENBLAS_NUM_THREADS: "2"
+  MKL_NUM_THREADS: "2"
+
+jobs:
+  tutorials:
+    name: Tutorials / ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: analysis and topology
+            lessons: "00 01 02 03"
+          - name: velocity and composition
+            lessons: "04 05 06 07"
+          - name: molecular and sparse states
+            lessons: "08 09"
+          - name: compass and optional public input gate
+            lessons: "10 11"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install and verify the public 0.2.0 wheel
+        run: |
+          python -m pip download --index-url https://pypi.org/simple --no-deps --only-binary=:all: scgeo==0.2.0 --dest "$RUNNER_TEMP/scgeo-wheel"
+          echo "105fe2e702ff995a1b46a9f09a5346a784175f9e75c03edf978bc7c728507a37  $RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" | sha256sum -c -
+          python -m pip install "$RUNNER_TEMP/scgeo-wheel/scgeo-0.2.0-py3-none-any.whl" -r environment/scgeo_v020_tutorials.txt
+          python -m pip check
+          python -m ipykernel install --sys-prefix --name scgeo-v020-ci
+          python scripts/execute_scgeo_v020_tutorials.py --validate-only
+      - name: Execute selected notebooks in fresh kernels and verify all plot hashes
+        env:
+          LESSONS: ${{ matrix.lessons }}
+        run: |
+          python scripts/execute_scgeo_v020_tutorials.py --lesson $LESSONS --kernel scgeo-v020-ci --output-dir results/tutorial_ci
+          git diff --exit-code -- notebooks
+      - name: Save executed notebooks, source tables, figures and provenance
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: tutorials-${{ strategy.job-index }}
+          path: results/tutorial_ci/
+          if-no-files-found: warn
+          retention-days: 14

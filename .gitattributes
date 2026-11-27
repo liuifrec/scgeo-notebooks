@@ -1,0 +1,3 @@
+# Preserve upstream example bytes on all platforms.
+scripts/scgeo_v020_examples/*.py text eol=lf
+scripts/scgeo_v020_examples/SOURCE_PART*.json text eol=lf
