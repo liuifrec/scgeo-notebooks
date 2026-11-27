@@ -5,6 +5,8 @@ using small, reproducible examples. This track is separate from the original
 paper's notebooks, environments and numerical evidence. It does not run private
 data, download manuscript data, or recreate published biological results.
 
+**First, understand the input:** [How the tutorial data are generated](../../../docs/SIMULATION_DESIGN.md) explains the synthetic geometry, gene programs, graph fixtures and sample-count design in pictures and equations. Lessons 00–10 use simulated inputs, not experimental sequencing data. Lesson 11 is optional public-data rendering.
+
 ## Install in a separate environment
 
 From the companion repository root, using Python 3.12:
