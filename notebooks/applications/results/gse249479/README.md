@@ -1,5 +1,7 @@
 # GSE249479 — public HSPC molecular shift results
 
+[**Browse actual native ScGeo 0.2.1 figures and viewer**](native/README.md). The aggregate molecular figures below remain separate.
+
 [**Open the results-first notebook**](GSE249479_inflammation_results.ipynb) · [Original GEO dataset](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE249479) · [Full molecular workflow](../../v0.2.0/06_gse249479_shift_explanations.ipynb) · [Replicate-aware lung gallery](../gse211713/README.md)
 
 This is a lightweight viewer of the actual successful ScGeo 0.2.1 HSPC molecular run, not synthetic data. All 14 state/contrast entries completed on the frozen 3,000-HVG SVD50 basis for 34,432 retained cells. The input contains no usable biological-replicate identities, so all estimates are pooled descriptive accounting with status `insufficient_samples`. No pseudo-replicates, sample intervals or population-level inference are introduced.

@@ -1,0 +1,170 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "representation_stability_heatmap",
+    "metric": "normalized_delta_norm",
+    "state_order": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "rep_order": [
+      "X_pca_raw",
+      "X_scanorama"
+    ],
+    "order_by": "input",
+    "legacy_mean_sort": {
+      "states": false,
+      "representations": false
+    },
+    "normalization": {
+      "class": "Normalize",
+      "vmin": 0.30264739433415994,
+      "vmax": 1.950386551409451
+    },
+    "missing_color": "#BDBDBD",
+    "clustering": "average linkage; RMS distance over shared finite entries; all-missing last",
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "reviewed state-level D8-D21 effects; full-roster local diagnostic flags"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      162.56,
+      241.29999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "02_representation_heatmap.png",
+      "sha256": "8be9ee8045c1b40b5f4e2711234896b5e0c82ad3066d6183a23cd1a013c87a80"
+    },
+    "svg": {
+      "file": "02_representation_heatmap.svg",
+      "sha256": "7f4705d73bf31f63afcbfa3fc49db66c4db4952ac341840bffafa1b784b91cc6"
+    },
+    "pdf": {
+      "file": "02_representation_heatmap.pdf",
+      "sha256": "7050552f6217ccc4fbcb7531ab3818d38dc5e61a57598d0de4c4c65ec3686fd5"
+    }
+  },
+  "tables": {
+    "matrix": {
+      "file": "02_representation_heatmap_matrix.csv",
+      "rows": 14,
+      "columns": [
+        "X_pca_raw",
+        "X_scanorama"
+      ],
+      "dtypes": [
+        "float64",
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "node"
+      ],
+      "attributes": {},
+      "sha256": "c52382aa15ad40463aa0014070eab6be635a26b32d268b4760dd6f421c6d1740"
+    },
+    "annotations": {
+      "file": "02_representation_heatmap_annotations.csv",
+      "rows": 14,
+      "columns": [
+        "consensus_label",
+        "usable_fraction",
+        "instability_warning"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "bool"
+      ],
+      "index_included": true,
+      "index_names": [
+        "node"
+      ],
+      "attributes": {},
+      "sha256": "267f7033018b71422cdcb4bd16e60e2c43c85307c3e817c568e672c6b402d17f"
+    },
+    "representation_diagnostics": {
+      "file": "02_representation_heatmap_representation_diagnostics.csv",
+      "rows": 2,
+      "columns": [
+        "n_pairwise_comparisons",
+        "median_pairwise_neighbor_overlap",
+        "median_pairwise_neighbor_jaccard",
+        "median_global_distortion",
+        "median_local_shape_distortion",
+        "median_trustworthiness_to_others",
+        "median_continuity_from_others",
+        "median_state_graph_spearman",
+        "insufficient_coverage",
+        "neighborhood_outlier",
+        "distortion_outlier",
+        "state_graph_outlier"
+      ],
+      "dtypes": [
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "bool"
+      ],
+      "index_included": true,
+      "index_names": [
+        "rep"
+      ],
+      "attributes": {},
+      "sha256": "03a3edfe6a3c54a67057ea13f5b5cf9bf60071d6eb4aab7acff005dbe2684c95"
+    }
+  }
+}

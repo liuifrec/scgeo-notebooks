@@ -1,0 +1,1166 @@
+{
+  "schema": "scgeo.public_native_gallery.v1",
+  "dataset": "GSE211713",
+  "scgeo_version": "0.2.1",
+  "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+  "scope": "131,157 retained mouse-lung cells; the primary cross-sectional contrasts use 13 qualified mice (5 control, 4 early, 4 late).",
+  "selection": "Geometry API examples selected by documented names; first complete gene/program/connector triplet in each selected contrast; selected for software coverage, not biological significance.",
+  "source_runs": [
+    {
+      "application_manifest_sha256": "64604fa939d9d232dce2f19423660c65d47f90c746ba6d68315b7fd3b52259f1",
+      "companion_commit": "9ec9b022988faa75ab6e2f4f61a41d5325c24694",
+      "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+      "scope": "131,157 retained mouse-lung cells; the primary cross-sectional contrasts use 13 qualified mice (5 control, 4 early, 4 late).",
+      "track": "geometry",
+      "plot_manifests": 38,
+      "figure_files": 114,
+      "source_tables": 216,
+      "source_digests": [
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "811076a5dea18da05674a4069c7e6cdb751201f672aeccd96f8a723fd4136c36",
+          "expected_sha256": "811076a5dea18da05674a4069c7e6cdb751201f672aeccd96f8a723fd4136c36"
+        },
+        {
+          "file": "report.json",
+          "sha256": "b5eacc8d4631de961f425f836adc09de9bd521235f8683a6f297ec9d68b7eef6",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "e3327dfae3dc352746bd163b20d63cc480fc2ab38d67dc2e105649bb5a847065",
+          "expected_sha256": "e3327dfae3dc352746bd163b20d63cc480fc2ab38d67dc2e105649bb5a847065"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "fe3cc599989f55d1a1b8ac5106e2e1e260de836061f2259f997916ee8a70af7e",
+          "expected_sha256": "fe3cc599989f55d1a1b8ac5106e2e1e260de836061f2259f997916ee8a70af7e"
+        },
+        {
+          "file": "report.json",
+          "sha256": "eae319f5c6992e010a7ba25b90cf6c26ddf57e846070faa6df879f25db689346",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "14da24c3beeea10591a89be5465aa6eb77f36880d6a269ff1a1735b4ba9f609c",
+          "expected_sha256": "14da24c3beeea10591a89be5465aa6eb77f36880d6a269ff1a1735b4ba9f609c"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "67712a7f124a5fae98a685ccb8dd23ef746c0ff02a0691ffca36cce7b58be865",
+          "expected_sha256": "67712a7f124a5fae98a685ccb8dd23ef746c0ff02a0691ffca36cce7b58be865"
+        },
+        {
+          "file": "report.json",
+          "sha256": "c2036c0d50cbf78805ac8a81c7f7de60b0d76da79b74ba1e923a47cb34c179a4",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "ac708e0d3645028e9ee7a445911a90619d34efbccffc30512f66a7236b607105",
+          "expected_sha256": "ac708e0d3645028e9ee7a445911a90619d34efbccffc30512f66a7236b607105"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "3bb8d04f4e04ca7db60fab15f5e90fc63fab4f8b34326077fba5df8e69748aac",
+          "expected_sha256": "3bb8d04f4e04ca7db60fab15f5e90fc63fab4f8b34326077fba5df8e69748aac"
+        },
+        {
+          "file": "report.json",
+          "sha256": "075bab592d2e14c36a06c5a512648660bbf1152fe366d3e53d00f1b38eedcdfa",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "9737c42ccc2478d408e42d56afe2229ec9588dbe463caeb399c56afd0cbf59e5",
+          "expected_sha256": "9737c42ccc2478d408e42d56afe2229ec9588dbe463caeb399c56afd0cbf59e5"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "ae1608bc2cfa8257467c4558f0fff28c880f231dcb3df680fb6d1b4ad620bc4b",
+          "expected_sha256": "ae1608bc2cfa8257467c4558f0fff28c880f231dcb3df680fb6d1b4ad620bc4b"
+        },
+        {
+          "file": "report.json",
+          "sha256": "ea30f9c2c7aa36b0d0fd009ba332519cb3f5c589ba337f3739af1e99b0a154d6",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "b3175f575b081df56cf246a447a8eeaf76d88c9411e15767004b83fe3f8f7cca",
+          "expected_sha256": "b3175f575b081df56cf246a447a8eeaf76d88c9411e15767004b83fe3f8f7cca"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "8da23ff1e340f33088147ca577a58005e6c8e225f57fef7321d2d8efdd5e4eb0",
+          "expected_sha256": "8da23ff1e340f33088147ca577a58005e6c8e225f57fef7321d2d8efdd5e4eb0"
+        },
+        {
+          "file": "report.json",
+          "sha256": "723c3e3cfa1edc1bff915cc9355f937e0381c7dd629f55f09871935ff0921f05",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "4d2762b1ddf91fa177706437b692827f408598f7bb4244fe67f93ba52f774816",
+          "expected_sha256": "4d2762b1ddf91fa177706437b692827f408598f7bb4244fe67f93ba52f774816"
+        },
+        {
+          "file": "gse211713_revision_annotated.h5ad",
+          "sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca",
+          "expected_sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca"
+        },
+        {
+          "file": "gse211713_revision_qc_hvg.h5ad",
+          "sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560",
+          "expected_sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560"
+        },
+        {
+          "file": "gse211713_revision_representations_v2.h5ad",
+          "sha256": "e8728846aff10091166b3f7d82b34afaf207142957b4daaafb8d6c496ca24cf2",
+          "expected_sha256": "e8728846aff10091166b3f7d82b34afaf207142957b4daaafb8d6c496ca24cf2"
+        }
+      ]
+    },
+    {
+      "application_manifest_sha256": "7bfef5e36b75dd279b2d2d50404849357f3b48ad2250381ce4026fb0df97639e",
+      "companion_commit": "3bc5472defaa6cee8d11edfe49659c072c887117",
+      "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+      "scope": "131,157 retained mouse-lung cells; the primary cross-sectional contrasts use 13 qualified mice (5 control, 4 early, 4 late).",
+      "track": "molecular",
+      "plot_manifests": 45,
+      "figure_files": 135,
+      "source_tables": 255,
+      "source_digests": [
+        {
+          "file": "pca_stage.json",
+          "sha256": "33749c49ed8e1d359db0359a96e04129b5fbcf66a30758047b53a93f5305db6e",
+          "expected_sha256": null
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "811076a5dea18da05674a4069c7e6cdb751201f672aeccd96f8a723fd4136c36",
+          "expected_sha256": "811076a5dea18da05674a4069c7e6cdb751201f672aeccd96f8a723fd4136c36"
+        },
+        {
+          "file": "report.json",
+          "sha256": "b5eacc8d4631de961f425f836adc09de9bd521235f8683a6f297ec9d68b7eef6",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "e3327dfae3dc352746bd163b20d63cc480fc2ab38d67dc2e105649bb5a847065",
+          "expected_sha256": "e3327dfae3dc352746bd163b20d63cc480fc2ab38d67dc2e105649bb5a847065"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "fe3cc599989f55d1a1b8ac5106e2e1e260de836061f2259f997916ee8a70af7e",
+          "expected_sha256": "fe3cc599989f55d1a1b8ac5106e2e1e260de836061f2259f997916ee8a70af7e"
+        },
+        {
+          "file": "report.json",
+          "sha256": "eae319f5c6992e010a7ba25b90cf6c26ddf57e846070faa6df879f25db689346",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "14da24c3beeea10591a89be5465aa6eb77f36880d6a269ff1a1735b4ba9f609c",
+          "expected_sha256": "14da24c3beeea10591a89be5465aa6eb77f36880d6a269ff1a1735b4ba9f609c"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "67712a7f124a5fae98a685ccb8dd23ef746c0ff02a0691ffca36cce7b58be865",
+          "expected_sha256": "67712a7f124a5fae98a685ccb8dd23ef746c0ff02a0691ffca36cce7b58be865"
+        },
+        {
+          "file": "report.json",
+          "sha256": "c2036c0d50cbf78805ac8a81c7f7de60b0d76da79b74ba1e923a47cb34c179a4",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "ac708e0d3645028e9ee7a445911a90619d34efbccffc30512f66a7236b607105",
+          "expected_sha256": "ac708e0d3645028e9ee7a445911a90619d34efbccffc30512f66a7236b607105"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "3bb8d04f4e04ca7db60fab15f5e90fc63fab4f8b34326077fba5df8e69748aac",
+          "expected_sha256": "3bb8d04f4e04ca7db60fab15f5e90fc63fab4f8b34326077fba5df8e69748aac"
+        },
+        {
+          "file": "report.json",
+          "sha256": "075bab592d2e14c36a06c5a512648660bbf1152fe366d3e53d00f1b38eedcdfa",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "9737c42ccc2478d408e42d56afe2229ec9588dbe463caeb399c56afd0cbf59e5",
+          "expected_sha256": "9737c42ccc2478d408e42d56afe2229ec9588dbe463caeb399c56afd0cbf59e5"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "ae1608bc2cfa8257467c4558f0fff28c880f231dcb3df680fb6d1b4ad620bc4b",
+          "expected_sha256": "ae1608bc2cfa8257467c4558f0fff28c880f231dcb3df680fb6d1b4ad620bc4b"
+        },
+        {
+          "file": "report.json",
+          "sha256": "ea30f9c2c7aa36b0d0fd009ba332519cb3f5c589ba337f3739af1e99b0a154d6",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "b3175f575b081df56cf246a447a8eeaf76d88c9411e15767004b83fe3f8f7cca",
+          "expected_sha256": "b3175f575b081df56cf246a447a8eeaf76d88c9411e15767004b83fe3f8f7cca"
+        },
+        {
+          "file": "individual_mouse_centers.csv",
+          "sha256": "8da23ff1e340f33088147ca577a58005e6c8e225f57fef7321d2d8efdd5e4eb0",
+          "expected_sha256": "8da23ff1e340f33088147ca577a58005e6c8e225f57fef7321d2d8efdd5e4eb0"
+        },
+        {
+          "file": "report.json",
+          "sha256": "723c3e3cfa1edc1bff915cc9355f937e0381c7dd629f55f09871935ff0921f05",
+          "expected_sha256": null
+        },
+        {
+          "file": "state_evidence.csv",
+          "sha256": "4d2762b1ddf91fa177706437b692827f408598f7bb4244fe67f93ba52f774816",
+          "expected_sha256": "4d2762b1ddf91fa177706437b692827f408598f7bb4244fe67f93ba52f774816"
+        },
+        {
+          "file": "gse211713_revision_annotated.h5ad",
+          "sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca",
+          "expected_sha256": "6f7dd2c10112960a4dca4a41b56fcc670a99e16232e0b9d86365ad5fdd66a6ca"
+        },
+        {
+          "file": "gse211713_revision_qc_hvg.h5ad",
+          "sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560",
+          "expected_sha256": "340504d5c88e60a3fc70f0c044ec9f65010226e99fa976e447fa8e6698418560"
+        },
+        {
+          "file": "gse211713_revision_representations_v2.h5ad",
+          "sha256": "e8728846aff10091166b3f7d82b34afaf207142957b4daaafb8d6c496ca24cf2",
+          "expected_sha256": "e8728846aff10091166b3f7d82b34afaf207142957b4daaafb8d6c496ca24cf2"
+        },
+        {
+          "file": "gse211713_annotation_markers_v1.json",
+          "sha256": "6e03f618083ce87df476322ea58797d8c09ae26f930ab9dcbd01c953c49f9f4d",
+          "expected_sha256": null
+        }
+      ],
+      "molecular_manifest_sha256": "a143d865fda6b699dca0d3082e63b40f76e17c9d4e8c94a35eb54679f4f6fc8c"
+    }
+  ],
+  "inventory": [
+    {
+      "track": "geometry",
+      "name": "fibroblast_17gy_early_vs_late_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "d1af5b4d5d91285f94da601ee65172ea63e95b0a86ff2a608f347b12bef0401a",
+      "png_sha256": "01261a8182b7ee26a83b24b4503775c422b834eb6916c9f54a743e11ba6c1144",
+      "plot_metadata_sha256": "b4af819ade7fb766247464b047bb9508f489ea1c5aa02245d0f3bec6c32d801d",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_17gy_early_vs_late_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "d85ad2c95974e5d71091a91830f610b44eaa09f223ee6aa81fa4997b04fdd1e7",
+      "png_sha256": "3efa2741ee8192e88de14302159519c29e0acc9506825abe2c1bf2634e6a24a2",
+      "plot_metadata_sha256": "697e95fd3c242899d9c3450ec7824bd52c1429bb020ec9e8a24dc2ebc117320f",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_17gy_early_vs_late_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "726a3475d685b5532f8081626f3f775eb1302175046080d4222e8b80dc6f7b8f",
+      "png_sha256": "793a807420f62e8e93eac895853010eafbda83d2fa035c50238ed7cfe43f31d1",
+      "plot_metadata_sha256": "bea2b3f65af112d57595d8a6fa8c1b1c8f9f49ac28d7f0c897bc5a40c0b4097f",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_17gy_early_vs_late_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "992730b9fca13a7bff9e54dbc319c526eacc05dfa46e83888bd6fd006841cf0f",
+      "png_sha256": "bac2c60b8eb0fd1e7eb8c68f02da94481d60eeb4a2884412fa003eaa01e383bf",
+      "plot_metadata_sha256": "1e0a4a78107e970f9d1c679e50a5a11bf49b9947b482d654b6aff4625b628ca1",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_17gy_early_vs_late_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "eba0dc95e29a2471bd3f34068c9fdb6ad0a24ccd004dabe8ca82126025bf36bc",
+      "png_sha256": "0c4bc042577e19ba9a968db214fc282539f6e936eb17f47e5c5c0f7d1571126b",
+      "plot_metadata_sha256": "a72f8f7ed086a7606bd1058bbb0891343a6e2ba78e7c44bc914a7abd20bd371d",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_early_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "414bf36a276fe34ee0ba5c993ea17b7143dae3e6d1ba1f894e1badf9e5a8f172",
+      "png_sha256": "875ad367bcd8cdb88fbad7396da4b6bbc4112f4647ab76063efd9cfad909a026",
+      "plot_metadata_sha256": "e87373346b984e3723af5fdae6988f8505f7d70bf60ab45daf46b9e64e52f09f",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_early_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "9bb93e1a2f7e778895e79be6f0a1a75d1f28184398995704ca0a3d74c950928a",
+      "png_sha256": "ed21d2f7611a81f25618e3011f4d80c03cc4c095dca6bce5fc897809e2e9aea2",
+      "plot_metadata_sha256": "df0136c8a456d6fed4fca1fba9be52438fea197952f7b035ba9fd7b169cc1414",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_early_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "04e6bebc187b77fb1da98ae43a6c0071a2883fc23e32ecd6aac9716baab41cd4",
+      "png_sha256": "803de809d5b462e7931b1cf4dec0bd26b6e429038cd3a22ed0297896c147036d",
+      "plot_metadata_sha256": "b072096e3be9d5f7818211778cb2355a9d9e9b4695a72c5b7f70ad4d2c6ae0d7",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_early_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "4f170068df103e02d0f129ad036841f7ebce95abf02b9a9587638b94f82c30a8",
+      "png_sha256": "60628d749ea9b9d8a1917038f5016675f693807c40a647d1d6eeec02e173cb66",
+      "plot_metadata_sha256": "47f92486ced365c772fc30fbf49564c2809381ba7f7905608d05565328d69401",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_early_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "19aceedcddd4ba01d32c99d3c4b18c5021c82b2880327e11d3a4f0dfbb2f6418",
+      "png_sha256": "bad82d4cd8dfd3b3eba55a6f7b35fc8e008e3939c5664bdf67501161230c3857",
+      "plot_metadata_sha256": "ca14433a20f15528f9ef96298021b655ae3c128382344ed75e74efb1222e753e",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_late_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "b665de7166a84bd7f86fd343e911babded8f57541baba8ee52d0dfa31a906aa2",
+      "png_sha256": "9aaf8b30495eda9736e438755079c62c4c1554ad24b094374984b413d0179ca4",
+      "plot_metadata_sha256": "ae05d63761cb5db0c9f71dcd1e334b90c0c7265d481de99bb8c32635ef1d5b4f",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_late_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "96fb968fef05f6a2a4a2b7ed61e01e13db0d686abb10be2360954fb5c7ee1f44",
+      "png_sha256": "8302ea8fc250fcd379e45b824ee138f551c7217b0082a25715967e230876700b",
+      "plot_metadata_sha256": "c0f0d20d9dd91b51844d52da6f558653ed593320d271294de49526420528f4ef",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_late_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "510b6340ccb5b2c729ea748828ce691b605d0a4d04c4672b520efd4f5fd257db",
+      "png_sha256": "ea2dddce046c9dd9adaafed3a2a696ce0654d19ff83d6603b11111c7767727bb",
+      "plot_metadata_sha256": "d4d2a24319e3a433eab6db00addf5a1769b221fc1921678817c8232d8bfe97d0",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_late_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "f75dae09ffa8e7af44c41845a9fd9f04b3b5a0bea29351f3d88c201a2ab38499",
+      "png_sha256": "01c572151ff8d3316b8d6ea036cf9b1aec165d88888d6983acfeeb6527d76043",
+      "plot_metadata_sha256": "fe53711c5776a0c598d6c0fb725bd9db661e776b3c903d36d7b89c6153fead3a",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_control_vs_17gy_late_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "975d130942cb58bcba128c7fa75548b49a8cb8faf2e4891cab3820bc909fcc66",
+      "png_sha256": "95122a97304043f1a135050811650e71125e1d8aefa27233924273feb7e14332",
+      "plot_metadata_sha256": "2766b66cfa7bb90b35ec04fb0ccc6298ba57aae57f3eacd8acc2d3fc48be6791",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "fibroblast_facets",
+      "api": "embedding_facets",
+      "svg_sha256": "f004a4dc231892daa728290e1c552b06bae79062b89e20966c2a85a92b82d77c",
+      "png_sha256": "c4393ed29b4c9fdc778d9aa6dd12dbbdc78c361057573cb6055ffd7d29a7c342",
+      "plot_metadata_sha256": "2d4d577396ee59a1b9bcf5e4dedbbb55dea69cdcec23c78d7fd9671cb87c2105",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_atlas",
+      "api": "geometry_dynamics_atlas",
+      "svg_sha256": "dc5335b6bbdce1a7da85871de567a9e98ff52dec9435e9410f9d56d3299b2cb6",
+      "png_sha256": "ad15e146fe66c32a5583b022003c9ca883d6c817e1b6d11d078fa08d00952072",
+      "plot_metadata_sha256": "a123ed84bf2738c7bce4a4bf4205c4575913f668dfe914fade54085c20db40f7",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "67f65787dab426e42df0e5721202b1b0eb8b035f6efbf7e969a0c3f12e9fc1d7",
+      "png_sha256": "f03eec1b86b93b7996116d003061a61533d4d365247fbc18fc2ef9b422fe9689",
+      "plot_metadata_sha256": "0b71f07cb133d9340a37ee60dc70af1d153a2df81721509bb584d30e20d7224d",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "0fb5f5dc3db77c3b16766bcb743804c3083d4d7db9dd0bc4746549100d06ff7d",
+      "png_sha256": "03b32d7b99a98997efef8f2724430d9a2c1c89dfd20795ac5a6b6b00b258f0ea",
+      "plot_metadata_sha256": "3cdc5de3270616bb90a2b946097d2577041ea96f8b4436a306a63228d0867142",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "e7462713258e69f9b1a77a5dbd3a55470c633cca255764c96bfd14630a63d7e6",
+      "png_sha256": "07550e4903b7130c9a8ea89a1e84c60e8b739247cfbc200a506e9f2d91bce548",
+      "plot_metadata_sha256": "0c719fe3dc5de41133ba3db1fa28076057d768d9ba0c2d2afadda8d73d286883",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "514a335cecfbfe2514d290cc7a6fde19cba51246d400dd518bce095427690d3c",
+      "png_sha256": "f4107eefe6ed0dfe69d0a9d998db72b1c3640523c14899c09c7abbfedcdaa7a4",
+      "plot_metadata_sha256": "8658d4a81a03edddc9dd52db9050c401167a92594f937c331d8f4e8f364359f3",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_17gy_early_vs_late_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "53a050b07360ab59ee052f3777da2dd318e40e6588ea4558d687fe118f7acdc5",
+      "png_sha256": "b9f35d1bed0f8e94fdcfeafe27eed8b2b336751ffbe89d2b25383d771e294875",
+      "plot_metadata_sha256": "3598535682983c81a96c0d6f92ea029df0ac2999438ab06574b68ac8b60c8ea8",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_atlas",
+      "api": "geometry_dynamics_atlas",
+      "svg_sha256": "3a49660dfd713bcdbf1ddf3477c48da658bb6c9a57f17c4a01f78785f1f87eb9",
+      "png_sha256": "a2e1c8ef0edfdd76bf999eefde5c41170995ad799af994e554e2e655b769103a",
+      "plot_metadata_sha256": "ac426d35fda884e68e7b6af92db846b13ecd1aa9ec9cf5093af07ddebd57efdb",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "dc0f1230d6062a2d068b08bce4d48ea14b092a7b8e8641d2c8fb19bd8fdcfb66",
+      "png_sha256": "5608fb7ea9e80a955eb926a1d5ae584bdfab2ecd656078eb92150c8a6c1d9556",
+      "plot_metadata_sha256": "fb8632b514e1e281172e0691a15ffa6cb468162335c68dc8ee41b636a130d5ee",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "b6c4e571a3148b9d49cabd0b01b1893a4f41aec7e1fcbf4a33c9c89851805af2",
+      "png_sha256": "beef0fe953b24c40da7160f274a3e9e3d5886492964f6513ba6af98adab11485",
+      "plot_metadata_sha256": "9c00a3eb908cca17d6283cb01eec1adc68d94ee22ba461c6546e6c13d5a3323a",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "1a8a0fbd6d9b0d6f55905bb1caa1f37ee4ca11145d71eba163418488dca02529",
+      "png_sha256": "4411679b497d1805f966917eb90be4906f3bda2ca2e17e7aec07401d8c1e6de2",
+      "plot_metadata_sha256": "e70ccabaa02bd4d1c0f948c725c840e0f61877c2f19c28e9f8289a9bf5938f0f",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "2c21facf08ee56cbd7ae903a1e55fc1c2316bddb0b82cea07d935410d9e2e9f1",
+      "png_sha256": "30b5feba48d00dab80c8caaf244138a52df8bb7721dfc9730dfb437baefa47ac",
+      "plot_metadata_sha256": "2f680358231edaa0dbd4da0c10bbf4482d415b03062d2f2e8d62d77dc1fe0606",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_early_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "95977b9726f32e36581bbe6d88426c86810aba8698f54726cd6f749412a33bb5",
+      "png_sha256": "701cebf9cdf5ace48318db1f8078ac7d43b1e45a520b99301ddea7286b5c9cb9",
+      "plot_metadata_sha256": "8cdd4a67bcb15dca36b698979f9a85fb418df7ea4e384f8c8f78957915f8d5ac",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_atlas",
+      "api": "geometry_dynamics_atlas",
+      "svg_sha256": "ba11312abcf47e30d346cc316f6cf8e86ca9b92ec21d2bff2b8301f5adbf207f",
+      "png_sha256": "c116606d1ea6e95eb77f61a11481ac34ab12d60f622903d84e2b2e3f72e46bc6",
+      "plot_metadata_sha256": "aaa0bd1688376a36e7c2cf24fde0998be1559bac7736c7f7f550592ac3e164c6",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "8b70e7114783a5b6cbf7a1f5355f88ef5b2e8fd1dec330b723b0963c9c82db9a",
+      "png_sha256": "1c4a5f41f22f686fe1a23c1fc536b4a30931b44b8c60f304e03384bdacc942f7",
+      "plot_metadata_sha256": "b026eaf67ae495e5153ff46a29863dd35f78566eb974be4950876bf1fb7d640c",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "7fe88394f0280242c709e0de90e21fa053baa2a672c44fae667184a9e373d655",
+      "png_sha256": "4c62e8ad5e46f658e1754ade829d96080726ea13762e77cc5981dc2fa6083017",
+      "plot_metadata_sha256": "f0c9029b0fd7a36f154a2c61a0cc90c47c25c9ef8bdba69f3c01bc9c3ff7248f",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "54ff5f083de88061c2f198990678c37a8b83326d6179819277477a0f9154d6e2",
+      "png_sha256": "10a2e1cbade7888cc7e667bcf432c67fe84c4ae5ffe5b2fb71eea5688f826668",
+      "plot_metadata_sha256": "f2ec8c4961ce33036eeb8c120fcfd807dc7f653018e82d36980d5219b251dcb1",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_mouse_centers",
+      "api": "replicate_effect",
+      "svg_sha256": "ad10b79478a7217a7f3eab26b7b670aeeb246146becca47961b2cc21dbf6df1a",
+      "png_sha256": "5f5b47adde4c4045545ce66546823aa93dff86c38a81759478808c8c70f72ee8",
+      "plot_metadata_sha256": "61303c891fd127e9b605c5fb8274f11d615234d5b57d3758b230f377fe68f100",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_control_vs_17gy_late_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "aee9d0e700999587c8a30be2a685dfabe338ce3b6e2625c2ead9d35134ed095e",
+      "png_sha256": "7b2ab2e9ec9a7781374fef93ffa63b916b4d80f347fb87a521206ced7d9c6d3b",
+      "plot_metadata_sha256": "c638514424c8c7927b0bae2c22fdb1115b1c7bd2c3bf795c8d21b61d6b022687",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "major_score_fibroblast_stromal",
+      "api": "embedding_facets",
+      "svg_sha256": "adc1341805a44959a932a9b2df76d48ef03cd7645adfdaccf1acdcf3767af3f0",
+      "png_sha256": "ddca0d9cfd915b68cca86090c5358829c62ec3c1d6b0f56397e2060f6c7e486e",
+      "plot_metadata_sha256": "9e979cffdca38ee3be0d877faca52215c0782cb4f027814c3637ef7adbf9b97f",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "primary_condition_facets",
+      "api": "embedding_facets",
+      "svg_sha256": "475ffb902e9e8ee919b6c5431afec6c90b71f90c94f8499d719e948272e609b6",
+      "png_sha256": "ed4ea61a423da4f79bb0b9880bece5242f047f5824a185758e7edb67b16ff90f",
+      "plot_metadata_sha256": "5f8aa8118c7ece14b8e6be7127ddebf61469b60dcdaa8c8de59445ab052e4fc6",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "refined_score_myofibroblast",
+      "api": "embedding_facets",
+      "svg_sha256": "9b7d9482ce10db628bcd592f4f128779d7f59d298b73552541f2290ab657e4fa",
+      "png_sha256": "e474e26d8eb72fb9b9fd027a37f9c203acfef25ef0a6b4342aef1dc89d7c2d65",
+      "plot_metadata_sha256": "ded0044d30c84317b09ac4704b01f4e1fe57d19779142719e8ec07d160c397e7",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "relative_density",
+      "api": "embedding_density",
+      "svg_sha256": "82a11893910ca4f3f14d098b99c328f90cae84a911db788764cd7ba9933f98b0",
+      "png_sha256": "5aa474f772774cb5d9037c03a867a440ed29c469780c233e8eeaa49eeb854f58",
+      "plot_metadata_sha256": "8587934a51d244d90d34613e019a84493df96f4ce8a87122f9b74670d5756fa5",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_00_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "81dc5de4c7e9301c0e519eb76356cf464561d82d722fdc4c3a48f33ac3796cb3",
+      "png_sha256": "ebfd53a359ff3154cd4956433c56a81735fe0836a3d260cbe4d146280d4cb3b0",
+      "plot_metadata_sha256": "aa333d1fae198a361781f3d282c8d66acc322e3114546df826db14e0f8eb9997",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_00_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "8292d0cef49d38a6b29d79b9b2dcabff84bbd05813b373fbd0a00dd52ad2ca4c",
+      "png_sha256": "bc4ce6016c1eb02d4f9e07908a36c40d66a68258309931ceb113a63e634c122c",
+      "plot_metadata_sha256": "c07bd0f970228265244c607982b8e1b469ad84164c9710b163a40a2bc1e40f38",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_00_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "196d5aee391479518e6aa73f3d78a8e5c075eecd5e38d85d9d2864dd8f7b2c77",
+      "png_sha256": "3eb347ce4b65e0e53e22806a23f9f8e9c41a4a402c0398affc79dfb0eb51869e",
+      "plot_metadata_sha256": "dacd110b7e5ef2357ae6ae57a709872e9881c6560f88f5edeb17eae35cd79065",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_01_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "e290825254fe6b24ee6532b08da37af3107819a2421c925bf8561e2f06b4d6a2",
+      "png_sha256": "fe747c21bfc51f099c5841a32a23706f23fc9a539cfdadd30bcc591a5d17558e",
+      "plot_metadata_sha256": "b61b33990dd50bd8edd9acf2d0884839571c05cc2981225d5f63eeedaa4a10bb",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_01_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "d6512f1fb42c9ded9b23e774592696d8ecc3f6c0df11717db95cdc8fd843f8e6",
+      "png_sha256": "aef4e116456cd7ed201fa317f870585d57108cfc16088102257a623fa4540757",
+      "plot_metadata_sha256": "c2adb74a557ff423aab03e92a584ff3b8d7d563450713b9bf2f7138758c1784e",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_01_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "261892a7ed35fad8a58b4b2d5fe9eacab172173fe8ed884ab309bc7512580795",
+      "png_sha256": "6f63d11ccb8b403e9968ce442895e7aed29983375036dd57c96822dedc59a600",
+      "plot_metadata_sha256": "5198f3b918ca1398d005645b3c524a0834f11afde49dc5e17f7de5db1edae6fe",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "19264c783331abc480977fcc437c4c3009035a0363e06726bb84de10ca44cb7d",
+      "png_sha256": "cad19dce17b47c2c1820fc9e4fbf04d94014e167fb0e5be355fffd6ab01dbe18",
+      "plot_metadata_sha256": "0e113640a82cd999445cab8643f643c7c016e3b7373393d048d5e413460511e1",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "6815224d1e6a0de2303c89ff5d68efa76f2ddaf32bb06da43df5555d8c4a3520",
+      "png_sha256": "0c1387557c2733a99aece75112ffe3f3806822391f0bca5fc1e6f66120af2808",
+      "plot_metadata_sha256": "c04aaf127b7b48aca272fdc742f56393e8e48d5841aeb8255cdc5ef17056ed19",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_17gy_early_vs_late_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "05ff990767d28c51a710ba0552786b348c428eb44c5e9b3c31fa59fd57f7822a",
+      "png_sha256": "8c2a07b30700125dc31055c9266973035386c5e6a580aa7cd60ee06c509d3396",
+      "plot_metadata_sha256": "1e731ba4623cace5815e5a33c7556362dc506dfebb232948e9c184893beb1f54",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_00_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "fae0be2ffa80a663a761f90e8f0ee6c81b3deb601fea21a3f10e93718b08bf2e",
+      "png_sha256": "7bf47bd509db0c56ca4da5f47e434e02d2d4262f99be6a6a558d41246b8c037e",
+      "plot_metadata_sha256": "c6d0e54ffd2c9d2c6478288a185aa8cb06563cc70d50257705eb442b8f222057",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_00_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "790b71f30203bf8ec3c3fb0ad9f7b5d7cfcdf2e306314bc044818497aa28f577",
+      "png_sha256": "d5e928263bf665a7c709482d8a96cbd6bf01e3a20f4266c96d09bd7af654a024",
+      "plot_metadata_sha256": "6460ed8a97bb89f60bd518233b5ba6fb4bcf938e0018d7b5364ff788e777dd1d",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_00_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "e8c424af167ef880567fb94688ca16098d37739b2cd306c3fd71f21621881019",
+      "png_sha256": "15d3918cb8738e1df356240e249ac6d0afde05a644b4a57485a53d53027e5f17",
+      "plot_metadata_sha256": "34108844d9e548d03f5fa7c0a9765eac926d2cd576b5b04226efff5242ac5449",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_01_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "ebe83a1c16ce00da570a533c637762f4ee2c039b01f913ff3331979ebcebce03",
+      "png_sha256": "92e44bacfacbaeaaf29fcf9443e21ee8d2b8ec39950b7dd4d177135d4378619a",
+      "plot_metadata_sha256": "9a33b37768800def72955253dc8c56ccda5a2ab9791a69a8f6101f9262af51d9",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_01_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "9d3d952db83a92c3a3b476359baa263684985a705b480c699fd713121ccb4bf0",
+      "png_sha256": "dd32c4f461632e171537a0cb2e7dedf8740ce240eac5d526ba5c02eb8a0516a8",
+      "plot_metadata_sha256": "d141a42b9935eaa07cb9d6561798616974ff8ae2561def8d7ec10e9f69ad8372",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_01_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "27fbcee06cea62158aa847651ff13ac30a3a9f8f14239e4643835b5e69be7277",
+      "png_sha256": "1bf742b211e9f0615a4aa565bdf5d9ba7936607eacbd8f265c2e9790ce741348",
+      "plot_metadata_sha256": "38655ae23b07407633d4ac8a0c0fddabdd71f153f7bdfad963a17d5560269daf",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "a6a9c7251d6fee3a81433c1d584d5893692f79491d40daf4ed5f1a73d4209597",
+      "png_sha256": "591f544e5757d71e46e8b41be4141b9470622456795177a274fdab48d2f405f5",
+      "plot_metadata_sha256": "840b0f97345e92a5a516c1e379a2737109108f4a4f8046947297295e2ae7a6bf",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "4d2dab814fdf924a6cf9697d65e2c9e7b7736778804c43fbf16b3516d6d75f8d",
+      "png_sha256": "0ef93bb642b858031e5db383714ddb22753d7b55d4fad0b2d737a3acd335cbe7",
+      "plot_metadata_sha256": "fd68052d89277f5ef268058ff0fbb418a0e6183937f0bc8d9c0479e03cffc79d",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_early_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "1213f1b7261b3b51850c3def7d61cdbeae76071fd10912780294140e7512f7a2",
+      "png_sha256": "e4e2499d27d8e7cf839d2daf0f3f850a36744442ac5f3eeba7ea249c02d7e68f",
+      "plot_metadata_sha256": "747e672753f79adf734fbce724616caff225a0df5cb009cc99987a6d0373d0d6",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_00_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "19f340ba64873d84eb5fddab1949a9646082e1568c1b5ef5a48d1a6e165072b1",
+      "png_sha256": "ee598f3e97e648a693809433f80babc370d16cc4de31dc9f5239f15d05da97c9",
+      "plot_metadata_sha256": "4691eeac1e76e7003a5dcbb69b8227ecfd26b7b3474b16d98ff1865fda691847",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_00_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "1b218e98b1ed8425dcc52cbab3bf0433a604e3395bdd9455e4fa3e3971cdbd95",
+      "png_sha256": "8257a7440b1d9eaf24c4648fc54f0de007626390d69e75a02b350d18dfaaeaba",
+      "plot_metadata_sha256": "40d75ccc25df13116884f200c67a5f281f09069a4fcba7331e73282bdbba3094",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_00_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "8a1f025f16249f5d70a0619bdc8276b47f34e351a1fc6b1d9f455b39f09b06d7",
+      "png_sha256": "20a406f7462a0f3df4fd95366297753a5864ceb7102cfa202b822db437fece1b",
+      "plot_metadata_sha256": "e83be7477c4732b19c2a214909b956db9fbf02191d5bde78ecb09eaa82761be3",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_01_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "2bd988b8c4cb034d22936ec00928903e2356070ae4cbf518c7dab7a647193f38",
+      "png_sha256": "d0227be7afa2e6ad71cb41a263ac0a43b40ab8cb7f0c295b25cc62316824ca40",
+      "plot_metadata_sha256": "544c842d792c7ab9dafa92bfce13e142db526b7077f692002120fb957a38be8b",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_01_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "2545a56c9f55dd14976c5726a187cdca3b67b0096d2eb026f56b8cffc5937aa9",
+      "png_sha256": "77ac47bc21a63f1c34ef23166e5c84d60ed18f72da50b508720e41031984d4c4",
+      "plot_metadata_sha256": "e5724d134f982f6e079a1170fe175f0272fc2d97cf1359875b27b9cfa08a0de1",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_01_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "4b678934401df9c915d4a1f779b9086060608262df361618b6794fd01e4be11c",
+      "png_sha256": "ddd9297fafa57446a792880930896858de27c299a4566d6c2ffe043d4ada921f",
+      "plot_metadata_sha256": "243694ff922375f3f7120f03785d41f5715d73ae937825a98e4abd552c5bf79d",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "afe0aabf87a9ca594b161387c8e0754445a717887a712c5af5da31e39f40b15c",
+      "png_sha256": "14334625e7c7217e80fb8a9a5b0345f4b88f01178a6cf73b1719ccb757cf9a2b",
+      "plot_metadata_sha256": "68f92fc55e3af27f9283a162d6a36c2335b118161dcc0033bbb829c05610f6b0",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "2f4a5cc6864a4f7171fd18d54dddf173f7fe3be16950bac71c3cfe5154c25b27",
+      "png_sha256": "d8d40ed3c8b62d4359b17e51ad17832eb7b6163f61ce46dcb1d6a917ea821e19",
+      "plot_metadata_sha256": "1c265aa9cc9637790497e1be71a9d13a7efd7eefc4edbddbafe1e3e56b32de6a",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_fibroblast_control_vs_17gy_late_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "eb5f00f12782ce790aa4cfdbf51c013a0710c00af8d928dbb2ceca0926f27154",
+      "png_sha256": "72e20fbe82a9a186d1c55ab3fae4e66afdd76221d22873d21bb7911cf821b8a2",
+      "plot_metadata_sha256": "942f017357d649672d330ec1af0d4684ad959b405e9be373411583ee212cbd75",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "f3fcef4ad6857a2b140f4301dccf0739c18f3d25584d42e3a683bbd322c4c3c7",
+      "png_sha256": "d10ec3b8869642750d5567ea3e5b33a005a8342c28ccd3cbd1a51e1ef4df96f5",
+      "plot_metadata_sha256": "7739aa22eea269722653574a19032e1c31144a698a22f2ec8dc6aa87f0b019a8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "14b64e4df8d9124769386d12b11ffb666bb89f31866d5325816b96d2da79b7bb",
+      "png_sha256": "abf5159bbd9294bd3dd532ee47555652e86b9cdfef4f908af48a06bb80918bdd",
+      "plot_metadata_sha256": "af077b9ccee41123c80c4a1792d424c0df1a53358cf24b353d75a56a6701252f",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "48e7e124d5365d9722a9e722c6e3587ff105d70db80a58ba219069e36ed36f16",
+      "png_sha256": "7c8af03118e9cf10a26b577c244b1c5f6eaf529d06f1262273a50501217e80ba",
+      "plot_metadata_sha256": "f61f90d7f77df15fb388ef066cbe57102c5fff6789ce28f21b6d972a480a1ca8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_04_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "ee92a3b5a681a9d49a7eb56e04769981bc5cc145d5762e3a2782d4a559c064a5",
+      "png_sha256": "4d37588f4aec63463ab3a109c439bc82af9351d830a7910ba8a89f95118d5d37",
+      "plot_metadata_sha256": "547c8edfc33e64f2741ef90866877ccd0969902659b7ebeba239b46aebc62107",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_04_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "6575780128d5c1ab3ad23ecf1bb026285a0a484cd8b5e36a95d948174fccdb15",
+      "png_sha256": "768ae94acba53fcf2001585e314dacd5cec8695b1ba7c8621665ca7927f55c3e",
+      "plot_metadata_sha256": "a8a9af14a55301c4c49d612828b24744ed2a9ce9942d4334f0fe295a64a9c6c8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_17gy_early_vs_late_04_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "b384bd33d99bcf05751d1141ff2594638dbd9a826f79bd708f98f04a278bc471",
+      "png_sha256": "76bf6dade8cf633de595994ac857bff52142e1b143c3ba8dfdc708bc11896733",
+      "plot_metadata_sha256": "727ad8489654c6fec27548b0c0fd1dfd7f69135b6c62d025efe085484536b1b4",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "21035209d7d9cbed0819a0d285abb26b1d526eb71231205622714a1d168e5e06",
+      "png_sha256": "f1aef5cadcce34ef9b6659da0bc3e04cb985bef474b0f64ecb8c0edce94b572d",
+      "plot_metadata_sha256": "dcfa9410b565b17ff7bf1be5665df1de0a588b30ce992781bec93eb0190b1349",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "bf609cf3482a220c8dcfc816b9a00e9d4b1932ca68c88eb69d0b8da6f4196fd0",
+      "png_sha256": "8e751978f52d948107e8cc724193d8945537a2177e6ebd7150ecf3d726878a9c",
+      "plot_metadata_sha256": "144aa69ed86c0e1f29b78e543972b95052f968b32e53e3839a54348f88c16532",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "0f545b34af5f7d37ace26850d37602ec8dd127aef6adc3bfd38f25375b36d28e",
+      "png_sha256": "6f08d4f0c070694e86e07072e855f9ef6e608453334a7f4957c7f1aa40da88ce",
+      "plot_metadata_sha256": "9faa76bee135c2c83a070139c24e930d5da684975dfd2a588788e91f840bf57a",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_04_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "916528ba60270b53376610c3ae4f3b7aea8e46f7464e3c6a06a6d64fd5c89d70",
+      "png_sha256": "6c3014e0bf544301e003e9bbba68a4834849ff450cc58d25101b7c39949061cc",
+      "plot_metadata_sha256": "3d545cbd972d37af72814a8e2e005de3822f4d93eb21421c7bfc25586cf33001",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_04_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "81455dbe7059cef808f0f636c8bd5736e7f725da22972c9b8467c504fa990f12",
+      "png_sha256": "ff8c8dcff5c05fe1b7d3b63d265f7e570595dbb0d7c790aeea20677f88c742bb",
+      "plot_metadata_sha256": "4555fefb2ab3b33c7fdd91968b9ddaed7fbfc899cf7ab63f0dbb46c45d3fa0da",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_early_04_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "dcbfdb257dc1215263493521a54d46464d1a38833f13ad7c7dc175fc60a4b8ba",
+      "png_sha256": "ea4635d0558f441b82f3e05423445a9752f2d532465d47850d90989fb3056480",
+      "plot_metadata_sha256": "cb6316ad00505a89afe1477ebb324f9e19ba28679f0243a42f6e2b6c14cce9ae",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "e74e62b85e000024ae2238d13790ec555e8084f8d5311a1ca89cdb65d2fb9604",
+      "png_sha256": "153e037eb2ee558df70ac74bf855e12438210a63ed7a5ba25a89c1f17058755b",
+      "plot_metadata_sha256": "2f5bd62f8cb38733f847a8bba5c27d9cf553b17220b15f427f2c02da36e495df",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "73b6a5c7d2c8483ff12dfe9dbd034b4bf3d68eee3d01cb678a6733e3a8b1542f",
+      "png_sha256": "180223900d8fa171b67edbed795023cdac5365e40f79f0cf2732b689445e9f79",
+      "plot_metadata_sha256": "e754d737d671f33b1bb456128644440a74730d997faf6aa58a142df29af2b9b8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "fca8c3cc15b3a1f0c996e1d6dbab0eef75087f5e73b4354a004a2a35df548b9b",
+      "png_sha256": "3b7a62e76f3016127a6c47e422f565066ffffccaa35aadc37a59af14cc1147b0",
+      "plot_metadata_sha256": "8b6d9e5579ef52ed837f37db2251426d16acc0b2073840e6725be0fdd060e401",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_04_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "df808d900bf17c642c0eae8d996fb831ba9128839f8819067b23536e51ba93d3",
+      "png_sha256": "1299aff0fd26b4f1aef59f69b8045014a8a6fe77f33c026b3e8bf659e3762d64",
+      "plot_metadata_sha256": "91959c378dfacfdaff6238e16bb10463e9d91b6b4ea240d0aedd32aed2138e9d",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_04_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "3bc04eba9a7626f49fa9d6aab06521df471c79b0152685f81975a3e5698d2d74",
+      "png_sha256": "b9a4e6c567ac92930e58b025ec89e78c1cc2e7c4f558e2031e9f7653f85d5ee4",
+      "plot_metadata_sha256": "cb75f1492b18ac953664cea54b9c39801e9c65de5be8d7c6b5588c69f5cfc2e8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "C_major_control_vs_17gy_late_04_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "f5312828c0e5c2a66592584fffcfe996d8c06ce3644b31df0411cd25f747eadc",
+      "png_sha256": "d6bd31df514046b24f0b4dc11a5f2b7890fc744c636c0f57ed790fd77e56da6d",
+      "plot_metadata_sha256": "77704640be09f4e80616026a33e76f01c994c24f70da2b05bae0388b8bc88e09",
+      "published": false
+    }
+  ],
+  "selected": [
+    {
+      "name": "primary_condition_facets",
+      "api": "embedding_facets",
+      "track": "geometry",
+      "figure": "figures/geometry/primary_condition_facets.svg",
+      "figure_sha256": "475ffb902e9e8ee919b6c5431afec6c90b71f90c94f8499d719e948272e609b6",
+      "metadata": "metadata/geometry/primary_condition_facets.json",
+      "metadata_sha256": "5f8aa8118c7ece14b8e6be7127ddebf61469b60dcdaa8c8de59445ab052e4fc6",
+      "note": "Common display-only UMAP; all retained cells in primary mice"
+    },
+    {
+      "name": "fibroblast_facets",
+      "api": "embedding_facets",
+      "track": "geometry",
+      "figure": "figures/geometry/fibroblast_facets.svg",
+      "figure_sha256": "f004a4dc231892daa728290e1c552b06bae79062b89e20966c2a85a92b82d77c",
+      "metadata": "metadata/geometry/fibroblast_facets.json",
+      "metadata_sha256": "2d4d577396ee59a1b9bcf5e4dedbbb55dea69cdcec23c78d7fd9671cb87c2105",
+      "note": "Fibroblast display subset only; never use this subset as total retained-cell denominator"
+    },
+    {
+      "name": "relative_density",
+      "api": "embedding_density",
+      "track": "geometry",
+      "figure": "figures/geometry/relative_density.svg",
+      "figure_sha256": "82a11893910ca4f3f14d098b99c328f90cae84a911db788764cd7ba9933f98b0",
+      "metadata": "metadata/geometry/relative_density.json",
+      "metadata_sha256": "8587934a51d244d90d34613e019a84493df96f4ce8a87122f9b74670d5756fa5",
+      "note": "Relative embedding density, not sample abundance"
+    },
+    {
+      "name": "major_control_vs_17gy_early_evidence",
+      "api": "state_evidence_panel",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_early_evidence.svg",
+      "figure_sha256": "1a8a0fbd6d9b0d6f55905bb1caa1f37ee4ca11145d71eba163418488dca02529",
+      "metadata": "metadata/geometry/major_control_vs_17gy_early_evidence.json",
+      "metadata_sha256": "e70ccabaa02bd4d1c0f948c725c840e0f61877c2f19c28e9f8289a9bf5938f0f",
+      "note": "Frozen qualified-mouse displacement; cross-sectional"
+    },
+    {
+      "name": "major_control_vs_17gy_late_representation_matrix",
+      "api": "robustness_matrix",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_late_representation_matrix.svg",
+      "figure_sha256": "aee9d0e700999587c8a30be2a685dfabe338ce3b6e2625c2ead9d35134ed095e",
+      "metadata": "metadata/geometry/major_control_vs_17gy_late_representation_matrix.json",
+      "metadata_sha256": "c638514424c8c7927b0bae2c22fdb1115b1c7bd2c3bf795c8d21b61d6b022687",
+      "note": "Stored scalar magnitudes; representations not independent"
+    },
+    {
+      "name": "major_control_vs_17gy_late_composition_pies",
+      "api": "paga_shift_map",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_late_composition_pies.svg",
+      "figure_sha256": "7fe88394f0280242c709e0de90e21fa053baa2a672c44fae667184a9e373d655",
+      "metadata": "metadata/geometry/major_control_vs_17gy_late_composition_pies.json",
+      "metadata_sha256": "f0c9029b0fd7a36f154a2c61a0cc90c47c25c9ef8bdba69f3c01bc9c3ff7248f",
+      "note": "PAGA-style renderer of descriptive pooled neighbor adjacency, not PAGA inference; equal-mouse state frequencies within condition"
+    },
+    {
+      "name": "major_control_vs_17gy_late_compass",
+      "api": "recovery_compass",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_late_compass.svg",
+      "figure_sha256": "8b70e7114783a5b6cbf7a1f5355f88ef5b2e8fd1dec330b723b0963c9c82db9a",
+      "metadata": "metadata/geometry/major_control_vs_17gy_late_compass.json",
+      "metadata_sha256": "b026eaf67ae495e5153ff46a29863dd35f78566eb974be4950876bf1fb7d640c",
+      "note": "Frozen qualified-mouse displacement; cross-sectional; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+    },
+    {
+      "name": "major_control_vs_17gy_late_mouse_centers",
+      "api": "replicate_effect",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_late_mouse_centers.svg",
+      "figure_sha256": "ad10b79478a7217a7f3eab26b7b670aeeb246146becca47961b2cc21dbf6df1a",
+      "metadata": "metadata/geometry/major_control_vs_17gy_late_mouse_centers.json",
+      "metadata_sha256": "61303c891fd127e9b605c5fb8274f11d615234d5b57d3758b230f377fe68f100",
+      "note": "Frozen qualified mouse centers; PC1 is one coordinate only; cross-sectional, unpaired"
+    },
+    {
+      "name": "major_control_vs_17gy_late_atlas",
+      "api": "geometry_dynamics_atlas",
+      "track": "geometry",
+      "figure": "figures/geometry/major_control_vs_17gy_late_atlas.svg",
+      "figure_sha256": "ba11312abcf47e30d346cc316f6cf8e86ca9b92ec21d2bff2b8301f5adbf207f",
+      "metadata": "metadata/geometry/major_control_vs_17gy_late_atlas.json",
+      "metadata_sha256": "aaa0bd1688376a36e7c2cf24fde0998be1559bac7736c7f7f550592ac3e164c6",
+      "note": "Frozen sample-aware evidence and display-only states; no dynamics"
+    },
+    {
+      "name": "fibroblast_17gy_early_vs_late_compass",
+      "api": "recovery_compass",
+      "track": "geometry",
+      "figure": "figures/geometry/fibroblast_17gy_early_vs_late_compass.svg",
+      "figure_sha256": "d1af5b4d5d91285f94da601ee65172ea63e95b0a86ff2a608f347b12bef0401a",
+      "metadata": "metadata/geometry/fibroblast_17gy_early_vs_late_compass.json",
+      "metadata_sha256": "b4af819ade7fb766247464b047bb9508f489ea1c5aa02245d0f3bec6c32d801d",
+      "note": "Frozen qualified-mouse displacement; cross-sectional; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_early_00_gene_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_early_00_gene_curves.svg",
+      "figure_sha256": "fae0be2ffa80a663a761f90e8f0ee6c81b3deb601fea21a3f10e93718b08bf2e",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_early_00_gene_curves.json",
+      "metadata_sha256": "c6d0e54ffd2c9d2c6478288a185aa8cb06563cc70d50257705eb442b8f222057",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_early_00_program_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_early_00_program_curves.svg",
+      "figure_sha256": "790b71f30203bf8ec3c3fb0ad9f7b5d7cfcdf2e306314bc044818497aa28f577",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_early_00_program_curves.json",
+      "metadata_sha256": "6460ed8a97bb89f60bd518233b5ba6fb4bcf938e0018d7b5364ff788e777dd1d",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound; overlapping program sums are not percentages"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_early_00_shift_embedding",
+      "api": "shift_embedding",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_early_00_shift_embedding.svg",
+      "figure_sha256": "e8c424af167ef880567fb94688ca16098d37739b2cd306c3fd71f21621881019",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_early_00_shift_embedding.json",
+      "metadata_sha256": "34108844d9e548d03f5fa7c0a9765eac926d2cd576b5b04226efff5242ac5449",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound; connector is not a lineage or RNA velocity"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_late_00_gene_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_late_00_gene_curves.svg",
+      "figure_sha256": "19f340ba64873d84eb5fddab1949a9646082e1568c1b5ef5a48d1a6e165072b1",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_late_00_gene_curves.json",
+      "metadata_sha256": "4691eeac1e76e7003a5dcbb69b8227ecfd26b7b3474b16d98ff1865fda691847",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_late_00_program_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_late_00_program_curves.svg",
+      "figure_sha256": "1b218e98b1ed8425dcc52cbab3bf0433a604e3395bdd9455e4fa3e3971cdbd95",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_late_00_program_curves.json",
+      "metadata_sha256": "40d75ccc25df13116884f200c67a5f281f09069a4fcba7331e73282bdbba3094",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound; overlapping program sums are not percentages"
+    },
+    {
+      "name": "C_fibroblast_control_vs_17gy_late_00_shift_embedding",
+      "api": "shift_embedding",
+      "track": "molecular",
+      "figure": "figures/molecular/C_fibroblast_control_vs_17gy_late_00_shift_embedding.svg",
+      "figure_sha256": "8a1f025f16249f5d70a0619bdc8276b47f34e351a1fc6b1d9f455b39f09b06d7",
+      "metadata": "metadata/molecular/C_fibroblast_control_vs_17gy_late_00_shift_embedding.json",
+      "metadata_sha256": "e83be7477c4732b19c2a214909b956db9fbf02191d5bde78ecb09eaa82761be3",
+      "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound; connector is not a lineage or RNA velocity"
+    }
+  ]
+}

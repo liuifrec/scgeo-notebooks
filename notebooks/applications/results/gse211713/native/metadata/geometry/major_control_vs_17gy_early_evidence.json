@@ -1,0 +1,239 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "state_evidence_panel",
+    "effect_metric": "normalized_delta_norm",
+    "effect_representation": null,
+    "sort_by": "normalized_delta_norm",
+    "state_order": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast/stromal",
+      "Lymphoid",
+      "Myeloid",
+      "Proliferating"
+    ],
+    "displayed_states": 6,
+    "total_states": 6,
+    "page": 0,
+    "evidence_mode": "compact",
+    "provenance": {
+      "group0": "control",
+      "group1": "17Gy_early"
+    },
+    "interval_note": "Magnitude intervals summarize uncertainty; they are not automatic hypothesis tests.",
+    "application_display_profile": {
+      "state_order": [
+        "Endothelial",
+        "Epithelial",
+        "Fibroblast/stromal",
+        "Lymphoid",
+        "Myeloid",
+        "Proliferating"
+      ],
+      "matrix_vmax": 4.452703275199082,
+      "effect_xlim": [
+        0.0,
+        6.467340566839043
+      ],
+      "condition_palette": {
+        "control": "#c0794f",
+        "17Gy_early": "#a154c7",
+        "17Gy_late": "#5739ae"
+      },
+      "pc1_ylim": [
+        -20.347918701036697,
+        9.777236188734637
+      ],
+      "abundance_xlim": [
+        -1.0,
+        63.39876967613533
+      ]
+    },
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen qualified-mouse displacement; cross-sectional"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      279.4,
+      162.55999999999997
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "major_control_vs_17gy_early_evidence.png",
+      "sha256": "4411679b497d1805f966917eb90be4906f3bda2ca2e17e7aec07401d8c1e6de2"
+    },
+    "svg": {
+      "file": "major_control_vs_17gy_early_evidence.svg",
+      "sha256": "1a8a0fbd6d9b0d6f55905bb1caa1f37ee4ca11145d71eba163418488dca02529"
+    },
+    "pdf": {
+      "file": "major_control_vs_17gy_early_evidence.pdf",
+      "sha256": "ea1cda1a4c0b360cc22cf97744a686d9191543092f6be7d5e41352755f81d9d0"
+    }
+  },
+  "tables": {
+    "report": {
+      "file": "major_control_vs_17gy_early_evidence_report.csv",
+      "rows": 6,
+      "columns": [
+        "contrast",
+        "hierarchy",
+        "state",
+        "representation",
+        "representation_role",
+        "inference_status",
+        "eligible_mouse_ids_group0",
+        "eligible_mouse_ids_group1",
+        "excluded_mouse_ids_group0",
+        "excluded_mouse_ids_group1",
+        "n_mice_group0",
+        "n_mice_group1",
+        "cells_per_mouse_group0",
+        "cells_per_mouse_group1",
+        "consensus_label",
+        "primary_pairwise_spearman_median",
+        "primary_magnitude_rank_std",
+        "leave_one_primary_max_relative_deviation",
+        "coverage_status",
+        "delta_norm",
+        "normalized_delta_norm",
+        "normalization_scale",
+        "raw_ci95_low",
+        "raw_ci95_high",
+        "normalized_ci95_low",
+        "normalized_ci95_high",
+        "directional_resultant_length",
+        "direction_stability",
+        "sign_stability",
+        "bootstrap_iterations",
+        "bootstrap_seed",
+        "resampling_status",
+        "n_cells0",
+        "n_samples0",
+        "n_cells1",
+        "n_samples1",
+        "normalized_magnitude_ci95_low",
+        "normalized_magnitude_ci95_high",
+        "magnitude_ci95_low",
+        "magnitude_ci95_high",
+        "effect_status",
+        "descriptive_only",
+        "inference_level",
+        "bootstrap_unit",
+        "group0",
+        "group1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "fa36c4be86d0801a68c1607e750221fc3f74baa73993074992004e245204ea7f"
+    },
+    "availability": {
+      "file": "major_control_vs_17gy_early_evidence_availability.csv",
+      "rows": 6,
+      "columns": [
+        "state",
+        "effect",
+        "representation",
+        "local",
+        "dynamics"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "529ea224bcd81e69e9794f187e6e80138590c89b4693fc740cfe468650320648"
+    }
+  }
+}

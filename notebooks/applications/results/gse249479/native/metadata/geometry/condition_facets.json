@@ -1,0 +1,222 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "embedding_facets",
+    "display_basis": "X_umap_pca50",
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "facets": {
+      "row": null,
+      "col": "condition",
+      "row_order": [
+        "All"
+      ],
+      "col_order": [
+        "PBS",
+        "TNF",
+        "LPS"
+      ],
+      "missing_labels": {
+        "row": null,
+        "col": null
+      }
+    },
+    "color_key": "application_state",
+    "color_type": "categorical",
+    "palette": {
+      "HSC/quiescent": "#43c6c6",
+      "Activated HSC": "#40a9a5",
+      "MPP/progenitor": "#3ab152",
+      "Myeloid": "#713abc",
+      "Megakaryocyte/erythroid": "#6d45c4",
+      "Lymphoid": "#4bb272",
+      "Ambiguous HSPC": "#4da942"
+    },
+    "palette_origin": "deterministic_hash",
+    "numeric_color_limits": null,
+    "velocity": null,
+    "velocity_key": null,
+    "velocity_options": null,
+    "velocity_radius": null,
+    "velocity_radius_source": null,
+    "shared_velocity_scale": true,
+    "velocity_scale_resolved": null,
+    "velocity_shared_color_limits": null,
+    "velocity_grid_extent": null,
+    "velocity_support_definition": null,
+    "shared_limits": true,
+    "context": "none",
+    "max_points_per_facet": 12000,
+    "random_state": 1729,
+    "n_cells_input": 34432,
+    "n_panels": 3,
+    "interprets_time_or_trajectory": false,
+    "application_dataset": "B",
+    "application_scope": "descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Fixed frozen UMAP for display"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      367.03,
+      121.91999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "condition_facets.png",
+      "sha256": "85aded31e9928c64057a9ada8409cc3f3b8c4fb27ad48517d3b88cc769a54275"
+    },
+    "svg": {
+      "file": "condition_facets.svg",
+      "sha256": "5f44e12c9476fbe143b8799e2b85ca6c2b5dd7610b1bb38e6663ed28e2c01497"
+    },
+    "pdf": {
+      "file": "condition_facets.pdf",
+      "sha256": "29fed6ed3d137db612cfd3c7882dd2e2214fee32589a7623eef25e7ae07d6cf4"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "condition_facets_cells.csv",
+      "rows": 34432,
+      "columns": [
+        "obs_position",
+        "cell_id",
+        "facet_id",
+        "row_label",
+        "col_label",
+        "x",
+        "y",
+        "finite_embedding",
+        "highlighted",
+        "displayed",
+        "color_value"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "ee78af843da3eed33f3737fa661f2022b0f74e0544b452d17321199a93f2563d"
+    },
+    "facets": {
+      "file": "condition_facets_facets.csv",
+      "rows": 3,
+      "columns": [
+        "facet_id",
+        "row_label",
+        "col_label",
+        "n_cells",
+        "n_finite_embedding",
+        "n_displayed",
+        "n_velocity_eligible",
+        "n_grid_supported",
+        "n_grid_total",
+        "x_min",
+        "x_max",
+        "y_min",
+        "y_max"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "object",
+        "object",
+        "object",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "ddf5f6ca79b843e20585f5430205269c1125f00c3b78ef5fbeed67feddf531fc"
+    },
+    "velocity_grid": {
+      "file": "condition_facets_velocity_grid.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_vectors": {
+      "file": "condition_facets_velocity_vectors.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_paths": {
+      "file": "condition_facets_velocity_paths.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  }
+}

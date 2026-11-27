@@ -1,0 +1,167 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "shift_embedding",
+    "explanation_key": "molecular_explanation",
+    "states": [
+      "all"
+    ],
+    "analysis_rep": "X_molecular_linear50",
+    "display_basis": "X_umap_pca50",
+    "curvature": 0.2,
+    "arrow_semantics": "schematic condition-center contrast",
+    "center_method": "frozen analysis cell weights applied to display coordinates",
+    "not_a_trajectory": true,
+    "max_points": 5000,
+    "n_drawn_cells": 2710,
+    "sample_key": null,
+    "color": "condition",
+    "category_colors": {
+      "PBS": "#4cb34f",
+      "TNF": "#4760c2"
+    },
+    "application_dataset": "B",
+    "application_scope": "New molecular accounting; descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; connector is not a lineage or RNA velocity"
+  },
+  "warnings": [
+    "Curvature is a display choice, not an estimated path, fate, or velocity field."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      177.79999999999998,
+      152.39999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "B_TNF_01_shift_embedding.png",
+      "sha256": "0dca3875a2cb341e2b2518d51e2478202d331b739482081ef67c82e8e5abcee6"
+    },
+    "svg": {
+      "file": "B_TNF_01_shift_embedding.svg",
+      "sha256": "4040f4dc10286839d1a7b1272077428135f356c8e8a940c838ec33382020a2c3"
+    },
+    "pdf": {
+      "file": "B_TNF_01_shift_embedding.pdf",
+      "sha256": "294a3620ee3ba5516b1889d1550f47947b1ccbeb3b317bd0b982080531125c1f"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "B_TNF_01_shift_embedding_cells.csv",
+      "rows": 2710,
+      "columns": [
+        "obs_position",
+        "obs_name",
+        "state",
+        "condition",
+        "sample",
+        "shift_score",
+        "eligible",
+        "color_label",
+        "x",
+        "y",
+        "displayed"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "45e71f0d5c4b9e99e79938ea9487dbf581e028491dfb946a6867f1a81dd59a94"
+    },
+    "centers": {
+      "file": "B_TNF_01_shift_embedding_centers.csv",
+      "rows": 1,
+      "columns": [
+        "state",
+        "status",
+        "drawn",
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "84a6dbd6aeb5ec13104974e839ad7e0f199d80538f0731cd863c6824b5a43f9c"
+    },
+    "center_weights": {
+      "file": "B_TNF_01_shift_embedding_center_weights.csv",
+      "rows": 2710,
+      "columns": [
+        "state",
+        "condition",
+        "obs_position",
+        "weight"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "e6a61b3fd846a970a06f18d24631546432b15f01416e49dbff5ac732aa009bcf"
+    }
+  }
+}

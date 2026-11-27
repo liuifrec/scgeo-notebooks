@@ -1,0 +1,170 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "robustness_matrix",
+    "summary": null,
+    "pass_threshold": null,
+    "missing_policy": "exclude",
+    "coverage_definition": "evaluated settings / displayed settings",
+    "row_order": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast/stromal",
+      "Lymphoid",
+      "Myeloid",
+      "Proliferating"
+    ],
+    "col_order": [
+      "X_pca20",
+      "X_pca30",
+      "X_pca50",
+      "X_scvi",
+      "X_diffmap"
+    ],
+    "cmap": "viridis",
+    "vmin": 0,
+    "vmax": 4.452703275199082,
+    "center": null,
+    "na_color": "#d9d9d9",
+    "show_coverage": true,
+    "application_display_profile": {
+      "state_order": [
+        "Endothelial",
+        "Epithelial",
+        "Fibroblast/stromal",
+        "Lymphoid",
+        "Myeloid",
+        "Proliferating"
+      ],
+      "matrix_vmax": 4.452703275199082,
+      "effect_xlim": [
+        0.0,
+        6.467340566839043
+      ],
+      "condition_palette": {
+        "control": "#c0794f",
+        "17Gy_early": "#a154c7",
+        "17Gy_late": "#5739ae"
+      },
+      "pc1_ylim": [
+        -20.347918701036697,
+        9.777236188734637
+      ],
+      "abundance_xlim": [
+        -1.0,
+        63.39876967613533
+      ]
+    },
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Stored scalar magnitudes; representations not independent"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      254.0,
+      152.39999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "major_control_vs_17gy_late_representation_matrix.png",
+      "sha256": "7b2ab2e9ec9a7781374fef93ffa63b916b4d80f347fb87a521206ced7d9c6d3b"
+    },
+    "svg": {
+      "file": "major_control_vs_17gy_late_representation_matrix.svg",
+      "sha256": "aee9d0e700999587c8a30be2a685dfabe338ce3b6e2625c2ead9d35134ed095e"
+    },
+    "pdf": {
+      "file": "major_control_vs_17gy_late_representation_matrix.pdf",
+      "sha256": "262437abfcf5b0ebd5250eee747ba6c48052c7766c4411d95b0a2ef17b507195"
+    }
+  },
+  "tables": {
+    "matrix": {
+      "file": "major_control_vs_17gy_late_representation_matrix_matrix.csv",
+      "rows": 6,
+      "columns": [
+        "X_pca20",
+        "X_pca30",
+        "X_pca50",
+        "X_scvi",
+        "X_diffmap"
+      ],
+      "dtypes": [
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "43f1fada2483b88161756fc62b5f4ad594c3db2515bd1ec335f7ca725502deda"
+    },
+    "coverage": {
+      "file": "major_control_vs_17gy_late_representation_matrix_coverage.csv",
+      "rows": 6,
+      "columns": [
+        "0"
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "9b86d0efdbcee24a92bc591e8b504a5c39b93c34ce28dc13e1f0663f8ef7f803"
+    },
+    "n_evaluated": {
+      "file": "major_control_vs_17gy_late_representation_matrix_n_evaluated.csv",
+      "rows": 6,
+      "columns": [
+        "0"
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "a5840067efc3cdcda653005cce2aaff904625fc4232efa446c492b46d1ce2ba7"
+    }
+  }
+}

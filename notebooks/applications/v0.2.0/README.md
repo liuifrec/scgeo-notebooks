@@ -1,4 +1,4 @@
-# ScGeo public biological applications (B and C)
+# ScGeo public biological applications
 
 This separate, opt-in track redraws previously computed public-data evidence with
 the released plotting API. It does not replace the frozen paper reproduction
@@ -10,15 +10,11 @@ output tables; it does not download or refit them.
 | [04 GSE249479 HSPC inflammation](04_gse249479_inflammation.ipynb) | 34,432 cells, PBS/TNF/LPS, descriptive only | Matched condition/score facets, relative density, annotation associations, frozen effects, representation matrices, neighbor-adjacency pies, stored compass, geometry/evidence atlas |
 | [05 GSE211713 mouse lung](05_gse211713_radiation_response.ipynb) | 131,157 retained cells from 20 libraries; primary contrasts use 13 mice (5/4/4) | Primary and fibroblast facets, stored scores, relative density, individual qualified mouse centers, frozen effects and representation matrices, equal-mouse pies, stored compass and geometry/evidence atlas |
 
-These are runnable sources, not pre-executed public figures. The two datasets
-are the first applications; the original hematopoietic recovery, held-out
-simulation benchmark and pancreas workflows remain separate until their
-verified local objects have been recovered. The current tutorial series
-remains the download-free starting point.
+These are output-free runnable sources. Browse the [native HSPC figures](../results/gse249479/native/README.md), [native lung figures](../results/gse211713/native/README.md), and the recovered GSE280305 application below. The frozen manuscript, simulation benchmark and pancreas workflows remain separate. The current tutorial series remains the download-free starting point.
 
 ## GSE280305 native visualization (0.2.1)
 
-The opt-in [GSE280305 native plotting notebook](08_gse280305_native_visualization.ipynb) applies the actual ScGeo renderers to the recovered historical checkpoint and reviewed geometry, molecular and local-geometry tables. See the [execution guide](GSE280305_NATIVE_PLOTS.md). This separate application is pending workstation execution and does not alter the existing B/C runner or published evidence. No velocity is fabricated.
+The opt-in [GSE280305 native plotting notebook](08_gse280305_native_visualization.ipynb) applies the actual ScGeo renderers to the recovered historical checkpoint and reviewed geometry, molecular and local-geometry tables. See the [execution guide](GSE280305_NATIVE_PLOTS.md). The application completed all eleven native plotting calls on the workstation. Browse the [actual native figures and results-first notebook](../results/gse280305/README.md). It does not alter the existing B/C runner or published evidence. No velocity is fabricated.
 
 ## Set up
 

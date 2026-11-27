@@ -1,0 +1,259 @@
+{
+  "status": "complete",
+  "dataset": "GSE280305",
+  "scgeo_version": "0.2.1",
+  "scgeo_vcs_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+  "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+  "source_table_hashes": {
+    "D8_D21_per_rep_state.csv": "8dc83fb5488f59fdb7aee7cf17e6c30de43517a61ea2394c90575ce640cacf75",
+    "D8_D21_consensus_state.csv": "7f4f6b83a6bb664686467041cd3e3c6910c18cf887602c864216e8faa63f8ed2",
+    "D8_D21_summary.csv": "1dcde85577bbc82321eca82cb3c0f67dda202493bd309d7d6dd1b458e9d0432d",
+    "D8_D21_genes.csv.gz": "ae76be1eb55e3a5b66adc630963b2eb7bad7c42136cafe5408d5642a2ae2dfd3",
+    "representation_summary.csv": "03a3edfe6a3c54a67057ea13f5b5cf9bf60071d6eb4aab7acff005dbe2684c95",
+    "state_pair_summary.csv": "4c2a021adde44096b88cbc5c5a5939b496757f7a1f521863e451ed4c530de628"
+  },
+  "n_cells": 31605,
+  "contrast": "D8_D21",
+  "inference_scope": "descriptive_only",
+  "native_plot_count": 11,
+  "plots": {
+    "01_facets_umap_raw": {
+      "figures": {
+        "png": "01_facets_umap_raw.png",
+        "svg": "01_facets_umap_raw.svg",
+        "pdf": "01_facets_umap_raw.pdf"
+      },
+      "tables": {
+        "cells": "01_facets_umap_raw_cells.csv",
+        "facets": "01_facets_umap_raw_facets.csv",
+        "velocity_grid": "01_facets_umap_raw_velocity_grid.csv",
+        "velocity_vectors": "01_facets_umap_raw_velocity_vectors.csv",
+        "velocity_paths": "01_facets_umap_raw_velocity_paths.csv"
+      },
+      "metadata": "01_facets_umap_raw.json"
+    },
+    "01_facets_umap_scanorama": {
+      "figures": {
+        "png": "01_facets_umap_scanorama.png",
+        "svg": "01_facets_umap_scanorama.svg",
+        "pdf": "01_facets_umap_scanorama.pdf"
+      },
+      "tables": {
+        "cells": "01_facets_umap_scanorama_cells.csv",
+        "facets": "01_facets_umap_scanorama_facets.csv",
+        "velocity_grid": "01_facets_umap_scanorama_velocity_grid.csv",
+        "velocity_vectors": "01_facets_umap_scanorama_velocity_vectors.csv",
+        "velocity_paths": "01_facets_umap_scanorama_velocity_paths.csv"
+      },
+      "metadata": "01_facets_umap_scanorama.json"
+    },
+    "02_representation_heatmap": {
+      "figures": {
+        "png": "02_representation_heatmap.png",
+        "svg": "02_representation_heatmap.svg",
+        "pdf": "02_representation_heatmap.pdf"
+      },
+      "tables": {
+        "matrix": "02_representation_heatmap_matrix.csv",
+        "annotations": "02_representation_heatmap_annotations.csv",
+        "representation_diagnostics": "02_representation_heatmap_representation_diagnostics.csv"
+      },
+      "metadata": "02_representation_heatmap.json"
+    },
+    "03_consensus_map": {
+      "figures": {
+        "png": "03_consensus_map.png",
+        "svg": "03_consensus_map.svg",
+        "pdf": "03_consensus_map.pdf"
+      },
+      "tables": {
+        "data": "03_consensus_map_data.csv"
+      },
+      "metadata": "03_consensus_map.json"
+    },
+    "04_neighbor_overlap": {
+      "figures": {
+        "png": "04_neighbor_overlap.png",
+        "svg": "04_neighbor_overlap.svg",
+        "pdf": "04_neighbor_overlap.pdf"
+      },
+      "tables": {
+        "data": "04_neighbor_overlap_data.csv"
+      },
+      "metadata": "04_neighbor_overlap.json"
+    },
+    "04_local_shape_distortion": {
+      "figures": {
+        "png": "04_local_shape_distortion.png",
+        "svg": "04_local_shape_distortion.svg",
+        "pdf": "04_local_shape_distortion.pdf"
+      },
+      "tables": {
+        "data": "04_local_shape_distortion_data.csv"
+      },
+      "metadata": "04_local_shape_distortion.json"
+    },
+    "05_evidence_panel": {
+      "figures": {
+        "png": "05_evidence_panel.png",
+        "svg": "05_evidence_panel.svg",
+        "pdf": "05_evidence_panel.pdf"
+      },
+      "tables": {
+        "report": "05_evidence_panel_report.csv",
+        "availability": "05_evidence_panel_availability.csv"
+      },
+      "metadata": "05_evidence_panel.json"
+    },
+    "06_adaptive_atlas": {
+      "figures": {
+        "png": "06_adaptive_atlas.png",
+        "svg": "06_adaptive_atlas.svg",
+        "pdf": "06_adaptive_atlas.pdf"
+      },
+      "tables": {
+        "cells": "06_adaptive_atlas_cells.csv",
+        "labels": "06_adaptive_atlas_labels.csv",
+        "legend": "06_adaptive_atlas_legend.csv",
+        "evidence_all": "06_adaptive_atlas_evidence_all.csv",
+        "evidence_displayed": "06_adaptive_atlas_evidence_displayed.csv"
+      },
+      "metadata": "06_adaptive_atlas.json"
+    },
+    "07_shift_curves_cluster_4": {
+      "figures": {
+        "png": "07_shift_curves_cluster_4.png",
+        "svg": "07_shift_curves_cluster_4.svg",
+        "pdf": "07_shift_curves_cluster_4.pdf"
+      },
+      "tables": {
+        "cells": "07_shift_curves_cluster_4_cells.csv",
+        "curves": "07_shift_curves_cluster_4_curves.csv",
+        "sample_curves": "07_shift_curves_cluster_4_sample_curves.csv",
+        "features": "07_shift_curves_cluster_4_features.csv",
+        "coverage": "07_shift_curves_cluster_4_coverage.csv",
+        "sample_expression": "07_shift_curves_cluster_4_sample_expression.csv",
+        "panel_status": "07_shift_curves_cluster_4_panel_status.csv"
+      },
+      "metadata": "07_shift_curves_cluster_4.json"
+    },
+    "07_shift_curves_cluster_9": {
+      "figures": {
+        "png": "07_shift_curves_cluster_9.png",
+        "svg": "07_shift_curves_cluster_9.svg",
+        "pdf": "07_shift_curves_cluster_9.pdf"
+      },
+      "tables": {
+        "cells": "07_shift_curves_cluster_9_cells.csv",
+        "curves": "07_shift_curves_cluster_9_curves.csv",
+        "sample_curves": "07_shift_curves_cluster_9_sample_curves.csv",
+        "features": "07_shift_curves_cluster_9_features.csv",
+        "coverage": "07_shift_curves_cluster_9_coverage.csv",
+        "sample_expression": "07_shift_curves_cluster_9_sample_expression.csv",
+        "panel_status": "07_shift_curves_cluster_9_panel_status.csv"
+      },
+      "metadata": "07_shift_curves_cluster_9.json"
+    },
+    "08_shift_embedding": {
+      "figures": {
+        "png": "08_shift_embedding.png",
+        "svg": "08_shift_embedding.svg",
+        "pdf": "08_shift_embedding.pdf"
+      },
+      "tables": {
+        "cells": "08_shift_embedding_cells.csv",
+        "centers": "08_shift_embedding_centers.csv",
+        "center_weights": "08_shift_embedding_center_weights.csv"
+      },
+      "metadata": "08_shift_embedding.json"
+    }
+  },
+  "file_sha256": {
+    "01_facets_umap_raw.json": "27a35b39e4297e81ace0369dadf141db91418768e840c06fab05247f27a9556c",
+    "01_facets_umap_raw.pdf": "b7b7110cc0872099e74e8d2da53a31f90d7d8c2b83ec2a57225bd17ea0f78eba",
+    "01_facets_umap_raw.png": "d6436e2a5342742c43eb664c8b9086ca5b45dcd64423b085168e67e9ec7a2648",
+    "01_facets_umap_raw.svg": "285c09fad4d600351ef787dc25b10856594547e50e8d1d702487bccc9d4b80f7",
+    "01_facets_umap_raw_cells.csv": "9f3c96f8fb4149d5a7c165f930c1b4d4f886e189d2b52ea15994313398a269cb",
+    "01_facets_umap_raw_facets.csv": "29f1443ac32c69d86091757f790d87f5859ba73c2c24e3a39e88b9cf548d9762",
+    "01_facets_umap_raw_velocity_grid.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01_facets_umap_raw_velocity_paths.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01_facets_umap_raw_velocity_vectors.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01_facets_umap_scanorama.json": "a5795a7950367207212846bc1b7297f03fb5b6bd67c699d2f65cc00cf951d636",
+    "01_facets_umap_scanorama.pdf": "0889e0bfd68c37b947bf062eec3c0dd89cc29019e027c8aa8051ed002e94bdf1",
+    "01_facets_umap_scanorama.png": "ae704f0ebbc06484398be858fa261d2a3b419b6a067c36028249c2735e83b126",
+    "01_facets_umap_scanorama.svg": "d6b93acc2c8a61521f87c292323a05d3ebe45f85455763fa228ad93eaa427129",
+    "01_facets_umap_scanorama_cells.csv": "daacf6894df68ff1a997138b115d272a3ea9b6d6f073bec374c85f07944f0393",
+    "01_facets_umap_scanorama_facets.csv": "3339c1d8f3a57a0ed12c8544a96517ef05678831265f037094c9780f56849b80",
+    "01_facets_umap_scanorama_velocity_grid.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01_facets_umap_scanorama_velocity_paths.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01_facets_umap_scanorama_velocity_vectors.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "02_representation_heatmap.json": "f5ef29576213a5fc91bcf7528ee1de5bcc8170167c40886bde60bb3c58b104eb",
+    "02_representation_heatmap.pdf": "7050552f6217ccc4fbcb7531ab3818d38dc5e61a57598d0de4c4c65ec3686fd5",
+    "02_representation_heatmap.png": "8be9ee8045c1b40b5f4e2711234896b5e0c82ad3066d6183a23cd1a013c87a80",
+    "02_representation_heatmap.svg": "7f4705d73bf31f63afcbfa3fc49db66c4db4952ac341840bffafa1b784b91cc6",
+    "02_representation_heatmap_annotations.csv": "267f7033018b71422cdcb4bd16e60e2c43c85307c3e817c568e672c6b402d17f",
+    "02_representation_heatmap_matrix.csv": "c52382aa15ad40463aa0014070eab6be635a26b32d268b4760dd6f421c6d1740",
+    "02_representation_heatmap_representation_diagnostics.csv": "03a3edfe6a3c54a67057ea13f5b5cf9bf60071d6eb4aab7acff005dbe2684c95",
+    "03_consensus_map.json": "a594f3ed3f13d77fd6f2f0f7f0b5d74d9237051969770a584e5d07342786ee52",
+    "03_consensus_map.pdf": "d375a79cbf511d21b785711363baada83608419ae9fac779ffc5b3eca4157142",
+    "03_consensus_map.png": "69ab9e731a5d3fe40ea431fe954480a59fe327a7b1bea7f72156445700a82853",
+    "03_consensus_map.svg": "604d0ed83a1b285d334c577459434a08db305a14b2885abd2570d4cc9a05d524",
+    "03_consensus_map_data.csv": "22920ed3f18a4a91035cccf879c92a10e8f62e7d3c9b041f1558d70678567dc0",
+    "04_local_shape_distortion.json": "7b16c7166f89cdd4264e0ee4e2a41493110f4f680b25e2579147167936509483",
+    "04_local_shape_distortion.pdf": "dc6f60da9901bd3ade8f4820bb72f84dad18b02e4cf78afcf6b51414c44a99d2",
+    "04_local_shape_distortion.png": "4c96a1280afc1347ca83eb5e9c2e2cf7cc654b326c1a6e6686cce06180c7c068",
+    "04_local_shape_distortion.svg": "1ed8401d0dfba25d99918310fd954644356cb0f90b48d7869ebad3503f68fe48",
+    "04_local_shape_distortion_data.csv": "52889d3f16aca996e71a562b4213090bd40e9a3a6c82dab06fed60af6882a3cf",
+    "04_neighbor_overlap.json": "3a0f49faadcfa332b7ec58f921482dafc220bd19c69c4b2511db48c537c012c6",
+    "04_neighbor_overlap.pdf": "052f15dc9e92ad7f0ae09b33a788397364b3395f68f9a2d68c25333bab368d4e",
+    "04_neighbor_overlap.png": "b5ebd10ba08e8bce92fc74cfb6942c07a68bf5e4c267c0b8036d10831b7d199b",
+    "04_neighbor_overlap.svg": "b35b5ef4a1da415fc1d9c2f9f4179de1ab109bca6f5e697e5750c37fe490b1c2",
+    "04_neighbor_overlap_data.csv": "cf15bfff301bdefa17d9b3234e175957f74f1e24af13d25db1b4f360f8695835",
+    "05_evidence_panel.json": "ba4a0b70c43b3e10b6c7bb67d5f9f25ce4def51c7c0538d3d484481560fe4407",
+    "05_evidence_panel.pdf": "6e391acd522d6d05670d18d24727590a7b41b41dea521aea728786add53ec3fc",
+    "05_evidence_panel.png": "650363d585c35815e0b0c50a7422f251399528e7fd40b93cc9302c6a07be7c2b",
+    "05_evidence_panel.svg": "3526c9293adca9d3477ac0a3bd74bb6bc9bf3d27e7339511df8d4433379e3336",
+    "05_evidence_panel_availability.csv": "1113d72fdc80010e210dca8dd2871979b2fffd8014a5bdeffc5a48b19948e055",
+    "05_evidence_panel_report.csv": "f8d00355a685636f5ca5c2b46b16894d3867df0e67944e5c231760e80fdd5550",
+    "06_adaptive_atlas.json": "ead581646e02f53d4d43bccf67f2aea2bf49800e99e6d28506a15fa74f44e6ba",
+    "06_adaptive_atlas.pdf": "d91d2a2ca19c7c00c0600bd0460a529c210f1d159c6ce9391c52aeaddd284739",
+    "06_adaptive_atlas.png": "1e6ca0588d2ff454d198869863cb8424148fbc2989d4f93972bf75b93a54a32c",
+    "06_adaptive_atlas.svg": "ffd28ab9c9df88966ca7dde7e48a5314b9f03cb48055d5e3f15fa20a97516ec9",
+    "06_adaptive_atlas_cells.csv": "4105077e8f29248bae29b557c3b76c8eab5524d18472d3b0a1308f11919722a8",
+    "06_adaptive_atlas_evidence_all.csv": "063bd8458ddeb26a04e22bd6ef070eae8ecf59ff4ec1682706f75fd3de270749",
+    "06_adaptive_atlas_evidence_displayed.csv": "063bd8458ddeb26a04e22bd6ef070eae8ecf59ff4ec1682706f75fd3de270749",
+    "06_adaptive_atlas_labels.csv": "960a51ca7b593a207c13a8afc717883a71c359fcaf0b549e6e5d707bd8613eec",
+    "06_adaptive_atlas_legend.csv": "9bdcbd6935e95338736fdd26815cc4cdef5b2f5d4da8eadaa2bc53451f972e12",
+    "07_shift_curves_cluster_4.json": "6de5731556cc48c251bcafe0ac6cbb62721367f0e01de3f7e756efd6e5475d33",
+    "07_shift_curves_cluster_4.pdf": "c2d5cda3e504fcb5b6540cb4337b14e54b17252ac9b09b3453606a3f123bab59",
+    "07_shift_curves_cluster_4.png": "7c771eb4558df5132dee8cd0311bf2474066f521d688a405eafb132d59a2b1e4",
+    "07_shift_curves_cluster_4.svg": "6e6dee1f4d10a9f748f6e945a8123fb05609ab0502a09d13c4dce8ae6037f398",
+    "07_shift_curves_cluster_4_cells.csv": "0d68fa117faf80d05056e5cfc02faade786d3548fe830be174972cb132e3134e",
+    "07_shift_curves_cluster_4_coverage.csv": "08ce0617e082f5b4112eacf4a4570cc130de791944de41edda9251bf5aa6b813",
+    "07_shift_curves_cluster_4_curves.csv": "a5283da5a5145a89ef5cff183e146ed7c4ea682d4b77902d057ebbeded47883e",
+    "07_shift_curves_cluster_4_features.csv": "599048e02a35b6cff2496a99e0b91d30337aebe1c2a76c8f98c6113d67bc8238",
+    "07_shift_curves_cluster_4_panel_status.csv": "9f2c502ecf7cdece00901a620dc84ef89eff16789aa81787144e662343887d79",
+    "07_shift_curves_cluster_4_sample_curves.csv": "b8b7ac0432511691b159b4a2d2d5c44302cc539361bf730450de4f816aa6301f",
+    "07_shift_curves_cluster_4_sample_expression.csv": "31bc773fb4c2cbb9f2c6b8b9b133980625d6fceb4683fafbc13bb8259338c0cb",
+    "07_shift_curves_cluster_9.json": "da0ef6e4704f5abd53a1fb94452e3c74b95f3716ab99e56fcebb8f39d4c8bd59",
+    "07_shift_curves_cluster_9.pdf": "cedbd7658ab244ae31d1ee24b1f0afdaa6d8a7cfe725981486d6bedc90a7c486",
+    "07_shift_curves_cluster_9.png": "733639649411c5338f9b60cc3f65c1c61f7e293ed93933604f1df8304cb14c22",
+    "07_shift_curves_cluster_9.svg": "b3351c80bda4ff2eb00763bc4b0f299d9d19962d28d2c2c95d0f1e991ad50dd9",
+    "07_shift_curves_cluster_9_cells.csv": "60c677f8385b6bb46e2a9fa2965c9c3077a8abe778951f9f994faaed37df17d9",
+    "07_shift_curves_cluster_9_coverage.csv": "7f1d56065ac3b1bea6feb3d387f59cbf7ee243c04f632c37d744ffbf5a586717",
+    "07_shift_curves_cluster_9_curves.csv": "e1c36eb76d792158064d380a1f977a946801f61a45301a5fd98b6a172446bbab",
+    "07_shift_curves_cluster_9_features.csv": "cf1da1c0451e5629a396b2ad980a25df05307df6c858ec9250864dca9049f193",
+    "07_shift_curves_cluster_9_panel_status.csv": "c2113588be92d9a276943593b84f9b670fc57da5cfad55b6f41eecc89b34370f",
+    "07_shift_curves_cluster_9_sample_curves.csv": "f787ae36025153e9f02956426e954c3192cf66a59292c8a87a9c9eea317b9feb",
+    "07_shift_curves_cluster_9_sample_expression.csv": "7f3b48def1053cfd24f48aede319473845b7373084582072d93bd29d9dd15fd5",
+    "08_shift_embedding.json": "ee1d47ce2059d004f241c2132161404808efe96263db122c3338f35ce5003484",
+    "08_shift_embedding.pdf": "b4c5283189b18203d831b1ced3de7be24e74bb8d95ebd03cd9cd0d39d21aea97",
+    "08_shift_embedding.png": "c4f83a25c807539b40b24706868e4893b82646ca1527109a4b9478fdd3248c08",
+    "08_shift_embedding.svg": "bc4a90f632eb8e41ab5f0bc560b633d5576645a9d95b116e73abe13fb81f4854",
+    "08_shift_embedding_cells.csv": "0242295e72c8acc94b9ed38464586e9ec52a7a3a1c01426e00db95af4668ee89",
+    "08_shift_embedding_center_weights.csv": "667896d4677237bd1988d8b2f1b6276e8377e1412c727e3a139e317bf44b047a",
+    "08_shift_embedding_centers.csv": "5cdefdcd987827ecd1117db7888b812cbfeee38bcacc785fbea8ff7a27eb48c9",
+    "state_report.csv": "db91c840cffdcd3a856a54dd4851f49774474fce72099345da477ba10c85f117"
+  },
+  "velocity_computed": false
+}

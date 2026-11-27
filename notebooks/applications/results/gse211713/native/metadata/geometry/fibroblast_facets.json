@@ -1,0 +1,218 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "embedding_facets",
+    "display_basis": "X_umap_display_only",
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "facets": {
+      "row": null,
+      "col": "application_group",
+      "row_order": [
+        "All"
+      ],
+      "col_order": [
+        "control",
+        "17Gy_early",
+        "17Gy_late"
+      ],
+      "missing_labels": {
+        "row": null,
+        "col": null
+      }
+    },
+    "color_key": "application_fibroblast",
+    "color_type": "categorical",
+    "palette": {
+      "Col13a1-like matrix fibroblast": "#3f7db7",
+      "Col14a1-like matrix fibroblast": "#477bc9",
+      "Myofibroblast": "#4fc550"
+    },
+    "palette_origin": "deterministic_hash",
+    "numeric_color_limits": null,
+    "velocity": null,
+    "velocity_key": null,
+    "velocity_options": null,
+    "velocity_radius": null,
+    "velocity_radius_source": null,
+    "shared_velocity_scale": true,
+    "velocity_scale_resolved": null,
+    "velocity_shared_color_limits": null,
+    "velocity_grid_extent": null,
+    "velocity_support_definition": null,
+    "shared_limits": true,
+    "context": "none",
+    "max_points_per_facet": 10000,
+    "random_state": 1729,
+    "n_cells_input": 5018,
+    "n_panels": 3,
+    "interprets_time_or_trajectory": false,
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Fibroblast display subset only; never use this subset as total retained-cell denominator"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      367.03,
+      121.91999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "fibroblast_facets.png",
+      "sha256": "c4393ed29b4c9fdc778d9aa6dd12dbbdc78c361057573cb6055ffd7d29a7c342"
+    },
+    "svg": {
+      "file": "fibroblast_facets.svg",
+      "sha256": "f004a4dc231892daa728290e1c552b06bae79062b89e20966c2a85a92b82d77c"
+    },
+    "pdf": {
+      "file": "fibroblast_facets.pdf",
+      "sha256": "853bac8a044ce0f2a5f29805f9fd0c3c94d647c16a506e0e0af877ae1a524281"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "fibroblast_facets_cells.csv",
+      "rows": 5018,
+      "columns": [
+        "obs_position",
+        "cell_id",
+        "facet_id",
+        "row_label",
+        "col_label",
+        "x",
+        "y",
+        "finite_embedding",
+        "highlighted",
+        "displayed",
+        "color_value"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "5a545429d69f78085b87757b4a35a17e13fc6b1cf44823195244677e4bdd36c0"
+    },
+    "facets": {
+      "file": "fibroblast_facets_facets.csv",
+      "rows": 3,
+      "columns": [
+        "facet_id",
+        "row_label",
+        "col_label",
+        "n_cells",
+        "n_finite_embedding",
+        "n_displayed",
+        "n_velocity_eligible",
+        "n_grid_supported",
+        "n_grid_total",
+        "x_min",
+        "x_max",
+        "y_min",
+        "y_max"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "object",
+        "object",
+        "object",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "08ded24bcaf24f6881a5927add0859f43f38ad6c4b29dbde92aa77332c791c4d"
+    },
+    "velocity_grid": {
+      "file": "fibroblast_facets_velocity_grid.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_vectors": {
+      "file": "fibroblast_facets_velocity_vectors.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_paths": {
+      "file": "fibroblast_facets_velocity_paths.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  }
+}

@@ -1,0 +1,850 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "recovery_compass",
+    "mode": "stored",
+    "layout": "adaptive",
+    "basis": "X_umap_pca50",
+    "node_key": "application_state",
+    "condition_key": "condition",
+    "group0": "PBS",
+    "group1": "TNF",
+    "alignment_source": "stored",
+    "analysis_rep": "X_pca50",
+    "effect_metric": "normalized_delta_norm",
+    "stored_provenance": {
+      "analysis_rep": "X_pca50",
+      "n_dimensions": null,
+      "scale": null,
+      "preprocessing": null,
+      "node_key": "application_state",
+      "condition_key": "condition",
+      "group0": "PBS",
+      "group1": "TNF",
+      "center": null,
+      "scope": null,
+      "reference": null,
+      "graph_mode": null,
+      "sample_key": null,
+      "sample_weighting": null,
+      "aggregation_unit": null,
+      "velocity_scope": null,
+      "velocity_aggregation": null,
+      "velocity_weighting": null,
+      "effect_normalization": null,
+      "status": "recorded_consistent",
+      "field_status": {
+        "analysis_rep": "recorded_consistent",
+        "n_dimensions": "unavailable",
+        "scale": "unavailable",
+        "preprocessing": "unavailable",
+        "node_key": "declared_unverified",
+        "condition_key": "declared_unverified",
+        "group0": "recorded_consistent",
+        "group1": "recorded_consistent",
+        "center": "unavailable",
+        "scope": "unavailable",
+        "reference": "unavailable",
+        "graph_mode": "unavailable",
+        "sample_key": "unavailable",
+        "sample_weighting": "unavailable",
+        "aggregation_unit": "unavailable",
+        "velocity_scope": "unavailable",
+        "velocity_aggregation": "unavailable",
+        "velocity_weighting": "unavailable",
+        "effect_normalization": "unavailable"
+      },
+      "table_provenance": {
+        "shift_df": {
+          "analysis_rep": "X_pca50",
+          "group0": "PBS",
+          "group1": "TNF"
+        }
+      },
+      "sources": {
+        "analysis_rep": [
+          {
+            "source": "shift_df.columns['representation']",
+            "value": "X_pca50"
+          },
+          {
+            "source": "declared analysis_rep",
+            "value": "X_pca50"
+          }
+        ],
+        "n_dimensions": [],
+        "scale": [],
+        "preprocessing": [],
+        "node_key": [
+          {
+            "source": "declared node_key",
+            "value": "application_state"
+          }
+        ],
+        "condition_key": [
+          {
+            "source": "declared condition_key",
+            "value": "condition"
+          }
+        ],
+        "group0": [
+          {
+            "source": "shift_df.columns['group0']",
+            "value": "PBS"
+          },
+          {
+            "source": "declared group0",
+            "value": "PBS"
+          }
+        ],
+        "group1": [
+          {
+            "source": "shift_df.columns['group1']",
+            "value": "TNF"
+          },
+          {
+            "source": "declared group1",
+            "value": "TNF"
+          }
+        ],
+        "center": [],
+        "scope": [],
+        "reference": [],
+        "graph_mode": [],
+        "sample_key": [],
+        "sample_weighting": [],
+        "aggregation_unit": [],
+        "velocity_scope": [],
+        "velocity_aggregation": [],
+        "velocity_weighting": [],
+        "effect_normalization": []
+      },
+      "declarations": {
+        "node_key": "application_state",
+        "condition_key": "condition",
+        "group0": "PBS",
+        "group1": "TNF",
+        "analysis_rep": "X_pca50"
+      },
+      "missing_fields": [],
+      "unverified_fields": [
+        "n_dimensions",
+        "scale",
+        "preprocessing",
+        "node_key",
+        "condition_key",
+        "center",
+        "scope",
+        "reference",
+        "graph_mode",
+        "sample_key",
+        "sample_weighting",
+        "aggregation_unit",
+        "velocity_scope",
+        "velocity_aggregation",
+        "velocity_weighting",
+        "effect_normalization"
+      ],
+      "strict": true,
+      "verification_scope": "Recorded metadata consistency only; no source-freshness or coordinate-transform verification."
+    },
+    "centroid_aggregation": "mean",
+    "centroid_unit": "cells",
+    "node_position": "pooled",
+    "velocity_key": "velocity_umap_pca50",
+    "velocity_scope": "contrast",
+    "velocity_aggregation": "jointly finite cell mean",
+    "ood_key": null,
+    "ood_threshold": null,
+    "ood_threshold_source": "scope_quantile_0.95",
+    "ood_scope": "contrast",
+    "ood_threshold_scope": "finite_scores_contrast",
+    "ood_fraction_denominator": "finite scored node cells in the selected OOD scope",
+    "sample_key": null,
+    "abundance_denominator": "annotated cells per sample-condition unit",
+    "sample_roster_scope": "all supplied selected-condition observations before state or display filtering",
+    "paga_key": "application_adjacency",
+    "graph_order_source": "explicit",
+    "graph_node_order": [
+      "Activated HSC",
+      "Ambiguous HSPC",
+      "HSC/quiescent",
+      "Lymphoid",
+      "MPP/progenitor",
+      "Megakaryocyte/erythroid",
+      "Myeloid"
+    ],
+    "connectivity_threshold": 0.01,
+    "graph_directed": false,
+    "min_cells": 20,
+    "node_size_mode": "constant",
+    "node_size_scale": 380.0,
+    "node_size_reference": 1.0,
+    "fill_color_mode": "constant",
+    "fill_norm": {
+      "type": "Normalize",
+      "vmin": 0.0,
+      "vmax": 1.0
+    },
+    "fill_cmap": "coolwarm",
+    "ring_mode": "none",
+    "arrow_color_mode": "constant",
+    "arrow_scale": 1.0,
+    "arrow_cmap": "magma",
+    "arrow_width_units": "points",
+    "arrow_norm": {
+      "type": "Normalize",
+      "vmin": 0.11784748316311464,
+      "vmax": 2.294742800980668
+    },
+    "arrow_source": "actual reference condition center; independent of node position",
+    "label_mode": "auto",
+    "label_names": null,
+    "max_points": 6000,
+    "random_state": 1729,
+    "n_background_displayed": 6000,
+    "summary_states": [
+      "Lymphoid",
+      "Activated HSC",
+      "MPP/progenitor",
+      "Myeloid",
+      "HSC/quiescent",
+      "Ambiguous HSPC",
+      "Megakaryocyte/erythroid"
+    ],
+    "resolved_panels": [
+      "map",
+      "effect",
+      "coverage"
+    ],
+    "omitted_panels": [
+      "alignment",
+      "abundance"
+    ],
+    "show_colorbar": true,
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "interpretation": "Stored evidence and observed display context remain separate; no recovery, causality or trajectories inferred.",
+    "application_display_profile": {
+      "state_order": [
+        "HSC/quiescent",
+        "Activated HSC",
+        "MPP/progenitor",
+        "Myeloid",
+        "Megakaryocyte/erythroid",
+        "Lymphoid",
+        "Ambiguous HSPC"
+      ],
+      "matrix_vmax": 0.6423749493310843,
+      "effect_xlim": [
+        0.0,
+        0.487317183616952
+      ],
+      "condition_palette": {
+        "PBS": "#4cb34f",
+        "TNF": "#4760c2",
+        "LPS": "#7342b2"
+      }
+    },
+    "application_dataset": "B",
+    "application_scope": "descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen descriptive displacement; no biological replication; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+  },
+  "warnings": [
+    "Projected velocity 'velocity_umap_pca50' unavailable; display alignment remains missing.",
+    "Sample weighting is not recorded consistently in every source table; no weighting is inferred."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      343.154,
+      294.64
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "PBS_vs_TNF_compass.png",
+      "sha256": "979c21bdedb17af63dc8d1f179c8eea242ec3c20ef6a445c1bb62fc338c46000"
+    },
+    "svg": {
+      "file": "PBS_vs_TNF_compass.svg",
+      "sha256": "5beebe06490942452f9d980a20380258ea34c671d0dbb20af9450fa450ce249e"
+    },
+    "pdf": {
+      "file": "PBS_vs_TNF_compass.pdf",
+      "sha256": "49e9f514bfee37b46252aec21b29fe6fd6eac9932a8f8b9ae0efb496f704ae39"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "PBS_vs_TNF_compass_cells.csv",
+      "rows": 34432,
+      "columns": [
+        "cell",
+        "obs_position",
+        "node",
+        "node_label",
+        "state",
+        "condition",
+        "x",
+        "y",
+        "finite_coordinates",
+        "in_contrast",
+        "contrast_included",
+        "vx",
+        "vy",
+        "velocity_in_scope",
+        "finite_velocity",
+        "velocity_included",
+        "ood_score",
+        "ood_in_scope",
+        "ood_scored",
+        "ood_flagged",
+        "background_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "Float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "821cc0cd363708ff50bb652cd89bb7c83388ea1fa70e31775fb0b70236ca8add"
+    },
+    "nodes": {
+      "file": "PBS_vs_TNF_compass_nodes.csv",
+      "rows": 7,
+      "columns": [
+        "application_state",
+        "state",
+        "n0",
+        "x0",
+        "y0",
+        "present0",
+        "n0_comp",
+        "frac0",
+        "n1",
+        "x1",
+        "y1",
+        "present1",
+        "n1_comp",
+        "frac1",
+        "dx",
+        "dy",
+        "shift_norm",
+        "delta_frac",
+        "delta_abs",
+        "usable_shift",
+        "coverage_status",
+        "vx",
+        "vy",
+        "n_vel",
+        "n_vel_observed",
+        "n_vel_missing",
+        "velocity_present",
+        "vel_norm",
+        "display_alignment_cosine",
+        "alignment_cosine",
+        "usable_velocity",
+        "ood_mean",
+        "ood_median",
+        "ood_flagged_n",
+        "ood_frac",
+        "ood_n",
+        "ood_n_scored",
+        "ood_n_missing",
+        "ood_score_coverage",
+        "ood_threshold_used",
+        "stored_alignment_available",
+        "displayed"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "f52066fb523fc74cd60327ee40405f20930dd1e49bcf654fbf4b66ea92e49053"
+    },
+    "edges": {
+      "file": "PBS_vs_TNF_compass_edges.csv",
+      "rows": 21,
+      "columns": [
+        "source",
+        "target",
+        "weight",
+        "self_loop",
+        "reason",
+        "displayed",
+        "source_x",
+        "source_y",
+        "target_x",
+        "target_y"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "140f1dcae881c914a5299a4cefda87584acfc0fa6325f4feb71c18447ec843a3"
+    },
+    "graph_nodes": {
+      "file": "PBS_vs_TNF_compass_graph_nodes.csv",
+      "rows": 7,
+      "columns": [
+        "node",
+        "matrix_position"
+      ],
+      "dtypes": [
+        "str",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "524c33ffe5db299727e391904e7cc632d338164fdc6eeb8a53eb53f8dd847d63"
+    },
+    "glyphs": {
+      "file": "PBS_vs_TNF_compass_glyphs.csv",
+      "rows": 7,
+      "columns": [
+        "node",
+        "x",
+        "y",
+        "displayed",
+        "position_source",
+        "size",
+        "size_value",
+        "fill_value",
+        "fill_available",
+        "ring_lw",
+        "ring_available",
+        "arrow_displayed",
+        "arrow_reason",
+        "arrow_source_x",
+        "arrow_source_y",
+        "arrow_end_x",
+        "arrow_end_y",
+        "comparison_x",
+        "comparison_y",
+        "label_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "78516b5cdc0d4c29908cfebb30d3c67ff58dc31b47c6110fd7f46cacbe3e5c72"
+    },
+    "node_anchors": {
+      "file": "PBS_vs_TNF_compass_node_anchors.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "x",
+        "y",
+        "n_cells",
+        "position_source",
+        "observed",
+        "usable",
+        "low_coverage",
+        "status",
+        "condition_coverage_status"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "str",
+        "bool",
+        "bool",
+        "bool",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "a67d8cacd44a6e34d18e938fdee9e50aa9affe9c2a2956fd84848e3183f38f3b"
+    },
+    "coverage": {
+      "file": "PBS_vs_TNF_compass_coverage.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "condition",
+        "n_cells",
+        "n_samples",
+        "n_samples_total",
+        "n_sample_denominators",
+        "n_velocity",
+        "n_ood_scored",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "abb03f38d8ed4e41dd5ad2cdcc6ada9c95f4686df636d648cb356539f96c0bdb"
+    },
+    "sample_abundance": {
+      "file": "PBS_vs_TNF_compass_sample_abundance.csv",
+      "rows": 0,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "count",
+        "denominator",
+        "n_cells",
+        "n_missing_state",
+        "state_fraction",
+        "included",
+        "status"
+      ],
+      "dtypes": [
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "c3db4f523a5a087d1a1364e2edbecea4370eeec7c7537dfd37a8f825f263c392"
+    },
+    "evidence": {
+      "file": "PBS_vs_TNF_compass_evidence.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "effect",
+        "effect_source_eligible",
+        "effect_available",
+        "effect_source_status",
+        "effect_metric",
+        "ci_low",
+        "ci_high",
+        "interval_available",
+        "interval_reason",
+        "alignment",
+        "alignment_source_eligible",
+        "alignment_available",
+        "alignment_source_status",
+        "alignment_reason",
+        "effect_descriptive",
+        "effect_supported",
+        "effect_support_status",
+        "summary_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "bool",
+        "bool",
+        "str",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "bcbf48ca9dc785e902ff6052064628d5cbe8ce033d0aaa9be62dab67684a54fc"
+    },
+    "labels": {
+      "file": "PBS_vs_TNF_compass_labels.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "anchor_x",
+        "anchor_y",
+        "offset_x_points",
+        "offset_y_points",
+        "placement"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "09c10dbaccbff01563ce8a93d8532a21973844e87bf4995bc741a9ef9a23d87e"
+    },
+    "shift_source": {
+      "file": "PBS_vs_TNF_compass_shift_source.csv",
+      "rows": 7,
+      "columns": [
+        "representation",
+        "state",
+        "status",
+        "usable",
+        "error_message",
+        "n_cells_PBS",
+        "n_samples0",
+        "n_samples1",
+        "robust_displacement_magnitude",
+        "normalized_effect",
+        "cell_bootstrap_magnitude_low",
+        "cell_bootstrap_magnitude_high",
+        "direction_stability",
+        "outlier_sensitivity",
+        "outlier_delta_difference_norm",
+        "outlier_relative_norm_change",
+        "outlier_cosine_to_mean",
+        "velocity_key",
+        "velocity_status",
+        "velocity_n_cells",
+        "alignment_cosine",
+        "alignment_class",
+        "magnitude_rank",
+        "loo_magnitude_median_without_rep",
+        "loo_magnitude_abs_deviation",
+        "loo_class_consensus_without_rep",
+        "loo_class_changes_consensus",
+        "n_cells_TNF",
+        "contrast",
+        "hierarchy",
+        "coverage_status_reason",
+        "resampling_status",
+        "inference_status",
+        "direction_sign_stability",
+        "representation_role",
+        "n_cells0",
+        "n_cells1",
+        "delta_norm",
+        "normalized_delta_norm",
+        "effect_status",
+        "coverage_status",
+        "descriptive_only",
+        "inference_level",
+        "group0",
+        "group1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "object",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "7bba7abf51fb38abc48729e3d150e429a9a18a318e12061fff9334e60e8c1382"
+    }
+  }
+}

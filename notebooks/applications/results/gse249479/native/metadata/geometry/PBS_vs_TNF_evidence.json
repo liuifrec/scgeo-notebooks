@@ -1,0 +1,231 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "state_evidence_panel",
+    "effect_metric": "normalized_delta_norm",
+    "effect_representation": null,
+    "sort_by": "normalized_delta_norm",
+    "state_order": [
+      "HSC/quiescent",
+      "Activated HSC",
+      "MPP/progenitor",
+      "Myeloid",
+      "Megakaryocyte/erythroid",
+      "Lymphoid",
+      "Ambiguous HSPC"
+    ],
+    "displayed_states": 7,
+    "total_states": 7,
+    "page": 0,
+    "evidence_mode": "compact",
+    "provenance": {
+      "group0": "PBS",
+      "group1": "TNF"
+    },
+    "interval_note": "Magnitude intervals summarize uncertainty; they are not automatic hypothesis tests.",
+    "application_display_profile": {
+      "state_order": [
+        "HSC/quiescent",
+        "Activated HSC",
+        "MPP/progenitor",
+        "Myeloid",
+        "Megakaryocyte/erythroid",
+        "Lymphoid",
+        "Ambiguous HSPC"
+      ],
+      "matrix_vmax": 0.6423749493310843,
+      "effect_xlim": [
+        0.0,
+        0.487317183616952
+      ],
+      "condition_palette": {
+        "PBS": "#4cb34f",
+        "TNF": "#4760c2",
+        "LPS": "#7342b2"
+      }
+    },
+    "application_dataset": "B",
+    "application_scope": "descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen descriptive displacement; no biological replication"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      279.4,
+      180.33999999999997
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "PBS_vs_TNF_evidence.png",
+      "sha256": "3a561a1f92f328ae3b92c6c890612a35456573a301dace8fde596e2c4db18fc2"
+    },
+    "svg": {
+      "file": "PBS_vs_TNF_evidence.svg",
+      "sha256": "7dd82c7a785e3b979ceb8bc830621ad67b03f7984adb1b85a7b6a6018c53f5a9"
+    },
+    "pdf": {
+      "file": "PBS_vs_TNF_evidence.pdf",
+      "sha256": "c0d31eb86d9c2d54d18debce8e5e581f9b1aa74af5c08fb794f2ff2df0372851"
+    }
+  },
+  "tables": {
+    "report": {
+      "file": "PBS_vs_TNF_evidence_report.csv",
+      "rows": 7,
+      "columns": [
+        "representation",
+        "state",
+        "status",
+        "usable",
+        "error_message",
+        "n_cells_PBS",
+        "n_samples0",
+        "n_samples1",
+        "robust_displacement_magnitude",
+        "normalized_effect",
+        "cell_bootstrap_magnitude_low",
+        "cell_bootstrap_magnitude_high",
+        "direction_stability",
+        "outlier_sensitivity",
+        "outlier_delta_difference_norm",
+        "outlier_relative_norm_change",
+        "outlier_cosine_to_mean",
+        "velocity_key",
+        "velocity_status",
+        "velocity_n_cells",
+        "alignment_cosine",
+        "alignment_class",
+        "magnitude_rank",
+        "loo_magnitude_median_without_rep",
+        "loo_magnitude_abs_deviation",
+        "loo_class_consensus_without_rep",
+        "loo_class_changes_consensus",
+        "n_cells_TNF",
+        "contrast",
+        "hierarchy",
+        "coverage_status_reason",
+        "resampling_status",
+        "inference_status",
+        "direction_sign_stability",
+        "representation_role",
+        "n_cells0",
+        "n_cells1",
+        "delta_norm",
+        "normalized_delta_norm",
+        "effect_status",
+        "coverage_status",
+        "descriptive_only",
+        "inference_level",
+        "group0",
+        "group1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "object",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "3f9f90569b9c6589b6b042ca23b12b205cc43085b68d74367e982abb1b2ec536"
+    },
+    "availability": {
+      "file": "PBS_vs_TNF_evidence_availability.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "effect",
+        "representation",
+        "local",
+        "dynamics"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "3351825dbf188eaf01aeced982a13d1d1bb0ef041cf208de976b4f05934c66da"
+    }
+  }
+}

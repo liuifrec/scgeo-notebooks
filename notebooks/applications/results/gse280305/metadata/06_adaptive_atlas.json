@@ -1,0 +1,406 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "geometry_dynamics_atlas",
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "requested_panels": [
+      "states",
+      "evidence"
+    ],
+    "panels": [
+      "states",
+      "evidence"
+    ],
+    "omitted_panels": {},
+    "display_basis": "X_umap_scanorama",
+    "velocity_basis": null,
+    "analysis_representation": "X_pca_raw",
+    "condition_key": "timepoint",
+    "group0": "D8",
+    "group1": "D21",
+    "condition_choice": "explicit",
+    "node_key": "leiden_raw",
+    "sample_key": null,
+    "unique_samples_by_condition": {},
+    "cell_count": 21478,
+    "finite_coordinates": 21478,
+    "drawn_state_cells": 10000,
+    "max_points": 10000,
+    "random_state": 1729,
+    "highlight_states": [],
+    "panel_provenance": {
+      "states": {
+        "color_key": "leiden_raw",
+        "color_type": "categorical",
+        "drawn": 10000,
+        "palette": {
+          "0": "#3cc25d",
+          "1": "#36ad74",
+          "2": "#b150b3",
+          "3": "#62c04f",
+          "4": "#61c542",
+          "5": "#b73c6c",
+          "6": "#b54885",
+          "7": "#38ac99",
+          "8": "#bec343",
+          "9": "#b7853d",
+          "10": "#66af4c",
+          "11": "#56c246",
+          "12": "#3bb379",
+          "13": "#91c55c"
+        },
+        "palette_origin": "stable_hash",
+        "label_states": true,
+        "max_labels": 14,
+        "label_mode": "auto",
+        "highlight_label_overflow": 0,
+        "numeric_norm": null,
+        "cmap": null,
+        "color_scale_scope": null,
+        "n_finite_color_values": null,
+        "legend_categories_displayed": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "legend_categories_omitted": [
+          "12",
+          "13"
+        ]
+      },
+      "evidence": {
+        "metric": "normalized_delta_norm",
+        "report_state_key": null,
+        "assessed_displayed": 0,
+        "total_report_states": 14,
+        "max_states": 14,
+        "intervals": "matching stored endpoints only"
+      }
+    },
+    "max_labels": 14,
+    "label_mode": "auto",
+    "highlight_label_overflow": 0,
+    "label_offsets": {},
+    "legend": "auto",
+    "legend_max_items": 12,
+    "legend_loc": "outside",
+    "legend_categories_displayed": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "legend_categories_omitted": [
+      "12",
+      "13"
+    ],
+    "layout": "adaptive",
+    "resolved_layout": "adaptive_evidence_strip",
+    "show_sample_coverage": true,
+    "sample_coverage_position": "figure_footer",
+    "sample_coverage_scope": "all supplied input cells, including context conditions",
+    "display_is_inference": false,
+    "effect_source": "explicit stored report",
+    "report_provenance": {
+      "effect_representation": "X_pca_raw",
+      "group0": "D8",
+      "group1": "D21"
+    },
+    "velocity_interpretation": "descriptive already projected vectors; not trajectories",
+    "paga_interpretation": "undirected connectivity; not transitions",
+    "figure_style": "paper",
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "native state and stored-evidence panels; no unsupported dynamics"
+  },
+  "warnings": [
+    "2 categories omitted from the visible legend; the exported legend retains all categories."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      241.29999999999998,
+      319.532
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "06_adaptive_atlas.png",
+      "sha256": "1e6ca0588d2ff454d198869863cb8424148fbc2989d4f93972bf75b93a54a32c"
+    },
+    "svg": {
+      "file": "06_adaptive_atlas.svg",
+      "sha256": "ffd28ab9c9df88966ca7dde7e48a5314b9f03cb48055d5e3f15fa20a97516ec9"
+    },
+    "pdf": {
+      "file": "06_adaptive_atlas.pdf",
+      "sha256": "d91d2a2ca19c7c00c0600bd0460a529c210f1d159c6ce9391c52aeaddd284739"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "06_adaptive_atlas_cells.csv",
+      "rows": 21478,
+      "columns": [
+        "cell_id",
+        "state",
+        "condition",
+        "x",
+        "y",
+        "finite",
+        "displayed",
+        "highlighted",
+        "color_value"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "4105077e8f29248bae29b557c3b76c8eab5524d18472d3b0a1308f11919722a8"
+    },
+    "labels": {
+      "file": "06_adaptive_atlas_labels.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "n_cells",
+        "n_finite",
+        "anchor_x",
+        "anchor_y",
+        "highlighted",
+        "displayed",
+        "reason",
+        "manual_offset_requested",
+        "offset_x_points",
+        "offset_y_points",
+        "placement"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "960a51ca7b593a207c13a8afc717883a71c359fcaf0b549e6e5d707bd8613eec"
+    },
+    "legend": {
+      "file": "06_adaptive_atlas_legend.csv",
+      "rows": 14,
+      "columns": [
+        "category",
+        "color",
+        "count",
+        "displayed",
+        "reason"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "9bdcbd6935e95338736fdd26815cc4cdef5b2f5d4da8eadaa2bc53451f972e12"
+    },
+    "evidence_all": {
+      "file": "06_adaptive_atlas_evidence_all.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "n_cells0",
+        "n_cells1",
+        "delta_norm",
+        "normalized_delta_norm",
+        "representation_consensus_label",
+        "representation_coverage_fraction",
+        "median_neighbor_overlap",
+        "median_local_shape_distortion",
+        "group0",
+        "group1",
+        "inference_scope",
+        "inference_status",
+        "effect_status",
+        "_state_id",
+        "effect",
+        "assessed",
+        "status_label",
+        "ci_low",
+        "ci_high",
+        "_highlight"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {
+        "provenance": {
+          "effect_representation": "X_pca_raw",
+          "group0": "D8",
+          "group1": "D21"
+        }
+      },
+      "sha256": "063bd8458ddeb26a04e22bd6ef070eae8ecf59ff4ec1682706f75fd3de270749"
+    },
+    "evidence_displayed": {
+      "file": "06_adaptive_atlas_evidence_displayed.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "n_cells0",
+        "n_cells1",
+        "delta_norm",
+        "normalized_delta_norm",
+        "representation_consensus_label",
+        "representation_coverage_fraction",
+        "median_neighbor_overlap",
+        "median_local_shape_distortion",
+        "group0",
+        "group1",
+        "inference_scope",
+        "inference_status",
+        "effect_status",
+        "_state_id",
+        "effect",
+        "assessed",
+        "status_label",
+        "ci_low",
+        "ci_high",
+        "_highlight"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {
+        "provenance": {
+          "effect_representation": "X_pca_raw",
+          "group0": "D8",
+          "group1": "D21"
+        }
+      },
+      "sha256": "063bd8458ddeb26a04e22bd6ef070eae8ecf59ff4ec1682706f75fd3de270749"
+    }
+  }
+}

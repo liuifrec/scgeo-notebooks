@@ -1,0 +1,339 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "shift_curves",
+    "state": "all",
+    "state_status": "insufficient_samples",
+    "shift_direction_available": true,
+    "explanation_key": "molecular_explanation",
+    "analysis_rep": "X_molecular_linear50",
+    "display_basis": "X_umap_pca50",
+    "layer": null,
+    "panels": [
+      "curve",
+      "expression",
+      "contribution"
+    ],
+    "sample_key": null,
+    "bandwidth_fraction": 0.18,
+    "bandwidth": 2.018730776617481,
+    "grid_size": 80,
+    "min_cells_per_sample": 5,
+    "sample_weighting": "equal among locally supported samples",
+    "uncertainty": "none",
+    "interval_is_confidence_interval": false,
+    "coordinate_interpretation": "frozen geometric projection; not time or a trajectory",
+    "coordinate_key": null,
+    "coordinate_source": "stored_shift_score",
+    "curve_coordinate_available": true,
+    "sample_roster_source": "full supplied AnnData observations in the declared contrast",
+    "distribution_summary": "pooled-cell median and observed cell IQR; no biological-sample inference",
+    "max_points": 2500,
+    "n_drawn_cells": 2500,
+    "show_samples": false,
+    "condition_colors": {
+      "PBS": "#4cb34f",
+      "TNF": "#4760c2"
+    },
+    "point_color": "condition",
+    "smoothing": "compact tricube kernel mean without extrapolation",
+    "application_dataset": "B",
+    "application_scope": "New molecular accounting; descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; overlapping program sums are not percentages"
+  },
+  "warnings": [
+    "Geometric shift coordinates are expression-derived; association and attribution are descriptive, not causal.",
+    "No biological sample key: pooled cell curves have no sample uncertainty band."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      312.41999999999996,
+      86.36
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "B_TNF_01_program_curves.png",
+      "sha256": "d4410d6aea7afc6d42454d4c6c4ff19db76ff33b17ae344e06955ce195d43f17"
+    },
+    "svg": {
+      "file": "B_TNF_01_program_curves.svg",
+      "sha256": "69af4425a870cb65cb39337f96db2b25a84f14ccaf11438ddaeed821840695af"
+    },
+    "pdf": {
+      "file": "B_TNF_01_program_curves.pdf",
+      "sha256": "3e269be5da17a54523293109cafc81fd538e8e4de102c484175aef5ef5267b1c"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "B_TNF_01_program_curves_cells.csv",
+      "rows": 2710,
+      "columns": [
+        "obs_position",
+        "obs_name",
+        "state",
+        "condition",
+        "sample",
+        "shift_score",
+        "eligible",
+        "curve_coordinate",
+        "coordinate_source",
+        "displayed",
+        "x",
+        "y",
+        "feature",
+        "expression",
+        "contribution"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "float64",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "3feda42d7525260a2d837eb4f192d76edfd925f6633cf52f8817ce4d8b4c2603"
+    },
+    "curves": {
+      "file": "B_TNF_01_program_curves_curves.csv",
+      "rows": 160,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "shift_score",
+        "expression",
+        "lower",
+        "upper",
+        "n_samples",
+        "n_smoothing_units",
+        "n_cells",
+        "support",
+        "curve_coordinate",
+        "coordinate_source"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "str",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "8074d79b68512179a579918704466532c71f55dd2ca7ec2dd96932aff4918f48"
+    },
+    "sample_curves": {
+      "file": "B_TNF_01_program_curves_sample_curves.csv",
+      "rows": 160,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "sample",
+        "shift_score",
+        "expression",
+        "n_cells",
+        "supported",
+        "curve_coordinate",
+        "coordinate_source"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "bool",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "aca93cead27e203d0c68c946a7e42ab9849b4cb234c56908660bbb1534cfa026"
+    },
+    "features": {
+      "file": "B_TNF_01_program_curves_features.csv",
+      "rows": 1,
+      "columns": [
+        "feature",
+        "name",
+        "kind",
+        "n_members",
+        "n_attributed_members",
+        "expression_summary",
+        "contribution_summary"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "21776e6cfb591b3efbcffb83501792887f0fa3302f435e710815dc0c887658e9"
+    },
+    "coverage": {
+      "file": "B_TNF_01_program_curves_coverage.csv",
+      "rows": 2,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "n_cells",
+        "n_coordinate_cells",
+        "sample_in_roster",
+        "biological_sample",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "b70d2887313cafdbc09459a9139506e2640a837d286f1493154c46bd2f81b863"
+    },
+    "sample_expression": {
+      "file": "B_TNF_01_program_curves_sample_expression.csv",
+      "rows": 2,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "sample",
+        "n_cells",
+        "n_coordinate_cells",
+        "sample_in_roster",
+        "biological_sample",
+        "status",
+        "mean",
+        "median",
+        "q25",
+        "q75"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "bool",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "83122ed73cc11abe567b58934a4a44818e67dcb2a84f18d6b88228cda4441ef2"
+    },
+    "panel_status": {
+      "file": "B_TNF_01_program_curves_panel_status.csv",
+      "rows": 3,
+      "columns": [
+        "state",
+        "feature",
+        "panel",
+        "status",
+        "reason"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "ba1b5f7709d3f422695cc2af2db484998c8c10900d3217d4d239e177c6ec9ea0"
+    }
+  }
+}

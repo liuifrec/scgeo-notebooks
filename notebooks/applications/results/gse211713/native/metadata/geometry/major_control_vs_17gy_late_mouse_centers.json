@@ -1,0 +1,200 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "replicate_effect",
+    "coordinate": 0,
+    "representation": "X_pca50",
+    "state_order": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast/stromal",
+      "Lymphoid",
+      "Myeloid",
+      "Proliferating"
+    ],
+    "condition_order": [
+      "control",
+      "17Gy_late"
+    ],
+    "pair_key": null,
+    "summary": null,
+    "seed": 0,
+    "jitter": 0.08,
+    "resolved_layout": "wrapped",
+    "inference": "Descriptive, equally weighted biological samples; no hypothesis test or CI computed.",
+    "source_attrs": {},
+    "application_display_profile": {
+      "state_order": [
+        "Endothelial",
+        "Epithelial",
+        "Fibroblast/stromal",
+        "Lymphoid",
+        "Myeloid",
+        "Proliferating"
+      ],
+      "matrix_vmax": 4.452703275199082,
+      "effect_xlim": [
+        0.0,
+        6.467340566839043
+      ],
+      "condition_palette": {
+        "control": "#c0794f",
+        "17Gy_early": "#a154c7",
+        "17Gy_late": "#5739ae"
+      },
+      "pc1_ylim": [
+        -20.347918701036697,
+        9.777236188734637
+      ],
+      "abundance_xlim": [
+        -1.0,
+        63.39876967613533
+      ]
+    },
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen qualified mouse centers; PC1 is one coordinate only; cross-sectional, unpaired"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      274.32,
+      182.88
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "major_control_vs_17gy_late_mouse_centers.png",
+      "sha256": "5f5b47adde4c4045545ce66546823aa93dff86c38a81759478808c8c70f72ee8"
+    },
+    "svg": {
+      "file": "major_control_vs_17gy_late_mouse_centers.svg",
+      "sha256": "ad10b79478a7217a7f3eab26b7b670aeeb246146becca47961b2cc21dbf6df1a"
+    },
+    "pdf": {
+      "file": "major_control_vs_17gy_late_mouse_centers.pdf",
+      "sha256": "04314ded3017b99ef33f7d177d15c4bea51cf72e9d7fde9ee2f56e14d80e732f"
+    }
+  },
+  "tables": {
+    "sample_centers": {
+      "file": "major_control_vs_17gy_late_mouse_centers_sample_centers.csv",
+      "rows": 54,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "coordinate",
+        "value",
+        "representation",
+        "state_cells",
+        "display_x"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "float64",
+        "str",
+        "int64",
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "a84075b37272a10f045f85bec175a72a713f815a2e7e981caf785df6a503a30b"
+    },
+    "sample_summary": {
+      "file": "major_control_vs_17gy_late_mouse_centers_sample_summary.csv",
+      "rows": 12,
+      "columns": [
+        "state",
+        "condition",
+        "coordinate",
+        "representation",
+        "summary",
+        "value",
+        "n_samples",
+        "n_missing"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "str",
+        "object",
+        "float64",
+        "int64",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "b1a7301575215e5514b17e2b84b12ff98398ce35cca7349a1fe67068f4c2b895"
+    },
+    "pairs": {
+      "file": "major_control_vs_17gy_late_mouse_centers_pairs.csv",
+      "rows": 0,
+      "columns": [
+        "state",
+        "pair_id",
+        "condition0",
+        "condition1",
+        "sample0",
+        "sample1",
+        "value0",
+        "value1"
+      ],
+      "dtypes": [
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object",
+        "object"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "0c236a141b141f502b576df4824f410937c8a702911eb3c80043184fa26191b0"
+    }
+  }
+}

@@ -1,0 +1,851 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "recovery_compass",
+    "mode": "stored",
+    "layout": "adaptive",
+    "basis": "X_umap_display_only",
+    "node_key": "application_state",
+    "condition_key": "application_group",
+    "group0": "17Gy_early",
+    "group1": "17Gy_late",
+    "alignment_source": "stored",
+    "analysis_rep": "X_pca50",
+    "effect_metric": "normalized_delta_norm",
+    "stored_provenance": {
+      "analysis_rep": "X_pca50",
+      "n_dimensions": null,
+      "scale": null,
+      "preprocessing": null,
+      "node_key": "application_state",
+      "condition_key": "application_group",
+      "group0": "17Gy_early",
+      "group1": "17Gy_late",
+      "center": null,
+      "scope": null,
+      "reference": null,
+      "graph_mode": null,
+      "sample_key": null,
+      "sample_weighting": null,
+      "aggregation_unit": null,
+      "velocity_scope": null,
+      "velocity_aggregation": null,
+      "velocity_weighting": null,
+      "effect_normalization": null,
+      "status": "recorded_consistent",
+      "field_status": {
+        "analysis_rep": "recorded_consistent",
+        "n_dimensions": "unavailable",
+        "scale": "unavailable",
+        "preprocessing": "unavailable",
+        "node_key": "declared_unverified",
+        "condition_key": "declared_unverified",
+        "group0": "recorded_consistent",
+        "group1": "recorded_consistent",
+        "center": "unavailable",
+        "scope": "unavailable",
+        "reference": "unavailable",
+        "graph_mode": "unavailable",
+        "sample_key": "unavailable",
+        "sample_weighting": "unavailable",
+        "aggregation_unit": "unavailable",
+        "velocity_scope": "unavailable",
+        "velocity_aggregation": "unavailable",
+        "velocity_weighting": "unavailable",
+        "effect_normalization": "unavailable"
+      },
+      "table_provenance": {
+        "shift_df": {
+          "analysis_rep": "X_pca50",
+          "group0": "17Gy_early",
+          "group1": "17Gy_late"
+        }
+      },
+      "sources": {
+        "analysis_rep": [
+          {
+            "source": "shift_df.columns['representation']",
+            "value": "X_pca50"
+          },
+          {
+            "source": "declared analysis_rep",
+            "value": "X_pca50"
+          }
+        ],
+        "n_dimensions": [],
+        "scale": [],
+        "preprocessing": [],
+        "node_key": [
+          {
+            "source": "declared node_key",
+            "value": "application_state"
+          }
+        ],
+        "condition_key": [
+          {
+            "source": "declared condition_key",
+            "value": "application_group"
+          }
+        ],
+        "group0": [
+          {
+            "source": "shift_df.columns['group0']",
+            "value": "17Gy_early"
+          },
+          {
+            "source": "declared group0",
+            "value": "17Gy_early"
+          }
+        ],
+        "group1": [
+          {
+            "source": "shift_df.columns['group1']",
+            "value": "17Gy_late"
+          },
+          {
+            "source": "declared group1",
+            "value": "17Gy_late"
+          }
+        ],
+        "center": [],
+        "scope": [],
+        "reference": [],
+        "graph_mode": [],
+        "sample_key": [],
+        "sample_weighting": [],
+        "aggregation_unit": [],
+        "velocity_scope": [],
+        "velocity_aggregation": [],
+        "velocity_weighting": [],
+        "effect_normalization": []
+      },
+      "declarations": {
+        "node_key": "application_state",
+        "condition_key": "application_group",
+        "group0": "17Gy_early",
+        "group1": "17Gy_late",
+        "analysis_rep": "X_pca50"
+      },
+      "missing_fields": [],
+      "unverified_fields": [
+        "n_dimensions",
+        "scale",
+        "preprocessing",
+        "node_key",
+        "condition_key",
+        "center",
+        "scope",
+        "reference",
+        "graph_mode",
+        "sample_key",
+        "sample_weighting",
+        "aggregation_unit",
+        "velocity_scope",
+        "velocity_aggregation",
+        "velocity_weighting",
+        "effect_normalization"
+      ],
+      "strict": true,
+      "verification_scope": "Recorded metadata consistency only; no source-freshness or coordinate-transform verification."
+    },
+    "centroid_aggregation": "mean",
+    "centroid_unit": "cells",
+    "node_position": "pooled",
+    "velocity_key": "velocity_umap_display_only",
+    "velocity_scope": "contrast",
+    "velocity_aggregation": "jointly finite cell mean",
+    "ood_key": null,
+    "ood_threshold": null,
+    "ood_threshold_source": "scope_quantile_0.95",
+    "ood_scope": "contrast",
+    "ood_threshold_scope": "finite_scores_contrast",
+    "ood_fraction_denominator": "finite scored node cells in the selected OOD scope",
+    "sample_key": "mouse_id",
+    "abundance_denominator": "annotated cells per sample-condition unit",
+    "sample_roster_scope": "all supplied selected-condition observations before state or display filtering",
+    "paga_key": "application_adjacency",
+    "graph_order_source": "explicit",
+    "graph_node_order": [
+      "Col13a1-like matrix fibroblast",
+      "Col14a1-like matrix fibroblast",
+      "Myofibroblast",
+      "Other retained cells"
+    ],
+    "connectivity_threshold": 0.01,
+    "graph_directed": false,
+    "min_cells": 20,
+    "node_size_mode": "constant",
+    "node_size_scale": 380.0,
+    "node_size_reference": 1.0,
+    "fill_color_mode": "constant",
+    "fill_norm": {
+      "type": "Normalize",
+      "vmin": 0.0,
+      "vmax": 1.0
+    },
+    "fill_cmap": "coolwarm",
+    "ring_mode": "none",
+    "arrow_color_mode": "constant",
+    "arrow_scale": 1.0,
+    "arrow_cmap": "magma",
+    "arrow_width_units": "points",
+    "arrow_norm": {
+      "type": "Normalize",
+      "vmin": 0.3996960189639899,
+      "vmax": 0.5827909295804606
+    },
+    "arrow_source": "actual reference condition center; independent of node position",
+    "label_mode": "auto",
+    "label_names": null,
+    "max_points": 6000,
+    "random_state": 1729,
+    "n_background_displayed": 6000,
+    "summary_states": [
+      "Col13a1-like matrix fibroblast",
+      "Myofibroblast",
+      "Col14a1-like matrix fibroblast"
+    ],
+    "resolved_panels": [
+      "map",
+      "effect",
+      "abundance",
+      "coverage"
+    ],
+    "omitted_panels": [
+      "alignment"
+    ],
+    "show_colorbar": true,
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "interpretation": "Stored evidence and observed display context remain separate; no recovery, causality or trajectories inferred.",
+    "application_display_profile": {
+      "state_order": [
+        "Col13a1-like matrix fibroblast",
+        "Col14a1-like matrix fibroblast",
+        "Myofibroblast"
+      ],
+      "matrix_vmax": 3.494940044680524,
+      "effect_xlim": [
+        0.0,
+        4.104210992167131
+      ],
+      "condition_palette": {
+        "control": "#c0794f",
+        "17Gy_early": "#a154c7",
+        "17Gy_late": "#5739ae"
+      },
+      "pc1_ylim": [
+        -20.980433044501435,
+        -9.683830853926393
+      ],
+      "abundance_xlim": [
+        -0.30364372469635625,
+        6.072874493927125
+      ]
+    },
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen qualified-mouse displacement; cross-sectional; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+  },
+  "warnings": [
+    "Projected velocity 'velocity_umap_display_only' unavailable; display alignment remains missing.",
+    "Sample weighting is not recorded consistently in every source table; no weighting is inferred."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      364.744,
+      264.15999999999997
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "fibroblast_17gy_early_vs_late_compass.png",
+      "sha256": "01261a8182b7ee26a83b24b4503775c422b834eb6916c9f54a743e11ba6c1144"
+    },
+    "svg": {
+      "file": "fibroblast_17gy_early_vs_late_compass.svg",
+      "sha256": "d1af5b4d5d91285f94da601ee65172ea63e95b0a86ff2a608f347b12bef0401a"
+    },
+    "pdf": {
+      "file": "fibroblast_17gy_early_vs_late_compass.pdf",
+      "sha256": "2fa863ac1832cb826fd12b7bd958ce2d4e5aab4fe339d80c2d296441c15acd57"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "fibroblast_17gy_early_vs_late_compass_cells.csv",
+      "rows": 83373,
+      "columns": [
+        "cell",
+        "obs_position",
+        "node",
+        "node_label",
+        "state",
+        "condition",
+        "x",
+        "y",
+        "finite_coordinates",
+        "in_contrast",
+        "contrast_included",
+        "vx",
+        "vy",
+        "velocity_in_scope",
+        "finite_velocity",
+        "velocity_included",
+        "ood_score",
+        "ood_in_scope",
+        "ood_scored",
+        "ood_flagged",
+        "sample",
+        "background_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "Float64",
+        "object",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "aa026512bd7f1c7bce7639e57ad40ffb04df01a75a008ca5bc619d1ba0a18067"
+    },
+    "nodes": {
+      "file": "fibroblast_17gy_early_vs_late_compass_nodes.csv",
+      "rows": 4,
+      "columns": [
+        "application_state",
+        "state",
+        "n0",
+        "x0",
+        "y0",
+        "present0",
+        "n0_comp",
+        "frac0",
+        "n1",
+        "x1",
+        "y1",
+        "present1",
+        "n1_comp",
+        "frac1",
+        "dx",
+        "dy",
+        "shift_norm",
+        "delta_frac",
+        "delta_abs",
+        "usable_shift",
+        "coverage_status",
+        "vx",
+        "vy",
+        "n_vel",
+        "n_vel_observed",
+        "n_vel_missing",
+        "velocity_present",
+        "vel_norm",
+        "display_alignment_cosine",
+        "alignment_cosine",
+        "usable_velocity",
+        "ood_mean",
+        "ood_median",
+        "ood_flagged_n",
+        "ood_frac",
+        "ood_n",
+        "ood_n_scored",
+        "ood_n_missing",
+        "ood_score_coverage",
+        "ood_threshold_used",
+        "stored_alignment_available",
+        "displayed"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "bffd282240609ec3178b1745a4744fe657b7f46e5ad8308d570009031062ebd8"
+    },
+    "edges": {
+      "file": "fibroblast_17gy_early_vs_late_compass_edges.csv",
+      "rows": 6,
+      "columns": [
+        "source",
+        "target",
+        "weight",
+        "self_loop",
+        "reason",
+        "displayed",
+        "source_x",
+        "source_y",
+        "target_x",
+        "target_y"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "1e3511d28120032f829cabeadcb7735ead3f360309eeb45389ebed6745c4be9d"
+    },
+    "graph_nodes": {
+      "file": "fibroblast_17gy_early_vs_late_compass_graph_nodes.csv",
+      "rows": 4,
+      "columns": [
+        "node",
+        "matrix_position"
+      ],
+      "dtypes": [
+        "str",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "7a1cf2c344988a4c1ef2f7570b859ea425f92cfea6abaa6d434c6d36b96921ed"
+    },
+    "glyphs": {
+      "file": "fibroblast_17gy_early_vs_late_compass_glyphs.csv",
+      "rows": 4,
+      "columns": [
+        "node",
+        "x",
+        "y",
+        "displayed",
+        "position_source",
+        "size",
+        "size_value",
+        "fill_value",
+        "fill_available",
+        "ring_lw",
+        "ring_available",
+        "arrow_displayed",
+        "arrow_reason",
+        "arrow_source_x",
+        "arrow_source_y",
+        "arrow_end_x",
+        "arrow_end_y",
+        "comparison_x",
+        "comparison_y",
+        "label_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "9394cb9ba035d2712d8083cbbc9cc8bdea43ae4085fff1642711e82b9d4cf731"
+    },
+    "node_anchors": {
+      "file": "fibroblast_17gy_early_vs_late_compass_node_anchors.csv",
+      "rows": 4,
+      "columns": [
+        "state",
+        "x",
+        "y",
+        "n_cells",
+        "position_source",
+        "observed",
+        "usable",
+        "low_coverage",
+        "status",
+        "condition_coverage_status"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "str",
+        "bool",
+        "bool",
+        "bool",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "2c96f30ed87d2fd955cb50c3e0a75eecba3d18e7505fbf0381d92352451c580c"
+    },
+    "coverage": {
+      "file": "fibroblast_17gy_early_vs_late_compass_coverage.csv",
+      "rows": 8,
+      "columns": [
+        "state",
+        "condition",
+        "n_cells",
+        "n_samples",
+        "n_samples_total",
+        "n_sample_denominators",
+        "n_velocity",
+        "n_ood_scored",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "201082a9f989edf5d6cc1051cf98b125143c1cb9a1c3739645b4c275d55ba01a"
+    },
+    "sample_abundance": {
+      "file": "fibroblast_17gy_early_vs_late_compass_sample_abundance.csv",
+      "rows": 32,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "count",
+        "denominator",
+        "n_cells",
+        "n_missing_state",
+        "state_fraction",
+        "included",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "cb921aefaef2c2290be10a9b9955851b80ee9c00ab9a713f537f04ae927905eb"
+    },
+    "evidence": {
+      "file": "fibroblast_17gy_early_vs_late_compass_evidence.csv",
+      "rows": 3,
+      "columns": [
+        "state",
+        "effect",
+        "effect_source_eligible",
+        "effect_available",
+        "effect_source_status",
+        "effect_metric",
+        "ci_low",
+        "ci_high",
+        "interval_available",
+        "interval_reason",
+        "alignment",
+        "alignment_source_eligible",
+        "alignment_available",
+        "alignment_source_status",
+        "alignment_reason",
+        "effect_descriptive",
+        "effect_supported",
+        "effect_support_status",
+        "summary_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "bool",
+        "bool",
+        "str",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "7cd37d0877dc4d5a1993435e597adb306c6e16b73d58674c177bbae2a7d2ce97"
+    },
+    "labels": {
+      "file": "fibroblast_17gy_early_vs_late_compass_labels.csv",
+      "rows": 4,
+      "columns": [
+        "state",
+        "anchor_x",
+        "anchor_y",
+        "offset_x_points",
+        "offset_y_points",
+        "placement"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "6873a02497e4fc04e5e0956118a6662f285ef604c43dc1208af0d00016e2c830"
+    },
+    "shift_source": {
+      "file": "fibroblast_17gy_early_vs_late_compass_shift_source.csv",
+      "rows": 3,
+      "columns": [
+        "contrast",
+        "hierarchy",
+        "state",
+        "representation",
+        "representation_role",
+        "inference_status",
+        "eligible_mouse_ids_group0",
+        "eligible_mouse_ids_group1",
+        "excluded_mouse_ids_group0",
+        "excluded_mouse_ids_group1",
+        "n_mice_group0",
+        "n_mice_group1",
+        "cells_per_mouse_group0",
+        "cells_per_mouse_group1",
+        "consensus_label",
+        "primary_pairwise_spearman_median",
+        "primary_magnitude_rank_std",
+        "leave_one_primary_max_relative_deviation",
+        "coverage_status",
+        "delta_norm",
+        "normalized_delta_norm",
+        "normalization_scale",
+        "raw_ci95_low",
+        "raw_ci95_high",
+        "normalized_ci95_low",
+        "normalized_ci95_high",
+        "directional_resultant_length",
+        "direction_stability",
+        "sign_stability",
+        "bootstrap_iterations",
+        "bootstrap_seed",
+        "resampling_status",
+        "n_cells0",
+        "n_samples0",
+        "n_cells1",
+        "n_samples1",
+        "normalized_magnitude_ci95_low",
+        "normalized_magnitude_ci95_high",
+        "magnitude_ci95_low",
+        "magnitude_ci95_high",
+        "effect_status",
+        "descriptive_only",
+        "inference_level",
+        "bootstrap_unit",
+        "group0",
+        "group1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "152ab4fd00082d714fd0ae67147465459d038b20b0e3f463228ec5d39caec07a"
+    }
+  }
+}

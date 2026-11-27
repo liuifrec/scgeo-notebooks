@@ -1,0 +1,164 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "robustness_matrix",
+    "summary": null,
+    "pass_threshold": null,
+    "missing_policy": "exclude",
+    "coverage_definition": "evaluated settings / displayed settings",
+    "row_order": [
+      "HSC/quiescent",
+      "Activated HSC",
+      "MPP/progenitor",
+      "Myeloid",
+      "Megakaryocyte/erythroid",
+      "Lymphoid",
+      "Ambiguous HSPC"
+    ],
+    "col_order": [
+      "X_pca20",
+      "X_pca30",
+      "X_pca50",
+      "X_scvi",
+      "X_diffmap"
+    ],
+    "cmap": "viridis",
+    "vmin": 0,
+    "vmax": 0.6423749493310843,
+    "center": null,
+    "na_color": "#d9d9d9",
+    "show_coverage": true,
+    "application_display_profile": {
+      "state_order": [
+        "HSC/quiescent",
+        "Activated HSC",
+        "MPP/progenitor",
+        "Myeloid",
+        "Megakaryocyte/erythroid",
+        "Lymphoid",
+        "Ambiguous HSPC"
+      ],
+      "matrix_vmax": 0.6423749493310843,
+      "effect_xlim": [
+        0.0,
+        0.487317183616952
+      ],
+      "condition_palette": {
+        "PBS": "#4cb34f",
+        "TNF": "#4760c2",
+        "LPS": "#7342b2"
+      }
+    },
+    "application_dataset": "B",
+    "application_scope": "descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Stored scalar magnitudes; representations not independent"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      254.0,
+      152.39999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "PBS_vs_LPS_representation_matrix.png",
+      "sha256": "03044000aea54aaaf658e2d7e3754d9346f664e3cc627c2b05e6705098199cd1"
+    },
+    "svg": {
+      "file": "PBS_vs_LPS_representation_matrix.svg",
+      "sha256": "2b0440188d2c5a3287dc056e462c36e88661acc8807f52a110be1c8e25eb5c5e"
+    },
+    "pdf": {
+      "file": "PBS_vs_LPS_representation_matrix.pdf",
+      "sha256": "febc6c31e4444b7126449ee2ee812341c6618a481fd7ca68762abeb4f3deda0f"
+    }
+  },
+  "tables": {
+    "matrix": {
+      "file": "PBS_vs_LPS_representation_matrix_matrix.csv",
+      "rows": 7,
+      "columns": [
+        "X_pca20",
+        "X_pca30",
+        "X_pca50",
+        "X_scvi",
+        "X_diffmap"
+      ],
+      "dtypes": [
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "a2605afe4a59e92f08a54d7e2b8e4a67f23e23d13048f74da8bf3222965192e1"
+    },
+    "coverage": {
+      "file": "PBS_vs_LPS_representation_matrix_coverage.csv",
+      "rows": 7,
+      "columns": [
+        "0"
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "2402730134ec4b8c06cc7206422d88233a98d9a8ecd506fe7cf98bdcff87a285"
+    },
+    "n_evaluated": {
+      "file": "PBS_vs_LPS_representation_matrix_n_evaluated.csv",
+      "rows": 7,
+      "columns": [
+        "0"
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "index_included": true,
+      "index_names": [
+        "state"
+      ],
+      "attributes": {},
+      "sha256": "81048152e26d82b13c5162dac186434596f310ea3fc9c7ce2328a6fe1a2c2aa2"
+    }
+  }
+}

@@ -1,0 +1,860 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "recovery_compass",
+    "mode": "stored",
+    "layout": "adaptive",
+    "basis": "X_umap_display_only",
+    "node_key": "application_state",
+    "condition_key": "application_group",
+    "group0": "control",
+    "group1": "17Gy_late",
+    "alignment_source": "stored",
+    "analysis_rep": "X_pca50",
+    "effect_metric": "normalized_delta_norm",
+    "stored_provenance": {
+      "analysis_rep": "X_pca50",
+      "n_dimensions": null,
+      "scale": null,
+      "preprocessing": null,
+      "node_key": "application_state",
+      "condition_key": "application_group",
+      "group0": "control",
+      "group1": "17Gy_late",
+      "center": null,
+      "scope": null,
+      "reference": null,
+      "graph_mode": null,
+      "sample_key": null,
+      "sample_weighting": null,
+      "aggregation_unit": null,
+      "velocity_scope": null,
+      "velocity_aggregation": null,
+      "velocity_weighting": null,
+      "effect_normalization": null,
+      "status": "recorded_consistent",
+      "field_status": {
+        "analysis_rep": "recorded_consistent",
+        "n_dimensions": "unavailable",
+        "scale": "unavailable",
+        "preprocessing": "unavailable",
+        "node_key": "declared_unverified",
+        "condition_key": "declared_unverified",
+        "group0": "recorded_consistent",
+        "group1": "recorded_consistent",
+        "center": "unavailable",
+        "scope": "unavailable",
+        "reference": "unavailable",
+        "graph_mode": "unavailable",
+        "sample_key": "unavailable",
+        "sample_weighting": "unavailable",
+        "aggregation_unit": "unavailable",
+        "velocity_scope": "unavailable",
+        "velocity_aggregation": "unavailable",
+        "velocity_weighting": "unavailable",
+        "effect_normalization": "unavailable"
+      },
+      "table_provenance": {
+        "shift_df": {
+          "analysis_rep": "X_pca50",
+          "group0": "control",
+          "group1": "17Gy_late"
+        }
+      },
+      "sources": {
+        "analysis_rep": [
+          {
+            "source": "shift_df.columns['representation']",
+            "value": "X_pca50"
+          },
+          {
+            "source": "declared analysis_rep",
+            "value": "X_pca50"
+          }
+        ],
+        "n_dimensions": [],
+        "scale": [],
+        "preprocessing": [],
+        "node_key": [
+          {
+            "source": "declared node_key",
+            "value": "application_state"
+          }
+        ],
+        "condition_key": [
+          {
+            "source": "declared condition_key",
+            "value": "application_group"
+          }
+        ],
+        "group0": [
+          {
+            "source": "shift_df.columns['group0']",
+            "value": "control"
+          },
+          {
+            "source": "declared group0",
+            "value": "control"
+          }
+        ],
+        "group1": [
+          {
+            "source": "shift_df.columns['group1']",
+            "value": "17Gy_late"
+          },
+          {
+            "source": "declared group1",
+            "value": "17Gy_late"
+          }
+        ],
+        "center": [],
+        "scope": [],
+        "reference": [],
+        "graph_mode": [],
+        "sample_key": [],
+        "sample_weighting": [],
+        "aggregation_unit": [],
+        "velocity_scope": [],
+        "velocity_aggregation": [],
+        "velocity_weighting": [],
+        "effect_normalization": []
+      },
+      "declarations": {
+        "node_key": "application_state",
+        "condition_key": "application_group",
+        "group0": "control",
+        "group1": "17Gy_late",
+        "analysis_rep": "X_pca50"
+      },
+      "missing_fields": [],
+      "unverified_fields": [
+        "n_dimensions",
+        "scale",
+        "preprocessing",
+        "node_key",
+        "condition_key",
+        "center",
+        "scope",
+        "reference",
+        "graph_mode",
+        "sample_key",
+        "sample_weighting",
+        "aggregation_unit",
+        "velocity_scope",
+        "velocity_aggregation",
+        "velocity_weighting",
+        "effect_normalization"
+      ],
+      "strict": true,
+      "verification_scope": "Recorded metadata consistency only; no source-freshness or coordinate-transform verification."
+    },
+    "centroid_aggregation": "mean",
+    "centroid_unit": "cells",
+    "node_position": "pooled",
+    "velocity_key": "velocity_umap_display_only",
+    "velocity_scope": "contrast",
+    "velocity_aggregation": "jointly finite cell mean",
+    "ood_key": null,
+    "ood_threshold": null,
+    "ood_threshold_source": "scope_quantile_0.95",
+    "ood_scope": "contrast",
+    "ood_threshold_scope": "finite_scores_contrast",
+    "ood_fraction_denominator": "finite scored node cells in the selected OOD scope",
+    "sample_key": "mouse_id",
+    "abundance_denominator": "annotated cells per sample-condition unit",
+    "sample_roster_scope": "all supplied selected-condition observations before state or display filtering",
+    "paga_key": "application_adjacency",
+    "graph_order_source": "explicit",
+    "graph_node_order": [
+      "Endothelial",
+      "Epithelial",
+      "Fibroblast/stromal",
+      "Lymphoid",
+      "Myeloid",
+      "Other retained cells",
+      "Proliferating"
+    ],
+    "connectivity_threshold": 0.01,
+    "graph_directed": false,
+    "min_cells": 20,
+    "node_size_mode": "constant",
+    "node_size_scale": 380.0,
+    "node_size_reference": 1.0,
+    "fill_color_mode": "constant",
+    "fill_norm": {
+      "type": "Normalize",
+      "vmin": 0.0,
+      "vmax": 1.0
+    },
+    "fill_cmap": "coolwarm",
+    "ring_mode": "none",
+    "arrow_color_mode": "constant",
+    "arrow_scale": 1.0,
+    "arrow_cmap": "magma",
+    "arrow_width_units": "points",
+    "arrow_norm": {
+      "type": "Normalize",
+      "vmin": 0.29776843501400907,
+      "vmax": 1.5143598475800446
+    },
+    "arrow_source": "actual reference condition center; independent of node position",
+    "label_mode": "auto",
+    "label_names": null,
+    "max_points": 6000,
+    "random_state": 1729,
+    "n_background_displayed": 6000,
+    "summary_states": [
+      "Epithelial",
+      "Endothelial",
+      "Proliferating",
+      "Lymphoid",
+      "Myeloid",
+      "Fibroblast/stromal"
+    ],
+    "resolved_panels": [
+      "map",
+      "effect",
+      "abundance",
+      "coverage"
+    ],
+    "omitted_panels": [
+      "alignment"
+    ],
+    "show_colorbar": true,
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "interpretation": "Stored evidence and observed display context remain separate; no recovery, causality or trajectories inferred.",
+    "application_display_profile": {
+      "state_order": [
+        "Endothelial",
+        "Epithelial",
+        "Fibroblast/stromal",
+        "Lymphoid",
+        "Myeloid",
+        "Proliferating"
+      ],
+      "matrix_vmax": 4.452703275199082,
+      "effect_xlim": [
+        0.0,
+        6.467340566839043
+      ],
+      "condition_palette": {
+        "control": "#c0794f",
+        "17Gy_early": "#a154c7",
+        "17Gy_late": "#5739ae"
+      },
+      "pc1_ylim": [
+        -20.347918701036697,
+        9.777236188734637
+      ],
+      "abundance_xlim": [
+        -1.0,
+        63.39876967613533
+      ]
+    },
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Frozen qualified-mouse displacement; cross-sectional; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+  },
+  "warnings": [
+    "Projected velocity 'velocity_umap_display_only' unavailable; display alignment remains missing.",
+    "Sample weighting is not recorded consistently in every source table; no weighting is inferred."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      321.564,
+      289.56
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "major_control_vs_17gy_late_compass.png",
+      "sha256": "1c4a5f41f22f686fe1a23c1fc536b4a30931b44b8c60f304e03384bdacc942f7"
+    },
+    "svg": {
+      "file": "major_control_vs_17gy_late_compass.svg",
+      "sha256": "8b70e7114783a5b6cbf7a1f5355f88ef5b2e8fd1dec330b723b0963c9c82db9a"
+    },
+    "pdf": {
+      "file": "major_control_vs_17gy_late_compass.pdf",
+      "sha256": "b10f2d502627688a68fbf8bae26a84b1aa075a5381aa753c7efb13c7ec8d87ac"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "major_control_vs_17gy_late_compass_cells.csv",
+      "rows": 83373,
+      "columns": [
+        "cell",
+        "obs_position",
+        "node",
+        "node_label",
+        "state",
+        "condition",
+        "x",
+        "y",
+        "finite_coordinates",
+        "in_contrast",
+        "contrast_included",
+        "vx",
+        "vy",
+        "velocity_in_scope",
+        "finite_velocity",
+        "velocity_included",
+        "ood_score",
+        "ood_in_scope",
+        "ood_scored",
+        "ood_flagged",
+        "sample",
+        "background_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "Float64",
+        "object",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "6106a05befd9993933a9cd57ce236053d746ffa1831ddad8ce5c0cd7049b6a32"
+    },
+    "nodes": {
+      "file": "major_control_vs_17gy_late_compass_nodes.csv",
+      "rows": 7,
+      "columns": [
+        "application_state",
+        "state",
+        "n0",
+        "x0",
+        "y0",
+        "present0",
+        "n0_comp",
+        "frac0",
+        "n1",
+        "x1",
+        "y1",
+        "present1",
+        "n1_comp",
+        "frac1",
+        "dx",
+        "dy",
+        "shift_norm",
+        "delta_frac",
+        "delta_abs",
+        "usable_shift",
+        "coverage_status",
+        "vx",
+        "vy",
+        "n_vel",
+        "n_vel_observed",
+        "n_vel_missing",
+        "velocity_present",
+        "vel_norm",
+        "display_alignment_cosine",
+        "alignment_cosine",
+        "usable_velocity",
+        "ood_mean",
+        "ood_median",
+        "ood_flagged_n",
+        "ood_frac",
+        "ood_n",
+        "ood_n_scored",
+        "ood_n_missing",
+        "ood_score_coverage",
+        "ood_threshold_used",
+        "stored_alignment_available",
+        "displayed"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "bool",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "e87ed4e1a8c7e403ccc0221452dd375aba900d520da80a519d1debc3e521973f"
+    },
+    "edges": {
+      "file": "major_control_vs_17gy_late_compass_edges.csv",
+      "rows": 21,
+      "columns": [
+        "source",
+        "target",
+        "weight",
+        "self_loop",
+        "reason",
+        "displayed",
+        "source_x",
+        "source_y",
+        "target_x",
+        "target_y"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "211cf2d71c5a241a19385f8db753dd8fb20dfc2b784a9f86c4d194f353ad459d"
+    },
+    "graph_nodes": {
+      "file": "major_control_vs_17gy_late_compass_graph_nodes.csv",
+      "rows": 7,
+      "columns": [
+        "node",
+        "matrix_position"
+      ],
+      "dtypes": [
+        "str",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "b900e0e8ae8ca1e6de6f6f207964885f964a5c2aaa4bb3c516497a9a12abd2cd"
+    },
+    "glyphs": {
+      "file": "major_control_vs_17gy_late_compass_glyphs.csv",
+      "rows": 7,
+      "columns": [
+        "node",
+        "x",
+        "y",
+        "displayed",
+        "position_source",
+        "size",
+        "size_value",
+        "fill_value",
+        "fill_available",
+        "ring_lw",
+        "ring_available",
+        "arrow_displayed",
+        "arrow_reason",
+        "arrow_source_x",
+        "arrow_source_y",
+        "arrow_end_x",
+        "arrow_end_y",
+        "comparison_x",
+        "comparison_y",
+        "label_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "493dc0871b63d365d025c2493e525d6e63b69b32852203af9549c263f4735306"
+    },
+    "node_anchors": {
+      "file": "major_control_vs_17gy_late_compass_node_anchors.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "x",
+        "y",
+        "n_cells",
+        "position_source",
+        "observed",
+        "usable",
+        "low_coverage",
+        "status",
+        "condition_coverage_status"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "str",
+        "bool",
+        "bool",
+        "bool",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "d5ac3089b47252e0945ae88e6e0d6cb0965c31d5cc6d6686f28cc184374219e2"
+    },
+    "coverage": {
+      "file": "major_control_vs_17gy_late_compass_coverage.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "condition",
+        "n_cells",
+        "n_samples",
+        "n_samples_total",
+        "n_sample_denominators",
+        "n_velocity",
+        "n_ood_scored",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "526141d35b2f28b253c5780ac42de3c027bf211e97aad49330bd04f7ddee2a3b"
+    },
+    "sample_abundance": {
+      "file": "major_control_vs_17gy_late_compass_sample_abundance.csv",
+      "rows": 63,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "count",
+        "denominator",
+        "n_cells",
+        "n_missing_state",
+        "state_fraction",
+        "included",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "57e2ad2248ed3b6ccb69429f0adc4d2bf2721cdf68f95b8f11818039b454d2b8"
+    },
+    "evidence": {
+      "file": "major_control_vs_17gy_late_compass_evidence.csv",
+      "rows": 6,
+      "columns": [
+        "state",
+        "effect",
+        "effect_source_eligible",
+        "effect_available",
+        "effect_source_status",
+        "effect_metric",
+        "ci_low",
+        "ci_high",
+        "interval_available",
+        "interval_reason",
+        "alignment",
+        "alignment_source_eligible",
+        "alignment_available",
+        "alignment_source_status",
+        "alignment_reason",
+        "effect_descriptive",
+        "effect_supported",
+        "effect_support_status",
+        "summary_displayed"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "bool",
+        "bool",
+        "str",
+        "str",
+        "bool",
+        "bool",
+        "str",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "9e06284f2e0937a4dca8ddf41441b79a5caee933e37758c6f2d5b54da7f974ac"
+    },
+    "labels": {
+      "file": "major_control_vs_17gy_late_compass_labels.csv",
+      "rows": 7,
+      "columns": [
+        "state",
+        "anchor_x",
+        "anchor_y",
+        "offset_x_points",
+        "offset_y_points",
+        "placement"
+      ],
+      "dtypes": [
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "1eca40c50d832814621646317bf03219ec1da744c292a4fa0bf7e117158436cc"
+    },
+    "shift_source": {
+      "file": "major_control_vs_17gy_late_compass_shift_source.csv",
+      "rows": 6,
+      "columns": [
+        "contrast",
+        "hierarchy",
+        "state",
+        "representation",
+        "representation_role",
+        "inference_status",
+        "eligible_mouse_ids_group0",
+        "eligible_mouse_ids_group1",
+        "excluded_mouse_ids_group0",
+        "excluded_mouse_ids_group1",
+        "n_mice_group0",
+        "n_mice_group1",
+        "cells_per_mouse_group0",
+        "cells_per_mouse_group1",
+        "consensus_label",
+        "primary_pairwise_spearman_median",
+        "primary_magnitude_rank_std",
+        "leave_one_primary_max_relative_deviation",
+        "coverage_status",
+        "delta_norm",
+        "normalized_delta_norm",
+        "normalization_scale",
+        "raw_ci95_low",
+        "raw_ci95_high",
+        "normalized_ci95_low",
+        "normalized_ci95_high",
+        "directional_resultant_length",
+        "direction_stability",
+        "sign_stability",
+        "bootstrap_iterations",
+        "bootstrap_seed",
+        "resampling_status",
+        "n_cells0",
+        "n_samples0",
+        "n_cells1",
+        "n_samples1",
+        "normalized_magnitude_ci95_low",
+        "normalized_magnitude_ci95_high",
+        "magnitude_ci95_low",
+        "magnitude_ci95_high",
+        "effect_status",
+        "descriptive_only",
+        "inference_level",
+        "bootstrap_unit",
+        "group0",
+        "group1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": true,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "52128a5a96bcfb6cc02bf7bef52a05529952fb0014dcab37da82939654349342"
+    }
+  }
+}
