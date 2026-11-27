@@ -31,6 +31,14 @@ How do we generate a state shift, an opposing local gene response, or a populati
 
 **[Read the illustrated simulation guide →](docs/SIMULATION_DESIGN.md)** for the mathematical models, supplied velocity fields, gene programs, exact sample counts and interpretation limits. The diagrams are explanatory; they are not experimental results. No external data are needed for lessons 00–10.
 
+## See actual public-data results without downloading the dataset
+
+The [GSE211713 molecular shift results notebook](notebooks/applications/results/gse211713/GSE211713_fibroblast_results.ipynb) presents the verified ScGeo 0.2.1 molecular accounting of radiation-associated mouse lung responses: displacement directions, selected signed gene contributions, program summaries, and biological replicate scores. It uses a small committed result snapshot, not simulated observations.
+
+[![Real-data example: positive Col3a1 expression changes can support or oppose the observed displacement](notebooks/applications/results/gse211713/figures/03_col3a1.svg)](notebooks/applications/results/gse211713/README.md)
+
+**[Browse the six real-data figures and provenance](notebooks/applications/results/gse211713/README.md).** These examples are descriptive, retrospectively selected, and do not establish causal molecular drivers. Full workflows remain separate.
+
 ## Find your starting point
 
 | Your goal | Start with | What you get |
