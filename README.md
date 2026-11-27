@@ -15,12 +15,21 @@ configurations, execution scripts, and figure-generation steps. It is the
 reproducibility companion to the [`scgeo` Python package](https://github.com/liuifrec/scgeo).
 
 [ScGeo 0.2.0 tutorials](notebooks/tutorials/v0.2.0/README.md) ·
+[How the tutorial data are generated](docs/SIMULATION_DESIGN.md) ·
 [Start here](docs/START_HERE.md) ·
 [Workflow catalog](docs/DATASET_MAP.md) ·
 [Results guide](docs/RESULTS_OVERVIEW.md) ·
 [Plotting workflows](docs/PLOTTING_WORKFLOWS.md) ·
 [Reproduce the paper](docs/REPRODUCIBILITY_GUIDE.md) ·
 [Cite and reuse](docs/PUBLICATION_GUIDE.md)
+
+## Learn the method with known answers
+
+How do we generate a state shift, an opposing local gene response, or a population with almost no controls? The current API tutorials use small, deterministic or seeded simulations whose intended behavior is known in advance.
+
+[![Illustration of the planted cell-state shifts in the introductory simulation](docs/assets/simulation_geometry.svg)](docs/SIMULATION_DESIGN.md)
+
+**[Read the illustrated simulation guide →](docs/SIMULATION_DESIGN.md)** for the mathematical models, supplied velocity fields, gene programs, exact sample counts and interpretation limits. The diagrams are explanatory; they are not experimental results. No external data are needed for lessons 00–10.
 
 ## Find your starting point
 

@@ -21,6 +21,8 @@ explains what each evidence layer measures.
 
 ## Learn the released 0.2.0 API
 
+Before running a notebook, read [How the tutorial data are generated](SIMULATION_DESIGN.md): an illustrated explanation of planted geometric shifts, supplied velocity vectors, opposing local gene responses and uneven sample capture. It links to the exact source generators and distinguishes a controlled simulation from biological evidence.
+
 The [new notebook series](../notebooks/tutorials/v0.2.0/README.md) starts with the read-only input contract and sample-aware displacement, then builds representation and graph views, matched velocity fields, state associations, facets, the atlas, molecular explanations, sparse-state PAGA pies and the stored-evidence compass. The final lesson is optional public-data rendering. Use the separate tutorial environment; all synthetic lessons run without data downloads, and no frozen manuscript outputs are read.
 
 ## Try the earlier conceptual report example
