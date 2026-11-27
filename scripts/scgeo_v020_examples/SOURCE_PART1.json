@@ -1,0 +1,46 @@
+{
+  "repository": "liuifrec/scgeo",
+  "commit": "46ba9017ceef17255292edd0140602ed13ac5305",
+  "files": [
+    {
+      "path": "scripts/scgeo_v020_examples/quickstart.py",
+      "upstream_path": "examples/quickstart.py",
+      "git_blob_sha": "6eb142fcb09f73115380287f455c2a2eadf2fced"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/plotting_gallery.py",
+      "upstream_path": "examples/plotting_gallery.py",
+      "git_blob_sha": "7ba3346f917d2935594e9ed0f1c98c62386db768"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/plotting_composition_gallery.py",
+      "upstream_path": "examples/plotting_composition_gallery.py",
+      "git_blob_sha": "7c20c74f6630256cfe489bf5a66750a4bc82a8f7"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/legacy_plotting_gallery.py",
+      "upstream_path": "examples/legacy_plotting_gallery.py",
+      "git_blob_sha": "9639444f3cdac923090a98f30754cc03d5b4d57b"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/embedding_facets_gallery.py",
+      "upstream_path": "examples/embedding_facets_gallery.py",
+      "git_blob_sha": "a624a6958d1ea18a3ab286549823c26e3026b5ed"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/geometry_dynamics_atlas_gallery.py",
+      "upstream_path": "examples/geometry_dynamics_atlas_gallery.py",
+      "git_blob_sha": "68ce04db4ae5d91a573a17ae3461dd59aa970703"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/paga_shift_map_gallery.py",
+      "upstream_path": "examples/paga_shift_map_gallery.py",
+      "git_blob_sha": "a9291b14400b2f3e69716a6b2347e57f4f6d8599"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/velocity_field_gallery.py",
+      "upstream_path": "examples/velocity_field_gallery.py",
+      "git_blob_sha": "cc4d980f9bbbbdfa2008e08304837fbb2ab420ad"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ This repository connects ScGeo's published analyses to their source notebooks,
 configurations, execution scripts, and figure-generation steps. It is the
 reproducibility companion to the [`scgeo` Python package](https://github.com/liuifrec/scgeo).
 
+[ScGeo 0.2.0 tutorials](notebooks/tutorials/v0.2.0/README.md) ·
 [Start here](docs/START_HERE.md) ·
 [Workflow catalog](docs/DATASET_MAP.md) ·
 [Results guide](docs/RESULTS_OVERVIEW.md) ·
@@ -25,15 +26,16 @@ reproducibility companion to the [`scgeo` Python package](https://github.com/liu
 
 | Your goal | Start with | What you get |
 |---|---|---|
-| Use ScGeo on your own AnnData | [Package quick start](https://github.com/liuifrec/scgeo/blob/main/docs/QUICKSTART.md) | A runnable introduction to the library API |
+| Use ScGeo on your own AnnData | [ScGeo 0.2.0 tutorials](notebooks/tutorials/v0.2.0/README.md) and [package quick start](https://github.com/liuifrec/scgeo/blob/v0.2.0/docs/QUICKSTART.md) | Twelve independent API notebooks with actual figure and source-data exports |
 | Understand the report format | [Small synthetic tutorial](notebooks/tutorials/01_quickstart_perturbation_report.ipynb) | A no-download conceptual example with a figure, source table, and metadata |
-| Redraw stored evidence tables | [Development plotting workflows](docs/PLOTTING_WORKFLOWS.md) | Source-aware state, contrast, sample, and representation figures |
+| Redraw stored evidence tables | [Released plotting workflows](docs/PLOTTING_WORKFLOWS.md) | Source-aware state, contrast, sample, and representation figures |
 | Understand the published evidence | [Results guide](docs/RESULTS_OVERVIEW.md) | Main findings, their interpretation, and the workflow behind each claim |
 | Reproduce a dataset or figure | [Workflow catalog](docs/DATASET_MAP.md) and [reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md) | Inputs, environments, execution order, and frozen checkpoints |
 | Cite or adapt an analysis | [Citation and reuse guide](docs/PUBLICATION_GUIDE.md) | Paper citation, reference-manager files, and a provenance checklist |
 
-The conceptual tutorial constructs its report with NumPy, pandas, and
-Matplotlib. For calls to the ScGeo API, use the package quick start.
+The new [0.2.0 learning track](notebooks/tutorials/v0.2.0/README.md) calls the published library directly and covers robust sample-aware analysis, representation comparisons, PAGA pies, matched velocity fields, annotation associations, figure composition, the atlas, gene/program response curves, sparse states, and the stored-evidence compass. Eleven lessons use synthetic inputs; the final lesson optionally uses checksum-matched public PBMC/pancreas files. No private data or manuscript downloads are needed.
+
+The older conceptual tutorial remains available unchanged; it constructs its report with NumPy, pandas and Matplotlib rather than calling the library.
 
 ## Analyses included
 
@@ -60,12 +62,14 @@ For learning the package and starting a new analysis, install the published
 library in a fresh environment (Python 3.12 recommended):
 
 ```bash
-python -m pip install "scgeo[scanpy,notebook]==0.1.0"
+python -m pip install "scgeo[scanpy,notebook]==0.2.0"
 ```
 
 See the [package installation guide](https://github.com/liuifrec/scgeo/blob/main/docs/INSTALLATION.md)
 for optional workflows and conda-managed environments. This repository is a
 collection of workflows, not an additional Python package to install.
+
+For the new tutorial track, use its [separate environment and runner](notebooks/tutorials/v0.2.0/README.md). The runner verifies source snapshots and figure/table hashes, and preserves output-free source notebooks.
 
 For the paper's frozen evidence, use the recorded environments, numerical
 inputs, and checkpoints:
@@ -98,7 +102,8 @@ not a complete download of all manuscript data and executed artifacts.
 
 | Location | Contents |
 |---|---|
-| [`notebooks/tutorials/`](notebooks/tutorials/) | Conceptual and application tutorials |
+| [`notebooks/tutorials/v0.2.0/`](notebooks/tutorials/v0.2.0/README.md) | Published API tutorials, with independent execution and exports |
+| [`notebooks/tutorials/`](notebooks/tutorials/) | Earlier conceptual and application tutorials (unchanged) |
 | [`notebooks/data_prep/`](notebooks/data_prep/), [`notebooks/exploration/`](notebooks/exploration/) | Original GSE280305 preprocessing and semi-manual reference annotation |
 | [`notebooks/manuscript/`](notebooks/manuscript/README.md) | Original manuscript analyses and figure utilities |
 | [`notebooks/benchmarks/`](notebooks/benchmarks/README.md) | Frozen synthetic benchmark review |

@@ -1,0 +1,31 @@
+{
+  "repository": "liuifrec/scgeo",
+  "commit": "46ba9017ceef17255292edd0140602ed13ac5305",
+  "files": [
+    {
+      "path": "scripts/scgeo_v020_examples/explain_shift_gallery.py",
+      "upstream_path": "examples/explain_shift_gallery.py",
+      "git_blob_sha": "edbf35bcabb4b583dae176ab51b131dae0f6818a"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/condition_sparse_states_gallery.py",
+      "upstream_path": "examples/condition_sparse_states_gallery.py",
+      "git_blob_sha": "eeab887482d05eced26d1ba442edb89501105f34"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/compass_evidence_gallery.py",
+      "upstream_path": "examples/compass_evidence_gallery.py",
+      "git_blob_sha": "7ef0d5004afaa17a848c42e538c5f58a0b70dff0"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/deployment_smoke.py",
+      "upstream_path": "examples/deployment_smoke.py",
+      "git_blob_sha": "372d393a3a324f0513022088dd6c42b05a50cae8"
+    },
+    {
+      "path": "scripts/scgeo_v020_examples/real_data_plotting_gallery.py",
+      "upstream_path": "examples/real_data_plotting_gallery.py",
+      "git_blob_sha": "8b34b27a53b2843f05801462787e99464ce5de6e"
+    }
+  ]
+}

@@ -19,7 +19,11 @@ and quantitative representations before interpreting the output. The
 [analysis-layer guide](https://github.com/liuifrec/scgeo/blob/main/docs/ANALYSIS_LAYERS.md)
 explains what each evidence layer measures.
 
-## Try a small report example
+## Learn the released 0.2.0 API
+
+The [new notebook series](../notebooks/tutorials/v0.2.0/README.md) starts with the read-only input contract and sample-aware displacement, then builds representation and graph views, matched velocity fields, state associations, facets, the atlas, molecular explanations, sparse-state PAGA pies and the stored-evidence compass. The final lesson is optional public-data rendering. Use the separate tutorial environment; all synthetic lessons run without data downloads, and no frozen manuscript outputs are read.
+
+## Try the earlier conceptual report example
 
 The [synthetic report tutorial](../notebooks/tutorials/01_quickstart_perturbation_report.ipynb)
 creates its input at runtime. It demonstrates descriptive state-shift ranking,
@@ -32,7 +36,7 @@ In a fresh Python 3.12 environment:
 ```bash
 git clone https://github.com/liuifrec/scgeo-notebooks.git
 cd scgeo-notebooks
-python -m pip install "scgeo[scanpy,notebook]==0.1.0"
+python -m pip install "scgeo[scanpy,notebook]==0.2.0"
 python -m ipykernel install --user --name scgeo-tutorial --display-name "ScGeo tutorial"
 python scripts/execute_revision_notebooks.py --notebook notebooks/tutorials/01_quickstart_perturbation_report.ipynb --kernel scgeo-tutorial --output-dir results/tutorial_quickstart --keep-executed
 ```
@@ -45,10 +49,8 @@ source/output convention.
 
 ## Redraw existing result tables
 
-For the development plotting API, see [plotting workflows](PLOTTING_WORKFLOWS.md).
-It includes an executable renderer for existing CSVs and a link to the package's
-synthetic visual gallery. These new interfaces require the matching development
-checkout; they are not in the published `scgeo==0.1.0` distribution.
+For the released plotting API, see [plotting workflows](PLOTTING_WORKFLOWS.md).
+It includes an executable renderer for existing CSVs and links to the [0.2.0 tutorials](../notebooks/tutorials/v0.2.0/README.md). The earlier 0.1.0 release does not include these plotting extensions.
 
 ## Read the published evidence
 

@@ -20,6 +20,10 @@ matching script. Some original exploratory/manuscript notebooks contain more
 notebook-local implementation and semi-manual decisions; follow their folder
 guide rather than assuming every notebook has the same structure.
 
+## Released API tutorials
+
+The separate [0.2.0 learning track](../notebooks/tutorials/v0.2.0/README.md) uses explicit API cells alongside byte-identical, checksum-recorded examples from the release source. Its execution runner starts fresh kernels, writes executed copies only to ignored results, and checks the hash of every figure/source table in each PlotResult manifest. The optional public-data lesson records non-execution if no files are supplied. These tutorials do not modify the frozen workflow implementations or configs.
+
 ## Reading a source notebook
 
 The ordered cells describe what the workflow expects and why a result has its

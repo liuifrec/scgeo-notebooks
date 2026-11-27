@@ -11,6 +11,7 @@ order, inputs, implementation, and inference scope.
 
 | Workflow | Start here | What to inspect | Analysis unit and scope |
 |---|---|---|---|
+| ScGeo 0.2.0 learning track | [Tutorial index](../notebooks/tutorials/v0.2.0/README.md) | Released analysis and plotting APIs, including sparse coverage and molecular explanations | Independent synthetic samples; optional public descriptive rendering; not manuscript evidence |
 | Small synthetic report | [Tutorial notebook](../notebooks/tutorials/01_quickstart_perturbation_report.ipynb) | Descriptive shift ranking and a figure/source-table bundle | Generated samples; conceptual example, not manuscript evidence |
 | GSE280305 hematopoietic recovery | [Original manuscript guide](../notebooks/manuscript/README.md); [first preparation notebook](../notebooks/data_prep/01_gse280305_paths.ipynb) | Preparation, reference annotation, displacement, and geometry–velocity alignment | Follow original design metadata; comparisons are among post-irradiation time points |
 | Synthetic benchmarks | [Benchmark guide](../notebooks/benchmarks/README.md); [overview notebook](../notebooks/benchmarks/00_manuscript_benchmark_overview.ipynb) | Estimator robustness, representation/dynamics diagnostics, and framework ablation | Frozen simulation job/seed; controlled method evidence |
@@ -23,6 +24,7 @@ order, inputs, implementation, and inference scope.
 
 | Workflow | Main implementation or executor | Environment/configuration entry point |
 |---|---|---|
+| ScGeo 0.2.0 tutorials | [`execute_scgeo_v020_tutorials.py`](../scripts/execute_scgeo_v020_tutorials.py), exact release example snapshots | [`scgeo_v020_tutorials.txt`](../environment/scgeo_v020_tutorials.txt) (separate new environment) |
 | Synthetic benchmark review | [`execute_revision_notebooks.py`](../scripts/execute_revision_notebooks.py) | [`manuscript_benchmark_v1.json`](../configs/manuscript_benchmark_v1.json) and the frozen package environment |
 | Pancreas | [`execute_pancreas_validation.py`](../scripts/execute_pancreas_validation.py), [`pancreas_validation_common.py`](../scripts/pancreas_validation_common.py) | [`pancreas_environment.yml`](../environment/pancreas_environment.yml) |
 | GSE249479 | [`execute_gse249479_validation.py`](../scripts/execute_gse249479_validation.py) and staged `gse249479_*` modules | [`gse249479_environment.yml`](../environment/gse249479_environment.yml) and dataset-specific configurations |

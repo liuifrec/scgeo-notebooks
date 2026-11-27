@@ -1,6 +1,6 @@
 # Reuse ScGeo's plotting workflows
 
-The package now has development interfaces for evidence panels, contrast
+The published ScGeo 0.2.0 package has interfaces for evidence panels, contrast
 comparisons, biological sample views, and reproducible figure export. This
 companion entry point redraws stored tables so presentation changes can be
 reviewed separately from numerical analyses.
@@ -10,16 +10,16 @@ reviewed separately from numerical analyses.
 [Visual gallery](https://github.com/liuifrec/scgeo/blob/main/docs/PLOTTING_GALLERY.md) ·
 [Reproducibility](REPRODUCIBILITY_GUIDE.md)
 
-## Use the matching development checkout
+## Use the published 0.2.0 API
 
-These features are **unreleased** and are not included in `scgeo==0.1.0` on
-PyPI. Install the ScGeo source checkout containing the plotting guide and record
-its commit. In an environment with that checkout installed:
+Install the independent [tutorial environment](../notebooks/tutorials/v0.2.0/README.md) and run the relevant lessons. They use the public PyPI release and exact example scripts from its source tag. For the evidence and contrast gallery alone:
 
 ```bash
-python -m pip install -e /path/to/scgeo
-python /path/to/scgeo/examples/plotting_gallery.py --output-dir results/plotting_gallery
+python -m pip install -r environment/scgeo_v020_tutorials.txt
+python scripts/execute_scgeo_v020_tutorials.py --lesson 02 --kernel python3
 ```
+
+Use a kernel from the tutorial environment, not a frozen manuscript kernel. The new learning track also covers PAGA, local velocity, annotation flow, facets, atlas, shift explanations, condition-sparse states and the stored-evidence compass.
 
 The gallery is entirely synthetic. It produces actual figures, CSVs, and JSON
 manifests through the package API without downloading manuscript datasets.
@@ -105,7 +105,7 @@ biological-replicate identity is unavailable.
 
 ## Inspect genuine biological samples
 
-New sample-aware `robust_shift` runs retain exact sample-center matrices:
+Sample-aware `robust_shift` runs in 0.2.0 retain exact sample-center matrices:
 
 ```python
 samples = sg.get.sample_centers(adata)
