@@ -37,7 +37,14 @@ The [GSE211713 molecular shift results notebook](notebooks/applications/results/
 
 [![Real-data example: positive Col3a1 expression changes can support or oppose the observed displacement](notebooks/applications/results/gse211713/figures/03_col3a1.svg)](notebooks/applications/results/gse211713/README.md)
 
-**[Browse the six real-data figures and provenance](notebooks/applications/results/gse211713/README.md).** These examples are descriptive, retrospectively selected, and do not establish causal molecular drivers. Full workflows remain separate.
+**[Browse the lung figures and provenance](notebooks/applications/results/gse211713/README.md).** The companion [GSE249479 HSPC results notebook](notebooks/applications/results/gse249479/GSE249479_inflammation_results.ipynb) compares TNF and LPS magnitudes, directions and molecular contributions without biological-replicate identities.
+
+| Public result gallery | Experimental context | Browse |
+|---|---|---|
+| GSE249479 | Pooled human HSPCs; descriptive only, no sample-level inference | [Notebook](notebooks/applications/results/gse249479/GSE249479_inflammation_results.ipynb) · [Five figures](notebooks/applications/results/gse249479/README.md) |
+| GSE211713 | Cross-sectional mouse lung; independent qualified mice and conditional sample-bootstrap intervals | [Notebook](notebooks/applications/results/gse211713/GSE211713_fibroblast_results.ipynb) · [Six figures](notebooks/applications/results/gse211713/README.md) |
+
+[**Browse all results-first examples**](notebooks/applications/results/README.md). These examples are descriptive, retrospectively selected, and do not establish causal molecular drivers. Full workflows remain separate.
 
 ## Find your starting point
 

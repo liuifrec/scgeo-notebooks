@@ -6,6 +6,8 @@ name: Public result notebook
       - "notebooks/applications/results/**"
       - "scripts/render_public_lung_gallery.mjs"
       - "scripts/extract_public_lung_gallery.py"
+      - "scripts/render_public_hspc_gallery.mjs"
+      - "scripts/extract_public_hspc_gallery.py"
       - ".github/workflows/public-results.yml"
   push:
     branches: [main]
@@ -13,6 +15,8 @@ name: Public result notebook
       - "notebooks/applications/results/**"
       - "scripts/render_public_lung_gallery.mjs"
       - "scripts/extract_public_lung_gallery.py"
+      - "scripts/render_public_hspc_gallery.mjs"
+      - "scripts/extract_public_hspc_gallery.py"
       - ".github/workflows/public-results.yml"
   workflow_dispatch:
 
@@ -33,10 +37,12 @@ jobs:
       - name: Install lightweight notebook dependencies
         run: python -m pip install "pandas>=2.2,<4" nbformat nbclient ipykernel
       - name: Verify deterministic SVGs
-        run: node scripts/render_public_lung_gallery.mjs --check
+        run: |
+          node scripts/render_public_lung_gallery.mjs --check
+          node scripts/render_public_hspc_gallery.mjs --check
       - name: Validate and execute the real-data results notebook
         run: |
-          python -m py_compile scripts/extract_public_lung_gallery.py
+          python -m py_compile scripts/extract_public_lung_gallery.py scripts/extract_public_hspc_gallery.py
           python - <<'PY'
           from pathlib import Path
           import os
@@ -44,17 +50,25 @@ jobs:
           import nbformat
           from nbclient import NotebookClient
 
-          folder = Path("notebooks/applications/results/gse211713").resolve()
-          source = folder / "GSE211713_fibroblast_results.ipynb"
-          nb = nbformat.read(source, as_version=4)
-          nbformat.validate(nb)
-          for svg in folder.glob("figures/*.svg"):
-              ET.parse(svg)
-          NotebookClient(nb, timeout=90, kernel_name="python3",
-                         resources={"metadata": {"path": str(folder)}}).execute()
-          assert not any(out.get("output_type") == "error" for cell in nb.cells
-                         if cell.cell_type == "code" for out in cell.outputs)
-          output = Path(os.environ["RUNNER_TEMP"]) / "GSE211713_fibroblast_results.executed.ipynb"
-          nbformat.write(nb, output)
-          print("PASS: executed all notebook code cells; original source untouched")
+          for dataset, name, count in [
+              ("gse211713", "GSE211713_fibroblast_results.ipynb", 6),
+              ("gse249479", "GSE249479_inflammation_results.ipynb", 5),
+          ]:
+              folder = Path("notebooks/applications/results", dataset).resolve()
+              source = folder / name
+              original = source.read_bytes()
+              nb = nbformat.read(source, as_version=4)
+              nbformat.validate(nb)
+              svgs = list(folder.glob("figures/*.svg"))
+              assert len(svgs) == count
+              for svg in svgs:
+                  ET.parse(svg)
+              NotebookClient(nb, timeout=90, kernel_name="python3",
+                             resources={"metadata": {"path": str(folder)}}).execute()
+              assert not any(out.get("output_type") == "error" for cell in nb.cells
+                             if cell.cell_type == "code" for out in cell.outputs)
+              assert source.read_bytes() == original
+              output = Path(os.environ["RUNNER_TEMP"]) / name.replace(".ipynb", ".executed.ipynb")
+              nbformat.write(nb, output)
+              print("PASS:", dataset, "executed all notebook code cells; original source untouched")
           PY

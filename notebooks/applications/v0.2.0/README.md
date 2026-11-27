@@ -135,11 +135,14 @@ inferred pairing. The compass separates stored PCA50 magnitudes from display
 connectors. The normalized effect intervals use the original normalized
 interval columns. Representations are not independent confirmations.
 
-Neither dataset has a saved expression-to-coordinate map in the H5ADs.
-Signature/marker score facets are allowed, but exact signed gene contributions
-remain deferred until original feature order, preprocessing and PCA/SVD
-weights can be recovered and verified. These applications do not establish
-a lineage, recovery mechanism or causal regulation.
+The geometry notebooks do not infer signed gene contributions from nonlinear
+embeddings or from the H5ADs alone. The separately validated molecular
+notebooks recover and verify the original ordered HVG preprocessing and SVD
+checkpoint (B) or centered PCA loadings (C). See [molecular shifts](MOLECULAR_SHIFTS.md).
+The [results-first galleries](../results/README.md) provide small numerical
+snapshots and illustrations of both successful molecular runs, without
+requiring the original H5ADs. These applications do not establish a lineage,
+recovery mechanism or causal regulation.
 
 ## Outputs and review
 

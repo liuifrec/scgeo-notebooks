@@ -60,4 +60,4 @@ If you have the exact original local review archive, run:
 python scripts/extract_public_lung_gallery.py /path/to/GSE211713_molecular_review.tar.gz --check notebooks/applications/results/gse211713/selected_results.json
 ```
 
-This read-only comparison checks the complete snapshot; it will refuse a different archive. All original-feature matching and derived directional cosine computations are documented in the extractor. The current gallery is intentionally limited to GSE211713 because the corresponding full numerical review exports for GSE249479 are not included.
+This read-only comparison checks the complete snapshot; it will refuse a different archive. All original-feature matching and derived directional cosine computations are documented in the extractor. For the companion pooled HSPC example, see the [GSE249479 results gallery](../gse249479/README.md).
