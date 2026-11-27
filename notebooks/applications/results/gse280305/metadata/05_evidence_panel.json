@@ -1,0 +1,162 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "state_evidence_panel",
+    "effect_metric": "normalized_delta_norm",
+    "effect_representation": "X_pca_raw",
+    "sort_by": "normalized_delta_norm",
+    "state_order": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "displayed_states": 14,
+    "total_states": 14,
+    "page": 0,
+    "evidence_mode": "compact",
+    "provenance": {
+      "effect_representation": "X_pca_raw",
+      "group0": "D8",
+      "group1": "D21"
+    },
+    "interval_note": "Magnitude intervals summarize uncertainty; they are not automatic hypothesis tests.",
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "raw-PCA normalized effects; local diagnostics refer to all four time points"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      254.0,
+      189.992
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "05_evidence_panel.png",
+      "sha256": "650363d585c35815e0b0c50a7422f251399528e7fd40b93cc9302c6a07be7c2b"
+    },
+    "svg": {
+      "file": "05_evidence_panel.svg",
+      "sha256": "3526c9293adca9d3477ac0a3bd74bb6bc9bf3d27e7339511df8d4433379e3336"
+    },
+    "pdf": {
+      "file": "05_evidence_panel.pdf",
+      "sha256": "6e391acd522d6d05670d18d24727590a7b41b41dea521aea728786add53ec3fc"
+    }
+  },
+  "tables": {
+    "report": {
+      "file": "05_evidence_panel_report.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "n_cells0",
+        "n_cells1",
+        "delta_norm",
+        "normalized_delta_norm",
+        "representation_consensus_label",
+        "representation_coverage_fraction",
+        "median_neighbor_overlap",
+        "median_local_shape_distortion",
+        "group0",
+        "group1",
+        "inference_scope",
+        "inference_status",
+        "effect_status"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {
+        "provenance": {
+          "effect_representation": "X_pca_raw",
+          "group0": "D8",
+          "group1": "D21"
+        }
+      },
+      "sha256": "f8d00355a685636f5ca5c2b46b16894d3867df0e67944e5c231760e80fdd5550"
+    },
+    "availability": {
+      "file": "05_evidence_panel_availability.csv",
+      "rows": 14,
+      "columns": [
+        "state",
+        "effect",
+        "representation",
+        "local",
+        "dynamics"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "1113d72fdc80010e210dca8dd2871979b2fffd8014a5bdeffc5a48b19948e055"
+    }
+  }
+}

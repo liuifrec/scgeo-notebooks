@@ -1,0 +1,468 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "columns": [
+      "condition",
+      "application_state",
+      "application_coarse"
+    ],
+    "count_unit": "cells",
+    "association_semantics": "same-cell adjacent categorical annotations",
+    "directed_stage_order": true,
+    "lineage_or_time_inferred": false,
+    "n_cells_input": 34432,
+    "n_cells_included": 34432,
+    "n_cells_dropped": 0,
+    "drop_na": false,
+    "missing_policy": "separate missing category",
+    "min_count": 10,
+    "denominator": 34432,
+    "fraction_denominator": "all included cells before min_count filtering",
+    "order": "input",
+    "category_order": {
+      "condition": [
+        "LPS",
+        "PBS",
+        "TNF"
+      ],
+      "application_state": [
+        "HSC/quiescent",
+        "Activated HSC",
+        "MPP/progenitor",
+        "Myeloid",
+        "Megakaryocyte/erythroid",
+        "Lymphoid",
+        "Ambiguous HSPC"
+      ],
+      "application_coarse": [
+        "megakaryocyte/erythroid",
+        "progenitor",
+        "HSC-like",
+        "ambiguous",
+        "myeloid",
+        "lymphoid"
+      ]
+    },
+    "source_columns": {
+      "condition": {
+        "label": "stage_0_label",
+        "missing": "stage_0_missing",
+        "node_id": "stage_0_node_id"
+      },
+      "application_state": {
+        "label": "stage_1_label",
+        "missing": "stage_1_missing",
+        "node_id": "stage_1_node_id"
+      },
+      "application_coarse": {
+        "label": "stage_2_label",
+        "missing": "stage_2_missing",
+        "node_id": "stage_2_node_id"
+      }
+    },
+    "node_identity": "(stage_index, original string label or None for genuine missing)",
+    "n_links_total": 28,
+    "n_links_displayed": 28,
+    "pair_coverage": [
+      {
+        "pair_index": 0,
+        "source_stage": "condition",
+        "target_stage": "application_state",
+        "total_count": 34432,
+        "displayed_count": 34432,
+        "omitted_count": 0,
+        "displayed_fraction": 1.0
+      },
+      {
+        "pair_index": 1,
+        "source_stage": "application_state",
+        "target_stage": "application_coarse",
+        "total_count": 34432,
+        "displayed_count": 34432,
+        "omitted_count": 0,
+        "displayed_fraction": 1.0
+      }
+    ],
+    "filtered_mass_renormalized": false,
+    "plot": "state_flow_alluvial",
+    "normalize": true,
+    "normalize_semantics": "fraction geometry in both modes; chooses default labels only",
+    "geometry_units": "fraction of all included cells",
+    "category_gap": 0.02,
+    "column_gap": 1.8,
+    "bar_width": 0.08,
+    "ribbon_curve": 0.35,
+    "color_by": "source",
+    "alpha": 0.7,
+    "node_palette": {
+      "0": "#7342b2",
+      "1": "#4cb34f",
+      "2": "#4760c2",
+      "3": "#43c6c6",
+      "4": "#40a9a5",
+      "5": "#3ab152",
+      "6": "#713abc",
+      "7": "#6d45c4",
+      "8": "#4bb272",
+      "9": "#4da942",
+      "10": "#bd4644",
+      "11": "#4eaeb3",
+      "12": "#b93f57",
+      "13": "#39b074",
+      "14": "#b53eb4",
+      "15": "#3a81ba"
+    },
+    "label_format": "percent",
+    "label_fontsize": 9.0,
+    "show_omissions": true,
+    "xlim": [
+      -0.14400000000000002,
+      3.744
+    ],
+    "ylim": [
+      -0.1048,
+      1.2056
+    ],
+    "application_dataset": "B",
+    "application_scope": "descriptive_only; no biological sample identity",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Same-cell associations; captured cells are not independent biological samples"
+  },
+  "warnings": [
+    "Links show same-cell categorical associations between adjacent annotations; they do not establish lineage, transitions, or elapsed time."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      279.4,
+      152.39999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "annotation_associations.png",
+      "sha256": "8bd3fbe90a7a2fe1796213d8d254364aec5c531d1d94df502807145e43c83408"
+    },
+    "svg": {
+      "file": "annotation_associations.svg",
+      "sha256": "041c858fa3ab26f89b58389d35e3219fd37eb1b9f5d8d5482866e8e4c2a64500"
+    },
+    "pdf": {
+      "file": "annotation_associations.pdf",
+      "sha256": "b0d0c158595a856b02f5b083364c10d93ca194b33d8a11c4f36b277addc7884d"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "annotation_associations_cells.csv",
+      "rows": 34432,
+      "columns": [
+        "obs_position",
+        "cell",
+        "included",
+        "drop_reason",
+        "stage_0_label",
+        "stage_0_missing",
+        "stage_0_node_id",
+        "stage_1_label",
+        "stage_1_missing",
+        "stage_1_node_id",
+        "stage_2_label",
+        "stage_2_missing",
+        "stage_2_node_id"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "bool",
+        "str",
+        "str",
+        "bool",
+        "Int64",
+        "str",
+        "bool",
+        "Int64",
+        "str",
+        "bool",
+        "Int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "df7827da5ad949fa9e12800c8c25d7fcffa4ff6e79441390d4264489eba8798c"
+    },
+    "nodes": {
+      "file": "annotation_associations_nodes.csv",
+      "rows": 16,
+      "columns": [
+        "node_id",
+        "node_key",
+        "stage_index",
+        "stage",
+        "label",
+        "display_label",
+        "is_missing",
+        "count",
+        "fraction",
+        "category_index",
+        "visible_in_count",
+        "omitted_in_count",
+        "visible_out_count",
+        "omitted_out_count"
+      ],
+      "dtypes": [
+        "int64",
+        "object",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "bool",
+        "int64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "e1be4b12b7be41c695a10850fb561a5a19d6838370592937f4b7f54e8a131050"
+    },
+    "links": {
+      "file": "annotation_associations_links.csv",
+      "rows": 28,
+      "columns": [
+        "link_id",
+        "pair_index",
+        "source_id",
+        "target_id",
+        "source_stage",
+        "target_stage",
+        "source_label",
+        "target_label",
+        "source_display_label",
+        "target_display_label",
+        "source_missing",
+        "target_missing",
+        "count",
+        "fraction",
+        "displayed",
+        "reason"
+      ],
+      "dtypes": [
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "bool",
+        "bool",
+        "int64",
+        "float64",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "33ccb9308160cff54436b73f1b09c1e0faaf7782bf3f2f13db236f7d06212974"
+    },
+    "node_layout": {
+      "file": "annotation_associations_node_layout.csv",
+      "rows": 16,
+      "columns": [
+        "node_id",
+        "node_key",
+        "stage_index",
+        "stage",
+        "label",
+        "display_label",
+        "is_missing",
+        "count",
+        "fraction",
+        "category_index",
+        "visible_in_count",
+        "omitted_in_count",
+        "visible_out_count",
+        "omitted_out_count",
+        "x",
+        "y0",
+        "y1",
+        "value",
+        "displayed",
+        "reason"
+      ],
+      "dtypes": [
+        "int64",
+        "object",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "bool",
+        "int64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "e51b3ae81a124f65497ab3a7ff24ac7ce69983758e13b9b06724c4043df1187a"
+    },
+    "link_layout": {
+      "file": "annotation_associations_link_layout.csv",
+      "rows": 28,
+      "columns": [
+        "link_id",
+        "pair_index",
+        "source_id",
+        "target_id",
+        "source_stage",
+        "target_stage",
+        "source_label",
+        "target_label",
+        "source_display_label",
+        "target_display_label",
+        "source_missing",
+        "target_missing",
+        "count",
+        "fraction",
+        "displayed",
+        "reason",
+        "value",
+        "x0",
+        "x1",
+        "y0_low",
+        "y0_high",
+        "y1_low",
+        "y1_high",
+        "left_stage",
+        "right_stage",
+        "left_label",
+        "right_label"
+      ],
+      "dtypes": [
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "str",
+        "bool",
+        "bool",
+        "int64",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "d4d95f9b89ebfc8ed4c7151ce97f2e3ab2c5c5e9436e036f43d42b56a4cbca0e"
+    },
+    "labels": {
+      "file": "annotation_associations_labels.csv",
+      "rows": 16,
+      "columns": [
+        "node_id",
+        "stage",
+        "label",
+        "text",
+        "anchor_x",
+        "anchor_y",
+        "offset_x_points",
+        "offset_y_points",
+        "ha",
+        "fontsize"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "str",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "0d9988ef5d0bc127bf3ac90ce0e139a0bd08dc3945cd22ae6260c44bef84a2b6"
+    }
+  }
+}

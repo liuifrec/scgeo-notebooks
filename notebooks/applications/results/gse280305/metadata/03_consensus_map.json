@@ -1,0 +1,105 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "consensus_state_map",
+    "basis": "X_umap_scanorama",
+    "display_only": true,
+    "n_cells": 31605,
+    "displayed_cells": 12000,
+    "max_points": 12000,
+    "random_state": 1729,
+    "palette": {
+      "stable_aligned": "#0072B2",
+      "stable_discordant": "#D55E00",
+      "stable_neutral": "#009E73",
+      "stable_effect": "#25769A",
+      "representation_unstable": "#CC79A7",
+      "insufficient_coverage": "#7F7F7F",
+      "missing": "#BDBDBD"
+    },
+    "store_key": "representation_stability",
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "stored consensus classes displayed on original embedding"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      147.32,
+      121.91999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "03_consensus_map.png",
+      "sha256": "69ab9e731a5d3fe40ea431fe954480a59fe327a7b1bea7f72156445700a82853"
+    },
+    "svg": {
+      "file": "03_consensus_map.svg",
+      "sha256": "604d0ed83a1b285d334c577459434a08db305a14b2885abd2570d4cc9a05d524"
+    },
+    "pdf": {
+      "file": "03_consensus_map.pdf",
+      "sha256": "d375a79cbf511d21b785711363baada83608419ae9fac779ffc5b3eca4157142"
+    }
+  },
+  "tables": {
+    "data": {
+      "file": "03_consensus_map_data.csv",
+      "rows": 31605,
+      "columns": [
+        "cell_index",
+        "cell_id",
+        "state",
+        "consensus_label",
+        "display_x",
+        "display_y",
+        "displayed"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "float32",
+        "float32",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "22920ed3f18a4a91035cccf879c92a10e8f62e7d3c9b041f1558d70678567dc0"
+    }
+  }
+}

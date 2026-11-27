@@ -41,10 +41,11 @@ The [GSE211713 molecular shift results notebook](notebooks/applications/results/
 
 | Public result gallery | Experimental context | Browse |
 |---|---|---|
-| GSE249479 | Pooled human HSPCs; descriptive only, no sample-level inference | [Notebook](notebooks/applications/results/gse249479/GSE249479_inflammation_results.ipynb) · [Five figures](notebooks/applications/results/gse249479/README.md) |
-| GSE211713 | Cross-sectional mouse lung; independent qualified mice and conditional sample-bootstrap intervals | [Notebook](notebooks/applications/results/gse211713/GSE211713_fibroblast_results.ipynb) · [Six figures](notebooks/applications/results/gse211713/README.md) |
+| GSE249479 | Pooled human HSPCs; descriptive only, no sample-level inference | [Notebook](notebooks/applications/results/gse249479/GSE249479_inflammation_results.ipynb) · [Aggregate figures](notebooks/applications/results/gse249479/README.md) · [Native outputs](notebooks/applications/results/gse249479/native/README.md) |
+| GSE211713 | Cross-sectional mouse lung; independent qualified mice and conditional sample-bootstrap intervals | [Notebook](notebooks/applications/results/gse211713/GSE211713_fibroblast_results.ipynb) · [Aggregate figures](notebooks/applications/results/gse211713/README.md) · [Native outputs](notebooks/applications/results/gse211713/native/README.md) |
+| GSE280305 | Post-irradiation mouse hematopoietic recovery; descriptive D8-referenced contrasts | [Notebook](notebooks/applications/results/gse280305/GSE280305_native_results.ipynb) · [Eleven native figures](notebooks/applications/results/gse280305/README.md) |
 
-[**Browse all results-first examples**](notebooks/applications/results/README.md). These examples are descriptive, retrospectively selected, and do not establish causal molecular drivers. Full workflows remain separate.
+[**Browse all native ScGeo outputs and results-first examples**](notebooks/applications/results/README.md). These examples are descriptive, retrospectively selected, and do not establish causal molecular drivers. Full workflows remain separate.
 
 ## Find your starting point
 
@@ -63,7 +64,7 @@ The older conceptual tutorial remains available unchanged; it constructs its rep
 
 ## Public-data application notebooks
 
-The [ScGeo 0.2.0 application track](notebooks/applications/v0.2.0/README.md) provides new visualization notebooks for the original HSPC inflammation and corrected mouse-lung radiation inputs. These opt-in workflows read checksum-matched local data and frozen evidence tables. They are separate from the simulated tutorials and the paper reproduction workflows; see the application guide for graph provenance and biological-replication limits.
+The [ScGeo 0.2.0 application track](notebooks/applications/v0.2.0/README.md) provides visualization notebooks for HSPC inflammation, corrected mouse-lung radiation inputs and the recovered GSE280305 checkpoint. The [native ScGeo 0.2.1 outputs](notebooks/applications/results/README.md) can be viewed without installing the package. These opt-in workflows read checksum-matched local data and frozen evidence tables. They are separate from the simulated tutorials and the paper reproduction workflows; see the application guide for graph provenance and biological-replication limits.
 
 ## Analyses included
 

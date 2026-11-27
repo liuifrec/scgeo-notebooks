@@ -1,0 +1,540 @@
+{
+  "schema": "scgeo.public_native_gallery.v1",
+  "dataset": "GSE249479",
+  "scgeo_version": "0.2.1",
+  "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+  "scope": "34,432 retained human HSPCs; pooled descriptive comparisons without verified biological replicate identities.",
+  "selection": "Geometry API examples selected by documented names; first complete gene/program/connector triplet in each selected contrast; selected for software coverage, not biological significance.",
+  "source_runs": [
+    {
+      "application_manifest_sha256": "f383861ea73b1c053365a286bdfdfa31e7b05ad5dd44b6adea5606d73dcdc668",
+      "companion_commit": "9ec9b022988faa75ab6e2f4f61a41d5325c24694",
+      "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+      "scope": "34,432 retained human HSPCs; pooled descriptive comparisons without verified biological replicate identities.",
+      "track": "geometry",
+      "plot_manifests": 16,
+      "figure_files": 48,
+      "source_tables": 90,
+      "source_digests": [
+        {
+          "file": "04_lps_detailed_representation_state_evidence.csv",
+          "sha256": "42fdade846a0e2665f48311bd4b38aa0f7adb4ea2b2298e7dc37e26a2622131f",
+          "expected_sha256": null
+        },
+        {
+          "file": "04_tnf_detailed_representation_state_evidence.csv",
+          "sha256": "b0b2227c8ff8e18730421905117e90807cc210a20ffc9bd5a8e033909868edb0",
+          "expected_sha256": null
+        },
+        {
+          "file": "gse249479_revision_qc_hvg.h5ad",
+          "sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759",
+          "expected_sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759"
+        },
+        {
+          "file": "gse249479_revision_representations.h5ad",
+          "sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979",
+          "expected_sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979"
+        }
+      ]
+    },
+    {
+      "application_manifest_sha256": "2f310caac118eeb6b507c1e0127936efdb3a55204ad9ac1086641e532401433f",
+      "companion_commit": "84bb5b1f20f168e7e95237825a803409f44a474e",
+      "scgeo_commit": "683228b1c52808d3cc5df2de5f6e104932c29328",
+      "scope": "34,432 retained human HSPCs; pooled descriptive comparisons without verified biological replicate identities.",
+      "track": "molecular",
+      "plot_manifests": 18,
+      "figure_files": 54,
+      "source_tables": 102,
+      "source_digests": [
+        {
+          "file": "03a_pca_summary.json",
+          "sha256": "709eaf9ac602c8f90d2f9662dcf97e75d75c2042f17899a0ac1156609db25c1c",
+          "expected_sha256": null
+        },
+        {
+          "file": "03a_pca_representations.npz",
+          "sha256": "49cf0d05ef955e9e9890ae680fcc7a262bbbe5370b9ce42acfaa6e63b5466919",
+          "expected_sha256": "49cf0d05ef955e9e9890ae680fcc7a262bbbe5370b9ce42acfaa6e63b5466919"
+        },
+        {
+          "file": "04_lps_detailed_representation_state_evidence.csv",
+          "sha256": "42fdade846a0e2665f48311bd4b38aa0f7adb4ea2b2298e7dc37e26a2622131f",
+          "expected_sha256": null
+        },
+        {
+          "file": "04_tnf_detailed_representation_state_evidence.csv",
+          "sha256": "b0b2227c8ff8e18730421905117e90807cc210a20ffc9bd5a8e033909868edb0",
+          "expected_sha256": null
+        },
+        {
+          "file": "gse249479_revision_qc_hvg.h5ad",
+          "sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759",
+          "expected_sha256": "86eed5f139e2d40ed2560d476198c11dbae423321a828d91e467013c5757b759"
+        },
+        {
+          "file": "gse249479_revision_representations.h5ad",
+          "sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979",
+          "expected_sha256": "5d91ecd63f62b14d77fab04943fb5cd0f530e795ccbc0403616036568e3d9979"
+        },
+        {
+          "file": "gse249479_signatures_v1.json",
+          "sha256": "ae2ebe8e2c2a9d95d51526f12e68673e6e6d7ee77bee2cf48fde0e44a71c9fa7",
+          "expected_sha256": null
+        }
+      ],
+      "molecular_manifest_sha256": "ef53e58258907b7a5a3003b7f63ba41b9a727f81cdc4ba341b3ca72c5078649b"
+    }
+  ],
+  "inventory": [
+    {
+      "track": "geometry",
+      "name": "PBS_vs_LPS_atlas",
+      "api": "geometry_dynamics_atlas",
+      "svg_sha256": "3867cddbc05263bd5aa8d94f5ec8c3193f1e23303698d2a9f1755de641c1a077",
+      "png_sha256": "7349a846fc7f9205f2c6167a0c0508afb53d87f554c5461fcdcb9821006b40eb",
+      "plot_metadata_sha256": "dbe35a062f5df6898d09edf6f03d3bda2fa02c2b38ef0bce02d4a8ed66385185",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_LPS_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "ee4b902d2fc3e66e38c15bb30f15e99c006486d72fed68a74753459a587873d5",
+      "png_sha256": "c5232aa83e58840bdd1f7ca68a315806a34bd3850400598bdee32fd9683cc8cb",
+      "plot_metadata_sha256": "c6632cd702fa8d1d5c3a7da2e11e5122942b02c86eb83b5ea0fb13cb2dbb961c",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_LPS_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "bd668c8ba19ee3725943ef1d8490f8b67e78acb7fe096998e7063546f0f68292",
+      "png_sha256": "3e863a8d18960122e42e0f93f7d012567f2f196f6597b5561e1c4a6a7bad5df6",
+      "plot_metadata_sha256": "9606d11bbb18ddc1cdc4b31eb4a028b2f67dc2db8b69340cbce3dc01e5dd9660",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_LPS_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "4afb73f6cff9b617eab48b409e5283c263f10497b6b8918a97abc64411e10312",
+      "png_sha256": "b231c2435be66b8970631fd976f756fc0d2a70aa57b5db58d539a9bc2c4d8980",
+      "plot_metadata_sha256": "ba460e03b74804525aea94653275982d17f058d23dd54b006506202bd133d488",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_LPS_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "2b0440188d2c5a3287dc056e462c36e88661acc8807f52a110be1c8e25eb5c5e",
+      "png_sha256": "03044000aea54aaaf658e2d7e3754d9346f664e3cc627c2b05e6705098199cd1",
+      "plot_metadata_sha256": "49427e8f415152a9ee12e008a26899b8488b2f7e246b4e9cf3442dda47b63502",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_TNF_atlas",
+      "api": "geometry_dynamics_atlas",
+      "svg_sha256": "6ce503b569da7a6550fff2b7fe300a74d08000b0a0d0d6abf8462b80178e1a9e",
+      "png_sha256": "499c6d295794c1e66db35246871ee4ffc35a8d58afa3cb38360a5c72cf4a119a",
+      "plot_metadata_sha256": "79d55a37918fff30be5a3a07fe3c0b5a23c23bca45f39f8dfd4ac0fffef36850",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_TNF_compass",
+      "api": "recovery_compass",
+      "svg_sha256": "5beebe06490942452f9d980a20380258ea34c671d0dbb20af9450fa450ce249e",
+      "png_sha256": "979c21bdedb17af63dc8d1f179c8eea242ec3c20ef6a445c1bb62fc338c46000",
+      "plot_metadata_sha256": "b1d5e77bba3d73af00420325a16acea710c31206ebf28e740a77141be753bdb0",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_TNF_composition_pies",
+      "api": "paga_shift_map",
+      "svg_sha256": "880c761eb8ba7cfbfed1539851217e86810bcd745ca08d598170570c363c39ab",
+      "png_sha256": "3821d63dfa80d4ffe23edca50dad6792fe40bf927b4b24684c28e2720f9e39e8",
+      "plot_metadata_sha256": "cea4b460d12304e849a597f39456b6b9fd5101e682e689080a48d9d24d60f660",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_TNF_evidence",
+      "api": "state_evidence_panel",
+      "svg_sha256": "7dd82c7a785e3b979ceb8bc830621ad67b03f7984adb1b85a7b6a6018c53f5a9",
+      "png_sha256": "3a561a1f92f328ae3b92c6c890612a35456573a301dace8fde596e2c4db18fc2",
+      "plot_metadata_sha256": "4e362c018b64b688304e50e2132da4599add100a87f7eb674c14516f5456dcc6",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "PBS_vs_TNF_representation_matrix",
+      "api": "robustness_matrix",
+      "svg_sha256": "edff5f0e34f04fc016fdf9336889d4cbc4590a2db8304fd011ae0762df5f03ea",
+      "png_sha256": "fbe8411260461e91fa0f8ef7fcae235c81fdfe8eed2eb00f5e31964136b63b89",
+      "plot_metadata_sha256": "09895f0186533b757205bb9b56e6841debb6d049664b5b0e311a26dab66f695a",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "annotation_associations",
+      "api": "state_flow_alluvial",
+      "svg_sha256": "041c858fa3ab26f89b58389d35e3219fd37eb1b9f5d8d5482866e8e4c2a64500",
+      "png_sha256": "8bd3fbe90a7a2fe1796213d8d254364aec5c531d1d94df502807145e43c83408",
+      "plot_metadata_sha256": "7c59e2fbb5cd5df1cece69ba31c06ef2c1c4982428afcdb17c98f90b2ab9ed66",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "condition_facets",
+      "api": "embedding_facets",
+      "svg_sha256": "5f44e12c9476fbe143b8799e2b85ca6c2b5dd7610b1bb38e6663ed28e2c01497",
+      "png_sha256": "85aded31e9928c64057a9ada8409cc3f3b8c4fb27ad48517d3b88cc769a54275",
+      "plot_metadata_sha256": "a1f04163a9c336bb7ea38e1083fffff2f4c2870e0848c5ebaf7ca5cb788a7d26",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "relative_density",
+      "api": "embedding_density",
+      "svg_sha256": "341955766b307f95527f7120f62b38d85ed9d27b626d67d6380ecf16236f700d",
+      "png_sha256": "d59c47c2aef47440999419d3e175f5c0fb4eb9d240d3e766157bc8fbe7907b66",
+      "plot_metadata_sha256": "b4ffff21d4c53b486b321bb9e0e5a6022404f0cdc9bc5a159dbf6df09e92578e",
+      "published": true
+    },
+    {
+      "track": "geometry",
+      "name": "score_ap1_stress_response",
+      "api": "embedding_facets",
+      "svg_sha256": "08a2bc34471761da42cad5f2c0b9c5f3ca4838b5d09c42c810d6ebbfd5baf6f7",
+      "png_sha256": "01ba52e6497786e8f41b0800ae62b078a9e4804c9fa6f56c04aed0baa997d80e",
+      "plot_metadata_sha256": "2e4ce10955a17161ab5d0827e4432ecf81013bb9fb335ecb0f0559a3ae60b2d3",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "score_interferon_response",
+      "api": "embedding_facets",
+      "svg_sha256": "93ec5ded4827c19de6b6afa96aed4177cfb12639db96a9cc6b2eda1a1fde955c",
+      "png_sha256": "3c78ac115d013a360179704c295412f45245eaf8c1ed46693717b375b2087fc8",
+      "plot_metadata_sha256": "ac3dd919fd04bfe6267f4f142e36ea64bc799e6f87828d92c59c5cb2b914de6d",
+      "published": false
+    },
+    {
+      "track": "geometry",
+      "name": "score_tnf_nfkb_response",
+      "api": "embedding_facets",
+      "svg_sha256": "38eb0141e5d010f0d703da45db317328e3e20a457ae4d3c61daef117b4921648",
+      "png_sha256": "17de0d6549559b53e7260a6bc04b79f6ca0c9249d3f39d36b5a7a4755b2bcc80",
+      "plot_metadata_sha256": "9ec9804a32db58f068f1345100de7ef3fb73146e3156a2b93dfb7459c3c11731",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_01_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "854b09fe0d5f92d5dd05dae1c4ff5deaa7620154cc1c93973bd2cebd223968a8",
+      "png_sha256": "fa7afa484d13fbf1932ffbd6f5f64269dd43a2f1f1d7900a9fcd0e0fbf899b84",
+      "plot_metadata_sha256": "4de190f0a56077018a0f8460a93db279c9cca96c8fb0a070b171fb57fa3d4512",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_01_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "73ac2cf55323d993dd8b942b241f2405b22123b85b32e2bcf27f5a851acc9ffd",
+      "png_sha256": "98dcf5e2a5f6a29999eb797563017bacbce18c4c0259bec26fd8411ff0c4ef2a",
+      "plot_metadata_sha256": "fa3a9dd8f25028f2c3e85da26f2a1437e96dd6466e6cfbd0ca59527ac3fddc5f",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_01_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "84388fcfe9a56f02858ae60ab91e49d1ef3101592b48fb6ff631e555616abf67",
+      "png_sha256": "957d15a6aa6aa793c73a1de320e2da91a88a50a5e98f597e5e1d0ee6c983f708",
+      "plot_metadata_sha256": "1912c4d65a5c2b3d37e383e8198d1489249d2e1aff524de835c25d5f3dbb0388",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "3e1e0dea177ccafc830e7e6071caca8b335f6e2bacae127a96b54875ffd63301",
+      "png_sha256": "5978e551bc6788299438aa90f00a83b88953bac2f73da32d9139058da163cc2d",
+      "plot_metadata_sha256": "1c15c4e7fc033cfa4adb09856622219efbf37e4f4f66b452b89259ed2b468d0e",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "389d647e8302c9832f81855a97221f780dbe250099cef086831829a8401d4833",
+      "png_sha256": "6995ad0a4ee6e568196a5309a8abe4461aa49f2cae37fb1dbf997c4a01ab7a0e",
+      "plot_metadata_sha256": "aa442e195a038f40b0e5ee1812d332a4c8c89813dbc2aacf116d092b56fa1a76",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "cc5ed69fd65d778ed97f6f88b9940968c7026a71de6ccf70d692c82ad75b8262",
+      "png_sha256": "8ae4e78c6300ce6384d5dbbf8cf0adc775c2ba7bf6d9a39e4126da7a0fa28f5b",
+      "plot_metadata_sha256": "299b166ba37d6b3d9078ca52a8e9e940e5721a519a8d9fb2ebe5b5c4a70ba6ea",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_06_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "e6ed41734b32a873bd14fb0a48ad0225d1201e5f0c5caae94b66994a1bf38a53",
+      "png_sha256": "fa7995c2f4e780e0a5dd4cf333bb8bc5467fb87c1f96a2666c8250967f330682",
+      "plot_metadata_sha256": "8993be0edfb0752d7dc487cc5a9f914e515026b213ad405690a05dcaca69c8b2",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_06_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "d18eb828437c7418a587c01f5346aa75bb859acfa068e805b20d5c81ec1ce40c",
+      "png_sha256": "e450b3b9d9395078fdd19bdf3716c12764ec98d81bd49e5580548d84b4ac758d",
+      "plot_metadata_sha256": "6658b4f785b13bb3f98226aa8132aabcc981aad3a04b253dea8a407345314704",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_LPS_06_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "9140ec64b73b0ef3380c2e4c9698e1f300e6f6acda12f07160b901ec42ea5c3f",
+      "png_sha256": "e5f77e24b92144a5726d189eba8d2cc35232d5eea314d7faf7869a610ab7fb51",
+      "plot_metadata_sha256": "c29793c0f7e2f95308b5fcc959221430285057a26bd8ebf071d0b5e1e76987a8",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_01_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "f7aba768d0c62d43ed3979371eee587cc1636b8a78702cf939df25e632ca6293",
+      "png_sha256": "95353c1e17babaf7c0ecd2d28e69e8874e2b83e96ae10697da48b10dadf0d8a3",
+      "plot_metadata_sha256": "94b5f624b72efe69d5c7ca162e7368df634eb98c3c9640b24b1620b5bd033d1c",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_01_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "69af4425a870cb65cb39337f96db2b25a84f14ccaf11438ddaeed821840695af",
+      "png_sha256": "d4410d6aea7afc6d42454d4c6c4ff19db76ff33b17ae344e06955ce195d43f17",
+      "plot_metadata_sha256": "9fd220fcbaa5ce478a9525e0488349b88321ac7edb258b7f7c0942c24f69d800",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_01_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "4040f4dc10286839d1a7b1272077428135f356c8e8a940c838ec33382020a2c3",
+      "png_sha256": "0dca3875a2cb341e2b2518d51e2478202d331b739482081ef67c82e8e5abcee6",
+      "plot_metadata_sha256": "6bb0d7b0d6f86447f6f19890d9d2f5f7731995254842ee65db2e4738aacdcd9d",
+      "published": true
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_02_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "fb1308d47d5f278de519ead43d5667a76a7b976ac363258d6a71ce2ce130d06e",
+      "png_sha256": "4bfae1dfbe6db8d9eb5cb4362f20396677454fade777c1eb3eea9b3507349a1b",
+      "plot_metadata_sha256": "2675a8061275b2238cff474767d3f33f534a95d6e51d7bd69718ca46201a8afa",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_02_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "b1598da3b821a74feba2671b093b00330583a29f1f340871e3bcdd673526e9ef",
+      "png_sha256": "920dc779737174b2af47d0778b936c9250969fa547513d42633b4747d96ee68d",
+      "plot_metadata_sha256": "fcc57525ad8c8ded46cefe8882c6e8abc94254b27fefbc7ec58ea7b085070915",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_02_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "ce50847eae34a908ea7d0eecac7c3d7d7f4a5c2faf8487b005c80bd0ce1f896b",
+      "png_sha256": "bceca4ce53451d4ff72963b6dbd0b755f2af235ea3161f8fd303637acd624e57",
+      "plot_metadata_sha256": "5bc490bbae544aa46b46b816b71a1b9d38d9fe5c7928ff91d1443f1d610428c9",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_06_gene_curves",
+      "api": "shift_curves",
+      "svg_sha256": "8bd2142da934e6505c3a79ed495ed9e81b35df27d0245be25157d5022a44794f",
+      "png_sha256": "b7253575d2e67e3131b05fe08f9f5ffc48bc9eea522754bb74c893e98c6cf8ec",
+      "plot_metadata_sha256": "ee832dfd96e133cf74b8dd446351ff6e1283c6b7d4dc6bca3b73b5c394061e0b",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_06_program_curves",
+      "api": "shift_curves",
+      "svg_sha256": "c0ef06750c2a142c654a8d522b70b27b52645b3be0f76661384ee5ed15ca0c92",
+      "png_sha256": "595de7d7a1bdf7f95d6cbb546d668a369f9d836e34def9e818f04a603353d343",
+      "plot_metadata_sha256": "d536cd98fe8db2b4b3afc7ec85fe1c2f10dea6789b2b9c7525165a344b0f84c7",
+      "published": false
+    },
+    {
+      "track": "molecular",
+      "name": "B_TNF_06_shift_embedding",
+      "api": "shift_embedding",
+      "svg_sha256": "c50c9ed984ee59ed83e42591d1b8186c59cb007b0cb3caaa08d936bf635b02ef",
+      "png_sha256": "d2651818cae2f0f73085567e4fbc3e2f16d7f7112a2e88a8bd1959eb87694be7",
+      "plot_metadata_sha256": "4a6b42b20be7f2f334fee6aeba6aeb4ae7fdb34fed4aad90431d9c8f76415c23",
+      "published": false
+    }
+  ],
+  "selected": [
+    {
+      "name": "condition_facets",
+      "api": "embedding_facets",
+      "track": "geometry",
+      "figure": "figures/geometry/condition_facets.svg",
+      "figure_sha256": "5f44e12c9476fbe143b8799e2b85ca6c2b5dd7610b1bb38e6663ed28e2c01497",
+      "metadata": "metadata/geometry/condition_facets.json",
+      "metadata_sha256": "a1f04163a9c336bb7ea38e1083fffff2f4c2870e0848c5ebaf7ca5cb788a7d26",
+      "note": "Fixed frozen UMAP for display"
+    },
+    {
+      "name": "relative_density",
+      "api": "embedding_density",
+      "track": "geometry",
+      "figure": "figures/geometry/relative_density.svg",
+      "figure_sha256": "341955766b307f95527f7120f62b38d85ed9d27b626d67d6380ecf16236f700d",
+      "metadata": "metadata/geometry/relative_density.json",
+      "metadata_sha256": "b4ffff21d4c53b486b321bb9e0e5a6022404f0cdc9bc5a159dbf6df09e92578e",
+      "note": "Descriptive density shape, not absolute abundance"
+    },
+    {
+      "name": "annotation_associations",
+      "api": "state_flow_alluvial",
+      "track": "geometry",
+      "figure": "figures/geometry/annotation_associations.svg",
+      "figure_sha256": "041c858fa3ab26f89b58389d35e3219fd37eb1b9f5d8d5482866e8e4c2a64500",
+      "metadata": "metadata/geometry/annotation_associations.json",
+      "metadata_sha256": "7c59e2fbb5cd5df1cece69ba31c06ef2c1c4982428afcdb17c98f90b2ab9ed66",
+      "note": "Same-cell associations; captured cells are not independent biological samples"
+    },
+    {
+      "name": "PBS_vs_TNF_evidence",
+      "api": "state_evidence_panel",
+      "track": "geometry",
+      "figure": "figures/geometry/PBS_vs_TNF_evidence.svg",
+      "figure_sha256": "7dd82c7a785e3b979ceb8bc830621ad67b03f7984adb1b85a7b6a6018c53f5a9",
+      "metadata": "metadata/geometry/PBS_vs_TNF_evidence.json",
+      "metadata_sha256": "4e362c018b64b688304e50e2132da4599add100a87f7eb674c14516f5456dcc6",
+      "note": "Frozen descriptive displacement; no biological replication"
+    },
+    {
+      "name": "PBS_vs_LPS_representation_matrix",
+      "api": "robustness_matrix",
+      "track": "geometry",
+      "figure": "figures/geometry/PBS_vs_LPS_representation_matrix.svg",
+      "figure_sha256": "2b0440188d2c5a3287dc056e462c36e88661acc8807f52a110be1c8e25eb5c5e",
+      "metadata": "metadata/geometry/PBS_vs_LPS_representation_matrix.json",
+      "metadata_sha256": "49427e8f415152a9ee12e008a26899b8488b2f7e246b4e9cf3442dda47b63502",
+      "note": "Stored scalar magnitudes; representations not independent"
+    },
+    {
+      "name": "PBS_vs_TNF_composition_pies",
+      "api": "paga_shift_map",
+      "track": "geometry",
+      "figure": "figures/geometry/PBS_vs_TNF_composition_pies.svg",
+      "figure_sha256": "880c761eb8ba7cfbfed1539851217e86810bcd745ca08d598170570c363c39ab",
+      "metadata": "metadata/geometry/PBS_vs_TNF_composition_pies.json",
+      "metadata_sha256": "cea4b460d12304e849a597f39456b6b9fd5101e682e689080a48d9d24d60f660",
+      "note": "PAGA-style renderer of descriptive pooled neighbor adjacency, not PAGA inference; captured-cell composition"
+    },
+    {
+      "name": "PBS_vs_TNF_compass",
+      "api": "recovery_compass",
+      "track": "geometry",
+      "figure": "figures/geometry/PBS_vs_TNF_compass.svg",
+      "figure_sha256": "5beebe06490942452f9d980a20380258ea34c671d0dbb20af9450fa450ce249e",
+      "metadata": "metadata/geometry/PBS_vs_TNF_compass.json",
+      "metadata_sha256": "b1d5e77bba3d73af00420325a16acea710c31206ebf28e740a77141be753bdb0",
+      "note": "Frozen descriptive displacement; no biological replication; alignment/OOD absent; connectors show display means, not quantitative displacements; graph is descriptive adjacency"
+    },
+    {
+      "name": "PBS_vs_LPS_atlas",
+      "api": "geometry_dynamics_atlas",
+      "track": "geometry",
+      "figure": "figures/geometry/PBS_vs_LPS_atlas.svg",
+      "figure_sha256": "3867cddbc05263bd5aa8d94f5ec8c3193f1e23303698d2a9f1755de641c1a077",
+      "metadata": "metadata/geometry/PBS_vs_LPS_atlas.json",
+      "metadata_sha256": "dbe35a062f5df6898d09edf6f03d3bda2fa02c2b38ef0bce02d4a8ed66385185",
+      "note": "Observed states and frozen descriptive evidence; no velocity or graph panel"
+    },
+    {
+      "name": "B_TNF_01_gene_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/B_TNF_01_gene_curves.svg",
+      "figure_sha256": "f7aba768d0c62d43ed3979371eee587cc1636b8a78702cf939df25e632ca6293",
+      "metadata": "metadata/molecular/B_TNF_01_gene_curves.json",
+      "metadata_sha256": "94b5f624b72efe69d5c7ca162e7368df634eb98c3c9640b24b1620b5bd033d1c",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation"
+    },
+    {
+      "name": "B_TNF_01_program_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/B_TNF_01_program_curves.svg",
+      "figure_sha256": "69af4425a870cb65cb39337f96db2b25a84f14ccaf11438ddaeed821840695af",
+      "metadata": "metadata/molecular/B_TNF_01_program_curves.json",
+      "metadata_sha256": "9fd220fcbaa5ce478a9525e0488349b88321ac7edb258b7f7c0942c24f69d800",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; overlapping program sums are not percentages"
+    },
+    {
+      "name": "B_TNF_01_shift_embedding",
+      "api": "shift_embedding",
+      "track": "molecular",
+      "figure": "figures/molecular/B_TNF_01_shift_embedding.svg",
+      "figure_sha256": "4040f4dc10286839d1a7b1272077428135f356c8e8a940c838ec33382020a2c3",
+      "metadata": "metadata/molecular/B_TNF_01_shift_embedding.json",
+      "metadata_sha256": "6bb0d7b0d6f86447f6f19890d9d2f5f7731995254842ee65db2e4738aacdcd9d",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; connector is not a lineage or RNA velocity"
+    },
+    {
+      "name": "B_LPS_01_gene_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/B_LPS_01_gene_curves.svg",
+      "figure_sha256": "854b09fe0d5f92d5dd05dae1c4ff5deaa7620154cc1c93973bd2cebd223968a8",
+      "metadata": "metadata/molecular/B_LPS_01_gene_curves.json",
+      "metadata_sha256": "4de190f0a56077018a0f8460a93db279c9cca96c8fb0a070b171fb57fa3d4512",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation"
+    },
+    {
+      "name": "B_LPS_01_program_curves",
+      "api": "shift_curves",
+      "track": "molecular",
+      "figure": "figures/molecular/B_LPS_01_program_curves.svg",
+      "figure_sha256": "73ac2cf55323d993dd8b942b241f2405b22123b85b32e2bcf27f5a851acc9ffd",
+      "metadata": "metadata/molecular/B_LPS_01_program_curves.json",
+      "metadata_sha256": "fa3a9dd8f25028f2c3e85da26f2a1437e96dd6466e6cfbd0ca59527ac3fddc5f",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; overlapping program sums are not percentages"
+    },
+    {
+      "name": "B_LPS_01_shift_embedding",
+      "api": "shift_embedding",
+      "track": "molecular",
+      "figure": "figures/molecular/B_LPS_01_shift_embedding.svg",
+      "figure_sha256": "84388fcfe9a56f02858ae60ab91e49d1ef3101592b48fb6ff631e555616abf67",
+      "metadata": "metadata/molecular/B_LPS_01_shift_embedding.json",
+      "metadata_sha256": "1912c4d65a5c2b3d37e383e8198d1489249d2e1aff524de835c25d5f3dbb0388",
+      "note": "Pooled descriptive attribution; no biological replicates; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; connector is not a lineage or RNA velocity"
+    }
+  ]
+}

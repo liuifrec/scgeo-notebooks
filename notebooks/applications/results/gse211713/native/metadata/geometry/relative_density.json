@@ -1,0 +1,304 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "embedding_density",
+    "basis": "X_umap_display_only",
+    "dimensions": [
+      0,
+      1
+    ],
+    "groupby": "application_group",
+    "groups": [
+      "control",
+      "17Gy_early",
+      "17Gy_late"
+    ],
+    "normalize": "per_group",
+    "normalization_rule": "divide_by_group_peak",
+    "color_label": "Relative density (group peak = 1)",
+    "color_limits": [
+      0.0,
+      1.0
+    ],
+    "norm": "Normalize",
+    "cmap": "magma",
+    "contour": true,
+    "smooth_k": 3,
+    "smoothing": "one_box_blur_with_replicated_edges",
+    "log1p": true,
+    "mask_zeros": true,
+    "contour_level_mode": "quantile",
+    "contour_levels": [
+      0.009975535943573635,
+      0.060567816571500094,
+      0.13315459896957743,
+      0.2138993159477956,
+      0.2824598331888993,
+      0.350474210175623,
+      0.41714768158950244,
+      0.47764258446234403,
+      0.5343513347249421,
+      0.5992933340595853,
+      0.691753213945629,
+      1.0
+    ],
+    "contour_lines": true,
+    "gridsize": 80,
+    "grid_extent": [
+      -13.643769264221191,
+      12.747587203979492,
+      -9.60894775390625,
+      11.945840835571289
+    ],
+    "grid_extent_source": "all_finite_labeled_cells",
+    "padded_constant_dimensions": [],
+    "histogram_source_scope": "selected_finite_cells_inside_grid",
+    "finite_coordinates_policy": "both_coordinates_finite",
+    "grid_upper_edge_included": true,
+    "n_input": 83373,
+    "n_selected": 83373,
+    "n_included": 83373,
+    "n_missing_groups": 0,
+    "n_nonfinite_selected": 0,
+    "n_outside_grid_selected": 0,
+    "obs_index_name": "cell_id",
+    "aspect": "equal",
+    "view_limits": {
+      "control": {
+        "xlim": [
+          -13.643769264221191,
+          12.747587203979492
+        ],
+        "ylim": [
+          -9.60894775390625,
+          11.945840835571289
+        ]
+      },
+      "17Gy_early": {
+        "xlim": [
+          -13.643769264221191,
+          12.747587203979492
+        ],
+        "ylim": [
+          -9.60894775390625,
+          11.945840835571289
+        ]
+      },
+      "17Gy_late": {
+        "xlim": [
+          -13.643769264221191,
+          12.747587203979492
+        ],
+        "ylim": [
+          -9.60894775390625,
+          11.945840835571289
+        ]
+      }
+    },
+    "view_limits_change_computation": false,
+    "colorbar_shown": true,
+    "transparent_background": true,
+    "background": null,
+    "alpha": 0.95,
+    "interpretation": "Descriptive cell counts in embedding bins; relative panels do not compare abundance.",
+    "application_dataset": "C",
+    "application_scope": "replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Relative embedding density, not sample abundance"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      251.45999999999995,
+      76.19999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "relative_density.png",
+      "sha256": "5aa474f772774cb5d9037c03a867a440ed29c469780c233e8eeaa49eeb854f58"
+    },
+    "svg": {
+      "file": "relative_density.svg",
+      "sha256": "82a11893910ca4f3f14d098b99c328f90cae84a911db788764cd7ba9933f98b0"
+    },
+    "pdf": {
+      "file": "relative_density.pdf",
+      "sha256": "9e77235b4ee7a6819d89e8dcbc359a9ef4ca12dbb9b26090a25c732ecb273ab3"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "relative_density_cells.csv",
+      "rows": 83373,
+      "columns": [
+        "obs_position",
+        "cell",
+        "group",
+        "group_value",
+        "group_missing",
+        "x",
+        "y",
+        "selected",
+        "finite_coordinates",
+        "in_grid",
+        "included",
+        "reason"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "a9cb7bb5eb5c1d4f73056f75c46154f91ac68a048c64220f3cd4e0bc9c4620da"
+    },
+    "grid": {
+      "file": "relative_density_grid.csv",
+      "rows": 19200,
+      "columns": [
+        "group",
+        "ix",
+        "iy",
+        "x",
+        "y",
+        "x_left",
+        "x_right",
+        "y_bottom",
+        "y_top",
+        "raw_count",
+        "smoothed_count",
+        "transformed_value",
+        "plotted_value",
+        "masked_zero",
+        "masked_norm",
+        "displayed"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "float64",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "af00f49b7e7c893bc5b18833d2b5c7acc91b5ba3b1b36a4d5d3c76263f008593"
+    },
+    "groups": {
+      "file": "relative_density_groups.csv",
+      "rows": 3,
+      "columns": [
+        "group",
+        "n_input",
+        "n_finite",
+        "n_in_grid",
+        "n_nonfinite",
+        "n_outside_grid",
+        "raw_count_sum",
+        "transformed_peak",
+        "normalization_factor",
+        "status",
+        "color_vmin",
+        "color_vmax",
+        "n_displayed_bins"
+      ],
+      "dtypes": [
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "int64",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64",
+        "int64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "c5ae1bb3b14c1e5238b7ddbccea82d3ba2d054663656b0eea7e48961e31f775a"
+    },
+    "contour_levels": {
+      "file": "relative_density_contour_levels.csv",
+      "rows": 36,
+      "columns": [
+        "group",
+        "level_index",
+        "value"
+      ],
+      "dtypes": [
+        "object",
+        "int64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "521091ba25ba1812eff049f91d6e9448c12cf224172c07f767e2495e61a587c4"
+    }
+  }
+}

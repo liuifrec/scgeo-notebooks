@@ -1,0 +1,167 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "shift_embedding",
+    "explanation_key": "molecular_explanation",
+    "states": [
+      "all"
+    ],
+    "analysis_rep": "X_molecular_linear50",
+    "display_basis": "X_umap_display_only",
+    "curvature": 0.2,
+    "arrow_semantics": "schematic condition-center contrast",
+    "center_method": "frozen analysis cell weights applied to display coordinates",
+    "not_a_trajectory": true,
+    "max_points": 5000,
+    "n_drawn_cells": 1205,
+    "sample_key": "mouse_id",
+    "color": "application_group",
+    "category_colors": {
+      "control": "#c0794f",
+      "17Gy_late": "#5739ae"
+    },
+    "application_dataset": "C",
+    "application_scope": "New molecular accounting; replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound; connector is not a lineage or RNA velocity"
+  },
+  "warnings": [
+    "Curvature is a display choice, not an estimated path, fate, or velocity field."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      177.79999999999998,
+      152.39999999999998
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding.png",
+      "sha256": "20a406f7462a0f3df4fd95366297753a5864ceb7102cfa202b822db437fece1b"
+    },
+    "svg": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding.svg",
+      "sha256": "8a1f025f16249f5d70a0619bdc8276b47f34e351a1fc6b1d9f455b39f09b06d7"
+    },
+    "pdf": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding.pdf",
+      "sha256": "73fcb399338836d9d345ed39aa198342b10045a68214030ac3bccb7a4fc8a486"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding_cells.csv",
+      "rows": 1205,
+      "columns": [
+        "obs_position",
+        "obs_name",
+        "state",
+        "condition",
+        "sample",
+        "shift_score",
+        "eligible",
+        "color_label",
+        "x",
+        "y",
+        "displayed"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "3b4f513488886e2fbe2e1cece33b571d703c1e0d0213710c3da7a2c3bc8d8bed"
+    },
+    "centers": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding_centers.csv",
+      "rows": 1,
+      "columns": [
+        "state",
+        "status",
+        "drawn",
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "b4b69634c64c4caedf04512ac42c22caf4eb5a0e1867cf3f8b02a0dee9bbdf76"
+    },
+    "center_weights": {
+      "file": "C_fibroblast_control_vs_17gy_late_00_shift_embedding_center_weights.csv",
+      "rows": 1205,
+      "columns": [
+        "state",
+        "condition",
+        "obs_position",
+        "weight"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "23ce91304804aa952f95dd050b099918a9614ee5c9be8a962a0d2022df74a59f"
+    }
+  }
+}

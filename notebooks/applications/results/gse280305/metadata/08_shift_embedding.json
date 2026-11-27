@@ -1,0 +1,168 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "shift_embedding",
+    "explanation_key": "reviewed_explanation",
+    "states": [
+      "4",
+      "9"
+    ],
+    "analysis_rep": "X_pca_raw",
+    "display_basis": "X_umap_scanorama",
+    "curvature": 0.2,
+    "arrow_semantics": "schematic condition-center contrast",
+    "center_method": "frozen analysis cell weights applied to display coordinates",
+    "not_a_trajectory": true,
+    "max_points": 10000,
+    "n_drawn_cells": 3635,
+    "sample_key": null,
+    "color": "timepoint",
+    "category_colors": {
+      "D8": "#bf549c",
+      "D21": "#c45564"
+    },
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "stored analysis weights projected to display coordinates; no trajectories"
+  },
+  "warnings": [
+    "Curvature is a display choice, not an estimated path, fate, or velocity field."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      152.39999999999998,
+      127.0
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "08_shift_embedding.png",
+      "sha256": "c4f83a25c807539b40b24706868e4893b82646ca1527109a4b9478fdd3248c08"
+    },
+    "svg": {
+      "file": "08_shift_embedding.svg",
+      "sha256": "bc4a90f632eb8e41ab5f0bc560b633d5576645a9d95b116e73abe13fb81f4854"
+    },
+    "pdf": {
+      "file": "08_shift_embedding.pdf",
+      "sha256": "b4c5283189b18203d831b1ced3de7be24e74bb8d95ebd03cd9cd0d39d21aea97"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "08_shift_embedding_cells.csv",
+      "rows": 3635,
+      "columns": [
+        "obs_position",
+        "obs_name",
+        "state",
+        "condition",
+        "sample",
+        "shift_score",
+        "eligible",
+        "color_label",
+        "x",
+        "y",
+        "displayed"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "bool"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "0242295e72c8acc94b9ed38464586e9ec52a7a3a1c01426e00db95af4668ee89"
+    },
+    "centers": {
+      "file": "08_shift_embedding_centers.csv",
+      "rows": 2,
+      "columns": [
+        "state",
+        "status",
+        "drawn",
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "5cdefdcd987827ecd1117db7888b812cbfeee38bcacc785fbea8ff7a27eb48c9"
+    },
+    "center_weights": {
+      "file": "08_shift_embedding_center_weights.csv",
+      "rows": 3635,
+      "columns": [
+        "state",
+        "condition",
+        "obs_position",
+        "weight"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "int64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "667896d4677237bd1988d8b2f1b6276e8377e1412c727e3a139e317bf44b047a"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+state,n_cells0,n_cells1,delta_norm,normalized_delta_norm,representation_consensus_label,representation_coverage_fraction,median_neighbor_overlap,median_local_shape_distortion,group0,group1,inference_scope,inference_status,effect_status
+1,4018,33,4.168247802512917,0.637108873276176,stable_effect,1.0,0.26666666666666666,0.14261080570647475,D8,D21,descriptive_only,descriptive_only,descriptive_only
+2,1457,1317,9.746738905795068,0.9492674034826348,stable_effect,1.0,0.4,0.11925136024310865,D8,D21,descriptive_only,descriptive_only,descriptive_only
+4,2483,577,9.619585597124996,1.2897345944139034,stable_effect,1.0,0.13333333333333333,0.16502437891522487,D8,D21,descriptive_only,descriptive_only,descriptive_only
+8,355,300,12.012714497200754,1.0583280959231358,stable_effect,1.0,0.26666666666666666,0.1388080146379767,D8,D21,descriptive_only,descriptive_only,descriptive_only
+5,2031,546,9.978558365893337,0.9871189393845131,representation_unstable,1.0,0.26666666666666666,0.1405909091841645,D8,D21,descriptive_only,descriptive_only,descriptive_only
+11,245,74,6.489346309454965,0.4898500573240041,stable_effect,1.0,0.4,0.12747415736122403,D8,D21,descriptive_only,descriptive_only,descriptive_only
+0,768,3084,6.362309698436996,0.8739944019503734,stable_effect,1.0,0.3333333333333333,0.1291934656000841,D8,D21,descriptive_only,descriptive_only,descriptive_only
+9,486,89,31.58799818760303,1.950386551409451,stable_effect,1.0,0.4,0.1417600755440657,D8,D21,descriptive_only,descriptive_only,descriptive_only
+10,142,39,11.041397435270989,0.7824962126002926,stable_effect,1.0,0.4666666666666667,0.14017575904234128,D8,D21,descriptive_only,descriptive_only,descriptive_only
+7,419,154,17.701296420243562,1.4025927673736887,stable_effect,1.0,0.26666666666666666,0.17975459356017773,D8,D21,descriptive_only,descriptive_only,descriptive_only
+3,504,1464,8.511255384676613,0.8235904580825969,stable_effect,1.0,0.3333333333333333,0.1244574673996855,D8,D21,descriptive_only,descriptive_only,descriptive_only
+6,51,448,6.174611321383365,0.874088720917283,representation_unstable,1.0,0.3333333333333333,0.1379582514283889,D8,D21,descriptive_only,descriptive_only,descriptive_only
+13,91,80,18.004563641822884,1.8195185567358605,stable_effect,1.0,0.6,0.11548646875543897,D8,D21,descriptive_only,descriptive_only,descriptive_only
+12,99,124,12.182259287457752,0.5287826737236238,stable_effect,1.0,0.4666666666666667,0.12401559212374778,D8,D21,descriptive_only,descriptive_only,descriptive_only

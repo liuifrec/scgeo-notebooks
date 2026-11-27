@@ -1,5 +1,7 @@
 # GSE211713 — molecular shift explanations on real public data
 
+[**Browse actual native ScGeo 0.2.1 figures and viewer**](native/README.md). The aggregate molecular figures below remain separate.
+
 [**Open the results-first notebook**](GSE211713_fibroblast_results.ipynb) · [Original GEO study](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE211713) · [Full molecular workflow (tested commit)](https://github.com/liuifrec/scgeo-notebooks/blob/3bc5472defaa6cee8d11edfe49659c072c887117/notebooks/applications/v0.2.0/07_gse211713_shift_explanations.ipynb)
 
 This gallery is derived from the maintainer's actual ScGeo 0.2.1 run, not synthetic data. All 27 state/contrast explanations passed. Browse the figures directly here or open the notebook to inspect the numerical tables without downloading the original H5ADs. The full analysis remains separate from this curated viewer.

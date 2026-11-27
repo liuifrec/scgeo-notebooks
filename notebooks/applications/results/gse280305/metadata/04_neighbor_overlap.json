@@ -1,0 +1,106 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "local_distortion_map",
+    "basis": "X_umap_scanorama",
+    "metric": "neighbor_overlap",
+    "aggregation": "state",
+    "rep_a": "X_pca_raw",
+    "rep_b": "X_scanorama",
+    "display_only": true,
+    "normalization": {
+      "class": "Normalize",
+      "vmin": 0.13333333333333333,
+      "vmax": 0.6
+    },
+    "n_cells": 31605,
+    "displayed_cells": 12000,
+    "max_points": 12000,
+    "random_state": 1729,
+    "store_key": "local_geometry_stability",
+    "missing_color": "#BDBDBD",
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "state-level medians, k=15; not per-cell estimates"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      147.32,
+      121.91999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "04_neighbor_overlap.png",
+      "sha256": "b5ebd10ba08e8bce92fc74cfb6942c07a68bf5e4c267c0b8036d10831b7d199b"
+    },
+    "svg": {
+      "file": "04_neighbor_overlap.svg",
+      "sha256": "b35b5ef4a1da415fc1d9c2f9f4179de1ab109bca6f5e697e5750c37fe490b1c2"
+    },
+    "pdf": {
+      "file": "04_neighbor_overlap.pdf",
+      "sha256": "052f15dc9e92ad7f0ae09b33a788397364b3395f68f9a2d68c25333bab368d4e"
+    }
+  },
+  "tables": {
+    "data": {
+      "file": "04_neighbor_overlap_data.csv",
+      "rows": 31605,
+      "columns": [
+        "cell_index",
+        "cell_id",
+        "value",
+        "display_x",
+        "display_y",
+        "displayed",
+        "state"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "float64",
+        "float32",
+        "float32",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "cf15bfff301bdefa17d9b3234e175957f74f1e24af13d25db1b4f360f8695835"
+    }
+  }
+}

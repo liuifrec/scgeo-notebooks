@@ -1,0 +1,338 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "shift_curves",
+    "state": "all",
+    "state_status": "ok",
+    "shift_direction_available": true,
+    "explanation_key": "molecular_explanation",
+    "analysis_rep": "X_molecular_linear50",
+    "display_basis": "X_umap_display_only",
+    "layer": null,
+    "panels": [
+      "curve",
+      "expression",
+      "contribution"
+    ],
+    "sample_key": "mouse_id",
+    "bandwidth_fraction": 0.18,
+    "bandwidth": 3.4057941290397467,
+    "grid_size": 80,
+    "min_cells_per_sample": 5,
+    "sample_weighting": "equal among locally supported samples",
+    "uncertainty": "sample_range",
+    "interval_is_confidence_interval": false,
+    "coordinate_interpretation": "frozen geometric projection; not time or a trajectory",
+    "coordinate_key": null,
+    "coordinate_source": "stored_shift_score",
+    "curve_coordinate_available": true,
+    "sample_roster_source": "full supplied AnnData observations in the declared contrast",
+    "distribution_summary": "one observed median and within-sample cell IQR per sample; no confidence interval",
+    "max_points": 2500,
+    "n_drawn_cells": 1966,
+    "show_samples": true,
+    "condition_colors": {
+      "control": "#c0794f",
+      "17Gy_early": "#a154c7"
+    },
+    "point_color": "application_group",
+    "smoothing": "compact tricube kernel mean without extrapolation",
+    "application_dataset": "C",
+    "application_scope": "New molecular accounting; replicate-aware cross-sectional mouse contrasts",
+    "frozen_estimator_source": "9a0ed16cbaa57f935f9c9bc87d1643a25b51012c",
+    "note": "Qualified cross-sectional mice; conditional sample bootstrap and sample-range curves; verified_frozen_pca50_coordinates; geometric accounting, not causal regulation; mapping policy: verified_global_residual_recenter_bound"
+  },
+  "warnings": [
+    "Geometric shift coordinates are expression-derived; association and attribution are descriptive, not causal."
+  ],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 165.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      312.41999999999996,
+      172.72
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves.png",
+      "sha256": "7bf47bd509db0c56ca4da5f47e434e02d2d4262f99be6a6a558d41246b8c037e"
+    },
+    "svg": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves.svg",
+      "sha256": "fae0be2ffa80a663a761f90e8f0ee6c81b3deb601fea21a3f10e93718b08bf2e"
+    },
+    "pdf": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves.pdf",
+      "sha256": "9f345bb1cc2f869a5de1ceecac9eb5b97c7ec00f8dd32c5e0c6d8689109f5b1d"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_cells.csv",
+      "rows": 3932,
+      "columns": [
+        "obs_position",
+        "obs_name",
+        "state",
+        "condition",
+        "sample",
+        "shift_score",
+        "eligible",
+        "curve_coordinate",
+        "coordinate_source",
+        "displayed",
+        "x",
+        "y",
+        "feature",
+        "expression",
+        "contribution"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "bool",
+        "float64",
+        "str",
+        "bool",
+        "float64",
+        "float64",
+        "str",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "bd5d22c1071a435f74ec011c12ef5218adc7690cbcc75948de82de0aca056714"
+    },
+    "curves": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_curves.csv",
+      "rows": 320,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "shift_score",
+        "expression",
+        "lower",
+        "upper",
+        "n_samples",
+        "n_smoothing_units",
+        "n_cells",
+        "support",
+        "curve_coordinate",
+        "coordinate_source"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64",
+        "int64",
+        "int64",
+        "int64",
+        "str",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "d96e4a726aaec009a93d64f96264eefd5031dcafb327968fa26265c8915c9c99"
+    },
+    "sample_curves": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_sample_curves.csv",
+      "rows": 1440,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "sample",
+        "shift_score",
+        "expression",
+        "n_cells",
+        "supported",
+        "curve_coordinate",
+        "coordinate_source"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "int64",
+        "bool",
+        "float64",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "fc3cd4c588f6b2c78ca3cb1e02b305fc42c12fd4d201404f6646b99ab5ccf0f8"
+    },
+    "features": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_features.csv",
+      "rows": 2,
+      "columns": [
+        "feature",
+        "name",
+        "kind",
+        "n_members",
+        "n_attributed_members",
+        "expression_summary",
+        "contribution_summary"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "6efd312b58a301209299fa75f98ab4a7c8994c77ff13100e5508fb45a3be1484"
+    },
+    "coverage": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_coverage.csv",
+      "rows": 9,
+      "columns": [
+        "state",
+        "condition",
+        "sample",
+        "n_cells",
+        "n_coordinate_cells",
+        "sample_in_roster",
+        "biological_sample",
+        "status"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "dc97786f469152875a811f6f8e50aa1ee6cd2a291aa76e7a39ea5a6a1d7b9e1a"
+    },
+    "sample_expression": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_sample_expression.csv",
+      "rows": 18,
+      "columns": [
+        "state",
+        "feature",
+        "condition",
+        "sample",
+        "n_cells",
+        "n_coordinate_cells",
+        "sample_in_roster",
+        "biological_sample",
+        "status",
+        "mean",
+        "median",
+        "q25",
+        "q75"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "bool",
+        "bool",
+        "str",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "0de7e3c1e1195da3fafa9dfd0e325d00bfbc47e31dcabdad0cfc622c01ae3a2f"
+    },
+    "panel_status": {
+      "file": "C_fibroblast_control_vs_17gy_early_00_gene_curves_panel_status.csv",
+      "rows": 6,
+      "columns": [
+        "state",
+        "feature",
+        "panel",
+        "status",
+        "reason"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "str",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "7e156ed6586fdfc82572bf5128029f88b6488df3a5ee844e3c4a56ba6367d00a"
+    }
+  }
+}

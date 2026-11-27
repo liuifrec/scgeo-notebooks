@@ -1,0 +1,230 @@
+{
+  "schema_version": "scgeo.plot_export.v1",
+  "software": {
+    "scgeo": "0.2.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "plot": {
+    "plot": "embedding_facets",
+    "display_basis": "X_umap_raw",
+    "owns_figure": true,
+    "export_scope": "created_figure",
+    "facets": {
+      "row": null,
+      "col": "timepoint",
+      "row_order": [
+        "All"
+      ],
+      "col_order": [
+        "D8",
+        "D11",
+        "D14",
+        "D21"
+      ],
+      "missing_labels": {
+        "row": null,
+        "col": null
+      }
+    },
+    "color_key": "leiden_raw",
+    "color_type": "categorical",
+    "palette": {
+      "0": "#3cc25d",
+      "1": "#36ad74",
+      "2": "#b150b3",
+      "3": "#62c04f",
+      "4": "#61c542",
+      "5": "#b73c6c",
+      "6": "#b54885",
+      "7": "#38ac99",
+      "8": "#bec343",
+      "9": "#b7853d",
+      "10": "#66af4c",
+      "11": "#56c246",
+      "12": "#3bb379",
+      "13": "#91c55c"
+    },
+    "palette_origin": "deterministic_hash",
+    "numeric_color_limits": null,
+    "velocity": null,
+    "velocity_key": null,
+    "velocity_options": null,
+    "velocity_radius": null,
+    "velocity_radius_source": null,
+    "shared_velocity_scale": true,
+    "velocity_scale_resolved": null,
+    "velocity_shared_color_limits": null,
+    "velocity_grid_extent": null,
+    "velocity_support_definition": null,
+    "shared_limits": true,
+    "context": "none",
+    "max_points_per_facet": 12000,
+    "random_state": 1729,
+    "n_cells_input": 31605,
+    "n_panels": 4,
+    "interprets_time_or_trajectory": false,
+    "dataset": "GSE280305",
+    "input_sha256": "c5d32591abad3d659277a20a5f8681602b55fd849d0bd0e2329c1b4fd6122bee",
+    "inference_scope": "descriptive_only",
+    "analysis_scope": "original stored embeddings; no fitted velocity"
+  },
+  "warnings": [],
+  "export": {
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "dpi": 220.0,
+    "transparent": false,
+    "bbox_inches": null,
+    "panel_labels": {},
+    "canvas_mm": [
+      457.2,
+      121.91999999999999
+    ]
+  },
+  "style": {
+    "font.family": [
+      "sans-serif"
+    ],
+    "font.size": 10.0,
+    "axes.titlesize": "large",
+    "axes.labelsize": "medium",
+    "xtick.labelsize": "medium",
+    "ytick.labelsize": "medium",
+    "legend.fontsize": "medium",
+    "pdf.fonttype": 3,
+    "svg.fonttype": "path"
+  },
+  "figures": {
+    "png": {
+      "file": "01_facets_umap_raw.png",
+      "sha256": "d6436e2a5342742c43eb664c8b9086ca5b45dcd64423b085168e67e9ec7a2648"
+    },
+    "svg": {
+      "file": "01_facets_umap_raw.svg",
+      "sha256": "285c09fad4d600351ef787dc25b10856594547e50e8d1d702487bccc9d4b80f7"
+    },
+    "pdf": {
+      "file": "01_facets_umap_raw.pdf",
+      "sha256": "b7b7110cc0872099e74e8d2da53a31f90d7d8c2b83ec2a57225bd17ea0f78eba"
+    }
+  },
+  "tables": {
+    "cells": {
+      "file": "01_facets_umap_raw_cells.csv",
+      "rows": 31605,
+      "columns": [
+        "obs_position",
+        "cell_id",
+        "facet_id",
+        "row_label",
+        "col_label",
+        "x",
+        "y",
+        "finite_embedding",
+        "highlighted",
+        "displayed",
+        "color_value"
+      ],
+      "dtypes": [
+        "int64",
+        "str",
+        "str",
+        "str",
+        "str",
+        "float64",
+        "float64",
+        "bool",
+        "bool",
+        "bool",
+        "str"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "9f3c96f8fb4149d5a7c165f930c1b4d4f886e189d2b52ea15994313398a269cb"
+    },
+    "facets": {
+      "file": "01_facets_umap_raw_facets.csv",
+      "rows": 4,
+      "columns": [
+        "facet_id",
+        "row_label",
+        "col_label",
+        "n_cells",
+        "n_finite_embedding",
+        "n_displayed",
+        "n_velocity_eligible",
+        "n_grid_supported",
+        "n_grid_total",
+        "x_min",
+        "x_max",
+        "y_min",
+        "y_max"
+      ],
+      "dtypes": [
+        "str",
+        "str",
+        "str",
+        "int64",
+        "int64",
+        "int64",
+        "object",
+        "object",
+        "object",
+        "float64",
+        "float64",
+        "float64",
+        "float64"
+      ],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "29f1443ac32c69d86091757f790d87f5859ba73c2c24e3a39e88b9cf548d9762"
+    },
+    "velocity_grid": {
+      "file": "01_facets_umap_raw_velocity_grid.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_vectors": {
+      "file": "01_facets_umap_raw_velocity_vectors.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "velocity_paths": {
+      "file": "01_facets_umap_raw_velocity_paths.csv",
+      "rows": 0,
+      "columns": [],
+      "dtypes": [],
+      "index_included": false,
+      "index_names": [
+        null
+      ],
+      "attributes": {},
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  }
+}
